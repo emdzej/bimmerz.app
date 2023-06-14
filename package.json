@@ -1,0 +1,15 @@
+{
+  "name": "bimmerz.app",
+  "version": "1.0.0",
+  "description": "The goal of this project is to build a Raspberry Pi based headunit utilising original BMW E46 widescreen navigation monitor.",
+  "directories": {
+    "doc": "doc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "workspaces": [
+    "ibus/core",    
+    "ibus/logger"
+  ]
+}

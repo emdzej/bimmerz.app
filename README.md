@@ -35,3 +35,10 @@ I have almost all the hardware components (waiting for touch digitizer and LCD s
 So once I have the HID device built and connected I'll likely setup [OpenAuto Pro](https://bluewavestudio.io/shop/openauto-pro-car-head-unit-solution/) on the Pi itself. Just to begin with something.
 
 # bimmerz.app
+
+
+https://github.com/tedsalmon/BlueBus
+
+https://github.com/toxsedyshev/imBMW
+
+https://github.com/piersholt/wilhelm-docs
