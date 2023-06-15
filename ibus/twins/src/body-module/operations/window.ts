@@ -5,7 +5,7 @@ import { DiagnosticOperations } from "../../types";
 
 export class WindoOperations extends DiagnosticOperations {
     constructor(ibusInterface: IBusInterface) {
-        super(KNOWN_DEVICES.BodyModule, ibusInterface, logger({ name: 'WindoOperations', level: 'debug' }));
+        super(KNOWN_DEVICES.BODY_MODULE, ibusInterface, logger({ name: 'WindoOperations', level: 'debug' }));
     }
 
     public openWindow(window: WINDOW): void {

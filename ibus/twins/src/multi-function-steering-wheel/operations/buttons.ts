@@ -11,7 +11,7 @@ export class ButtonOperations extends DeviceOperations {
 
     public press(button: MULTI_FUNCTION_STEERING_WHEEL_BUTTON, 
                 state: MULTI_FUNCTION_STEERING_WHEEL_BUTTON_STATE,
-                target: DEVICE = KNOWN_DEVICES.Radio): void {
+                target: DEVICE = KNOWN_DEVICES.RADIO): void {
         const payload = Buffer.from([
             MULTI_FUNCTION_STEERING_WHEEL_COMMANDS.BUTTON_PRESS,
             button | state

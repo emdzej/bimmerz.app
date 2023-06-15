@@ -9,7 +9,7 @@ export class VolumeOperations extends DeviceOperations {
         super(ibusInterface, logger({ name: 'VolumeOperations', level: 'debug' }));
     }
 
-    public changeVolume(direction: VOLUME_CHANGE_DIRECTION, steps: number = 0x01, target: DEVICE = KNOWN_DEVICES.Radio): void {
+    public changeVolume(direction: VOLUME_CHANGE_DIRECTION, steps: number = 0x01, target: DEVICE = KNOWN_DEVICES.RADIO): void {
         const payload = Buffer.from([
             MULTI_FUNCTION_STEERING_WHEEL_COMMANDS.VOLUME_BUTTON_PRESS,
             direction | (steps << 4)

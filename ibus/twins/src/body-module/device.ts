@@ -13,7 +13,7 @@ export declare interface BodyModule  {
 }
 
 export class BodyModule extends DeviceTwin {
-    private doorLidStatuses: DoorLidStatuses = {
+    private _doorLidStatuses: DoorLidStatuses = {
         driverFront: DOOR_LID_STATUSES.CLOSED,
         passengerFront: DOOR_LID_STATUSES.CLOSED,
         driverRear: DOOR_LID_STATUSES.CLOSED,
@@ -23,17 +23,36 @@ export class BodyModule extends DeviceTwin {
         bootRelease: DOOR_LID_STATUSES.CLOSED,
         sunroof: DOOR_LID_STATUSES.CLOSED,
     };
-    private centralLockingStatus: CENTRAL_LOCKING_STATUS = CENTRAL_LOCKING_STATUSES.UNLOCKED;
-    private interiorLightStatus: LAMP_STATUS = LAMP_STATUSES.OFF;
-    private windowStatuses: WindowStatuses = {
+
+    public get doorLidStatuses(): Readonly<DoorLidStatuses> {
+        return this._doorLidStatuses;
+    }
+
+    private _centralLockingStatus: CENTRAL_LOCKING_STATUS = CENTRAL_LOCKING_STATUSES.UNLOCKED;
+
+    public get centralLockingStatus(): CENTRAL_LOCKING_STATUS {
+        return this._centralLockingStatus;
+    }
+
+    private _interiorLightStatus: LAMP_STATUS = LAMP_STATUSES.OFF;
+
+    public get interiorLightStatus(): LAMP_STATUS {
+        return this._interiorLightStatus;
+    }
+
+    private _windowStatuses: WindowStatuses = {
         driverFront: WINDOW_STATUSES.CLOSED,
         passengerFront: WINDOW_STATUSES.CLOSED,
         driverRear: WINDOW_STATUSES.CLOSED,
         passengerRear: WINDOW_STATUSES.CLOSED,
     };
 
+    public get windowStatuses(): Readonly<WindowStatuses> {
+        return this._windowStatuses;
+    }
+
     constructor(ibusInterface: IBusInterface) {
-        super(KNOWN_DEVICES.BodyModule, 'Body Module', ibusInterface, logger({ name: 'BodyModule', level: 'debug' }));
+        super(KNOWN_DEVICES.BODY_MODULE, 'Body Module', ibusInterface, logger({ name: 'BodyModule', level: 'debug' }));
         this.handle(BODY_MODULE_COMMANDS.DIAGNOSTIC_RESPONSE, (message) => this.handleDiagnosticResponse(message));
         this.handle(BODY_MODULE_COMMANDS.DOOR_LID_STATUS_RESPONSE, (message) => this.handleDoorLidStatusResponse(message));
         this.handle(BODY_MODULE_COMMANDS.DOOR_LID_STATUS_REQUEST, (message) => this.handleDoorLidStatusRequest(message));
@@ -82,10 +101,10 @@ export class BodyModule extends DeviceTwin {
             passengerRear: ((windowsStatus & 0b0000_1000) >> 3) as WINDOW_STATUS,
         };
 
-        this.doorLidStatuses = doorLidStatuses;        
-        this.centralLockingStatus = centralLockStatus as CENTRAL_LOCKING_STATUS;
-        this.interiorLightStatus = lampIndicator as LAMP_STATUS;        
-        this.windowStatuses = windowStatuses;
+        this._doorLidStatuses = doorLidStatuses;        
+        this._centralLockingStatus = centralLockStatus as CENTRAL_LOCKING_STATUS;
+        this._interiorLightStatus = lampIndicator as LAMP_STATUS;        
+        this._windowStatuses = windowStatuses;
 
         this.log.debug(doorLidStatuses, 'Door lid statuses');
         this.log.debug(centralLockStatus, 'Central locking status');

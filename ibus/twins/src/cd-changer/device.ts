@@ -18,7 +18,7 @@ export declare interface CDChanger  {
 export class CDChanger extends DeviceTwin {
     
     constructor(ibusInterface: IBusInterface) {
-        super(KNOWN_DEVICES.CDChangerDINsize, 'CDChanger', ibusInterface, logger({ name: 'CDChanger', level: 'debug' }));        
+        super(KNOWN_DEVICES.CD_CHANGER_DIN, 'CDChanger', ibusInterface, logger({ name: 'CDChanger', level: 'debug' }));        
         this.handle(COMMON_COMMANDS.MODULE_STATUS_RESPONE, (message) => this.handleStatusResponse(message));
     }
 

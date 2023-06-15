@@ -8,12 +8,11 @@ export const COMMANDS = {
 export type COMMAND = typeof COMMANDS[keyof typeof COMMANDS];
 
 export const MODULE_STATUSES = {
-    MODULE_NOT_PRESENT: 0x00,
-    MODULE_PRESENT: 0x01
+    MODULE_PRESENT: 0x00,
+    MODULE_ANNOUNCE: 0x01
 } as const;
 
 export type MODULE_STATUS = typeof MODULE_STATUSES[keyof typeof MODULE_STATUSES];
-
 
 export type DeviceEvent = {
     source: DEVICE;
@@ -56,7 +55,7 @@ export abstract class DiagnosticOperations extends DeviceOperations {
 
     protected sendMessage(payload: Buffer): void {
         const message: IBusMessage = {
-            source: KNOWN_DEVICES.Diagnostic,
+            source: KNOWN_DEVICES.DIAGNOSTIC,
             destination: this.device,
             payload
         }
@@ -79,4 +78,5 @@ export abstract class DiagnosticOperations extends DeviceOperations {
     }
 }
 
-export type IBusMessageParserFunction<T, A> = (message: IBusMessage, args: A) => T;
+export type IBusMessageDecoderFunction<T, A> = (message: IBusMessage, args: A) => T;
+export type IBusMessageEncoderFunction<A> = (source: DEVICE, destination: DEVICE, args: A) => IBusMessage;

@@ -6,7 +6,7 @@ import { DiagnosticOperations } from "../../types";
 
 export class CentralLockingOperations extends DiagnosticOperations {
     constructor(ibusInterface: IBusInterface) {
-        super(KNOWN_DEVICES.BodyModule, ibusInterface, logger({ name: 'CentralLockingOperations', level: 'debug' }));
+        super(KNOWN_DEVICES.BODY_MODULE, ibusInterface, logger({ name: 'CentralLockingOperations', level: 'debug' }));
     }
 
     public pressCenterLockButton(vehicleType: VEHICLE_TYPE): void {

@@ -20,7 +20,7 @@ export declare interface LightControlModule  {
 }
 
 export class LightControlModule extends DeviceTwin {
-    private lightStatus: LigthStatus = {
+    private _lightStatus: LigthStatus = {
         rapidBlink: LIGHT_STATUSES.OFF,
         turnRight: LIGHT_STATUSES.OFF,
         turnLeft: LIGHT_STATUSES.OFF,
@@ -38,14 +38,43 @@ export class LightControlModule extends DeviceTwin {
         lowBeamCheck: ERROR_STATUSES.OK,
         parkingCheck: ERROR_STATUSES.OK,
     }
-    private variant?: LIGHT_MODULE_VARIANT;
-    private dimmerVoltage?: number;
-    private frontLoadVoltage?: number;
-    private rearLoadVoltage?: number;
-    private photoVoltage?: number;
+
+    public get lightStatus(): Readonly<LigthStatus> {
+        return this._lightStatus;
+    }
+
+    private _variant?: LIGHT_MODULE_VARIANT;
+
+    public get variant(): LIGHT_MODULE_VARIANT | undefined {
+        return this._variant;
+    }
+
+    private _dimmerVoltage?: number;
+
+    public get dimmerVoltage(): number | undefined {
+        return this._dimmerVoltage;
+    }
+
+    private _frontLoadVoltage?: number;
+
+    public get frontLoadVoltage(): number | undefined {
+        return this._frontLoadVoltage;
+    }
+
+    private _rearLoadVoltage?: number;
+
+    public get rearLoadVoltage(): number | undefined {
+        return this._rearLoadVoltage;
+    }
+
+    private _photoVoltage?: number;
+
+    public get photoVoltage(): number | undefined {
+        return this._photoVoltage;
+    }
 
     constructor(ibusInterface: IBusInterface) {
-        super(KNOWN_DEVICES.LightControlModule, 'Light Control Module', ibusInterface, logger({ name: 'LCM', level: 'debug' }));
+        super(KNOWN_DEVICES.LIGHT_CONTROL_MODULE, 'Light Control Module', ibusInterface, logger({ name: 'LCM', level: 'debug' }));
 
         this.handle(LIGHT_CONTROL_MODULE_COMMANDS.DIAGNOSTIC_REQUEST, (message: IBusMessage) => this.handleDiagnosticRequest(message));
         this.handle(LIGHT_CONTROL_MODULE_COMMANDS.DIAGNOSTIC_RESPONSE, (message: IBusMessage) => this.handleDiagnosticResponse(message));
@@ -57,29 +86,29 @@ export class LightControlModule extends DeviceTwin {
     private handleDiagnosticResponse(message: IBusMessage): void {
         if (message.length == 0x0F) {
             // based on BlueMod
-            this.variant = this.determineLightModuleVariant(message);
-            this.log.debug({ variant: this.variant }, 'Light module variant detected');
+            this._variant = this.determineLightModuleVariant(message);
+            this.log.debug({ variant: this._variant }, 'Light module variant detected');
         } else if (message.length == 0x19) {
             // LME38 has unique status. It's shorter, and different mapping.
             // Length is an (educated) guess based on number of bytes required to
             // populate the job results.
-            this.dimmerVoltage = message.payload[LME38_DIMMER_OFFSET];
+            this._dimmerVoltage = message.payload[LME38_DIMMER_OFFSET];
         } else if (message.length == 0x23) {
              // Front load sensor voltage (Xenon)
-            this.frontLoadVoltage = message.payload[LOAD_FRONT_OFFSET];
+            this._frontLoadVoltage = message.payload[LOAD_FRONT_OFFSET];
             // Dimmer (58G) voltage
-            this.dimmerVoltage = message.payload[DIMMER_OFFSET];
+            this._dimmerVoltage = message.payload[DIMMER_OFFSET];
             // Rear load sensor voltage (Xenon) / manual vertical aim control (non-Xenon)
-            this.rearLoadVoltage = message.payload[LOAD_REAR_OFFSET];            
+            this._rearLoadVoltage = message.payload[LOAD_REAR_OFFSET];            
             // Photosensor voltage (LSZ)
-            this.photoVoltage = message.payload[PHOTO_OFFSET];
+            this._photoVoltage = message.payload[PHOTO_OFFSET];
         }        
         this.emit('diagnosticResponse', {
-            variant: this.variant,
-            dimmerVoltage: this.dimmerVoltage,
-            frontLoadVoltage: this.frontLoadVoltage,
-            rearLoadVoltage: this.rearLoadVoltage,
-            photoVoltage: this.photoVoltage,            
+            variant: this._variant,
+            dimmerVoltage: this._dimmerVoltage,
+            frontLoadVoltage: this._frontLoadVoltage,
+            rearLoadVoltage: this._rearLoadVoltage,
+            photoVoltage: this._photoVoltage,            
         });
     }
 
@@ -149,7 +178,7 @@ export class LightControlModule extends DeviceTwin {
             lowBeamCheck: checkBit(errors, LIGHT_CHECK_STATUS_BITS.LOW_BEAM),
             parkingCheck: checkBit(errors, LIGHT_CHECK_STATUS_BITS.PARKING),
         };
-        this.lightStatus = lightStatus;
+        this._lightStatus = lightStatus;
         this.emit('lightStatusResponse', {
             lightStatus
         });

@@ -134,7 +134,7 @@ export const OBC_PROPERTIES = {
 
 export type OBC_PROPERTY = typeof OBC_PROPERTIES[keyof typeof OBC_PROPERTIES];
 
-export type WRITEABLE_OBC_PROPERITES = {
+export const WRITEABLE_OBC_PROPERITES = {
     TIME: 0x01,
     DATE: 0x02,
     DISTANCE: 0x07,
@@ -142,7 +142,10 @@ export type WRITEABLE_OBC_PROPERITES = {
     CODE: 0x0d,
     AUX_TIMER_1: 0x0f,
     AUX_TIMER_2: 0x10
-};
+} as const;
+
+export type WRITEABLE_OBC_PROPERTY = typeof WRITEABLE_OBC_PROPERITES[keyof typeof WRITEABLE_OBC_PROPERITES];
+
 
 export type OBCProperties = {
     time?: string;

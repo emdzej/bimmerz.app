@@ -15,10 +15,14 @@ export declare interface InstrumentCluster  {
     emit<K extends keyof InstrumentClusterEvents>(name: K, event: InstrumentClusterEvents[K]): boolean;    
 }
 
-
 export class InstrumentCluster extends DeviceTwin {
-    private ignitionStatus: IGNITION_STATUS = IGNITION_STATUSES.OFF;
-    private sensorsStatus: SensorsStatus = {
+    private _ignitionStatus: IGNITION_STATUS = IGNITION_STATUSES.OFF;
+
+    public get ignitionStatus(): Readonly<IGNITION_STATUS> {
+        return this._ignitionStatus;
+    }
+
+    private _sensorsStatus: SensorsStatus = {
         handbrake: HANDBRAKE_STATUSES.OFF,
         oilPressure: OIL_PRESSURE_STATUSES.OK,
         brakePads: BRAKE_PADS_STATUSES.OK,
@@ -28,13 +32,52 @@ export class InstrumentCluster extends DeviceTwin {
         gear: GEARS.NONE,
         auxVent: AUX_VENT_STATUSES.OFF
     }
-    private vehicleType?: VEHICLE_TYPE;
-    private temperatures: Temperatures = {};
-    private speed?: number;
-    private rpm?: number;
-    private odometer?: number;
-    private obcProperties: OBCProperties = {};
-    private redundantData: RedundantData = {};
+
+    public get sensorsStatus(): Readonly<SensorsStatus> {
+        return this._sensorsStatus;
+    }
+
+    private _vehicleType?: VEHICLE_TYPE;
+
+    public get vehicleType(): VEHICLE_TYPE | undefined {
+        return this._vehicleType;
+    }
+
+    private _temperatures: Temperatures = {};
+
+    public get temperatures(): Readonly<Temperatures> {
+        return this._temperatures;
+    }
+
+    private _speed?: number;
+
+    public get speed(): number | undefined {
+        return this._speed;
+    }
+
+    private _rpm?: number;
+
+    public get rpm(): number | undefined {
+        return this._rpm;
+    }
+
+    private _odometer?: number;
+
+    public get odometer(): number | undefined {
+        return this._odometer;
+    }
+
+    private _obcProperties: OBCProperties = {};
+
+    public get obcProperties(): Readonly<OBCProperties> {
+        return this._obcProperties;
+    }
+
+    private _redundantData: RedundantData = {};
+
+    public get redundantData(): Readonly<RedundantData> {
+        return this._redundantData;
+    }
 
     constructor(ibusInterface: IBusInterface) {
         super(KNOWN_DEVICES.InstrumentClusterElectronics, 'InstrumentCluster', ibusInterface, logger({ name: 'InstrumentCluster', level: 'debug' }));               
@@ -51,7 +94,7 @@ export class InstrumentCluster extends DeviceTwin {
         this.handle(INSTRUMENT_CLUSTER_COMMANDS.REDUNDANT_DATA_RESPONSE, (message) => this.handleRedundantDataResponse(message));
     }
 
-    public requestRedundantData(source: DEVICE = KNOWN_DEVICES.LightControlModule): void {
+    public requestRedundantData(source: DEVICE = KNOWN_DEVICES.LIGHT_CONTROL_MODULE): void {
         const payload = Buffer.from([
             INSTRUMENT_CLUSTER_COMMANDS.REDUNDANT_DATA_REQUEST
         ]);
@@ -82,10 +125,9 @@ export class InstrumentCluster extends DeviceTwin {
         redundantData.mileage = data[5] << 8 + data[6];
         redundantData.oilInterval = data[9] << 8 + data[10];
         redundantData.timeInterval = data[11] << 8 + data[12];
-        this.redundantData = redundantData;
+        this._redundantData = redundantData;
         this.emit('redundantDataResponse', { redundantData }); 
     }
-    
         
     public requestIgnitionStatus(source: DEVICE): void {
         const payload = Buffer.alloc(1);
@@ -107,7 +149,7 @@ export class InstrumentCluster extends DeviceTwin {
 
     private handleIgnitionStatusResponse(message: IBusMessage): void {
         const status = message.payload[DATA_BYTE_1_INDEX] as IGNITION_STATUS;
-        this.ignitionStatus = status;
+        this._ignitionStatus = status;
         this.emit('ignitionStatusChange', {
             status: status,
         });
@@ -156,7 +198,7 @@ export class InstrumentCluster extends DeviceTwin {
             auxVent
         };
 
-        this.sensorsStatus = status;
+        this._sensorsStatus = status;
 
         this.emit('sensorsStatusChange', { status });
     }
@@ -169,7 +211,7 @@ export class InstrumentCluster extends DeviceTwin {
         } else {            
             detectedVehicleType = VEHICLE_TYPES.E38_E39_E53;
         }
-        this.vehicleType = detectedVehicleType;
+        this._vehicleType = detectedVehicleType;
         this.emit('vehicleTypeUpdate', { vehicleType: detectedVehicleType });
     }
 
@@ -180,15 +222,15 @@ export class InstrumentCluster extends DeviceTwin {
             coolant: coolantTemp,
             ambient: ambientTemp
         };
-        this.temperatures = temperatures;
+        this._temperatures = temperatures;
         this.emit('temperaturesUpdate', { temperatures });
     }
 
     private handleSpeedRpmUpdate(message: IBusMessage): void {
         const speed = message.payload[DATA_BYTE_1_INDEX] * 2;
         const rpm = message.payload[DATA_BYTE_2_INDEX] * 100;
-        this.speed = speed;
-        this.rpm = rpm;
+        this._speed = speed;
+        this._rpm = rpm;
         this.emit('speedRpmChange', { speed, rpm });
     }
 
@@ -196,7 +238,7 @@ export class InstrumentCluster extends DeviceTwin {
         const odometer =  message.payload.readUInt8(DATA_BYTE_3_INDEX) << 16
             + message.payload.readUInt8(DATA_BYTE_2_INDEX) << 8
             + message.payload.readUInt8(DATA_BYTE_1_INDEX);
-        this.odometer = odometer;
+        this._odometer = odometer;
         this.emit('odometerChange', { odometer });
     }
 
@@ -204,27 +246,23 @@ export class InstrumentCluster extends DeviceTwin {
         const property  = message.payload[DATA_BYTE_1_INDEX] as OBC_PROPERTY;
         const rawValue = message.payload.subarray(DATA_BYTE_3_INDEX).toString();
         switch (property) {
-            case OBC_PROPERTIES.TIME: this.obcProperties.time = rawValue; break;
-            case OBC_PROPERTIES.DATE: this.obcProperties.date = rawValue; break;
-            case OBC_PROPERTIES.TEMPERATURE: this.obcProperties.temperature = rawValue; break;
-            case OBC_PROPERTIES.CONSUMPTION_1: this.obcProperties.consumption1 = rawValue; break;
-            case OBC_PROPERTIES.CONSUMPTION_2: this.obcProperties.consumption2 = rawValue; break;
-            case OBC_PROPERTIES.RANGE: this.obcProperties.range = rawValue; break;
-            case OBC_PROPERTIES.DISTANCE: this.obcProperties.distance = rawValue; break;
-            case OBC_PROPERTIES.ARRIVAL: this.obcProperties.arrival = rawValue; break;
-            case OBC_PROPERTIES.LIMIT: this.obcProperties.limit = rawValue; break;
-            case OBC_PROPERTIES.AVERAGE_SPEED: this.obcProperties.averageSpeed = rawValue; break;
-            case OBC_PROPERTIES.TIMER: this.obcProperties.timer = rawValue; break;
-            case OBC_PROPERTIES.AUX_TIMER_1: this.obcProperties.auxTimer1 = rawValue; break;
-            case OBC_PROPERTIES.AUX_TIMER_2: this.obcProperties.auxTimer2 = rawValue; break;
-            case OBC_PROPERTIES.CODE_EMERGENCY_DEACTIVATION: this.obcProperties.codeEmergencyDeactivation = rawValue; break;
-            case OBC_PROPERTIES.TIMER_LAP: this.obcProperties.timerLap = rawValue; break;
+            case OBC_PROPERTIES.TIME: this._obcProperties.time = rawValue; break;
+            case OBC_PROPERTIES.DATE: this._obcProperties.date = rawValue; break;
+            case OBC_PROPERTIES.TEMPERATURE: this._obcProperties.temperature = rawValue; break;
+            case OBC_PROPERTIES.CONSUMPTION_1: this._obcProperties.consumption1 = rawValue; break;
+            case OBC_PROPERTIES.CONSUMPTION_2: this._obcProperties.consumption2 = rawValue; break;
+            case OBC_PROPERTIES.RANGE: this._obcProperties.range = rawValue; break;
+            case OBC_PROPERTIES.DISTANCE: this._obcProperties.distance = rawValue; break;
+            case OBC_PROPERTIES.ARRIVAL: this._obcProperties.arrival = rawValue; break;
+            case OBC_PROPERTIES.LIMIT: this._obcProperties.limit = rawValue; break;
+            case OBC_PROPERTIES.AVERAGE_SPEED: this._obcProperties.averageSpeed = rawValue; break;
+            case OBC_PROPERTIES.TIMER: this._obcProperties.timer = rawValue; break;
+            case OBC_PROPERTIES.AUX_TIMER_1: this._obcProperties.auxTimer1 = rawValue; break;
+            case OBC_PROPERTIES.AUX_TIMER_2: this._obcProperties.auxTimer2 = rawValue; break;
+            case OBC_PROPERTIES.CODE_EMERGENCY_DEACTIVATION: this._obcProperties.codeEmergencyDeactivation = rawValue; break;
+            case OBC_PROPERTIES.TIMER_LAP: this._obcProperties.timerLap = rawValue; break;
         }  
-        this.emit('obcPropertiesChange', { obcProperties: this.obcProperties });
-    }
-
-    private setObcProperty(property: WRITEABLE_OBC_PROPERITES, value: any, source: DEVICE = KNOWN_DEVICES.GraphicsNavigationDriver) {
-
+        this.emit('obcPropertiesChange', { obcProperties: this._obcProperties });
     }
 }
 

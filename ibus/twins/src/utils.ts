@@ -9,7 +9,7 @@ export function isFromMe(deviceAddress: DEVICE,message: IBusMessage): boolean {
 }
 
 export function isBroadcast(message: IBusMessage): boolean {
-    return message.destination === KNOWN_DEVICES.Broadcast;
+    return message.destination === KNOWN_DEVICES.BROADCAST;
 }
 
 export function checkBit<T = number>(value: number, position: number): T{

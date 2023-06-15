@@ -16,7 +16,7 @@ export abstract class DeviceTwin extends EventEmitter {
     protected isPresent: boolean = false;
     protected readonly ibusInterface: IBusInterface;
     protected readonly log: Logger<LoggerOptions>;
-    private readonly handlers: Record<number, IBusMessageHandler>;
+    private readonly _handlers: Record<number, IBusMessageHandler>;
     protected vehicle?: Vehicle;
     
     protected constructor(deviceAddress: DEVICE, deviceName: string, ibusInterface: IBusInterface, log: Logger<LoggerOptions>) {
@@ -25,7 +25,7 @@ export abstract class DeviceTwin extends EventEmitter {
         this.deviceName = deviceName;
         this.ibusInterface = ibusInterface;
         this.log = log;
-        this.handlers = {
+        this._handlers = {
             [COMMON_COMMANDS.MODULE_STATUS_REQUEST]: (message) => this.handleModuleStatusRequest(message),
             [COMMON_COMMANDS.MODULE_STATUS_RESPONE]: (message) => this.handleModuleStatusResponse(message)
         };
@@ -41,7 +41,7 @@ export abstract class DeviceTwin extends EventEmitter {
     }
 
     protected handle(command: number, withHandler: IBusMessageHandler): void {
-        this.handlers[command] = withHandler;
+        this._handlers[command] = withHandler;
     }
 
     private handleModuleStatusRequest(message: IBusMessage): void {
@@ -52,7 +52,7 @@ export abstract class DeviceTwin extends EventEmitter {
     }
 
     private routeMessage(message: IBusMessage) {
-        if (message.destination === KNOWN_DEVICES.Broadcast || message.source === KNOWN_DEVICES.GlobalBroadcastAddress) {
+        if (message.destination === KNOWN_DEVICES.BROADCAST || message.source === KNOWN_DEVICES.GLOBAL_BROADCAST) {
             this.log.debug(message, "Broadcast message, accepting");
             this.handleMessage(message);
         }
@@ -67,9 +67,9 @@ export abstract class DeviceTwin extends EventEmitter {
 
     private handleMessage(message: IBusMessage): void {
         const command = message.payload[COMMAND_INDEX];
-        if (this.handlers[command]) {
+        if (this._handlers[command]) {
             this.log.debug(message, "Handling message");
-            this.handlers[command](message);
+            this._handlers[command](message);
         } else {
             this.log.debug(message, "No handler for message");
         }
@@ -87,15 +87,23 @@ export abstract class DeviceTwin extends EventEmitter {
         this.ibusInterface.sendMessage(message);
     }
 
-    public announceStatus(targetDevice: DEVICE = KNOWN_DEVICES.Broadcast): void {
+    public respondToStatusRequest(targetDevice: DEVICE): void {
         const payload = Buffer.from([
             COMMON_COMMANDS.MODULE_STATUS_RESPONE,
             MODULE_STATUSES.MODULE_PRESENT
         ]);
-        this.announceStatusRaw(payload, targetDevice);        
+        this.sensStatusReponse(payload, targetDevice);    
+    };
+
+    public announce(targetDevice: DEVICE = KNOWN_DEVICES.BROADCAST): void {
+        const payload = Buffer.from([
+            COMMON_COMMANDS.MODULE_STATUS_RESPONE,
+            MODULE_STATUSES.MODULE_ANNOUNCE
+        ]);
+        this.sensStatusReponse(payload, targetDevice);        
     }
 
-    public announceStatusRaw(status: Buffer, targetDevice: DEVICE = KNOWN_DEVICES.Broadcast): void {
+    public sensStatusReponse(status: Buffer, targetDevice: DEVICE = KNOWN_DEVICES.BROADCAST): void {
         this.log.debug({ status }, "Announcing status");
         const payload = Buffer.alloc(status.length + 1);
         payload[0] = COMMON_COMMANDS.MODULE_STATUS_RESPONE;

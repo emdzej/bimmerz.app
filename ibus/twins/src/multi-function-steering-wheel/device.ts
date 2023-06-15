@@ -15,7 +15,7 @@ export declare interface MultiFuncionSteeringWheel  {
 export class MultiFuncionSteeringWheel extends DeviceTwin {
     
     constructor(ibusInterface: IBusInterface) {
-        super(KNOWN_DEVICES.BodyModule, 'Multi Function Steering Wheel', ibusInterface, logger({ name: 'MultiFuncionSteeringWheel' }));
+        super(KNOWN_DEVICES.BODY_MODULE, 'Multi Function Steering Wheel', ibusInterface, logger({ name: 'MultiFuncionSteeringWheel' }));
         this.handle(MULTI_FUNCTION_STEERING_WHEEL_COMMANDS.BUTTON_PRESS, (message) => this.handleButtonPress(message));
         this.handle(MULTI_FUNCTION_STEERING_WHEEL_COMMANDS.VOLUME_BUTTON_PRESS, (message) => this.handleVolumeChange(message));        
     }
