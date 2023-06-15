@@ -1,6 +1,6 @@
 import { KNOWN_DEVICES } from "./devices";
 
-function getKeyByValue(object: any, value: any) {
+export function getKeyByValue(object: any, value: any) {
     return Object.keys(object).find(key => object[key] === value);    
 }
 

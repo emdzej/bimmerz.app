@@ -1,11 +1,11 @@
-import { IBusInterface } from "@bimmerz/ibus-core";
+import { IBusInterface , KNOWN_DEVICES} from "@bimmerz/ibus-core";
 import logger from 'pino';
 import { BODY_MODULE_COMMANDS, DIAGNOSTIC_JOBS, WINDOW, DIAGNOSTIC_JOB, WINDOWS } from "../types";
-import { DiagnosticOperations } from "./types";
+import { DiagnosticOperations } from "../../types";
 
 export class WindoOperations extends DiagnosticOperations {
     constructor(ibusInterface: IBusInterface) {
-        super(ibusInterface, logger({ name: 'WindoOperations', level: 'debug' }));
+        super(KNOWN_DEVICES.BodyModule, ibusInterface, logger({ name: 'WindoOperations', level: 'debug' }));
     }
 
     public openWindow(window: WINDOW): void {

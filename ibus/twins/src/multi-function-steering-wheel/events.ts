@@ -1,17 +1,18 @@
 import { DeviceEvents } from "../types";
-import { VOLUME_CHANGE_DIRECTION, MULTI_FUNCTION_STEERING_WHEEL_BUTTON } from "./types";
+import { VOLUME_CHANGE_DIRECTION, MULTI_FUNCTION_STEERING_WHEEL_BUTTON, MULTI_FUNCTION_STEERING_WHEEL_BUTTON_STATE } from "./types";
 
 export type VolumeChangeEvent = {
     direction: VOLUME_CHANGE_DIRECTION;
     steps: number;
 }
 
-export type KeyPressEvent = {
+export type ButtonEvent = {
     button: MULTI_FUNCTION_STEERING_WHEEL_BUTTON;
+    state: MULTI_FUNCTION_STEERING_WHEEL_BUTTON_STATE;
 };
 
 
 export type MultiFuncionSteeringWheelEvents = DeviceEvents & {
     volumeChange: VolumeChangeEvent;
-    keyPress: KeyPressEvent;
+    button: ButtonEvent;
 }

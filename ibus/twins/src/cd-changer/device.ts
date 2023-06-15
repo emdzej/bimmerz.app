@@ -3,7 +3,7 @@ import { DeviceTwin } from "../device-twin";
 import { IBusMessage, IBusMessageHandler } from "@bimmerz/ibus-core";
 import logger, { Logger, LoggerOptions } from 'pino';
 import { COMMAND_INDEX } from "@bimmerz/ibus-core";
-import { COMMANDS as COMMON_COMMANDS, MODULE_STATUS } from "../commands";
+import { COMMANDS as COMMON_COMMANDS, MODULE_STATUS } from "../types";
 import { IBusInterface } from "@bimmerz/ibus-core";
 import { DeviceEventHandler, DeviceEvents } from "../types";
 import { CDChangerEvents } from "./events";
@@ -19,7 +19,7 @@ export class CDChanger extends DeviceTwin {
     
     constructor(ibusInterface: IBusInterface) {
         super(KNOWN_DEVICES.CDChangerDINsize, 'CDChanger', ibusInterface, logger({ name: 'CDChanger', level: 'debug' }));        
-        this.registerHandler(COMMON_COMMANDS.MODULE_STATUS_RESPONE, (message) => this.handleStatusResponse(message));
+        this.handle(COMMON_COMMANDS.MODULE_STATUS_RESPONE, (message) => this.handleStatusResponse(message));
     }
 
     private handleStatusResponse(message: IBusMessage): void {

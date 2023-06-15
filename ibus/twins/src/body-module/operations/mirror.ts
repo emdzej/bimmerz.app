@@ -1,11 +1,10 @@
-import { IBusInterface } from "@bimmerz/ibus-core";
+import { IBusInterface, KNOWN_DEVICES } from "@bimmerz/ibus-core";
 import logger from 'pino';
 import { BODY_MODULE_COMMANDS, DIAGNOSTIC_JOBS, SIDE_MIRROR } from "../types";
-import { DiagnosticOperations } from "./types";
-
+import { DiagnosticOperations } from "../../types";
 export class MirrorOperations extends DiagnosticOperations {
     constructor(ibusInterface: IBusInterface) {
-        super(ibusInterface, logger({ name: 'MirrorOperations', level: 'debug' }));
+        super(KNOWN_DEVICES.BodyModule, ibusInterface, logger({ name: 'MirrorOperations', level: 'debug' }));
     }
 
     public foldMirror(mirror: SIDE_MIRROR): void {

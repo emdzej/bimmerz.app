@@ -1,7 +1,7 @@
 import { IBusInterface, IBusProtocol, KNOWN_DEVICE,
     KNOWN_DEVICES} from '@bimmerz/ibus-core';
 
-import { CDChanger, BodyModule, Radio, DisplayOperations } from '@bimmerz/ibus-device-twins';
+import { CDChanger, BodyModule, Radio, DisplayOperations, VolumeOperations, VOLUME_CHANGE_DIRECTIONS, MultiFuncionSteeringWheel } from '@bimmerz/ibus-device-twins';
 
 var device = '/dev/cu.usbserial-0001';
 
@@ -11,6 +11,7 @@ const ibus = new IBusInterface(device, new IBusProtocol());
 const radio = new Radio(ibus)
 const bodyModule = new BodyModule(ibus);
 const cdChanger = new CDChanger(ibus);
+const wheel = new MultiFuncionSteeringWheel(ibus);
 
 bodyModule.on('moduleStatusResponse', () => {
     console.log('Body module responded');
@@ -19,7 +20,11 @@ bodyModule.on('moduleStatusResponse', () => {
 
 ibus.init();
 const display = new DisplayOperations(ibus);
+const volume = new VolumeOperations(ibus);
 
 setTimeout(() => {
-    // display.displayText('Hello World');
+    wheel.announceStatus(KNOWN_DEVICES.Radio);
+    setInterval(() => {
+        volume.changeVolume(VOLUME_CHANGE_DIRECTIONS.UP, 0x01, KNOWN_DEVICES.Radio);
+    }, 5000);
 }, 1000);

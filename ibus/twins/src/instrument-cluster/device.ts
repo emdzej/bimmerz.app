@@ -2,7 +2,7 @@ import { DEVICE, KNOWN_DEVICE, KNOWN_DEVICES } from "@bimmerz/ibus-core";
 import { IBusMessage, IBusMessageHandler } from "@bimmerz/ibus-core";
 import logger, { Logger, LoggerOptions } from 'pino';
 import { COMMAND_INDEX, DATA_BYTE_1_INDEX, DATA_BYTE_2_INDEX, DATA_BYTE_3_INDEX } from "@bimmerz/ibus-core";
-import { COMMANDS as COMMON_COMMANDS } from "../commands";
+import { COMMANDS as COMMON_COMMANDS } from "../types";
 import { IBusInterface } from "@bimmerz/ibus-core";
 import { DeviceEvent, DeviceEvents, DeviceEventHandler } from "../types";
 import { AUX_VENT_STATUS, AUX_VENT_STATUSES, BRAKE_PADS_STATUS, BRAKE_PADS_STATUSES, DRIVER_DOOR_STATUS, DRIVER_DOOR_STATUSES, ENGINE_STATUS, ENGINE_STATUSES, GEAR, GEARS, HANDBRAKE_STATUS, HANDBRAKE_STATUSES, IGNITION_STATUS, IGNITION_STATUSES, INSTRUMENT_CLUSTER_COMMANDS,  OBCProperties, OBC_PROPERTIES, OBC_PROPERTY, OIL_PRESSURE_STATUS, OIL_PRESSURE_STATUSES, RedundantData, SensorsStatus, TRANSMISSION_STATUS, TRANSMISSION_STATUSES, Temperatures, VEHICLE_TYPE, VEHICLE_TYPES, WRITEABLE_OBC_PROPERITES } from "./types";
@@ -38,17 +38,17 @@ export class InstrumentCluster extends DeviceTwin {
 
     constructor(ibusInterface: IBusInterface) {
         super(KNOWN_DEVICES.InstrumentClusterElectronics, 'InstrumentCluster', ibusInterface, logger({ name: 'InstrumentCluster', level: 'debug' }));               
-        this.registerHandler(INSTRUMENT_CLUSTER_COMMANDS.IGNITION_STATUS_REQUEST, (message) => this.handleIgnitionStatusRequest(message));
-        this.registerHandler(INSTRUMENT_CLUSTER_COMMANDS.IGNITION_STATUS_RESPONSE, (message) => this.handleIgnitionStatusResponse(message));
-        this.registerHandler(INSTRUMENT_CLUSTER_COMMANDS.SENSORS_STATUS_REQUEST, (message) => this.handleSensorsStatusRequest(message));
-        this.registerHandler(INSTRUMENT_CLUSTER_COMMANDS.SENSORS_STATUS_RESPONSE, (message) => this.handleSensorsStatusResponse(message));
-        this.registerHandler(INSTRUMENT_CLUSTER_COMMANDS.VEHICLE_CONFIG_RESPONSE, (message) => this.handleVehicleConfigResponse(message));
-        this.registerHandler(INSTRUMENT_CLUSTER_COMMANDS.TEMP_UPDATE, (message) => this.handleTempUpdate(message));
-        this.registerHandler(INSTRUMENT_CLUSTER_COMMANDS.SPEED_RPM_UPDATE, (message) => this.handleSpeedRpmUpdate(message));
-        this.registerHandler(INSTRUMENT_CLUSTER_COMMANDS.ODOMETER_UPDATE, (message) => this.handleOdometerUpdate(message));
-        this.registerHandler(INSTRUMENT_CLUSTER_COMMANDS.OBC_PROPERTY_UPDATE, (message) => this.handleOBCPropertyUpdate(message));
-        this.registerHandler(INSTRUMENT_CLUSTER_COMMANDS.REDUNDANT_DATA_REQUEST, (message) => this.handleRedundantDataRequest(message));
-        this.registerHandler(INSTRUMENT_CLUSTER_COMMANDS.REDUNDANT_DATA_RESPONSE, (message) => this.handleRedundantDataResponse(message));
+        this.handle(INSTRUMENT_CLUSTER_COMMANDS.IGNITION_STATUS_REQUEST, (message) => this.handleIgnitionStatusRequest(message));
+        this.handle(INSTRUMENT_CLUSTER_COMMANDS.IGNITION_STATUS_RESPONSE, (message) => this.handleIgnitionStatusResponse(message));
+        this.handle(INSTRUMENT_CLUSTER_COMMANDS.SENSORS_STATUS_REQUEST, (message) => this.handleSensorsStatusRequest(message));
+        this.handle(INSTRUMENT_CLUSTER_COMMANDS.SENSORS_STATUS_RESPONSE, (message) => this.handleSensorsStatusResponse(message));
+        this.handle(INSTRUMENT_CLUSTER_COMMANDS.VEHICLE_CONFIG_RESPONSE, (message) => this.handleVehicleConfigResponse(message));
+        this.handle(INSTRUMENT_CLUSTER_COMMANDS.TEMP_UPDATE, (message) => this.handleTempUpdate(message));
+        this.handle(INSTRUMENT_CLUSTER_COMMANDS.SPEED_RPM_UPDATE, (message) => this.handleSpeedRpmUpdate(message));
+        this.handle(INSTRUMENT_CLUSTER_COMMANDS.ODOMETER_UPDATE, (message) => this.handleOdometerUpdate(message));
+        this.handle(INSTRUMENT_CLUSTER_COMMANDS.OBC_PROPERTY_UPDATE, (message) => this.handleOBCPropertyUpdate(message));
+        this.handle(INSTRUMENT_CLUSTER_COMMANDS.REDUNDANT_DATA_REQUEST, (message) => this.handleRedundantDataRequest(message));
+        this.handle(INSTRUMENT_CLUSTER_COMMANDS.REDUNDANT_DATA_RESPONSE, (message) => this.handleRedundantDataResponse(message));
     }
 
     public requestRedundantData(source: DEVICE = KNOWN_DEVICES.LightControlModule): void {

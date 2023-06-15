@@ -34,9 +34,9 @@ export class BodyModule extends DeviceTwin {
 
     constructor(ibusInterface: IBusInterface) {
         super(KNOWN_DEVICES.BodyModule, 'Body Module', ibusInterface, logger({ name: 'BodyModule', level: 'debug' }));
-        this.registerHandler(BODY_MODULE_COMMANDS.DIAGNOSTIC_RESPONSE, (message) => this.handleDiagnosticResponse(message));
-        this.registerHandler(BODY_MODULE_COMMANDS.DOOR_LID_STATUS_RESPONSE, (message) => this.handleDoorLidStatusResponse(message));
-        this.registerHandler(BODY_MODULE_COMMANDS.DOOR_LID_STATUS_REQUEST, (message) => this.handleDoorLidStatusRequest(message));
+        this.handle(BODY_MODULE_COMMANDS.DIAGNOSTIC_RESPONSE, (message) => this.handleDiagnosticResponse(message));
+        this.handle(BODY_MODULE_COMMANDS.DOOR_LID_STATUS_RESPONSE, (message) => this.handleDoorLidStatusResponse(message));
+        this.handle(BODY_MODULE_COMMANDS.DOOR_LID_STATUS_REQUEST, (message) => this.handleDoorLidStatusRequest(message));
     }
 
     public requestDoorLidStatus(source: DEVICE): void {

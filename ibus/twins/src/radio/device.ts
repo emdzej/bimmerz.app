@@ -3,7 +3,7 @@ import { DeviceTwin } from "../device-twin";
 import { IBusMessage, IBusMessageHandler } from "@bimmerz/ibus-core";
 import logger, { Logger, LoggerOptions } from 'pino';
 import { COMMAND_INDEX } from "@bimmerz/ibus-core";
-import { COMMANDS as COMMON_COMMANDS } from "../commands";
+import { COMMANDS as COMMON_COMMANDS } from "../types";
 import { IBusInterface } from "@bimmerz/ibus-core";
 import { RadioEvents } from "./events";
 import { DeviceEventHandler } from "../types";

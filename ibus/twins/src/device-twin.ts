@@ -1,12 +1,13 @@
-import { EventEmitter } from "stream";
+import EventEmitter from "events";
 import { DEVICE, KNOWN_DEVICES } from "@bimmerz/ibus-core";
 import { IBusMessage, IBusMessageHandler } from "@bimmerz/ibus-core";
 import { IBusInterface } from "@bimmerz/ibus-core";
 import { Logger, LoggerOptions } from 'pino';
-import { MODULE_STATUS, MODULE_STATUSES } from "./commands";
-import { COMMANDS as COMMON_COMMANDS } from "./commands";
+import { MODULE_STATUS, MODULE_STATUSES } from "./types";
+import { COMMANDS as COMMON_COMMANDS } from "./types";
 import { COMMAND_INDEX } from "@bimmerz/ibus-core";
 import { MODULE_STATUS_REQUEST_EVENT, MODULE_STATUS_RESPONSE_EVENT } from "./types";
+import { Vehicle } from "vehicle";
 
 export abstract class DeviceTwin extends EventEmitter {
     protected lastActivity?: number;
@@ -16,6 +17,7 @@ export abstract class DeviceTwin extends EventEmitter {
     protected readonly ibusInterface: IBusInterface;
     protected readonly log: Logger<LoggerOptions>;
     private readonly handlers: Record<number, IBusMessageHandler>;
+    protected vehicle?: Vehicle;
     
     protected constructor(deviceAddress: DEVICE, deviceName: string, ibusInterface: IBusInterface, log: Logger<LoggerOptions>) {
         super();
@@ -38,8 +40,8 @@ export abstract class DeviceTwin extends EventEmitter {
         });
     }
 
-    protected registerHandler(command: number, handler: IBusMessageHandler): void {
-        this.handlers[command] = handler;
+    protected handle(command: number, withHandler: IBusMessageHandler): void {
+        this.handlers[command] = withHandler;
     }
 
     private handleModuleStatusRequest(message: IBusMessage): void {
@@ -50,7 +52,7 @@ export abstract class DeviceTwin extends EventEmitter {
     }
 
     private routeMessage(message: IBusMessage) {
-        if (message.destination === KNOWN_DEVICES.Broadcast) {
+        if (message.destination === KNOWN_DEVICES.Broadcast || message.source === KNOWN_DEVICES.GlobalBroadcastAddress) {
             this.log.debug(message, "Broadcast message, accepting");
             this.handleMessage(message);
         }
@@ -64,17 +66,19 @@ export abstract class DeviceTwin extends EventEmitter {
     }
 
     private handleMessage(message: IBusMessage): void {
-        this.log.debug(message, "Handling message");
-
         const command = message.payload[COMMAND_INDEX];
         if (this.handlers[command]) {
+            this.log.debug(message, "Handling message");
             this.handlers[command](message);
+        } else {
+            this.log.debug(message, "No handler for message");
         }
     }
 
     public requestStatus(targetDevice: DEVICE, sourceDevice: DEVICE = this.deviceAddress): void {
-        const payload = Buffer.alloc(1);
-        payload[0] = COMMON_COMMANDS.MODULE_STATUS_REQUEST;
+        const payload = Buffer.from([
+            COMMON_COMMANDS.MODULE_STATUS_REQUEST
+        ]);        
         const message = {
             source: sourceDevice,
             destination: targetDevice,
@@ -84,9 +88,10 @@ export abstract class DeviceTwin extends EventEmitter {
     }
 
     public announceStatus(targetDevice: DEVICE = KNOWN_DEVICES.Broadcast): void {
-        const payload = Buffer.alloc(2);
-        payload[0] = COMMON_COMMANDS.MODULE_STATUS_RESPONE;
-        payload[1] = MODULE_STATUSES.MODULE_PRESENT;
+        const payload = Buffer.from([
+            COMMON_COMMANDS.MODULE_STATUS_RESPONE,
+            MODULE_STATUSES.MODULE_PRESENT
+        ]);
         this.announceStatusRaw(payload, targetDevice);        
     }
 
