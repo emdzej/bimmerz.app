@@ -198,5 +198,4 @@ export class LightControlModule extends DeviceTwin {
             destination: message.destination,
         });
     }
-
 }
