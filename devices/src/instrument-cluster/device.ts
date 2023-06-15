@@ -1,0 +1,265 @@
+import { DEVICE, KNOWN_DEVICE, KNOWN_DEVICES, IBusInterface, IBusMessage, COMMAND_INDEX, DATA_BYTE_1_INDEX, DATA_BYTE_2_INDEX, DATA_BYTE_3_INDEX } from "@bimmerz/ibus";
+import logger, { Logger, LoggerOptions } from 'pino';
+import { COMMANDS as COMMON_COMMANDS } from "../types";
+import { DeviceEvent, DeviceEvents, DeviceEventHandler } from "../types";
+import { AUX_VENT_STATUS, AUX_VENT_STATUSES, BRAKE_PADS_STATUS, BRAKE_PADS_STATUSES, DRIVER_DOOR_STATUS, DRIVER_DOOR_STATUSES, ENGINE_STATUS, ENGINE_STATUSES, GEAR, GEARS, HANDBRAKE_STATUS, HANDBRAKE_STATUSES, IGNITION_STATUS, IGNITION_STATUSES, INSTRUMENT_CLUSTER_COMMANDS,  OBCProperties, OBC_PROPERTIES, OBC_PROPERTY, OIL_PRESSURE_STATUS, OIL_PRESSURE_STATUSES, RedundantData, SensorsStatus, TRANSMISSION_STATUS, TRANSMISSION_STATUSES, Temperatures, VEHICLE_TYPE, VEHICLE_TYPES, WRITEABLE_OBC_PROPERITES } from "./types";
+import { DeviceTwin } from "../device-twin";
+import { InstrumentClusterEvents } from "./events";
+
+
+export declare interface InstrumentCluster  {    
+    on<K extends keyof InstrumentClusterEvents>(name: K, listener: DeviceEventHandler<InstrumentClusterEvents[K]>): this;
+    emit<K extends keyof InstrumentClusterEvents>(name: K, event: InstrumentClusterEvents[K]): boolean;    
+}
+
+export class InstrumentCluster extends DeviceTwin {
+    private _ignitionStatus: IGNITION_STATUS = IGNITION_STATUSES.OFF;
+
+    public get ignitionStatus(): Readonly<IGNITION_STATUS> {
+        return this._ignitionStatus;
+    }
+
+    private _sensorsStatus: SensorsStatus = {
+        handbrake: HANDBRAKE_STATUSES.OFF,
+        oilPressure: OIL_PRESSURE_STATUSES.OK,
+        brakePads: BRAKE_PADS_STATUSES.OK,
+        transmission: TRANSMISSION_STATUSES.OK,
+        engine: ENGINE_STATUSES.OFF,
+        driverDoor: DRIVER_DOOR_STATUSES.CLOSED,
+        gear: GEARS.NONE,
+        auxVent: AUX_VENT_STATUSES.OFF
+    }
+
+    public get sensorsStatus(): Readonly<SensorsStatus> {
+        return this._sensorsStatus;
+    }
+
+    private _vehicleType?: VEHICLE_TYPE;
+
+    public get vehicleType(): VEHICLE_TYPE | undefined {
+        return this._vehicleType;
+    }
+
+    private _temperatures: Temperatures = {};
+
+    public get temperatures(): Readonly<Temperatures> {
+        return this._temperatures;
+    }
+
+    private _speed?: number;
+
+    public get speed(): number | undefined {
+        return this._speed;
+    }
+
+    private _rpm?: number;
+
+    public get rpm(): number | undefined {
+        return this._rpm;
+    }
+
+    private _odometer?: number;
+
+    public get odometer(): number | undefined {
+        return this._odometer;
+    }
+
+    private _obcProperties: OBCProperties = {};
+
+    public get obcProperties(): Readonly<OBCProperties> {
+        return this._obcProperties;
+    }
+
+    private _redundantData: RedundantData = {};
+
+    public get redundantData(): Readonly<RedundantData> {
+        return this._redundantData;
+    }
+
+    constructor(ibusInterface: IBusInterface) {
+        super(KNOWN_DEVICES.InstrumentClusterElectronics, 'InstrumentCluster', ibusInterface, logger({ name: 'InstrumentCluster', level: 'debug' }));               
+        this.handle(INSTRUMENT_CLUSTER_COMMANDS.IGNITION_STATUS_REQUEST, (message) => this.handleIgnitionStatusRequest(message));
+        this.handle(INSTRUMENT_CLUSTER_COMMANDS.IGNITION_STATUS_RESPONSE, (message) => this.handleIgnitionStatusResponse(message));
+        this.handle(INSTRUMENT_CLUSTER_COMMANDS.SENSORS_STATUS_REQUEST, (message) => this.handleSensorsStatusRequest(message));
+        this.handle(INSTRUMENT_CLUSTER_COMMANDS.SENSORS_STATUS_RESPONSE, (message) => this.handleSensorsStatusResponse(message));
+        this.handle(INSTRUMENT_CLUSTER_COMMANDS.VEHICLE_CONFIG_RESPONSE, (message) => this.handleVehicleConfigResponse(message));
+        this.handle(INSTRUMENT_CLUSTER_COMMANDS.TEMP_UPDATE, (message) => this.handleTempUpdate(message));
+        this.handle(INSTRUMENT_CLUSTER_COMMANDS.SPEED_RPM_UPDATE, (message) => this.handleSpeedRpmUpdate(message));
+        this.handle(INSTRUMENT_CLUSTER_COMMANDS.ODOMETER_UPDATE, (message) => this.handleOdometerUpdate(message));
+        this.handle(INSTRUMENT_CLUSTER_COMMANDS.OBC_PROPERTY_UPDATE, (message) => this.handleOBCPropertyUpdate(message));
+        this.handle(INSTRUMENT_CLUSTER_COMMANDS.REDUNDANT_DATA_REQUEST, (message) => this.handleRedundantDataRequest(message));
+        this.handle(INSTRUMENT_CLUSTER_COMMANDS.REDUNDANT_DATA_RESPONSE, (message) => this.handleRedundantDataResponse(message));
+    }
+
+    public requestRedundantData(source: DEVICE = KNOWN_DEVICES.LIGHT_CONTROL_MODULE): void {
+        const payload = Buffer.from([
+            INSTRUMENT_CLUSTER_COMMANDS.REDUNDANT_DATA_REQUEST
+        ]);
+        const message = {
+            source: source,
+            destination: this.deviceAddress,
+            payload
+        };
+        this.ibusInterface.sendMessage(message);
+    }
+
+    private handleRedundantDataRequest(message: IBusMessage): void {
+        this.emit('redundantDataRequest', {
+            source: message.source,
+            destination: message.destination,
+        });
+    }
+    
+    private handleRedundantDataResponse(message: IBusMessage): void {
+        const data = message.payload.subarray(1);
+        const redundantData: RedundantData = {};
+        redundantData.vin = data[0].toString() 
+            + data[1].toString()
+            + data[2].toString(16)
+            + data[3].toString(16)
+            + (data[4] >> 4).toString(16);
+        redundantData.consumedFuel = data[8] * 100;
+        redundantData.mileage = data[5] << 8 + data[6];
+        redundantData.oilInterval = data[9] << 8 + data[10];
+        redundantData.timeInterval = data[11] << 8 + data[12];
+        this._redundantData = redundantData;
+        this.emit('redundantDataResponse', { redundantData }); 
+    }
+        
+    public requestIgnitionStatus(source: DEVICE): void {
+        const payload = Buffer.alloc(1);
+        payload[0] = INSTRUMENT_CLUSTER_COMMANDS.IGNITION_STATUS_REQUEST;
+        const message = {
+            source: source,
+            destination: this.deviceAddress,
+            payload
+        };
+        this.ibusInterface.sendMessage(message);
+    }
+
+    private handleIgnitionStatusRequest(message: IBusMessage): void {
+        this.emit('ignitionStatusRequest', {
+            source: message.source,
+            destination: message.destination,
+        });
+    }
+
+    private handleIgnitionStatusResponse(message: IBusMessage): void {
+        const status = message.payload[DATA_BYTE_1_INDEX] as IGNITION_STATUS;
+        this._ignitionStatus = status;
+        this.emit('ignitionStatusChange', {
+            status: status,
+        });
+    }
+
+    public requestSensorsStatus(source: DEVICE): void {
+        const payload = Buffer.alloc(1);
+        payload[0] = INSTRUMENT_CLUSTER_COMMANDS.SENSORS_STATUS_REQUEST;
+        const message = {
+            source: source,
+            destination: this.deviceAddress,
+            payload
+        };
+        this.ibusInterface.sendMessage(message);
+    }
+
+    private handleSensorsStatusRequest(message: IBusMessage): void {
+        this.emit('sensorsStatusRequest', {
+            source: message.source,
+            destination: message.destination,
+        });
+    }
+
+    private handleSensorsStatusResponse(message: IBusMessage): void {
+        const firstByte = message.payload[DATA_BYTE_1_INDEX];
+        const secondByte = message.payload[DATA_BYTE_2_INDEX];
+        const thirdByte = message.payload[DATA_BYTE_3_INDEX];
+ 
+        const handbrake = (firstByte & 0b0000_0001) as HANDBRAKE_STATUS;
+        const oilPressure = (firstByte & 0b0000_0010) as OIL_PRESSURE_STATUS;
+        const brakePads = (firstByte & 0b0000_0100) as BRAKE_PADS_STATUS;
+        const transmission = (firstByte >> 4) as TRANSMISSION_STATUS;
+        const engine = (secondByte & 0b0000_0001) as ENGINE_STATUS;
+        const driverDoor = (secondByte & 0b0000_0010) as DRIVER_DOOR_STATUS;
+        const gear =(secondByte >> 4) as GEAR;
+        const auxVent = (thirdByte >> 3) as AUX_VENT_STATUS;
+
+        const status: SensorsStatus = {
+            handbrake,
+            oilPressure,
+            brakePads,
+            transmission,
+            engine,
+            driverDoor,
+            gear,
+            auxVent
+        };
+
+        this._sensorsStatus = status;
+
+        this.emit('sensorsStatusChange', { status });
+    }
+
+    private handleVehicleConfigResponse(message: IBusMessage): void {
+        const reportedType = (message.payload[DATA_BYTE_1_INDEX] >> 4) & 0xF;
+        var detectedVehicleType: VEHICLE_TYPE;
+        if (reportedType == 0x0F || reportedType == 0x0A) {
+            detectedVehicleType = VEHICLE_TYPES.E46_Z4;
+        } else {            
+            detectedVehicleType = VEHICLE_TYPES.E38_E39_E53;
+        }
+        this._vehicleType = detectedVehicleType;
+        this.emit('vehicleTypeUpdate', { vehicleType: detectedVehicleType });
+    }
+
+    private handleTempUpdate(message: IBusMessage): void {
+        const coolantTemp = message.payload[DATA_BYTE_2_INDEX];
+        const ambientTemp = message.payload.readInt8(DATA_BYTE_1_INDEX);
+        const temperatures = {
+            coolant: coolantTemp,
+            ambient: ambientTemp
+        };
+        this._temperatures = temperatures;
+        this.emit('temperaturesUpdate', { temperatures });
+    }
+
+    private handleSpeedRpmUpdate(message: IBusMessage): void {
+        const speed = message.payload[DATA_BYTE_1_INDEX] * 2;
+        const rpm = message.payload[DATA_BYTE_2_INDEX] * 100;
+        this._speed = speed;
+        this._rpm = rpm;
+        this.emit('speedRpmChange', { speed, rpm });
+    }
+
+    private handleOdometerUpdate(message: IBusMessage): void {
+        const odometer =  message.payload.readUInt8(DATA_BYTE_3_INDEX) << 16
+            + message.payload.readUInt8(DATA_BYTE_2_INDEX) << 8
+            + message.payload.readUInt8(DATA_BYTE_1_INDEX);
+        this._odometer = odometer;
+        this.emit('odometerChange', { odometer });
+    }
+
+    private handleOBCPropertyUpdate(message: IBusMessage): void {
+        const property  = message.payload[DATA_BYTE_1_INDEX] as OBC_PROPERTY;
+        const rawValue = message.payload.subarray(DATA_BYTE_3_INDEX).toString();
+        switch (property) {
+            case OBC_PROPERTIES.TIME: this._obcProperties.time = rawValue; break;
+            case OBC_PROPERTIES.DATE: this._obcProperties.date = rawValue; break;
+            case OBC_PROPERTIES.TEMPERATURE: this._obcProperties.temperature = rawValue; break;
+            case OBC_PROPERTIES.CONSUMPTION_1: this._obcProperties.consumption1 = rawValue; break;
+            case OBC_PROPERTIES.CONSUMPTION_2: this._obcProperties.consumption2 = rawValue; break;
+            case OBC_PROPERTIES.RANGE: this._obcProperties.range = rawValue; break;
+            case OBC_PROPERTIES.DISTANCE: this._obcProperties.distance = rawValue; break;
+            case OBC_PROPERTIES.ARRIVAL: this._obcProperties.arrival = rawValue; break;
+            case OBC_PROPERTIES.LIMIT: this._obcProperties.limit = rawValue; break;
+            case OBC_PROPERTIES.AVERAGE_SPEED: this._obcProperties.averageSpeed = rawValue; break;
+            case OBC_PROPERTIES.TIMER: this._obcProperties.timer = rawValue; break;
+            case OBC_PROPERTIES.AUX_TIMER_1: this._obcProperties.auxTimer1 = rawValue; break;
+            case OBC_PROPERTIES.AUX_TIMER_2: this._obcProperties.auxTimer2 = rawValue; break;
+            case OBC_PROPERTIES.CODE_EMERGENCY_DEACTIVATION: this._obcProperties.codeEmergencyDeactivation = rawValue; break;
+            case OBC_PROPERTIES.TIMER_LAP: this._obcProperties.timerLap = rawValue; break;
+        }  
+        this.emit('obcPropertiesChange', { obcProperties: this._obcProperties });
+    }
+}
+
