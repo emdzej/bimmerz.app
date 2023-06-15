@@ -1,12 +1,12 @@
-import { CDChanger, IBusInterface, IBusProtocol, KNOWN_DEVICE, Radio,
-    BodyModule,
-    
+import { IBusInterface, IBusProtocol, KNOWN_DEVICE,
     KNOWN_DEVICES} from '@bimmerz/ibus-core';
 
+import { CDChanger, BodyModule, Radio, DisplayOperations } from '@bimmerz/ibus-device-twins';
 
 var device = '/dev/cu.usbserial-0001';
 
 const ibus = new IBusInterface(device, new IBusProtocol());
+
 
 const radio = new Radio(ibus)
 const bodyModule = new BodyModule(ibus);
@@ -18,8 +18,8 @@ bodyModule.on('moduleStatusResponse', () => {
 });
 
 ibus.init();
-
+const display = new DisplayOperations(ibus);
 
 setTimeout(() => {
-    bodyModule.requestStatus(KNOWN_DEVICES.Radio);
+    // display.displayText('Hello World');
 }, 1000);

@@ -2,8 +2,17 @@ import { SerialPort, ByteLengthParser } from 'serialport';
 import EventEmitter from 'events';
 import { IBusProtocol } from './protocol';
 import logger, { Logger, LoggerOptions } from 'pino';
-import { IBusMessage } from 'types';
+import { EventHandler, IBusMessage } from 'types';
 import { getDeviceName } from './utils';
+
+export type IBusInterfaceEvents = {
+  message: IBusMessage;
+}
+
+export declare interface IBusInterface {
+    on<K extends keyof IBusInterfaceEvents>(name: K, listener: EventHandler<IBusInterfaceEvents[K]>): this;
+    emit<K extends keyof IBusInterfaceEvents>(name: K, event: IBusInterfaceEvents[K]): boolean;    
+}
 
 export class IBusInterface extends EventEmitter {
     private serialPort?: SerialPort;

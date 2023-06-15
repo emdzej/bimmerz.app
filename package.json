@@ -9,7 +9,8 @@
   "author": "",
   "license": "ISC",
   "workspaces": [
-    "ibus/core",    
+    "ibus/core", 
+    "ibus/twins",   
     "ibus/logger"
   ]
 }
