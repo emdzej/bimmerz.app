@@ -16,7 +16,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@abandonware/noble": "^1.9.2-21",
+    "@bimmerz/devices": "^1.0.0",
     "@bimmerz/ibus": "^1.0.0",
-    "@bimmerz/devices": "^1.0.0"
+    "pino": "^8.14.1"
   }
 }
