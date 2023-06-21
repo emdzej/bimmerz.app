@@ -1,5 +1,6 @@
 import { DEVICE, IBusInterface, IBusMessage, KNOWN_DEVICES } from "@bimmerz/ibus";
-import { Logger, LoggerOptions } from "pino";
+import { Logger } from "@bimmerz/core";
+
 export const COMMANDS = {
     MODULE_STATUS_REQUEST: 0x01,
     MODULE_STATUS_RESPONE: 0x02
@@ -31,9 +32,9 @@ export const MODULE_STATUS_RESPONSE_EVENT = 'moduleStatusResponse';
 
 export abstract class DeviceOperations {
     protected readonly ibusInterface: IBusInterface;
-    protected readonly log: Logger<LoggerOptions>;
+    protected readonly log: Logger;
 
-    constructor(ibusInterface: IBusInterface, log: Logger<LoggerOptions>) {
+    constructor(ibusInterface: IBusInterface, log: Logger) {
         this.ibusInterface = ibusInterface;
         this.log = log;
     }
@@ -48,7 +49,7 @@ export const DIAGNOSTIC_COMMANDS = {
 export abstract class DiagnosticOperations extends DeviceOperations {
     private readonly device: DEVICE;
 
-    constructor(device: DEVICE, ibusInterface: IBusInterface, log: Logger<LoggerOptions>) {
+    constructor(device: DEVICE, ibusInterface: IBusInterface, log: Logger) {
         super(ibusInterface, log);
         this.device = device;        
     }

@@ -1,16 +1,9 @@
 import { DATA_BYTE_1_INDEX, DATA_BYTE_2_INDEX, IBusInterface, IBusMessage, KNOWN_DEVICES } from "@bimmerz/ibus";
 import { DeviceTwin } from "../device-twin";
-import logger, {  } from 'pino';
 import { RainLightSensorEvents } from "./events";
-import { DeviceEventHandler } from "../types";
 import { LIGHTS_REQUIRED_STATUS, LIGHT_RAIN_SENSOR_STATUS, RAIN_LIGHT_SENSOR_COMMANDS } from "./types";
-
-export declare interface RainLightSensor  {    
-    on<K extends keyof RainLightSensorEvents>(name: K, listener: DeviceEventHandler<RainLightSensorEvents[K]>): this;
-    emit<K extends keyof RainLightSensorEvents>(name: K, event: RainLightSensorEvents[K]): boolean;    
-}
-
-export class RainLightSensor extends DeviceTwin {
+import { Logger } from "@bimmerz/core";
+export class RainLightSensor extends DeviceTwin<RainLightSensorEvents> {
     private _intensity?: number;
     private _lightsRequired?: LIGHTS_REQUIRED_STATUS;
     private _status?: LIGHT_RAIN_SENSOR_STATUS;
@@ -27,8 +20,8 @@ export class RainLightSensor extends DeviceTwin {
         return this._status;
     }
 
-    constructor(ibusInterface: IBusInterface) {
-        super(KNOWN_DEVICES.RAIN_LIGHT_SENSOR, 'Rain Light Sensor', ibusInterface, logger({ name: 'Rain Light Sensor', level: 'debug' }));            
+    constructor(ibusInterface: IBusInterface, logger: Logger) {
+        super(KNOWN_DEVICES.RAIN_LIGHT_SENSOR, 'Rain Light Sensor', ibusInterface, logger);
         this.handle(RAIN_LIGHT_SENSOR_COMMANDS.SENSOR_STATUS, (message) => this.handleSensorStatus(message));   
     }
 
@@ -40,6 +33,15 @@ export class RainLightSensor extends DeviceTwin {
         this._lightsRequired = lightsRequired;
         this._status = status;
         this.emit('status', { status, lightsRequired, intensity });
+    }
+
+    protected handleModuleStatusResponse(message: IBusMessage): void {
+        this.isPresent = true;
+        this.emit("moduleStatusResponse", { source: message.source, destination: message.destination });
+    }
+
+    protected handleModuleStatusRequest(message: IBusMessage): void {
+        this.emit("moduleStatusRequest", { source: message.source, destination: message.destination });
     }
 }
 

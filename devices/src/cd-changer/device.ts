@@ -1,21 +1,15 @@
 import { IBusMessage, KNOWN_DEVICES, IBusInterface } from "@bimmerz/ibus";
 import { DeviceTwin } from "../device-twin";
-import logger, { Logger, LoggerOptions } from 'pino';
 import { COMMANDS as COMMON_COMMANDS, MODULE_STATUS } from "../types";
 import { DeviceEventHandler, DeviceEvents } from "../types";
 import { CDChangerEvents } from "./events";
+import { Logger } from "@bimmerz/core";
 
 
-
-export declare interface CDChanger  {    
-    on<K extends keyof CDChangerEvents>(name: K, listener: DeviceEventHandler<CDChangerEvents[K]>): this;
-    emit<K extends keyof CDChangerEvents>(name: K, event: CDChangerEvents[K]): boolean;    
-}
-
-export class CDChanger extends DeviceTwin {
+export class CDChanger extends DeviceTwin<CDChangerEvents> {
     
-    constructor(ibusInterface: IBusInterface) {
-        super(KNOWN_DEVICES.CD_CHANGER_DIN, 'CDChanger', ibusInterface, logger({ name: 'CDChanger', level: 'debug' }));        
+    constructor(ibusInterface: IBusInterface, logger: Logger) {
+        super(KNOWN_DEVICES.CD_CHANGER_DIN, 'CDChanger', ibusInterface, logger);
         this.handle(COMMON_COMMANDS.MODULE_STATUS_RESPONE, (message) => this.handleStatusResponse(message));
     }
 
@@ -29,6 +23,15 @@ export class CDChanger extends DeviceTwin {
         if (message.destination === this.deviceAddress) {
             this.log.debug(`${message.source} said to CD it is present`);
         }
+    }
+    
+    protected handleModuleStatusResponse(message: IBusMessage): void {
+        this.isPresent = true;
+        this.emit("moduleStatusResponse", { source: message.source, destination: message.destination });
+    }
+
+    protected handleModuleStatusRequest(message: IBusMessage): void {
+        this.emit("moduleStatusRequest", { source: message.source, destination: message.destination });
     }
 }
 

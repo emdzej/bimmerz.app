@@ -1,11 +1,11 @@
 import { DeviceOperations } from "../../types";
-import logger from 'pino';
 import { DEVICE, IBusMessage, KNOWN_DEVICE, KNOWN_DEVICES, IBusInterface} from "@bimmerz/ibus";
 import { MULTI_FUNCTION_STEERING_WHEEL_COMMANDS, MULTI_FUNCTION_STEERING_WHEEL_BUTTON, VOLUME_CHANGE_DIRECTION, MULTI_FUNCTION_STEERING_WHEEL_BUTTON_MASK, MULTI_FUNCTION_STEERING_WHEEL_BUTTON_STATE_MASK, MULTI_FUNCTION_STEERING_WHEEL_BUTTON_STATE } from "../types";
+import { Logger } from "@bimmerz/core";
 
 export class VolumeOperations extends DeviceOperations {
-    constructor(ibusInterface: IBusInterface) {
-        super(ibusInterface, logger({ name: 'VolumeOperations', level: 'debug' }));
+    constructor(ibusInterface: IBusInterface, logger: Logger) {
+        super(ibusInterface, logger);
     }
 
     public changeVolume(direction: VOLUME_CHANGE_DIRECTION, steps: number = 0x01, target: DEVICE = KNOWN_DEVICES.RADIO): void {

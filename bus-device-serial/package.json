@@ -1,0 +1,25 @@
+{
+    "name": "@bimmerz/bus-device-serial",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/index.js",
+    "devDependencies": {
+        "@devicescript/cli": "^2.11.6"
+    },
+    "scripts": {
+        "build": "npx tsc",
+        "develop": "npx tsc --watch"
+    },
+    "author": "",
+    "license": "ISC",
+    "devicescript": {
+        "library": true
+    },
+    "files": [
+        "src/*.ts",
+        "devsconfig.json"
+    ],
+    "keywords": [
+        "devicescript"
+    ]
+}

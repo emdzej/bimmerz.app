@@ -1,18 +1,12 @@
 import { DEVICE, KNOWN_DEVICE, KNOWN_DEVICES, IBusInterface, IBusMessage, COMMAND_INDEX, DATA_BYTE_1_INDEX, DATA_BYTE_2_INDEX, DATA_BYTE_3_INDEX } from "@bimmerz/ibus";
-import logger, { Logger, LoggerOptions } from 'pino';
 import { COMMANDS as COMMON_COMMANDS } from "../types";
 import { DeviceEvent, DeviceEvents, DeviceEventHandler } from "../types";
 import { AUX_VENT_STATUS, AUX_VENT_STATUSES, BRAKE_PADS_STATUS, BRAKE_PADS_STATUSES, DRIVER_DOOR_STATUS, DRIVER_DOOR_STATUSES, ENGINE_STATUS, ENGINE_STATUSES, GEAR, GEARS, HANDBRAKE_STATUS, HANDBRAKE_STATUSES, IGNITION_STATUS, IGNITION_STATUSES, INSTRUMENT_CLUSTER_COMMANDS,  OBCProperties, OBC_PROPERTIES, OBC_PROPERTY, OIL_PRESSURE_STATUS, OIL_PRESSURE_STATUSES, RedundantData, SensorsStatus, TRANSMISSION_STATUS, TRANSMISSION_STATUSES, Temperatures, VEHICLE_TYPE, VEHICLE_TYPES, WRITEABLE_OBC_PROPERITES } from "./types";
 import { DeviceTwin } from "../device-twin";
 import { InstrumentClusterEvents } from "./events";
+import { Logger } from "@bimmerz/core";
 
-
-export declare interface InstrumentCluster  {    
-    on<K extends keyof InstrumentClusterEvents>(name: K, listener: DeviceEventHandler<InstrumentClusterEvents[K]>): this;
-    emit<K extends keyof InstrumentClusterEvents>(name: K, event: InstrumentClusterEvents[K]): boolean;    
-}
-
-export class InstrumentCluster extends DeviceTwin {
+export class InstrumentCluster extends DeviceTwin<InstrumentClusterEvents> {
     private _ignitionStatus: IGNITION_STATUS = IGNITION_STATUSES.OFF;
 
     public get ignitionStatus(): Readonly<IGNITION_STATUS> {
@@ -76,8 +70,8 @@ export class InstrumentCluster extends DeviceTwin {
         return this._redundantData;
     }
 
-    constructor(ibusInterface: IBusInterface) {
-        super(KNOWN_DEVICES.InstrumentClusterElectronics, 'InstrumentCluster', ibusInterface, logger({ name: 'InstrumentCluster', level: 'debug' }));               
+    constructor(ibusInterface: IBusInterface, logger: Logger) {
+        super(KNOWN_DEVICES.InstrumentClusterElectronics, 'InstrumentCluster', ibusInterface, logger);
         this.handle(INSTRUMENT_CLUSTER_COMMANDS.IGNITION_STATUS_REQUEST, (message) => this.handleIgnitionStatusRequest(message));
         this.handle(INSTRUMENT_CLUSTER_COMMANDS.IGNITION_STATUS_RESPONSE, (message) => this.handleIgnitionStatusResponse(message));
         this.handle(INSTRUMENT_CLUSTER_COMMANDS.SENSORS_STATUS_REQUEST, (message) => this.handleSensorsStatusRequest(message));
@@ -260,6 +254,15 @@ export class InstrumentCluster extends DeviceTwin {
             case OBC_PROPERTIES.TIMER_LAP: this._obcProperties.timerLap = rawValue; break;
         }  
         this.emit('obcPropertiesChange', { obcProperties: this._obcProperties });
+    }
+
+    protected handleModuleStatusResponse(message: IBusMessage): void {
+        this.isPresent = true;
+        this.emit("moduleStatusResponse", { source: message.source, destination: message.destination });
+    }
+
+    protected handleModuleStatusRequest(message: IBusMessage): void {
+        this.emit("moduleStatusRequest", { source: message.source, destination: message.destination });
     }
 }
 

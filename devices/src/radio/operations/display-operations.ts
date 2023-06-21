@@ -1,10 +1,10 @@
+import { Logger } from "@bimmerz/core";
 import { DeviceOperations } from "../../types";
-import logger from 'pino';
 import { KNOWN_DEVICES, IBusInterface } from "@bimmerz/ibus";
 
 export class DisplayOperations extends DeviceOperations {
-    constructor(ibusInterface: IBusInterface) {
-        super(ibusInterface, logger({ name: 'DisplayOperations', level: 'debug' }));
+    constructor(ibusInterface: IBusInterface, logger: Logger) {
+        super(ibusInterface, logger);
     }
 
     public displayText(text: String): void {

@@ -1,33 +1,28 @@
 import { SerialPort, ByteLengthParser } from 'serialport';
-import EventEmitter from 'events';
+import { EventEmitter } from "@bimmerz/core";
 import { IBusProtocol } from './protocol';
-import logger, { Logger, LoggerOptions } from 'pino';
 import { EventHandler, IBusMessage } from 'types';
 import { getDeviceName } from './utils';
+import { Logger }  from "@bimmerz/core";
 
 export type IBusInterfaceEvents = {
   message: IBusMessage;
 }
-
-export declare interface IBusInterface {
-    on<K extends keyof IBusInterfaceEvents>(name: K, listener: EventHandler<IBusInterfaceEvents[K]>): this;
-    emit<K extends keyof IBusInterfaceEvents>(name: K, event: IBusInterfaceEvents[K]): boolean;    
-}
-
-export class IBusInterface extends EventEmitter {
+export class IBusInterface extends EventEmitter<IBusInterfaceEvents> {
     private serialPort?: SerialPort;
     private device: string;
-    private protocol: IBusProtocol;
+    private readonly protocol: IBusProtocol;
     private queue: Array<Buffer> = [];
-    private log: Logger<LoggerOptions> = logger({ name: 'IBusInterface', level: 'debug' });
+    private readonly log: Logger;
     private lastActivityTime: [number, number] = process.hrtime();
 
-    constructor(devicePath: string, protocol: IBusProtocol) {
+    constructor(devicePath: string, protocol: IBusProtocol, logger: Logger) {
         super();
         this.device = devicePath;
         this.protocol = protocol;
         this.lastActivityTime = process.hrtime();
         this.queue = [];
+        this.log = logger;
     }
     
   sendMessage(message: IBusMessage): void {
@@ -35,9 +30,8 @@ export class IBusInterface extends EventEmitter {
         this.log.warn("Queue too large, dropping message", message);
         return;
     }
-
-    const buffer =  this.protocol.encodeMessage(message);
-    this.log.debug(`Send message: ${buffer}`);
+    this.log.debug(`Queuing message from ${getDeviceName(message.source)} to: ${getDeviceName(message.destination)}, data: ${message.payload.toString('hex')}`);        
+    const buffer =  this.protocol.encodeMessage(message);    
     this.queue.unshift(buffer);
   }
 
@@ -63,7 +57,7 @@ export class IBusInterface extends EventEmitter {
       const parser = this.serialPort.pipe(this.protocol);
       
       parser.on('message', (message: IBusMessage) => {
-        this.log.debug(`Received message:`, message);        
+        this.log.debug(`Received message from ${getDeviceName(message.source)} to: ${getDeviceName(message.destination)}, data: ${message.payload.toString('hex')}`);        
         this.lastActivityTime = process.hrtime();
         this.emit('message', message);
       });

@@ -1,12 +1,11 @@
 import { IBusInterface, KNOWN_DEVICES } from "@bimmerz/ibus";
-import logger from 'pino';
 import { VEHICLE_TYPE, VEHICLE_TYPES } from "../../instrument-cluster";
 import { BODY_MODULE_COMMANDS, DIAGNOSTIC_JOBS } from "../types";
 import { DiagnosticOperations } from "../../types";
-
+import { Logger } from "@bimmerz/core";
 export class CentralLockingOperations extends DiagnosticOperations {
-    constructor(ibusInterface: IBusInterface) {
-        super(KNOWN_DEVICES.BODY_MODULE, ibusInterface, logger({ name: 'CentralLockingOperations', level: 'debug' }));
+    constructor(ibusInterface: IBusInterface, logger: Logger) {
+        super(KNOWN_DEVICES.BODY_MODULE, ibusInterface, logger);
     }
 
     public pressCenterLockButton(vehicleType: VEHICLE_TYPE): void {

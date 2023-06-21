@@ -1,17 +1,21 @@
-import { KNOWN_DEVICES, IBusInterface } from "@bimmerz/ibus";
+import { KNOWN_DEVICES, IBusInterface, IBusMessage } from "@bimmerz/ibus";
 import { DeviceTwin } from "../device-twin";
-import logger, {  } from 'pino';
 import { RadioEvents } from "./events";
 import { DeviceEventHandler } from "../types";
+import { Logger } from "@bimmerz/core";
 
-export declare interface Radio  {    
-    on<K extends keyof RadioEvents>(name: K, listener: DeviceEventHandler<RadioEvents[K]>): this;
-    emit<K extends keyof RadioEvents>(name: K, event: RadioEvents[K]): boolean;    
-}
+export class Radio extends DeviceTwin<RadioEvents> {
+    constructor(ibusInterface: IBusInterface, logger: Logger) {
+        super(KNOWN_DEVICES.RADIO, 'Radio', ibusInterface, logger);
+    }
 
-export class Radio extends DeviceTwin {
-    constructor(ibusInterface: IBusInterface) {
-        super(KNOWN_DEVICES.RADIO, 'Radio', ibusInterface, logger({ name: 'Radio', level: 'debug' }));               
+    protected handleModuleStatusResponse(message: IBusMessage): void {
+        this.isPresent = true;
+        this.emit("moduleStatusResponse", { source: message.source, destination: message.destination });
+    }
+
+    protected handleModuleStatusRequest(message: IBusMessage): void {
+        this.emit("moduleStatusRequest", { source: message.source, destination: message.destination });
     }
 }
 

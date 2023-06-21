@@ -5,12 +5,20 @@
     "doc": "doc"
   },
   "keywords": [],
+  "scripts": {
+    "build": "npm --workspaces run build"
+  },
   "author": "",
   "license": "ISC",
   "workspaces": [
     "ibus",
-    "devices",    
+    "devices",
     "cli",
-    "controller"
+    "controller",
+    "firmware",
+    "bus-os-serial",
+    "bus-device-serial",
+    "core",
+    "logging-pino"
   ]
 }

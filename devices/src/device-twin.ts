@@ -1,22 +1,19 @@
-import EventEmitter from "events";
+import { EventEmitter } from "@bimmerz/core";
 import { DEVICE, KNOWN_DEVICES, IBusInterface, COMMAND_INDEX, IBusMessage, IBusMessageHandler} from "@bimmerz/ibus";
-import { Logger, LoggerOptions } from 'pino';
-import { MODULE_STATUS, MODULE_STATUSES } from "./types";
+import { Logger } from '@bimmerz/core';
+import { DeviceEvents, MODULE_STATUS, MODULE_STATUSES } from "./types";
 import { COMMANDS as COMMON_COMMANDS } from "./types";
-import { MODULE_STATUS_REQUEST_EVENT, MODULE_STATUS_RESPONSE_EVENT } from "./types";
-import { Vehicle } from "vehicle";
 
-export abstract class DeviceTwin extends EventEmitter {
+export abstract class DeviceTwin<TEvents extends DeviceEvents> extends EventEmitter<TEvents> {
     protected lastActivity?: number;
     public readonly deviceAddress: DEVICE;
     public readonly deviceName: string = 'Unknown Device';
     protected isPresent: boolean = false;
     protected readonly ibusInterface: IBusInterface;
-    protected readonly log: Logger<LoggerOptions>;
+    protected readonly log: Logger;
     private readonly _handlers: Record<number, IBusMessageHandler>;
-    protected vehicle?: Vehicle;
-    
-    protected constructor(deviceAddress: DEVICE, deviceName: string, ibusInterface: IBusInterface, log: Logger<LoggerOptions>) {
+        
+    protected constructor(deviceAddress: DEVICE, deviceName: string, ibusInterface: IBusInterface, log: Logger) {
         super();
         this.deviceAddress = deviceAddress;
         this.deviceName = deviceName;
@@ -29,23 +26,11 @@ export abstract class DeviceTwin extends EventEmitter {
         this.ibusInterface.on('message', (message: IBusMessage) => this.routeMessage(message));
     }
     
-    private handleModuleStatusResponse(message: IBusMessage): void {
-        this.isPresent = true;
-        this.emit(MODULE_STATUS_RESPONSE_EVENT, {
-            source: message.source,
-            destination: message.destination,
-        });
-    }
-
+    protected abstract handleModuleStatusResponse(message: IBusMessage): void;
+    protected abstract handleModuleStatusRequest(message: IBusMessage): void;
+     
     protected handle(command: number, withHandler: IBusMessageHandler): void {
         this._handlers[command] = withHandler;
-    }
-
-    private handleModuleStatusRequest(message: IBusMessage): void {
-        this.emit(MODULE_STATUS_REQUEST_EVENT, {
-            source: message.source,
-            destination: message.destination
-        });
     }
 
     private routeMessage(message: IBusMessage) {

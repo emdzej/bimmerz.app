@@ -1,7 +1,5 @@
 import { DATA_BYTE_1_INDEX, DATA_BYTE_2_INDEX, DEVICE, KNOWN_DEVICES, IBusInterface, IBusMessage } from "@bimmerz/ibus";
 import { DeviceTwin } from "../device-twin";
-import logger, { Logger, LoggerOptions } from 'pino';
-import { DeviceEvents, DeviceEventHandler } from "../types";
 import { LightControlModuleEvents } from "./events";
 import { CODING_INDEX_OFFSET,
     LME38_DIMMER_OFFSET,
@@ -11,13 +9,9 @@ import { CODING_INDEX_OFFSET,
     DIMMER_OFFSET,
      DIAGNOSTIC_INDEX_OFFSSET, ERROR_STATUSES, LIGHT_CHECK_STATUS_BITS, LIGHT_CONTROL_MODULE_COMMANDS, LIGHT_MODULE_VARIANT, LIGHT_MODULE_VARIANTS, LIGHT_STATUS, LIGHT_STATUSES, LIGHT_STATUS_BITS, LigthStatus } from "./types";
 import { checkBit } from "utils";
+import { Logger } from "@bimmerz/core";
 
-export declare interface LightControlModule  {    
-    on<K extends keyof LightControlModuleEvents>(name: K, listener: DeviceEventHandler<LightControlModuleEvents[K]>): this;
-    emit<K extends keyof LightControlModuleEvents>(name: K, event: LightControlModuleEvents[K]): boolean;    
-}
-
-export class LightControlModule extends DeviceTwin {
+export class LightControlModule extends DeviceTwin<LightControlModuleEvents> {
     private _lightStatus: LigthStatus = {
         rapidBlink: LIGHT_STATUSES.OFF,
         turnRight: LIGHT_STATUSES.OFF,
@@ -71,8 +65,8 @@ export class LightControlModule extends DeviceTwin {
         return this._photoVoltage;
     }
 
-    constructor(ibusInterface: IBusInterface) {
-        super(KNOWN_DEVICES.LIGHT_CONTROL_MODULE, 'Light Control Module', ibusInterface, logger({ name: 'LCM', level: 'debug' }));
+    constructor(ibusInterface: IBusInterface, logger: Logger) {
+        super(KNOWN_DEVICES.LIGHT_CONTROL_MODULE, 'Light Control Module', ibusInterface, logger);
 
         this.handle(LIGHT_CONTROL_MODULE_COMMANDS.DIAGNOSTIC_REQUEST, (message: IBusMessage) => this.handleDiagnosticRequest(message));
         this.handle(LIGHT_CONTROL_MODULE_COMMANDS.DIAGNOSTIC_RESPONSE, (message: IBusMessage) => this.handleDiagnosticResponse(message));
@@ -195,5 +189,14 @@ export class LightControlModule extends DeviceTwin {
             source: message.source,
             destination: message.destination,
         });
+    }
+
+    protected handleModuleStatusResponse(message: IBusMessage): void {
+        this.isPresent = true;
+        this.emit("moduleStatusResponse", { source: message.source, destination: message.destination });
+    }
+
+    protected handleModuleStatusRequest(message: IBusMessage): void {
+        this.emit("moduleStatusRequest", { source: message.source, destination: message.destination });
     }
 }

@@ -1,11 +1,11 @@
 import { DeviceOperations } from "../../types";
-import logger from 'pino';
 import { DEVICE, IBusMessage, KNOWN_DEVICE, KNOWN_DEVICES, IBusInterface } from "@bimmerz/ibus";
 import { MULTI_FUNCTION_STEERING_WHEEL_BUTTON, MULTI_FUNCTION_STEERING_WHEEL_BUTTON_STATE, MULTI_FUNCTION_STEERING_WHEEL_COMMANDS } from "../types";
+import { Logger } from "@bimmerz/core";
 
 export class ButtonOperations extends DeviceOperations {
-    constructor(ibusInterface: IBusInterface) {
-        super(ibusInterface, logger({ name: 'ButtonOperations', level: 'debug' }));
+    constructor(ibusInterface: IBusInterface, logger: Logger) {
+        super(ibusInterface, logger);
     }
 
     public press(button: MULTI_FUNCTION_STEERING_WHEEL_BUTTON, 

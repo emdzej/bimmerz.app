@@ -1,16 +1,11 @@
 import { DATA_BYTE_1_INDEX, DATA_BYTE_2_INDEX, DEVICE, KNOWN_DEVICES, IBusMessage, IBusInterface } from "@bimmerz/ibus";
 import { DeviceTwin } from "../device-twin";
-import logger, {  } from 'pino';
-import { DeviceEvent, DeviceEventHandler, DeviceEvents } from "../types";
+import { Logger } from '@bimmerz/core';
 import { BodyModuleEvents, DoorLidStatusRequestEvent, DoorLidStatusesChangedEvent, InteriorLightStatusChangedEvent, CentralLockingStatusChangedEvent } from "./events";
 import { DoorLidStatuses, BODY_MODULE_COMMANDS, BODY_MODULE_VARIANT_INDEX, DIAGNOSTIC_JOBS, DOOR_LID_STATUSES, CENTRAL_LOCKING_STATUS, CENTRAL_LOCKING_STATUSES, LAMP_STATUS, LAMP_STATUSES, WindowStatuses, WINDOW_STATUSES, WindowStatusesChangedEvent, SIDE_MIRROR, WINDOW, DIAGNOSTIC_JOB, WINDOWS, WINDOW_STATUS, DOOR_LID_STATUS } from "./types";
 
-export declare interface BodyModule  {    
-    on<K extends keyof BodyModuleEvents>(name: K, listener: DeviceEventHandler<BodyModuleEvents[K]>): this;
-    emit<K extends keyof BodyModuleEvents>(name: K, event: BodyModuleEvents[K]): boolean;    
-}
-
-export class BodyModule extends DeviceTwin {
+export class BodyModule extends DeviceTwin<BodyModuleEvents> {
+    
     private _doorLidStatuses: DoorLidStatuses = {
         driverFront: DOOR_LID_STATUSES.CLOSED,
         passengerFront: DOOR_LID_STATUSES.CLOSED,
@@ -49,8 +44,8 @@ export class BodyModule extends DeviceTwin {
         return this._windowStatuses;
     }
 
-    constructor(ibusInterface: IBusInterface) {
-        super(KNOWN_DEVICES.BODY_MODULE, 'Body Module', ibusInterface, logger({ name: 'BodyModule', level: 'debug' }));
+    constructor(ibusInterface: IBusInterface, logger: Logger) {
+        super(KNOWN_DEVICES.BODY_MODULE, 'Body Module', ibusInterface, logger);
         this.handle(BODY_MODULE_COMMANDS.DIAGNOSTIC_RESPONSE, (message) => this.handleDiagnosticResponse(message));
         this.handle(BODY_MODULE_COMMANDS.DOOR_LID_STATUS_RESPONSE, (message) => this.handleDoorLidStatusResponse(message));
         this.handle(BODY_MODULE_COMMANDS.DOOR_LID_STATUS_REQUEST, (message) => this.handleDoorLidStatusRequest(message));
@@ -119,5 +114,14 @@ export class BodyModule extends DeviceTwin {
         const variant = message.payload[BODY_MODULE_VARIANT_INDEX];
         this.log.info('Body Module variant:', variant);
     };
+
+    protected handleModuleStatusResponse(message: IBusMessage): void {
+        this.isPresent = true;
+        this.emit("moduleStatusResponse", { source: message.source, destination: message.destination });
+    }
+
+    protected handleModuleStatusRequest(message: IBusMessage): void {
+        this.emit("moduleStatusRequest", { source: message.source, destination: message.destination });
+    }
 }
 
