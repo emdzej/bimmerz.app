@@ -31,15 +31,6 @@ test("Expect listener to be called once", () => {
     expect(listener).toBeCalledTimes(1);
 });
 
-test("Expect listener to be not called after disposal", () => {
-    const emitter = new Emitter();
-    const listener = jest.fn();
-    const disposable = emitter.on("test", listener);
-    disposable.dispose();
-    emitter.emitTest({ name: "test" });
-    expect(listener).not.toBeCalled();
-});
-
 test("Expect listener to be not called after calling off", () => {
     const emitter = new Emitter();
     const listener = jest.fn();

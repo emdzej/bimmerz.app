@@ -1,4 +1,4 @@
-import { DEVICE } from "devices";
+import { DEVICE } from "./devices";
 
 export type IBusMessage = {
     id?: number;

@@ -21,13 +21,3 @@ export function createLogger(ctor: LoggerConstructor, name: string, level: LogLe
     return new ctor(name, level);
 }
 
-export class ConsoleLogger implements Logger {
-    public debug: LoggingFunction = console.debug;
-    public info: LoggingFunction = console.info;
-    public warn: LoggingFunction = console.warn;
-    public error: LoggingFunction = console.error;
-
-    constructor(name: string, level: LogLevel = "debug") {
-    
-    }        
-}

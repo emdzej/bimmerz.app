@@ -2,6 +2,7 @@ import { IBusInterface, IBusProtocol, KNOWN_DEVICE,
     KNOWN_DEVICES} from '@bimmerz/ibus';
 
 import { SerialPortAdapter } from '@bimmerz/bus-os-serial';
+import { IBusProtocolNode } from '@bimmerz/ibus-protocol-node';
 
 import { BluetoothProximitySensor } from "./features/keyless-entry/bt-senser";
 
@@ -14,7 +15,7 @@ import { PinoLogger } from "@bimmerz/logging-pino";
 var device = '/dev/cu.usbserial-0001';
 
 const logger = createLogger(PinoLogger, "IBUS", "info");
-const protocol = new IBusProtocol(logger);
+const protocol = new IBusProtocolNode(logger);
 
 const adapter = new SerialPortAdapter(protocol, device, logger);
 

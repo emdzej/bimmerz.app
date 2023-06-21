@@ -23,7 +23,7 @@ class ProtocolTransform extends Transform {
   }
 
   public _transform(chunk: Buffer, encoding: BufferEncoding, callback: TransformCallback): void {
-    this._protocol.transform(chunk, encoding, callback);
+    this._protocol.transform(chunk, callback);
   };
 
 }

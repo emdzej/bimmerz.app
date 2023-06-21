@@ -13,12 +13,12 @@
   "workspaces": [
     "ibus",
     "devices",
-    "cli",
     "controller",
     "firmware",
     "bus-os-serial",
     "bus-device-serial",
     "core",
-    "logging-pino"
+    "logging-pino",
+    "ibus-protocol-node"
   ]
 }
