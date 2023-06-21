@@ -6,10 +6,12 @@
   "scripts": {
     "build": "npx tsc",
     "develop": "npx tsc --watch"
-},
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@bimmerz/core": "^1.0.0",
+    "@bimmerz/ibus": "^1.0.0",
     "pino": "^8.14.1",
     "serialport": "^11.0.0"
   },

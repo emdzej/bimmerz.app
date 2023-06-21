@@ -1,8 +1,7 @@
-import { UUID } from "crypto";
 import { DEVICE } from "devices";
 
 export type IBusMessage = {
-    id?: UUID;
+    id?: number;
     source: DEVICE;
     destination: DEVICE;
     length?: number;

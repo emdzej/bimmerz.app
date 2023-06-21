@@ -1,8 +1,5 @@
 import * as ds from "@devicescript/core"
 
-class Foo  {
-    
-};
 
 setInterval(() => {
     console.log(":)")

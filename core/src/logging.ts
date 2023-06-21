@@ -4,8 +4,10 @@ export type LoggingFunction = {
     (msg: string, ...args: any[]): void;
 }
 
+export type LogLevel =   "fatal" | "error" | "warn" | "info" | "silent" | "debug";
+
 export type LoggerConstructor = {
-    new(name: string): Logger;
+    new(name: string, level: LogLevel): Logger;
 }
 
 export type Logger = {
@@ -15,8 +17,8 @@ export type Logger = {
     error: LoggingFunction;    
 };
 
-export function createLogger(ctor: LoggerConstructor, name: string): Logger {
-    return new ctor(name);
+export function createLogger(ctor: LoggerConstructor, name: string, level: LogLevel = "debug"): Logger {
+    return new ctor(name, level);
 }
 
 export class ConsoleLogger implements Logger {
@@ -25,7 +27,7 @@ export class ConsoleLogger implements Logger {
     public warn: LoggingFunction = console.warn;
     public error: LoggingFunction = console.error;
 
-    constructor(name: string) {
+    constructor(name: string, level: LogLevel = "debug") {
     
     }        
 }

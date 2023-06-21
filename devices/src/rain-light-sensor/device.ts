@@ -3,6 +3,7 @@ import { DeviceTwin } from "../device-twin";
 import { RainLightSensorEvents } from "./events";
 import { LIGHTS_REQUIRED_STATUS, LIGHT_RAIN_SENSOR_STATUS, RAIN_LIGHT_SENSOR_COMMANDS } from "./types";
 import { Logger } from "@bimmerz/core";
+
 export class RainLightSensor extends DeviceTwin<RainLightSensorEvents> {
     private _intensity?: number;
     private _lightsRequired?: LIGHTS_REQUIRED_STATUS;
