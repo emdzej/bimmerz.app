@@ -23,7 +23,7 @@ export abstract class DeviceTwin<TEvents extends DeviceEvents> extends EventEmit
             [COMMON_COMMANDS.MODULE_STATUS_REQUEST]: (message) => this.handleModuleStatusRequest(message),
             [COMMON_COMMANDS.MODULE_STATUS_RESPONE]: (message) => this.handleModuleStatusResponse(message)
         };
-        this.ibusInterface.on('message', (message: IBusMessage) => this.routeMessage(message));
+        this.ibusInterface.on('message', this.routeMessage, this);
     }
     
     protected abstract handleModuleStatusResponse(message: IBusMessage): void;
@@ -33,17 +33,18 @@ export abstract class DeviceTwin<TEvents extends DeviceEvents> extends EventEmit
         this._handlers[command] = withHandler;
     }
 
-    private routeMessage(message: IBusMessage) {
+    private routeMessage(owner: any, message: IBusMessage) {
+        const me = owner as this;
         if (message.destination === KNOWN_DEVICES.BROADCAST || message.source === KNOWN_DEVICES.GLOBAL_BROADCAST) {
-            this.log.debug(message, "Broadcast message, accepting");
-            this.handleMessage(message);
+            me.log.debug(message, "Broadcast message, accepting");
+            me.handleMessage(message);
         }
-        else if  (this.deviceAddress === message.destination) {
-            this.log.debug(message, "Message for me, accepting");
-            this.handleMessage(message);
-        } else if (this.deviceAddress === message.source) {
-            this.log.debug(message, "Message from me, accepting");
-            this.handleMessage(message);
+        else if  (me.deviceAddress === message.destination) {
+            me.log.debug(message, "Message for me, accepting");
+            me.handleMessage(message);
+        } else if (me.deviceAddress === message.source) {
+            me.log.debug(message, "Message from me, accepting");
+            me.handleMessage(message);
         }
     }
 

@@ -17,24 +17,25 @@ class Emitter extends EventEmitter<TestEvents> {
 test("Expect listener to be called", () => {
     const emitter = new Emitter();
     const listener = jest.fn();
-    emitter.on("test", listener);
-    emitter.emitTest({ name: "test" });
-    expect(listener).toBeCalled();
+    emitter.on("test", listener, this);
+    emitter.emitTest({ name: "test" });    
+    expect(listener).toBeCalledWith(this, { name: "test" });
 });
 
 test("Expect listener to be called once", () => {
     const emitter = new Emitter();
     const listener = jest.fn();
-    emitter.once("test", listener);
+    emitter.once("test", listener, this);
     emitter.emitTest({ name: "test" });
     emitter.emitTest({ name: "test" });
     expect(listener).toBeCalledTimes(1);
+    expect(listener).toBeCalledWith(this, { name: "test" });
 });
 
 test("Expect listener to be not called after calling off", () => {
     const emitter = new Emitter();
     const listener = jest.fn();
-    emitter.on("test", listener);
+    emitter.on("test", listener, this);
     emitter.off("test", listener);
     emitter.emitTest({ name: "test" });
     expect(listener).not.toBeCalled();

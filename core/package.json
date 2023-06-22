@@ -9,8 +9,7 @@
         "ts-jest": "^29.1.0"
     },
     "scripts": {
-        "build": "npx tsc",
-        "develop": "npx tsc --watch",
+        "build": "npx tsc --noEmit",
         "test": "jest --passWithNoTests"
     },
     "author": "",

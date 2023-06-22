@@ -30,7 +30,7 @@ const wheel = new MultiFuncionSteeringWheel(ibus, createLogger(PinoLogger, "Mult
 bodyModule.on('moduleStatusResponse', () => {
     console.log('Body module responded');
     bodyModule.requestDoorLidStatus(KNOWN_DEVICES.RADIO);
-});
+}, undefined);
 
 
 const display = new DisplayOperations(ibus, createLogger(PinoLogger, "DisplayOperations"));

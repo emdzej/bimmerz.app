@@ -11,11 +11,11 @@ class ProtocolTransform extends Transform {
     super(options || {});
     this.log = logger;
     this._protocol = protocol;
-    this._protocol.on('message', (message: IBusMessage) => this.handleMessage(message));
+    this._protocol.on('message', this.handleMessage, this);
   }
 
-  private handleMessage(message: IBusMessage): any {
-    this.emit('message', message);
+  private handleMessage(owner: any, message: IBusMessage): any {
+    (owner as this).emit('message', message);
   }
 
   public _flush(callback: TransformCallback): void {

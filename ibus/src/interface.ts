@@ -13,11 +13,11 @@ export class IBusInterface extends EventEmitter<IBusInterfaceEvents> {
     constructor(busAdapter: BusAdapter, logger: Logger) {
         super();
         this._busAdapter = busAdapter;      
-        this._busAdapter.on('message', (message: MessageEvent) => this.handleMessage(message));        
+        this._busAdapter.on('message', this.handleMessage, this);
     }
 
-    private handleMessage(message: MessageEvent): any {
-      this.emit('message',  message);
+    private handleMessage(owner: any, message: MessageEvent): void {
+      (owner as this).emit('message',  message);
     }
 
     public sendMessage(message: IBusMessage): void {
