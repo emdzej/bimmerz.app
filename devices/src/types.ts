@@ -78,6 +78,3 @@ export abstract class DiagnosticOperations extends DeviceOperations {
         this.sendMessage(payload);
     }
 }
-
-export type IBusMessageDecoderFunction<T, A> = (message: IBusMessage, args: A) => T;
-export type IBusMessageEncoderFunction<A> = (source: DEVICE, destination: DEVICE, args: A) => IBusMessage;

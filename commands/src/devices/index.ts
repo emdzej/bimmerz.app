@@ -4,3 +4,4 @@ export * from "./light-control-module";
 export * from "./radio";
 export * from "./multi-function-steering-wheel";
 export * from "./rain-light-sensor";
+export * from "./diagnostic";
