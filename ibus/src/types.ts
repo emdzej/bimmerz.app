@@ -12,3 +12,7 @@ export type IBusMessage = {
 export type EventHandler<T> = (event: T) => void; 
 
 export type IBusMessageHandler = (message: IBusMessage) => void;
+
+export type IBusMessageParser<T> = (message: IBusMessage) => T;
+
+export type IBusMessageBuilder<T> = (input: T) => IBusMessage;
