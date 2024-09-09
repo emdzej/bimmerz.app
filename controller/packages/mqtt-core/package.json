@@ -1,0 +1,16 @@
+{
+  "name": "@bimmerz/mqtt-core",
+  "main": "src/index.ts",    
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc"
+  },  
+  "dependencies": {
+    "@bimmerz/commands": "^1.0.0",
+    "@bimmerz/core": "^1.0.0",
+    "@bimmerz/devices": "^1.0.0"    
+  },
+  "peerDependencies": {
+    "mqtt": "^5.10.1"    
+  }
+}

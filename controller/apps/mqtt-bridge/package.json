@@ -1,0 +1,16 @@
+{
+  "name": "@bimmerz/mqtt-bridge",
+  "main": "src/index.ts",  
+  "scripts": {
+    "build": "tsc --noEmit",
+    "start": "tsx src/index.ts -h hub.iot.solvely.pl -d /dev/cu.usbserial-0001",
+    "develop": "tsx watch src/index.ts -h hub.iot.solvely.pl -d /dev/cu.usbserial-0001" 
+  },
+  "dependencies": {
+    "@bimmerz/commands": "^1.0.0",
+    "@bimmerz/core": "^1.0.0",
+    "@bimmerz/mqtt-core": "^1.0.0",
+    "@bimmerz/devices": "^1.0.0",
+    "mqtt": "^5.10.1"    
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "@bimmerz/bus",
+  "main": "src/index.ts",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@bimmerz/core": "^1.0.0",
+    "serialport": "^12.0.0"
+  }
+}

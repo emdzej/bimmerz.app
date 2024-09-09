@@ -1,0 +1,17 @@
+{
+  "name": "@bimmerz/commands",
+  "main": "src/index.ts",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {    
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@bimmerz/core": "^1.0.0",
+    "@bimmerz/bus": "^1.0.0"
+  }
+}

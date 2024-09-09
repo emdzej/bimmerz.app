@@ -1,0 +1,19 @@
+{
+  "name": "@bimmerz/devices",
+  "version": "1.0.0",
+  "main": "src/index.ts",  
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@bimmerz/core": "^1.0.0",
+    "@bimmerz/bus": "^1.0.0",
+    "@bimmerz/commands": "^1.0.0"
+  }
+}

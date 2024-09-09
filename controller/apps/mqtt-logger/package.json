@@ -1,0 +1,19 @@
+{
+  "name": "@bimmerz/mqtt-logger",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "start": "tsx src/index.ts -h hub.iot.solvely.pl"
+  },
+  "dependencies": {
+    "@bimmerz/commands": "^1.0.0",
+    "@bimmerz/core": "^1.0.0",
+    "@bimmerz/devices": "^1.0.0",
+    "@bimmerz/mqtt-core": "^1.0.0",
+    "mqtt": "^5.10.1",
+    "pino": "^9.4.0"
+  },
+  "devDependencies": {
+    "@types/pino": "^7.0.5"
+  }
+}
