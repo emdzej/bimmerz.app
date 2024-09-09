@@ -1,7 +1,7 @@
 import { DEVICE, IBusMessage, KNOWN_DEVICES } from "@bimmerz/bus";
 import { KNOWN_COMMANDS } from "../types";
 
-export function buildDiagnosticRequest(payload: Buffer, target: DEVICE) {
+export function buildDiagnosticRequest(payload: number[], target: DEVICE) {
     const message: IBusMessage = {
         source: KNOWN_DEVICES.DIAGNOSTIC,
         destination: target,
@@ -11,16 +11,22 @@ export function buildDiagnosticRequest(payload: Buffer, target: DEVICE) {
 }
 
 export function buildIOStatusRequest(target: DEVICE) {
-    const payload = Buffer.from([KNOWN_COMMANDS.GET_IO_STATUS]);
+    const payload = [
+        KNOWN_COMMANDS.GET_IO_STATUS
+    ];
     return buildDiagnosticRequest(payload, target);
 }
 
 export function buildIdentityRequest(target: DEVICE) {
-    const payload = Buffer.from([KNOWN_COMMANDS.REQUEST_IDENTITY]);
+    const payload = [
+        KNOWN_COMMANDS.REQUEST_IDENTITY
+    ];
     return buildDiagnosticRequest(payload, target);
 }
 
 export function buildTerminateDiagnostic(target: DEVICE): IBusMessage {
-    const payload = Buffer.from([KNOWN_COMMANDS.TERMINATE_DIAGNOSTIC]);
+    const payload = [
+        KNOWN_COMMANDS.TERMINATE_DIAGNOSTIC
+    ];
     return buildDiagnosticRequest(payload, target);
 }

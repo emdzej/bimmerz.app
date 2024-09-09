@@ -7,7 +7,7 @@ export type InstrumentClusterRedundantDataResponseParser = IBusMessageParser<Red
 export function parseInstrumentClusterRedundantDataResponse(message: IBusMessage): RedundantData {
     validateCommand(KNOWN_COMMANDS.REDUNDANT_DATA_RESPONSE, message);
 
-    const data = message.payload.subarray(1);
+    const data = message.payload.slice(1);
     const redundantData: RedundantData = {};
     redundantData.vin = data[0].toString() 
         + data[1].toString()
@@ -81,8 +81,9 @@ export type InstrumetnClusterTemperatureResponseParser = IBusMessageParser<Tempe
 export function parseInstrumentClusterTemperatureResponse(message: IBusMessage): Temperatures {
     validateCommand(KNOWN_COMMANDS.TEMP_UPDATE, message);
 
-    const coolantTemp = message.payload[DATA_BYTE_2_INDEX];
-    const ambientTemp = message.payload.readInt8(DATA_BYTE_1_INDEX);
+    const coolantTemp = message.payload[DATA_BYTE_2_INDEX];    
+    // .readInt8(DATA_BYTE_1_INDEX);
+    const ambientTemp = message.payload[DATA_BYTE_1_INDEX];
     const temperatures = {
         coolant: coolantTemp,
         ambient: ambientTemp
@@ -107,9 +108,10 @@ export type InstrumetnClusterOdometerResponseParser = IBusMessageParser<number>;
 
 export function parseInstrumentClusterOdometerResponse(message: IBusMessage): number {
     validateCommand(KNOWN_COMMANDS.ODOMETER_UPDATE, message);
-    const odometer =  message.payload.readUInt8(DATA_BYTE_3_INDEX) << 16
-        + message.payload.readUInt8(DATA_BYTE_2_INDEX) << 8
-        + message.payload.readUInt8(DATA_BYTE_1_INDEX);
+    // .readUint8
+    const odometer =  message.payload[DATA_BYTE_3_INDEX] << 16
+        + message.payload[DATA_BYTE_2_INDEX] << 8
+        + message.payload[DATA_BYTE_1_INDEX];
     return odometer;    
 }
 
@@ -118,7 +120,7 @@ export type InstrumentClusterObcPropertyUpdateParser = IBusMessageParser<OBCProp
 export function parseInstrumetnClusterObcPropertyUpdate(message: IBusMessage): OBCPropertyRawUpdate {
     validateCommand(KNOWN_COMMANDS.OBC_PROPERTY_UPDATE, message);
     const property  = message.payload[DATA_BYTE_1_INDEX] as OBC_PROPERTY;
-    const rawValue = message.payload.subarray(DATA_BYTE_3_INDEX).toString();
+    const rawValue = message.payload.slice(DATA_BYTE_3_INDEX).toString();
     const update = {
         property,
         value: rawValue        

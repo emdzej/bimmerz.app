@@ -120,7 +120,7 @@ export class IBusProtocolNode extends IBusProtocol {
                             source: mSrc,
                             length: mLen,
                             destination: mDst,
-                            payload: mMsg,
+                            payload: Array.from(mMsg),
                             checksum: mCrc
                         });
 
@@ -166,7 +166,7 @@ export class IBusProtocolNode extends IBusProtocol {
         result[1] = message.payload.length + 2;
         result[2] = message.destination;
 
-        message.payload.copy(result, 3);
+        Buffer.from(message.payload).copy(result, 3);
 
         result[packetLength - 1] = this.calculateChecksum(result, 0, packetLength - 1);
 

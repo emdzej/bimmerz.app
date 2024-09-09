@@ -7,7 +7,6 @@ import { SerialPortAdapter } from '@bimmerz/bus';
 import { IBusProtocolNode } from '@bimmerz/bus';
 import { parseArgs } from "node:util";
 import mqtt from "mqtt";
-import { fromMqttMessage, toMqttMessage } from "@bimmerz/mqtt-core"
 import { MqttAdapter } from "@bimmerz/mqtt-core";
 
 const logger = createLogger(ConsoleLogger, "IBUS MQTT Bridge", "info");

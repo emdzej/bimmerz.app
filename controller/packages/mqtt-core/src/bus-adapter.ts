@@ -1,6 +1,5 @@
 import { BusAdapter, IBusMessage } from "@bimmerz/bus";
 import mqtt, { MqttClient } from "mqtt";
-import { fromMqttMessage, toMqttMessage } from "./types";
 import { Logger } from "@bimmerz/core";
 
 export type MqttAdapterOptions = {    
@@ -13,7 +12,7 @@ export class MqttAdapter extends BusAdapter {
     
     public send(message: IBusMessage): void {
         if (this._client.connected) {
-            this._client.publish(this._options.txTopic, JSON.stringify(toMqttMessage(message)));
+            this._client.publish(this._options.txTopic, JSON.stringify(message));
         }
     }
 
@@ -29,7 +28,7 @@ export class MqttAdapter extends BusAdapter {
                 return;
             }
             const payload = JSON.parse(message.toString());
-            this.emit('message', fromMqttMessage(payload));
+            this.emit('message', payload);
         });
     }
 

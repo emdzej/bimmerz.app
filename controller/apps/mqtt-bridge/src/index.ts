@@ -7,7 +7,6 @@ import { SerialPortAdapter } from '@bimmerz/bus';
 import { IBusProtocolNode } from '@bimmerz/bus';
 import { parseArgs } from "node:util";
 import mqtt from "mqtt";
-import { fromMqttMessage, toMqttMessage } from "@bimmerz/mqtt-core"
 
 const logger = createLogger(ConsoleLogger, "IBUS MQTT Bridge", "debug");
 
@@ -73,7 +72,7 @@ client.on('message', (topic, message) => {
     const data = JSON.parse(message.toString());
     logger.debug("Received data:", data);
     logger.info("Sending data to IBUS:", data);
-    ibus.sendMessage(fromMqttMessage(data));
+    ibus.sendMessage(data);
 });
 
 const protocol = new IBusProtocolNode(logger);
@@ -82,7 +81,7 @@ const ibus = new IBusInterface(adapter, logger);
 
 ibus.on("message", (ctx, message) => {
     logger.debug("Received IBUS message: ", message);
-    const payload = JSON.stringify(toMqttMessage(message));        
+    const payload = JSON.stringify(message);        
     logger.debug(`Publishing data: ${payload}`);
     client.publish(publishTopic, payload);
 }, undefined);

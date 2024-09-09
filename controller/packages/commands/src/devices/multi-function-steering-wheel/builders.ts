@@ -6,10 +6,10 @@ export type MultiFunctionSteeringWheelButtonPressBuilder = IBusMessageBuilder<Bu
 
 export function buildMultiFunctionSteeringWheelButtonPress(
     { button, state, target = KNOWN_DEVICES.RADIO }: ButtonPressArgs): IBusMessage {
-    const payload = Buffer.from([
+    const payload = [
         KNOWN_COMMANDS.BUTTON_PRESS,
         button | state
-    ]);
+    ];
     const message = {
         source: KNOWN_DEVICES.MultiFunctionSteeringWheel,
         destination: target,
@@ -22,10 +22,10 @@ export type MultiFunctionSteeringWheelVolumeChangeBuilder = IBusMessageBuilder<V
 
 export function buildMultiFunctionSteeringWheelVolumeChange(
     { direction, steps, target = KNOWN_DEVICES.RADIO }: VolumeChangeArgs): IBusMessage {
-    const payload = Buffer.from([
+    const payload = [
         KNOWN_COMMANDS.VOLUME_BUTTON_PRESS,
         direction | (steps << 4)
-    ]);
+    ];
     const message = {
         source: KNOWN_DEVICES.MultiFunctionSteeringWheel,
         destination: target,

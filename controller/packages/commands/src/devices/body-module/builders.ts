@@ -6,9 +6,9 @@ import { BODY_MODULE_DIAGNOSTIC_JOB, BODY_MODULE_DIAGNOSTIC_JOBS, SIDE_MIRROR, W
 export type BodyModuleDoorLidStatusRequestBuilder = IBusMessageBuilder<DEVICE>;
 
 export function buildBodyModuleDoorLidStatusRequest(source: DEVICE): IBusMessage {
-    const payload = Buffer.from([
+    const payload = [
         KNOWN_COMMANDS.DOOR_LID_STATUS_REQUEST
-    ]);
+    ];
     const message: IBusMessage = {
         source,
         destination: KNOWN_DEVICES.BODY_MODULE,
@@ -20,21 +20,21 @@ export function buildBodyModuleDoorLidStatusRequest(source: DEVICE): IBusMessage
 export type BodyModuleCentralButtonPressBuilder = IBusMessageBuilder<VEHICLE_TYPE>;
 
 export function buildBodyModuleCentralButtonPress(vehicleType: VEHICLE_TYPE): IBusMessage {
-    var payload: Buffer;
+    var payload: number[];
     if (vehicleType === VEHICLE_TYPES.E46_Z4) {
-        payload = Buffer.from([
+        payload = [
             KNOWN_COMMANDS.DIAGNOSTIC_REQUEST,
             BODY_MODULE_DIAGNOSTIC_JOBS.ZKE5_CENTRAL_LOCK,    
             0x01
-        ]);
+        ];
         return buildDiagnosticRequest(payload, KNOWN_DEVICES.BODY_MODULE);
     } else if (vehicleType === VEHICLE_TYPES.E38_E39_E53) {
-        payload = Buffer.from([
+        payload = [
             KNOWN_COMMANDS.DIAGNOSTIC_REQUEST,
             0x00, // Sub-Module
             BODY_MODULE_DIAGNOSTIC_JOBS.ZKE3_GM4_CENTRAL_LOCK,
             0x01
-        ]);
+        ];
         return buildDiagnosticRequest(payload, KNOWN_DEVICES.BODY_MODULE);
     }               
     throw new Error(`Unsupported vehicle type: ${vehicleType}`);
@@ -43,21 +43,21 @@ export function buildBodyModuleCentralButtonPress(vehicleType: VEHICLE_TYPE): IB
 export type BodyModuleLockAllDoorsBuilder = IBusMessageBuilder<VEHICLE_TYPE>;
 
 export function buildBodyModuleLockAllDoors(vehicleType: VEHICLE_TYPE): IBusMessage {
-    var payload: Buffer;
+    var payload: number[];
     if (vehicleType === VEHICLE_TYPES.E46_Z4) {
-        payload = Buffer.from([
+        payload = [
             KNOWN_COMMANDS.DIAGNOSTIC_REQUEST,
             BODY_MODULE_DIAGNOSTIC_JOBS.ZKE3_GM4_LOCK_ALL,    
             0x01
-        ]);
+        ];
         return buildDiagnosticRequest(payload, KNOWN_DEVICES.BODY_MODULE);
     } else if (vehicleType === VEHICLE_TYPES.E38_E39_E53) {
-        payload = Buffer.from([
+        payload = [
             KNOWN_COMMANDS.DIAGNOSTIC_REQUEST,
             0x00, // Sub-Module
             BODY_MODULE_DIAGNOSTIC_JOBS.ZKE3_GM4_LOCK_ALL,
             0x01
-        ]);
+        ];
         return buildDiagnosticRequest(payload, KNOWN_DEVICES.BODY_MODULE);
     }              
     throw new Error(`Unsupported vehicle type: ${vehicleType}`);
@@ -66,21 +66,21 @@ export function buildBodyModuleLockAllDoors(vehicleType: VEHICLE_TYPE): IBusMess
 export type BodyModuleLockHighSideDoorsBuilder = IBusMessageBuilder<VEHICLE_TYPE>;
 
 export function buildBodyModuleLockHighSideDoors(vehicleType: VEHICLE_TYPE): IBusMessage {
-    var payload: Buffer;
+    var payload: number[];
     if (vehicleType === VEHICLE_TYPES.E46_Z4) {
-        payload = Buffer.from([
+        payload = [
             KNOWN_COMMANDS.DIAGNOSTIC_REQUEST,
             BODY_MODULE_DIAGNOSTIC_JOBS.ZKE5_LOCK_ALL,    
             0x01
-        ]);
+        ];
         return buildDiagnosticRequest(payload, KNOWN_DEVICES.BODY_MODULE);
     } else if (vehicleType === VEHICLE_TYPES.E38_E39_E53) {
-        payload = Buffer.from([
+        payload = [
             KNOWN_COMMANDS.DIAGNOSTIC_REQUEST,
             0x00, // Sub-Module
             BODY_MODULE_DIAGNOSTIC_JOBS.ZKE3_GM4_LOCK_HIGH,
             0x01
-        ]);
+        ];
         return buildDiagnosticRequest(payload, KNOWN_DEVICES.BODY_MODULE);
     }              
     throw new Error(`Unsupported vehicle type: ${vehicleType}`);
@@ -89,21 +89,21 @@ export function buildBodyModuleLockHighSideDoors(vehicleType: VEHICLE_TYPE): IBu
 export type BodyModuleLockLowSideDoorsBuilder = IBusMessageBuilder<VEHICLE_TYPE>;
 
 export function buildBodyModuleLockLowSideDoors(vehicleType: VEHICLE_TYPE): IBusMessage {
-    var payload: Buffer;
+    var payload: number[];
     if (vehicleType === VEHICLE_TYPES.E46_Z4) {
-        payload = Buffer.from([
+        payload = [
             KNOWN_COMMANDS.DIAGNOSTIC_REQUEST,
             BODY_MODULE_DIAGNOSTIC_JOBS.ZKE5_LOCK_ALL,    
             0x01
-        ]);
+        ];
         return buildDiagnosticRequest(payload, KNOWN_DEVICES.BODY_MODULE);
     } else if (vehicleType === VEHICLE_TYPES.E38_E39_E53) {
-        payload = Buffer.from([
+        payload = [
             KNOWN_COMMANDS.DIAGNOSTIC_REQUEST,
             0x00, // Sub-Module
             BODY_MODULE_DIAGNOSTIC_JOBS.ZKE3_GM4_LOCK_LOW,
             0x01
-        ]);
+        ];
         return buildDiagnosticRequest(payload, KNOWN_DEVICES.BODY_MODULE);
     }              
     throw new Error(`Unsupported vehicle type: ${vehicleType}`);
@@ -112,21 +112,21 @@ export function buildBodyModuleLockLowSideDoors(vehicleType: VEHICLE_TYPE): IBus
 export type BodyModuleUnlockAllDoorsBuilder = IBusMessageBuilder<VEHICLE_TYPE>;
 
 export function buildBodyModuleUnlockAllDoors(vehicleType: VEHICLE_TYPE): IBusMessage {
-    var payload: Buffer;
+    var payload: number[];
     if (vehicleType === VEHICLE_TYPES.E46_Z4) {
-        payload = Buffer.from([
+        payload = [
             KNOWN_COMMANDS.DIAGNOSTIC_REQUEST,
             BODY_MODULE_DIAGNOSTIC_JOBS.ZKE5_UNLOCK_ALL,
             0x01
-        ]);
+        ];
         return buildDiagnosticRequest(payload, KNOWN_DEVICES.BODY_MODULE);
     } else if (vehicleType === VEHICLE_TYPES.E38_E39_E53) {
-        payload = Buffer.from([
+        payload = [
             KNOWN_COMMANDS.DIAGNOSTIC_REQUEST,
             0x00, // Sub-Module
             BODY_MODULE_DIAGNOSTIC_JOBS.ZKE3_GM4_CENTRAL_LOCK,
             0x01
-        ]);
+        ];
         return buildDiagnosticRequest(payload, KNOWN_DEVICES.BODY_MODULE);
     }              
     throw new Error(`Unsupported vehicle type: ${vehicleType}`);
@@ -135,21 +135,21 @@ export function buildBodyModuleUnlockAllDoors(vehicleType: VEHICLE_TYPE): IBusMe
 export type BodyModuleUnlockHighSideDoorsBuilder = IBusMessageBuilder<VEHICLE_TYPE>;
 
 export function buildBodyModuleUnlockHighSideDoors(vehicleType: VEHICLE_TYPE): IBusMessage {
-    var payload: Buffer;
+    var payload: number[];
     if (vehicleType === VEHICLE_TYPES.E46_Z4) {
-        payload = Buffer.from([
+        payload = [
             KNOWN_COMMANDS.DIAGNOSTIC_REQUEST,
             BODY_MODULE_DIAGNOSTIC_JOBS.ZKE5_UNLOCK_ALL,
             0x01
-        ]);
+        ];
         return buildDiagnosticRequest(payload, KNOWN_DEVICES.BODY_MODULE);
     } else if (vehicleType === VEHICLE_TYPES.E38_E39_E53) {
-        payload = Buffer.from([
+        payload = [
             KNOWN_COMMANDS.DIAGNOSTIC_REQUEST,
             0x00, // Sub-Module
             BODY_MODULE_DIAGNOSTIC_JOBS.ZKE3_GM4_UNLOCK_HIGH,
             0x01
-        ]);
+        ];
         return buildDiagnosticRequest(payload, KNOWN_DEVICES.BODY_MODULE);
     }        
     throw new Error(`Unsupported vehicle type: ${vehicleType}`);
@@ -158,21 +158,21 @@ export function buildBodyModuleUnlockHighSideDoors(vehicleType: VEHICLE_TYPE): I
 export type BodyModuleUnlockLowSideDoorsBuilder = IBusMessageBuilder<VEHICLE_TYPE>;
 
 export function buildBodyModuleUnlockLowSideDoors(vehicleType: VEHICLE_TYPE): IBusMessage {
-    var payload: Buffer;
+    var payload: number[];
     if (vehicleType === VEHICLE_TYPES.E46_Z4) {
-        payload = Buffer.from([
+        payload = [
             KNOWN_COMMANDS.DIAGNOSTIC_REQUEST,
             BODY_MODULE_DIAGNOSTIC_JOBS.ZKE5_UNLOCK_LOW,
             0x01
-        ]);
+        ];
         return buildDiagnosticRequest(payload, KNOWN_DEVICES.BODY_MODULE);
     } else if (vehicleType === VEHICLE_TYPES.E38_E39_E53) {
-        payload = Buffer.from([
+        payload = [
             KNOWN_COMMANDS.DIAGNOSTIC_REQUEST,
             0x00, // Sub-Module
             BODY_MODULE_DIAGNOSTIC_JOBS.ZKE3_GM4_UNLOCK_LOW,
             0x01
-        ]);
+        ];
         return buildDiagnosticRequest(payload, KNOWN_DEVICES.BODY_MODULE);
     }
     throw new Error(`Unsupported vehicle type: ${vehicleType}`);        
@@ -181,24 +181,24 @@ export function buildBodyModuleUnlockLowSideDoors(vehicleType: VEHICLE_TYPE): IB
 export type BodyModuleFoldMirrorBuilder = IBusMessageBuilder<SIDE_MIRROR>;
 
 export function buildBodyModuleFoldMirror(mirror: SIDE_MIRROR): IBusMessage {
-    const payload: Buffer = Buffer.from([
+    const payload = [
         KNOWN_COMMANDS.DIAGNOSTIC_REQUEST,
         mirror,
         BODY_MODULE_DIAGNOSTIC_JOBS.FOLD_MIRROR,
         0x01
-    ]);
+    ];
     return buildDiagnosticRequest(payload, KNOWN_DEVICES.BODY_MODULE);
 }
 
 export type BodyModuleUnfoldMirrorBuilder = IBusMessageBuilder<SIDE_MIRROR>;
 
 export function buildBodyModuleUnfoldMirror(mirror: SIDE_MIRROR): IBusMessage {
-    const payload: Buffer = Buffer.from([
+    const payload = [
         KNOWN_COMMANDS.DIAGNOSTIC_REQUEST,
         mirror,
         BODY_MODULE_DIAGNOSTIC_JOBS.UNFOLD_MIRROR,
         0x01
-    ]);
+    ];
     return buildDiagnosticRequest(payload, KNOWN_DEVICES.BODY_MODULE);
 }
 
@@ -214,11 +214,11 @@ export function buildBodyModuleOpenWindow(window: WINDOW): IBusMessage {
         case WINDOWS.PASSENGER_REAR: job = BODY_MODULE_DIAGNOSTIC_JOBS.OPEN_WINDOW_PASSENGER_REAR; break;        
     }
 
-    const payload: Buffer = Buffer.from([
+    const payload = [
         KNOWN_COMMANDS.DIAGNOSTIC_REQUEST,
         job,
         0x01
-    ]);
+    ];
 
     return buildDiagnosticRequest(payload, KNOWN_DEVICES.BODY_MODULE);
 }
@@ -235,11 +235,11 @@ export function buildBodyModuleCloseWindow(window: WINDOW): IBusMessage {
         case WINDOWS.PASSENGER_REAR: job = BODY_MODULE_DIAGNOSTIC_JOBS.CLOSE_WINDOW_PASSENGER_REAR; break;     
     }
 
-    const payload: Buffer = Buffer.from([
+    const payload = [
         KNOWN_COMMANDS.DIAGNOSTIC_REQUEST,
         job,
         0x01
-    ]);
+    ];
 
     return buildDiagnosticRequest(payload, KNOWN_DEVICES.BODY_MODULE);
 }

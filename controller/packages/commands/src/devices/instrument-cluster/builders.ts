@@ -5,9 +5,9 @@ import { IGNITION_STATUS } from "./types";
 export type InstrumentClusterRedundantDataRequestBuilder = IBusMessageBuilder<DEVICE>;
 
 export function buildInstrumentClusterRedundantDataRequest(source: DEVICE = KNOWN_DEVICES.LIGHT_CONTROL_MODULE): IBusMessage {
-    const payload = Buffer.from([
+    const payload = [
         KNOWN_COMMANDS.REDUNDANT_DATA_REQUEST
-    ]);
+    ];
     const message = {
         source,
         destination: KNOWN_DEVICES.InstrumentClusterElectronics,
@@ -19,9 +19,9 @@ export function buildInstrumentClusterRedundantDataRequest(source: DEVICE = KNOW
 export type InstrumentClusterIgnitionStatusRequestBuilder = IBusMessageBuilder<DEVICE>;
 
 export function buildInstrumentClusterIgnitionStatusRequest(source: DEVICE): IBusMessage {
-    const payload = Buffer.from([
+    const payload = [
         KNOWN_COMMANDS.IGNITION_STATUS_REQUEST
-    ]);
+    ];
     const message = {
         source,
         destination: KNOWN_DEVICES.InstrumentClusterElectronics,
@@ -33,9 +33,9 @@ export function buildInstrumentClusterIgnitionStatusRequest(source: DEVICE): IBu
 export type InstrumentClusterSensorsStatusRequestBuilder = IBusMessageBuilder<DEVICE>;
 
 export function buildInstrumentClusterSensorsStatusRequest(source: DEVICE): IBusMessage {
-    const payload = Buffer.from([
+    const payload = [
         KNOWN_COMMANDS.SENSORS_STATUS_REQUEST
-    ]);
+    ];
     const message = {
         source: source,
         destination: KNOWN_DEVICES.InstrumentClusterElectronics,
@@ -53,10 +53,10 @@ export type IgnitionStatusResponseBuilderArgs = {
 export type InstrumentClusterIgnitionStatusResponseBuilder = IBusMessageBuilder<IgnitionStatusResponseBuilderArgs>;
 
 export function buildInstrumentClusterIgnitionStatusResponse({target, status}: IgnitionStatusResponseBuilderArgs): IBusMessage {
-    const payload = Buffer.from([
+    const payload = [
         KNOWN_COMMANDS.IGNITION_STATUS_RESPONSE,
         status
-    ]);
+    ];
     const message = {
         source: KNOWN_DEVICES.InstrumentClusterElectronics,
         destination: target,
@@ -66,9 +66,9 @@ export function buildInstrumentClusterIgnitionStatusResponse({target, status}: I
 }
 
 export function buildOdometerRequest(source: DEVICE): IBusMessage {
-    const payload = Buffer.from([
+    const payload = [
         KNOWN_COMMANDS.ODOMETER_REQUEST
-    ]);
+    ];
     const message = {
         source,
         destination: KNOWN_DEVICES.InstrumentClusterElectronics,
@@ -78,9 +78,9 @@ export function buildOdometerRequest(source: DEVICE): IBusMessage {
 }
 
 export function buildTemperatureRequest(source: DEVICE): IBusMessage {
-    const payload = Buffer.from([
+    const payload = [
         KNOWN_COMMANDS.TEMP_REQUEST
-    ]);
+    ];
     const message = {
         source,
         destination: KNOWN_DEVICES.InstrumentClusterElectronics,

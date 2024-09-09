@@ -3,9 +3,9 @@ import { KNOWN_COMMANDS } from "../../types";
 import { MODULE_STATUS } from "./types";
 
 export function buildStatusRequest(source: DEVICE, target: DEVICE) {
-    const payload = Buffer.from([
+    const payload = [
         KNOWN_COMMANDS.MODULE_STATUS_REQUEST
-    ]);        
+    ];
     const message = {
         source: source,
         destination: target,
@@ -15,10 +15,10 @@ export function buildStatusRequest(source: DEVICE, target: DEVICE) {
 }
 
 export function buildStatusResponse(source: DEVICE, target: DEVICE, status: MODULE_STATUS) {
-    const payload = Buffer.from([
+    const payload = [
         KNOWN_COMMANDS.MODULE_STATUS_RESPONSE,
         status
-    ]);
+    ];
     const message = {
         source: source,
         destination: target,

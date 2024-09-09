@@ -1,14 +1,13 @@
 import { ConsoleLogger, createLogger, PinoLogger } from '@bimmerz/core';
 import {
     getDeviceName,
-    IBusInterface, IBusProtocol, KNOWN_DEVICE,
+    IBusInterface, IBusMessage, IBusProtocol, KNOWN_DEVICE,
     KNOWN_DEVICES
 } from '@bimmerz/bus';
 import { SerialPortAdapter } from '@bimmerz/bus';
 import { IBusProtocolNode } from '@bimmerz/bus';
 import { parseArgs } from "node:util";
 import mqtt from "mqtt";
-import { fromMqttMessage, MqttIBusMessage, toMqttMessage } from './types';
 import { MqttAdapter } from "@bimmerz/mqtt-core";
 
 import pino from 'pino';
@@ -80,7 +79,7 @@ client.on('connect', () => {
 });
 
 client.on('message', (topic, message) => {
-    const data = JSON.parse(message.toString()) as MqttIBusMessage;
+    const data = JSON.parse(message.toString()) as IBusMessage;
     logger.info(
      `${getDeviceName(data.source)}[${data.source.toString(16)}] -> ${getDeviceName(data.destination)}[${data.destination.toString(16)}]: ${getCommandName(data.payload[0] as COMMAND)}[${data.payload[0].toString(16)}]`
     );

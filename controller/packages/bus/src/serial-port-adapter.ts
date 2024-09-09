@@ -60,7 +60,7 @@ export class SerialPortAdapter extends BusAdapter {
 
 
     parser.on('message', (message: IBusMessage) => {
-      this.log.debug(`Received message from ${getDeviceName(message.source)} to: ${getDeviceName(message.destination)}, data: ${message.payload.toString('hex')}`);
+      this.log.debug(`Received message from ${getDeviceName(message.source)} to: ${getDeviceName(message.destination)}, data: ${message.payload}`);
       this.lastActivityTime = process.hrtime();      
       this.emit('message', message);
     });
@@ -84,7 +84,7 @@ export class SerialPortAdapter extends BusAdapter {
       this.log.warn("Queue too large, dropping message", message);
       return;
     }
-    this.log.debug(`Queuing message from ${getDeviceName(message.source)} to: ${getDeviceName(message.destination)}, data: ${message.payload.toString('hex')}`);
+    this.log.debug(`Queuing message from ${getDeviceName(message.source)} to: ${getDeviceName(message.destination)}, data: ${message.payload}`);
     const buffer = this._protocol.encodeMessage(message);
     this._queue.unshift(buffer);
   }
