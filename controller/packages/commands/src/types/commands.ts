@@ -25,7 +25,7 @@ import { getKeyByValue } from "@bimmerz/core";
 // const unsigned char T = 0x19;/*"Temperature"*/
 // const unsigned char ITDG = 0x1A;/*"IKE text display/Gong"*/
 // const unsigned char ITS = 0x1B;/*"IKE text status"*/
-// const unsigned char G = 0x1C;/*"Gong"*/
+
 // const unsigned char TREQ = 0x1D;/*"Temperature request"*/
 // const unsigned char UTAD = 0x1F;/*"UTC time and date"*/
 
@@ -34,7 +34,6 @@ import { getKeyByValue } from "@bimmerz/core";
 // const unsigned char UMID = 0x23;/*"Display Text"*/
 // const unsigned char UANZV = 0x24;/*"Update ANZV"*/
 // const unsigned char OBCSU = 0x2A;/*"On-Board Computer State Update"*/
-// const unsigned char TI = 0x2b; /*Telephone indicators*/
 
 // const unsigned char MFLB = 0x32;/*"MFL buttons"*/
 // const unsigned char DSPEB = 0x34;/*"DSP Equalizer Button"*/
@@ -69,24 +68,26 @@ import { getKeyByValue } from "@bimmerz/core";
 
 // const unsigned char RCL = 0xD4; /*RDS channel list*/
 
-// const unsigned char DD = 0xA0;/*"DIAG data"*/
 // const unsigned char CPAT = 0xA2;/*"Current position and time*/
 // const unsigned char CL = 0xA4;/*Current location, always 23 bytes, data has 2 byte order number and then ascii: 00 01 4F 55 4C 55 00 == 1st packet, OULU\0*/
 // const unsigned char ST = 0xa5; /*Screen text*/
 // const unsigned char TMCSREQ = 0xA7;/*"TMC status request"*/
-// const unsigned char NC = 0xAA;/*"Navigation Control"*/
 
 export const KNOWN_COMMANDS = {
+    NC: 0xAA,
     REQUEST_IDENTITY: 0x00,    
     MODULE_STATUS_REQUEST: 0x01,
     MODULE_STATUS_RESPONSE: 0x02,
+    READ_FAULT_CODES: 0x04,
+    CLEAR_FAULT_CODES: 0x05,
     READ_MEMORY: 0x06,
     WRITE_MEMORY: 0x07,    
+    
     READ_CODING_DATA: 0x08,    
     WRITE_CODING_DATA: 0x09,
     GET_IO_STATUS: 0x0B,
-    DIAGNOSTIC_REQUEST: 0x0C,
-    DIAGNOSTIC_RESPONSE: 0xA0,    
+    VC: 0x0C,
+    
     IGNITION_STATUS_REQUEST: 0x10,
     IGNITION_STATUS_RESPONSE: 0x11,
     SENSORS_STATUS_REQUEST: 0x12,
@@ -96,6 +97,7 @@ export const KNOWN_COMMANDS = {
     ODOMETER_UPDATE: 0x17,
     SPEED_RPM_UPDATE: 0x18,
     TEMP_UPDATE: 0x19,
+    G: 0x1C,
     TEMP_REQUEST: 0x1D,
     GPS_TIME: 0x1F,
     OBC_PROPERTY_UPDATE: 0x24,
@@ -116,16 +118,33 @@ export const KNOWN_COMMANDS = {
     LIGHT_STATUS_REQUEST: 0x5A,
     LIGHT_STATUS_RESPONSE: 0x5B,
     DIMMER_STATUS: 0x5C,
+    DIMMER_STATUS_REQUEST: 0x5D,
+    LIGHT_RAIN_SENSOR_STATUS_REQUEST: 0x71,
+    IMMOBILISER_STATUS_REQUEST: 0x73,
+    WIPER_STATUS_REQUEST: 0x75,
     VISUAL_INDICATOR_STATUS: 0x76,
     DOOR_LID_STATUS_REQUEST: 0x79,
     DOOR_LID_STATUS_RESPONSE: 0x7A,   
     AC_STATUS_UNVERIFIED: 0x83, 
+    DIAGNOSTIC_KEEP_ALIVE: 0x9E,
     TERMINATE_DIAGNOSTIC: 0x9F,
     // PDC
-    PDC_STATUS: 0x07,
-    PDC_SENSOR_REQUEST: 0x1B,
-    PDC_SENSOR_RESPONSE: 0xA0
+    
+    PDC_SENSOR_REQUEST: 0x1B,    
+    DD: 0xA0,    
+    DIAGNOSTIC_PARAMETER_ERROR: 0xB0,
+    TI: 0x2B,
+    
 } as const;
+
+export const KNOWN_COMMAND_NAMES: Partial<Record<keyof typeof KNOWN_COMMANDS, string>> = {
+    G: "Gong",
+    VC: "Vehicle Control",
+    DD: "Diagnostic Data",
+    TI: "Telephone Indicators",
+    NC: "Navigation Control",
+} as const;
+
 
 /*
 

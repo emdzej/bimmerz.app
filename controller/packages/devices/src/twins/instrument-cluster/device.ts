@@ -1,4 +1,4 @@
-import { DEVICE, KNOWN_DEVICES, IBusInterface, IBusMessage } from "@bimmerz/bus";
+import { DEVICE, KNOWN_DEVICES, IBusInterface, IBusMessage, KNOWN_DEVICE_NAMES } from "@bimmerz/bus";
 import { DeviceTwin } from "../device-twin";
 import { InstrumentClusterEvents } from "./events";
 import { Logger } from "@bimmerz/core";
@@ -69,7 +69,7 @@ export class InstrumentCluster extends DeviceTwin<InstrumentClusterEvents> {
     }
 
     constructor(ibusInterface: IBusInterface, logger: Logger) {
-        super(KNOWN_DEVICES.InstrumentClusterElectronics, 'InstrumentCluster', ibusInterface, logger);
+        super(KNOWN_DEVICES.IKE, KNOWN_DEVICE_NAMES.IKE, ibusInterface, logger);
         this.handle(KNOWN_COMMANDS.IGNITION_STATUS_REQUEST, (message) => this.handleIgnitionStatusRequest(message));
         this.handle(KNOWN_COMMANDS.IGNITION_STATUS_RESPONSE, (message) => this.handleIgnitionStatusResponse(message));
         this.handle(KNOWN_COMMANDS.SENSORS_STATUS_REQUEST, (message) => this.handleSensorsStatusRequest(message));
@@ -83,7 +83,7 @@ export class InstrumentCluster extends DeviceTwin<InstrumentClusterEvents> {
         this.handle(KNOWN_COMMANDS.REDUNDANT_DATA_RESPONSE, (message) => this.handleRedundantDataResponse(message));
     }
 
-    public requestRedundantData(source: DEVICE = KNOWN_DEVICES.LIGHT_CONTROL_MODULE): void {
+    public requestRedundantData(source: DEVICE = KNOWN_DEVICES.LCM): void {
         this.ibusInterface.sendMessage(
             buildInstrumentClusterRedundantDataRequest(source)
         );        

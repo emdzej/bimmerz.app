@@ -1,93 +1,137 @@
-// /*
-// const unsigned char GM = 0x00; /*Body module*/
-// const unsigned char SHD = 0x08; /*Sunroof Control*/
-// const unsigned char CDC = 0x18; /*CD Changer*/
-// const unsigned char FUH = 0x28; /*Radio controlled clock*/
-// const unsigned char CCM = 0x30; /*Check control module*/
-// const unsigned char GT = 0x3B; /*Graphics driver (in navigation system)*/
-// const unsigned char DIA = 0x3F; /*Diagnostic*/
-// const unsigned char FBZV = 0x40; /*Remote control central locking*/
-// const unsigned char GTF = 0x43; /*Graphics driver for rear screen (in navigation system)*/
-// const unsigned char EWS = 0x44; /*Immobiliser*/
-// const unsigned char CID = 0x46; /*Central information display (flip-up LCD screen)*/
-// const unsigned char MFL = 0x50; /*Multi function steering wheel*/
-// const unsigned char MM0 = 0x51; /*Mirror memory*/
-// const unsigned char IHK = 0x5B; /*Integrated heating and air conditioning*/
-// const unsigned char PDC = 0x60; /*Park distance control*/
-// const unsigned char ONL = 0x67; /*unknown*/
-// const unsigned char RAD = 0x68; /*Radio*/
-// const unsigned char DSP = 0x6A; /*Digital signal processing audio amplifier*/
-// const unsigned char SM0 = 0x72; /*Seat memory*/
-// const unsigned char SDRS = 0x73; /*Sirius Radio*/
-// const unsigned char CDCD = 0x76; /*CD changer, DIN size.*/
-// const unsigned char NAVE = 0x7F; /*Navigation (Europe)*/
-// const unsigned char IKE = 0x80; /*Instrument cluster electronics*/
-// const unsigned char MM1 = 0x9B; /*Mirror memory*/
-// const unsigned char MM2 = 0x9C; /*Mirror memory*/
-// const unsigned char FMID = 0xA0; /*Rear multi-info-display*/
-// const unsigned char ABM = 0xA4; /*Air bag module*/
-// const unsigned char KAM = 0xA8; /*unknown*/
-// const unsigned char ASP = 0xAC; /*unknown*/
-// const unsigned char SES = 0xB0; /*Speed recognition system*/
-// const unsigned char NAVJ = 0xBB; /*Navigation (Japan)*/
-// const unsigned char GLO = 0xBF; /*Global, broadcast address*/
-// const unsigned char MID = 0xC0; /*Multi-info display*/
-// const unsigned char TEL = 0xC8; /*Telephone*/
-// const unsigned char TCU = 0xCA; /*unknown (BMW Assist?)*/
-// const unsigned char LCM = 0xD0; /*Light control module*/
-// const unsigned char GTHL = 0xDA; /*unknown*/
-// const unsigned char IRIS = 0xE0; /*Integrated radio information system*/
-// const unsigned char ANZV = 0xE7; /*Front display*/
-// const unsigned char RLS = 0xE8; /*Rain/Light Sensor*/
-// const unsigned char TV = 0xED; /*Television*/
-// const unsigned char BMBT = 0xF0; /*On-board monitor operating part*/
-// const unsigned char CSU = 0xF5; /*unknown*/
-// const unsigned char LOC = 0xFF; /*Local*/
-// */
-
 export const KNOWN_DEVICES = {
-    BODY_MODULE: 0x00,
-    "SunroofControl": 0x08,
-    CD_CHANGER: 0x18,
-    "RadioControlledClock": 0x28,
-    CHECK_CONTROL_MODULE: 0x30,
-    GRAPHICS_NAVIGATION_DRIVER: 0x3B,
-    DIAGNOSTIC: 0x3F,
-    "RemoteControlCentralLocking": 0x40,
-    "GraphicsDriverRearScreen": 0x43,
-    "Immobiliser": 0x44,
-    "CentralInformationDisplay": 0x46,
-    "MultiFunctionSteeringWheel": 0x50,
-    "MirrorMemory": 0x51,
-    "IntegratedHeatingAndAirConditioning": 0x5B,
-    PARK_DISTANCE_CONTROL: 0x60,
-    RADIO: 0x68,
-    "DigitalSignalProcessingAudioAmplifier": 0x6A,
-    "SeatMemory": 0x72,
-    "SiriusRadio": 0x73,
-    CD_CHANGER_DIN: 0x76,
-    "NavigationEurope": 0x7F,
-    "InstrumentClusterElectronics": 0x80,
-    "MirrorMemorySecond": 0x9B,
-    "MirrorMemoryThird": 0x9C,
-    "RearMultiInfoDisplay": 0xA0,
-    "AirBagModule": 0xA4,
-    "SpeedRecognitionSystem": 0xB0,
-    "NavigationJapan": 0xBB,
-    GLOBAL_BROADCAST: 0xBF,
-    "MultiInfoDisplay": 0xC0,
-    TELEPHONE: 0xC8,
-    "Assist": 0xCA,
-    LIGHT_CONTROL_MODULE: 0xD0,
-    "SeatMemorySecond": 0xDA,
-    "IntegratedRadioInformationSystem": 0xE0,
-    DISPLAYS_MULTICAST: 0xE7,
-    RAIN_LIGHT_SENSOR: 0xE8,
-    TELEVISION: 0xED,
-    ON_BOARD_MONITOR: 0xF0,
-    BROADCAST: 0xFF
+    DMEK: 0xB8,
+    DME: 0x12,
+    EGS: 0x32,
+    EHC: 0xAC,
+    EKM: 0x02,
+    EKP: 0x65,
+    FHK: 0xA7,
+    HAC: 0x9A,
+    HKM: 0x0F,
+    NAVC: 0xA8,
+    CVM: 0x52,
+    PIC: 0xF1,
+    RCSC: 0x81,
+    SES: 0xB0,
+    GR: 0xA6,
+    ASC: 0x56,
+    CSU: 0xF5,
+    ABG: 0xA4,
+    AHL: 0x66,
+    GM: 0x00,
+    SHD: 0x08,
+    CDC: 0x18,
+    RCC: 0x28,
+    CCM: 0x30,
+    GT: 0x3B,
+    GTF: 0x43,
+    DIA: 0x3F,
+    LWS: 0x57,
+    FBZV: 0x40,
+    EWS: 0x44,
+    CID: 0x46,
+    MFL: 0x50,
+    MML: 0x51,
+    IHKA: 0x5B,
+    PDC: 0x60,
+    RAD: 0x68,
+    DSP: 0x6A,
+    DSPC: 0xEA,
+    SM: 0x72,
+    SDRS: 0x73,
+    CDCD: 0x76,
+    NAVE: 0x7F,
+    IKE: 0x80,
+    MMR: 0x9B,
+    MM3: 0x9C,
+    FID: 0xA0,
+    NAVJ: 0xBB,
+    GLO: 0xBF,
+    MID: 0xC0,
+    TEL: 0xC8,
+    ASST: 0xCA,
+    LCM: 0xD0,
+    IRIS: 0xE0,
+    RDC: 0x70,
+    ANZV: 0xE7,
+    RLS: 0xE8,
+    VID: 0xED,
+    SOR: 0x74,
+    BMBT: 0xF0,
+    FMBT: 0x47,
+    TCU: 0xCA,
+    STH: 0x6B,
+    LOC: 0xFF,
+    SMAD: 0xDA
 } as const;
 
 export type KNOWN_DEVICE = typeof KNOWN_DEVICES[keyof typeof KNOWN_DEVICES];
 
 export type DEVICE = KNOWN_DEVICE | number;
+
+export const KNOWN_DEVICE_NAMES: Record<keyof typeof KNOWN_DEVICES, string> = {
+    ABG: "Airbag",
+    AHL: "Adaptive headlight unit",
+    ANZV: "Display group",
+    ASC: "Anti-lock braking system with ASC",
+    ASST: "BMW Assist",
+    BMBT: "On board monitor control panel",
+    CCM: "Check control messages",
+    CDC: "CD changer",
+    CDCD: "CD changer (DIN size)",
+    CID: "Center information display",
+    CSU: "Centre switch control unit",
+    CVM: "Cabrio folding top module",
+    DIA: "Diagnostic",
+    DME: "Digital Motor Electronics",
+    DMEK: "DME (K2000 protocol)",
+    DSP: "Digital sound processor amplifier",
+    DSPC: "Digital sound processor controller",
+    EGS: "Electronic gearbox control",
+    EHC: "Electronic height control",
+    EKM: "Electronic body module",
+    EKP: "Electronic fuel pump",
+    EWS: "EWS immobilizer",
+    FBZV: "Key fob (only older E38)",
+    FHK: "Automatic climate control, rear",
+    FID: "Multi-information display, rear",
+    FMBT: "Rear monitor controls",
+    GLO: "Global",
+    GM: "General module",
+    GR: "Cruise control",
+    GT: "Navigation",
+    GTF: "Navigation, rear",
+    HAC: "Headlight aim control",
+    HKM: "Boot lid control unit",
+    IHKA: "Automatic climate control",
+    IKE: "Cluster",
+    IRIS: "Integrated radio information system",
+    LCM: "Light/check module",
+    LOC: "Local",
+    LWS: "Steering angle sensor",
+    MFL: "Multi function lever",
+    MID: "Multi-information display",
+    MM3: "Mirror memory 3",
+    MML: "Mirror memory, left",
+    MMR: "Mirror memory, right",
+    NAVC: "Navigation China",
+    NAVE: "Navigation Europe",
+    NAVJ: "Navigation Japan",
+    PDC: "Park distance control",
+    PIC: "Programmable controller (custom unit)",
+    RAD: "Radio",
+    RCC: "Radio controlled clock",
+    RCSC: "Revolution counter/steering column",
+    RDC: "Tire pressure control",
+    RLS: "Rain/light sensor",
+    SDRS: "Sirius sat radio",
+    SES: "Handfree/speech input",
+    SHD: "Sunroof module",
+    SM: "Seat memory",
+    SMAD: "Seat memory assistant driver",
+    SOR: "Seat occupancy recognition unit",
+    STH: "Standing heat",
+    TCU: "Telematics control unit",
+    TEL: "Telephone",
+    VID: "Video input/TV tuner",
+} as const;

@@ -45,8 +45,8 @@ export class BodyModule extends DeviceTwin<BodyModuleEvents> {
     }
 
     constructor(ibusInterface: IBusInterface, logger: Logger) {
-        super(KNOWN_DEVICES.BODY_MODULE, 'Body Module', ibusInterface, logger);
-        this.handle(KNOWN_COMMANDS.DIAGNOSTIC_RESPONSE, (message) => this.handleDiagnosticResponse(message));
+        super(KNOWN_DEVICES.GM, 'Body Module', ibusInterface, logger);
+        this.handle(KNOWN_COMMANDS.DD, (message) => this.handleDiagnosticResponse(message));
         this.handle(KNOWN_COMMANDS.DOOR_LID_STATUS_RESPONSE, (message) => this.handleDoorLidStatusResponse(message));
         this.handle(KNOWN_COMMANDS.DOOR_LID_STATUS_REQUEST, (message) => this.handleDoorLidStatusRequest(message));
     }

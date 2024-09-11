@@ -9,19 +9,19 @@ export class StatusOperations extends DeviceOperations {
         super(ibusInterface, logger);
     }
     
-    public requestStatus(source: DEVICE, target: DEVICE = KNOWN_DEVICES.GLOBAL_BROADCAST): void {        
+    public requestStatus(source: DEVICE, target: DEVICE = KNOWN_DEVICES.GLO): void {        
         this.ibusInterface.sendMessage(buildStatusRequest(source, target));
     }
 
-    public announce(source: DEVICE, target: DEVICE = KNOWN_DEVICES.GLOBAL_BROADCAST): void {
+    public announce(source: DEVICE, target: DEVICE = KNOWN_DEVICES.GLO): void {
         this.reportStatus(source, MODULE_STATUSES.MODULE_ANNOUNCE, target);
     }
 
-    public reportPresence(source: DEVICE, target: DEVICE = KNOWN_DEVICES.GLOBAL_BROADCAST): void {
+    public reportPresence(source: DEVICE, target: DEVICE = KNOWN_DEVICES.GLO): void {
         this.reportStatus(source, MODULE_STATUSES.MODULE_PRESENT, target);
     }
 
-    public reportStatus(source: DEVICE, status: MODULE_STATUS, target: DEVICE = KNOWN_DEVICES.GLOBAL_BROADCAST): void {
+    public reportStatus(source: DEVICE, status: MODULE_STATUS, target: DEVICE = KNOWN_DEVICES.GLO): void {
         this.ibusInterface.sendMessage(
             buildStatusResponse(source, target, status)
         );        

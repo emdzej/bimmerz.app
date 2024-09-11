@@ -8,7 +8,7 @@ export class VolumeOperations extends DeviceOperations {
         super(ibusInterface, logger);
     }
 
-    public changeVolume(direction: VOLUME_CHANGE_DIRECTION, steps: number = 0x01, target: DEVICE = KNOWN_DEVICES.RADIO): void {
+    public changeVolume(direction: VOLUME_CHANGE_DIRECTION, steps: number = 0x01, target: DEVICE = KNOWN_DEVICES.RAD): void {
         this.ibusInterface.sendMessage(
             buildMultiFunctionSteeringWheelVolumeChange({ 
                 direction, 

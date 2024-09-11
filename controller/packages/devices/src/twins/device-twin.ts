@@ -2,7 +2,7 @@ import { EventEmitter } from "@bimmerz/core";
 import { DEVICE, KNOWN_DEVICES, IBusInterface, COMMAND_INDEX, IBusMessage, IBusMessageHandler} from "@bimmerz/bus";
 import { Logger } from '@bimmerz/core';
 import { DeviceEvents, DeviceOperations, DeviceOperationsCategory, DeviceOperationsRegistry } from "../devices";
-import { buildStatusRequest, buildStatusResponse, KNOWN_COMMANDS, MODULE_STATUSES } from "@bimmerz/commands";
+import { buildStatusRequest, buildStatusResponse, COMMAND, KNOWN_COMMANDS, MODULE_STATUSES } from "@bimmerz/commands";
 
 export abstract class DeviceTwin<
     TEvents extends DeviceEvents
@@ -39,7 +39,7 @@ export abstract class DeviceTwin<
 
     private routeMessage(owner: any, message: IBusMessage) {
         const me = owner as this;
-        if (message.destination === KNOWN_DEVICES.BROADCAST || message.source === KNOWN_DEVICES.GLOBAL_BROADCAST) {
+        if (message.destination === KNOWN_DEVICES.LOC || message.source === KNOWN_DEVICES.GLO) {
             me.log.debug(message, "Broadcast message, accepting");
             me.handleMessage(message);
         }
@@ -53,7 +53,7 @@ export abstract class DeviceTwin<
     }
 
     private handleMessage(message: IBusMessage): void {
-        const command = message.payload[COMMAND_INDEX];
+        const command = message.payload[COMMAND_INDEX] as COMMAND;
         if (this._handlers[command]) {
             this.log.debug(message, "Handling message");
             this._handlers[command](message);

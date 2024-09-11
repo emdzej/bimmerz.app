@@ -9,7 +9,7 @@ export class OBCOperations extends DeviceOperations {
         super(ibusInterface, logger);
     }
 
-    private set(property: WRITEABLE_OBC_PROPERTY, value: any, source: DEVICE = KNOWN_DEVICES.GRAPHICS_NAVIGATION_DRIVER) {
+    private set(property: WRITEABLE_OBC_PROPERTY, value: any, source: DEVICE = KNOWN_DEVICES.GT) {
 
     }
 }

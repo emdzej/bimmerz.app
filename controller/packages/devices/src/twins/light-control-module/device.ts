@@ -59,10 +59,10 @@ export class LightControlModule extends DeviceTwin<LightControlModuleEvents> {
     }
 
     constructor(ibusInterface: IBusInterface, logger: Logger) {
-        super(KNOWN_DEVICES.LIGHT_CONTROL_MODULE, 'Light Control Module', ibusInterface, logger);
+        super(KNOWN_DEVICES.LCM, 'Light Control Module', ibusInterface, logger);
 
-        this.handle(KNOWN_COMMANDS.DIAGNOSTIC_REQUEST, (message: IBusMessage) => this.handleDiagnosticRequest(message));
-        this.handle(KNOWN_COMMANDS.DIAGNOSTIC_RESPONSE, (message: IBusMessage) => this.handleDiagnosticResponse(message));
+        this.handle(KNOWN_COMMANDS.VC, (message: IBusMessage) => this.handleDiagnosticRequest(message));
+        this.handle(KNOWN_COMMANDS.DD, (message: IBusMessage) => this.handleDiagnosticResponse(message));
         this.handle(KNOWN_COMMANDS.LIGHT_STATUS_REQUEST, (message: IBusMessage) => this.handleLightStatusRequest(message));
         this.handle(KNOWN_COMMANDS.LIGHT_STATUS_RESPONSE, (message: IBusMessage) => this.handleLightStatusResponse(message));
         this.handle(KNOWN_COMMANDS.DIMMER_STATUS, (message: IBusMessage) => this.handleDimmerStatus(message));

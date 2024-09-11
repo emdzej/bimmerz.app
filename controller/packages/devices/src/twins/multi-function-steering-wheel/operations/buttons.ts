@@ -10,7 +10,7 @@ export class ButtonOperations extends DeviceOperations {
 
     public press(button: MULTI_FUNCTION_STEERING_WHEEL_BUTTON, 
                 state: MULTI_FUNCTION_STEERING_WHEEL_BUTTON_STATE,
-                target: DEVICE = KNOWN_DEVICES.RADIO): void {        
+                target: DEVICE = KNOWN_DEVICES.RAD): void {        
         this.ibusInterface.sendMessage(
             buildMultiFunctionSteeringWheelButtonPress({ 
                 button, 

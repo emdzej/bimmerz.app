@@ -5,7 +5,7 @@ import { Logger } from "@bimmerz/core";
 
 export class Radio extends DeviceTwin<RadioEvents> {
     constructor(ibusInterface: IBusInterface, logger: Logger) {
-        super(KNOWN_DEVICES.RADIO, 'Radio', ibusInterface, logger);
+        super(KNOWN_DEVICES.RAD, 'Radio', ibusInterface, logger);
     }
 
     protected handleModuleStatusResponse(message: IBusMessage): void {

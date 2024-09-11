@@ -8,7 +8,7 @@ import { KNOWN_COMMANDS } from "@bimmerz/commands";
 export class CDChanger extends DeviceTwin<CDChangerEvents> {
     
     constructor(ibusInterface: IBusInterface, logger: Logger) {
-        super(KNOWN_DEVICES.CD_CHANGER_DIN, 'CDChanger', ibusInterface, logger);
+        super(KNOWN_DEVICES.CDCD, 'CDChanger', ibusInterface, logger);
         this.handle(KNOWN_COMMANDS.MODULE_STATUS_RESPONSE, (message) => this.handleStatusResponse(message));
     }
 

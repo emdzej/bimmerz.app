@@ -24,7 +24,6 @@ export function createLogger(ctor: LoggerConstructor, name: string, level: LogLe
     return new ctor(name, level);
 }
 
-
 export class PinoLogger implements Logger {
     public debug: LoggingFunction;
     public info: LoggingFunction;

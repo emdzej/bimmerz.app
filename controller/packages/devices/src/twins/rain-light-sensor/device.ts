@@ -22,7 +22,7 @@ export class RainLightSensor extends DeviceTwin<RainLightSensorEvents> {
     }
 
     constructor(ibusInterface: IBusInterface, logger: Logger) {
-        super(KNOWN_DEVICES.RAIN_LIGHT_SENSOR, 'Rain Light Sensor', ibusInterface, logger);
+        super(KNOWN_DEVICES.RLS, 'Rain Light Sensor', ibusInterface, logger);
         this.handle(KNOWN_COMMANDS.LIGHT_RAIN_SENSOR_STATUS, (message) => this.handleSensorStatus(message));   
     }
 

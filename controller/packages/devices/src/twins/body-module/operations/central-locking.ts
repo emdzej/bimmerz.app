@@ -5,7 +5,7 @@ import { buildBodyModuleCentralButtonPress, buildBodyModuleLockAllDoors, buildBo
 
 export class CentralLockingOperations extends DiagnosticOperations {
     constructor(ibusInterface: IBusInterface, logger: Logger) {
-        super(KNOWN_DEVICES.BODY_MODULE, ibusInterface, logger);
+        super(KNOWN_DEVICES.GM, ibusInterface, logger);
     }
 
     public pressCenterLockButton(vehicleType: VEHICLE_TYPE): void {

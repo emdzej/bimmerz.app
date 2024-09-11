@@ -1,4 +1,4 @@
-import { ConsoleLogger, createLogger, PinoLogger } from '@bimmerz/core';
+import { arrayToHex, ConsoleLogger, createLogger, numberToHex, PinoLogger } from '@bimmerz/core';
 import {
     getDeviceName,
     IBusInterface, IBusMessage, IBusProtocol, KNOWN_DEVICE,
@@ -9,9 +9,9 @@ import { IBusProtocolNode } from '@bimmerz/bus';
 import { parseArgs } from "node:util";
 import mqtt from "mqtt";
 import { MqttAdapter } from "@bimmerz/mqtt-core";
-
+import { handleTerminate } from '@bimmerz/cli-core';
 import pino from 'pino';
-import { COMMAND, getCommandName } from '@bimmerz/commands';
+import { COMMAND, getCommandName, parseCommand } from '@bimmerz/commands';
 
 const logger = createLogger(ConsoleLogger, "IBUS MQTT Bridge", "info");
 
@@ -81,16 +81,24 @@ client.on('connect', () => {
 client.on('message', (topic, message) => {
     const data = JSON.parse(message.toString()) as IBusMessage;
     logger.info(
-     `${getDeviceName(data.source)}[${data.source.toString(16)}] -> ${getDeviceName(data.destination)}[${data.destination.toString(16)}]: ${getCommandName(data.payload[0] as COMMAND)}[${data.payload[0].toString(16)}]`
+        numberToHex(data.source) + " " +
+        numberToHex(data.length!) + " " +
+        numberToHex(data.destination) + " " +
+        arrayToHex(data.payload) + " " +
+        numberToHex(data.checksum!)
     );
     logger.info(
-        data.payload.slice(1).map((byte) => byte.toString(16)).join(' ')
-    );
+     `${getDeviceName(data.source)}[${data.source.toString(16)}] -> ${getDeviceName(data.destination)}[${data.destination.toString(16)}]: ${getCommandName(data.payload[0] as COMMAND)}[${data.payload[0].toString(16)}]`
+    );    
+    logger.info("Parsed output: ", parseCommand(data, logger));
     dataLogger.info(data);
 });
 
-process.on('SIGINT', () => {
-    logger.info("Received SIGINT, cleaning up...");    
-    client.end();    ;
+function terminate(reason: string) {
+    logger.info(`Received termination signal ${reason} , cleaning up...`);
+    client.end();    
+    logger.info("Done.")
     process.exit();
-});
+}
+
+handleTerminate(terminate);

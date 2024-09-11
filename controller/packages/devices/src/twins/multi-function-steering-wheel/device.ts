@@ -8,7 +8,7 @@ import { KNOWN_COMMANDS, MULTI_FUNCTION_STEERING_WHEEL_BUTTON, MULTI_FUNCTION_ST
 export class MultiFuncionSteeringWheel extends DeviceTwin<MultiFuncionSteeringWheelEvents> {
     
     constructor(ibusInterface: IBusInterface, logger: Logger) {
-        super(KNOWN_DEVICES.BODY_MODULE, 'Multi Function Steering Wheel', ibusInterface, logger);
+        super(KNOWN_DEVICES.GM, 'Multi Function Steering Wheel', ibusInterface, logger);
         this.handle(KNOWN_COMMANDS.BUTTON_PRESS, (message) => this.handleButtonPress(message));
         this.handle(KNOWN_COMMANDS.VOLUME_BUTTON_PRESS, (message) => this.handleVolumeChange(message));        
     }

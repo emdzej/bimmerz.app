@@ -6,7 +6,7 @@ import { ParkingDistanceControlModuleEvents } from "./events";
 import { Logger } from "@bimmerz/core";
 export class ParkingDistanceControlModule extends DeviceTwin<ParkingDistanceControlModuleEvents> {
     constructor(ibusInterface: IBusInterface, logger: Logger) {
-        super(KNOWN_DEVICES.PARK_DISTANCE_CONTROL, 'Parking Distance Control Module', ibusInterface, logger);
+        super(KNOWN_DEVICES.PDC, 'Parking Distance Control Module', ibusInterface, logger);
     };
 
     protected handleModuleStatusResponse(message: IBusMessage): void {

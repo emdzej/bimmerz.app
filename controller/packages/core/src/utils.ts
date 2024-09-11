@@ -85,3 +85,57 @@ export function setBit(value: number, position: number): number {
 export function getKeyByValue(object: any, value: any) {
     return Object.keys(object).find(key => object[key] === value);    
 }
+
+export function stringToArray(data: string): number[] {
+    return Array.from(data).map((char) => char.charCodeAt(0));	
+}
+
+// // Convert hex to ASCII
+// function h2a(data) {
+// 	data    = data.toString();
+// 	let str = '';
+
+// 	for (let i = 0; i < data.length; i += 2) { str += String.fromCharCode(parseInt(data.substr(i, 2), 16)); }
+
+// 	return str;
+// }
+
+// // Convert hex to string
+// function h2s(data) {
+// 	data = Buffer.from(data);
+
+// 	if (data[0] === 0x1A) data = data.slice(3); // Check control message
+// 	if (data[0] === 0x21) data = data.slice(4); // MID menu text
+// 	if (data[0] === 0x23) data = data.slice(4); // IKE text
+// 	if (data[0] === 0x24) data = data.slice(3); // OBC text
+
+// 	// IKE text suffix
+// 	if (data[data.length - 1] === 0x04) data = data.slice(0, -1);
+
+// 	// Format
+// 	data = data.toString();
+// 	data = data.replace(/�/g, '°');
+// 	data = data.replace(/ {2}/g, ' ');
+
+// 	data = data.trim();
+// 	return data;
+// }
+
+export function numberToHex(data: number, length = 2) {	
+	return data.toString(16).toUpperCase().padStart(length, '0');	
+}
+
+export function arrayToHex(data: number[]) {
+    return data.map((byte) => numberToHex(byte)).join(' ');	
+}
+
+export function hexToNumber(data: string) {
+    return parseInt(data, 16);
+}
+
+export function hexToArray(data: string) {
+    // convert a hex string to an array of numbers
+    // e.g. '01 02 03 FF' -> [1, 2, 3, 255 ]
+    return data.split(' ').map((byte) => hexToNumber(byte));
+}
+

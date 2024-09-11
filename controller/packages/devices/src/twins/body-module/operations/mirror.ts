@@ -6,7 +6,7 @@ import { Logger } from "@bimmerz/core";
 
 export class MirrorOperations extends DiagnosticOperations {
     constructor(ibusInterface: IBusInterface, logger: Logger) {
-        super(KNOWN_DEVICES.BODY_MODULE, ibusInterface, logger);
+        super(KNOWN_DEVICES.GM, ibusInterface, logger);
     }
 
     public foldMirror(mirror: SIDE_MIRROR): void {

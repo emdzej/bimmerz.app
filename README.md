@@ -81,3 +81,5 @@ Our work was based on the information provided by:
 - [imBMW](https://github.com/toxsedyshev/imBMW)
 - [wilhelm-docs](https://github.com/piersholt/wilhelm-docs)
 - [HackTheIbus](https://github.com/TheKikGen/HackTheIbus/wiki/Ibus-Inside)
+- https://github.com/kmalinich/node-bmw-ref/tree/master
+- https://github.com/kmalinich/node-bmw-share

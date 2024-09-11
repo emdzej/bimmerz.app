@@ -15,7 +15,7 @@ export class IgnitionOparations extends DeviceOperations {
         );        
     }
 
-    public reportIgnitionStatus(status: IGNITION_STATUS, target: DEVICE = KNOWN_DEVICES.GLOBAL_BROADCAST): void {
+    public reportIgnitionStatus(status: IGNITION_STATUS, target: DEVICE = KNOWN_DEVICES.GLO): void {
         this.ibusInterface.sendMessage(
             buildInstrumentClusterIgnitionStatusResponse({status, target})
         );

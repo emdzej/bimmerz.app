@@ -1,14 +1,14 @@
-import { ConsoleLogger, createLogger, PinoLogger } from '@bimmerz/core';
+import { ConsoleLogger, createLogger, LogLevel } from '@bimmerz/core';
 import {
-    IBusInterface, IBusProtocol, KNOWN_DEVICE,
-    KNOWN_DEVICES
+    arrayToMessage,
+    IBusInterface, IBusMessage, 
+    messageToArray
 } from '@bimmerz/bus';
 import { SerialPortAdapter } from '@bimmerz/bus';
 import { IBusProtocolNode } from '@bimmerz/bus';
 import { parseArgs } from "node:util";
 import mqtt from "mqtt";
-
-const logger = createLogger(ConsoleLogger, "IBUS MQTT Bridge", "debug");
+import { handleTerminate } from '@bimmerz/cli-core';
 
 const { values, positionals } = parseArgs({
     args: process.argv,
@@ -33,11 +33,18 @@ const { values, positionals } = parseArgs({
             type: 'string',
             short: 't',
             default: 'ibus',
+        },
+        level: {
+            type: 'string',
+            short: 'l',
+            default: 'info',
         }
     },
     strict: true,
     allowPositionals: true,
 });
+
+const logger = createLogger(ConsoleLogger, "IBUS MQTT Bridge", values.level as LogLevel);
 
 if (values.host === undefined || values.device === undefined) {
     logger.info("Usage: ibus-mqtt-bridge -h <mqtt-host> -p <serial-port>");
@@ -49,18 +56,19 @@ logger.info(`Connecting to MQTT broker at: ${values.host}`);
 logger.info(`Using serial device: ${values.device}`);
 
 const transmitTopic = `${values.topic}/tx`;
+const transmitRawTopic = `${values.topic}/tx/raw`;
 const publishTopic = `${values.topic}/rx`;
+const publishRawTopic = `${values.topic}/rx/raw`;
 
-logger.info(`Forwarding from IBUS to MQTT on: ${publishTopic}`);
-logger.info(`Forwarding from MQTT to IBUS on: ${transmitTopic}`);
-
+logger.info(`Forwarding from IBUS to MQTT on: ${publishTopic}, ${publishRawTopic}`);
+logger.info(`Forwarding from MQTT to IBUS on: ${transmitTopic}, ${transmitRawTopic}`);
 
 const client = mqtt.connect(`mqtt://${values.host}`);
 
 client.on('connect', () => {    
     logger.info("Connected to MQTT broker");
-    logger.info(`Subscribing to ${transmitTopic}`);
-    client.subscribe(transmitTopic, (err) => {
+    logger.info(`Subscribing to ${transmitTopic}, ${transmitRawTopic}`);
+    client.subscribe([ transmitTopic, transmitRawTopic ], (err) => {
         if (err) {
             logger.error(`Error subscribing to ${transmitTopic}`);
         }
@@ -69,10 +77,19 @@ client.on('connect', () => {
 
 client.on('message', (topic, message) => {
     logger.info(`Received message on ${topic}`);
-    const data = JSON.parse(message.toString());
-    logger.debug("Received data:", data);
-    logger.info("Sending data to IBUS:", data);
-    ibus.sendMessage(data);
+    let data: IBusMessage;
+    if (topic === transmitRawTopic) {
+        data = arrayToMessage(Array.from(message));        
+    } else if (topic === transmitTopic) { 
+        data = JSON.parse(message.toString());    
+    } else {
+        logger.error(`Unknown topic: ${topic}`);
+        return;
+    }
+    if (data) {
+        logger.debug("Received data:", data);        
+        ibus.sendMessage(data);
+    }
 });
 
 const protocol = new IBusProtocolNode(logger);
@@ -84,11 +101,17 @@ ibus.on("message", (ctx, message) => {
     const payload = JSON.stringify(message);        
     logger.debug(`Publishing data: ${payload}`);
     client.publish(publishTopic, payload);
+    const rawPayload = Buffer.from(messageToArray(message));
+    client.publish(publishRawTopic, rawPayload);
 }, undefined);
 
-process.on('SIGINT', () => {
-    logger.info("Received SIGINT, cleaning up...");    
+
+function terminate(reason: string) {
+    logger.info(`Received termination signal ${reason} , cleaning up...`);
     client.end();
     adapter.close();
+    logger.info("Done.")
     process.exit();
-});
+}
+
+handleTerminate(terminate);

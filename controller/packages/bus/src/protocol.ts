@@ -8,7 +8,13 @@ const PAYLOAD_INDEX = 3;
 
 const MAX_PAYLOAD_LENGTH = -0xFF;
 const MAX_MESSAGE_LENGTH = MAX_PAYLOAD_LENGTH + 2;
+// IBUS/KBUS packet:
+	// SRC LEN DST MSG CHK
+	// LEN is the length of the packet after the LEN byte (or the entire thing, minus 2)
 
+	// DBUS packet:
+	// DST LEN MSG CHK
+	// LEN is the length of the entire packet
 export const COMMAND_INDEX = 0;
 export const DATA_BYTE_1_INDEX = 1;
 export const DATA_BYTE_2_INDEX = 2;
@@ -64,20 +70,13 @@ export class IBusProtocolNode extends IBusProtocol {
 
         this.isProcessing = true;
 
-        this.log.debug(`Processing: ${this.processId}`);
-        this.log.debug(`Current buffer: ${this.buffer}`);
-        this.log.debug(`Current chunk: ${chunk}`);
-
         this.processId++;
 
         this.buffer = Buffer.concat([this.buffer, chunk]);
 
         const cchunk = this.buffer;
 
-        this.log.debug(`Concated chunk: ${cchunk}`);
-
         if (cchunk.length >= 5) {
-            this.log.debug(`Analyzing: ${cchunk}`);
 
             // gather messages from current chunk
             const messages: Array<IBusMessage> = [];
@@ -114,7 +113,7 @@ export class IBusProtocolNode extends IBusProtocol {
                         crc = crc ^ mMsg[j];
                     }
 
-                    if (crc === mCrc) {
+                    if (crc === mCrc && mLen > 0) {
                         messages.push({
                             id: this._messageId++,
                             source: mSrc,
@@ -142,7 +141,7 @@ export class IBusProtocolNode extends IBusProtocol {
             if (endOfLastMessage !== -1) {
                 // Push the remaining chunk from the end of the last valid Message
                 this.buffer = <Buffer>Uint8Array.prototype.slice.call(cchunk, endOfLastMessage);
-                this.log.debug(`Sliced data: ${endOfLastMessage}, ${this.buffer}`);
+                
             } else {
                 // Push the entire chunk
                 if (this.buffer.length > 500) {
@@ -153,7 +152,6 @@ export class IBusProtocolNode extends IBusProtocol {
             }
         }
 
-        this.log.debug(`Buffered messages size: ${this.buffer.length}`);
         this.isProcessing = false;
         callback();
     };

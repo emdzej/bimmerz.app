@@ -4,4 +4,4 @@ export * from "./utils";
 export * from "./interface";
 export * from "./types";
 export * from "./bus-adapter";
-export * from "./serial-port-adapter";
+export * from "./async-serial-port-adapter";

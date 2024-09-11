@@ -1,0 +1,15 @@
+{
+  "name": "@bimmerz/cli-core",
+  "main": "src/index.ts",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {            
+  },
+  "peerDependencies": {    
+    "@bimmerz/core": "^1.0.0"
+  },
+  "dependencies": {    
+  }
+}

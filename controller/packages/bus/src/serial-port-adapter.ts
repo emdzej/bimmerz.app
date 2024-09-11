@@ -56,6 +56,7 @@ export class SerialPortAdapter extends BusAdapter {
       dataBits: 8
     });
 
+
     const parser = this._serialPort.pipe(this._protocolTransform);
 
 
@@ -95,7 +96,6 @@ export class SerialPortAdapter extends BusAdapter {
     // convert seconds to miliseconds and nanoseconds to miliseconds as well
     return (ts[0] * 1000) + (ts[1] / 1000000);
   }
-
 
 
   private processOutGoingQueue(ready: () => void) {
