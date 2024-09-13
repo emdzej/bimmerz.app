@@ -1,5 +1,5 @@
-import { DEVICE, IBusMessageBuilder, IBusMessage, KNOWN_DEVICES } from "@bimmerz/bus";
-import { KNOWN_COMMANDS } from "../../types";
+import { DEVICE, IBusMessageBuilder, IBusMessage, KNOWN_DEVICES, KNOWN_DEVICE } from "@bimmerz/bus";
+import { BuilderRegistry, KNOWN_COMMANDS } from "../../types";
 import { VEHICLE_TYPE, VEHICLE_TYPES, buildDiagnosticRequest } from "../";
 import { BODY_MODULE_DIAGNOSTIC_JOB, BODY_MODULE_DIAGNOSTIC_JOBS, SIDE_MIRROR, WINDOW, WINDOWS } from "./types";
 
@@ -225,3 +225,33 @@ export function buildBodyModuleCloseWindow(window: WINDOW): IBusMessage {
 
     return buildDiagnosticRequest(payload, KNOWN_DEVICES.GM);
 }
+
+export type GmBuiltCommandTypes = {
+    requestDoorLidStatus: DEVICE;
+    pressCentralLockButton: VEHICLE_TYPE;
+    lockAllDoors: VEHICLE_TYPE;
+    lockHighSideDoors: VEHICLE_TYPE;
+    lockLowSideDoors: VEHICLE_TYPE;
+    unlockAllDoors: VEHICLE_TYPE;
+    unlockHighSideDoors: VEHICLE_TYPE;
+    unlockLowSideDoors: VEHICLE_TYPE;
+    foldMirror: SIDE_MIRROR;
+    unfoldMirror: SIDE_MIRROR;
+    openWindow: WINDOW;
+    closeWindow: WINDOW;
+};
+
+export const GM_COMMAND_BUILDERS: BuilderRegistry<GmBuiltCommandTypes> = {
+    requestDoorLidStatus: buildBodyModuleDoorLidStatusRequest,
+    pressCentralLockButton: buildBodyModuleCentralButtonPress,
+    lockAllDoors: buildBodyModuleLockAllDoors,
+    lockHighSideDoors: buildBodyModuleLockHighSideDoors,
+    lockLowSideDoors: buildBodyModuleLockLowSideDoors,
+    unlockAllDoors: buildBodyModuleUnlockAllDoors,
+    unlockHighSideDoors: buildBodyModuleUnlockHighSideDoors,
+    unlockLowSideDoors: buildBodyModuleUnlockLowSideDoors,
+    foldMirror: buildBodyModuleFoldMirror,
+    unfoldMirror: buildBodyModuleUnfoldMirror,
+    openWindow: buildBodyModuleOpenWindow,
+    closeWindow: buildBodyModuleCloseWindow
+} as const;

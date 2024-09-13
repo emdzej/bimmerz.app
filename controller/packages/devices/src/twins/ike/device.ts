@@ -2,7 +2,7 @@ import { DEVICE, KNOWN_DEVICES, IBusInterface, IBusMessage, KNOWN_DEVICE_NAMES }
 import { DeviceTwin } from "../device-twin";
 import { InstrumentClusterEvents } from "./events";
 import { Logger } from "@bimmerz/core";
-import { AUX_VENT_STATUSES, BRAKE_PADS_STATUSES, buildInstrumentClusterRedundantDataRequest, DRIVER_DOOR_STATUSES, ENGINE_STATUSES, GEARS, HANDBRAKE_STATUSES, IGNITION_STATUS, IGNITION_STATUSES, KNOWN_COMMANDS, OBC_PROPERTIES, OBCProperties, OIL_PRESSURE_STATUSES, parseInstrumentClusterIgnitionStatusResponse, parseInstrumentClusterOdometerResponse, parseInstrumentClusterRedundantDataResponse, parseInstrumentClusterSensorStatusResponse, parseInstrumentClusterSpeedRpmResponse, parseInstrumentClusterTemperatureResponse, parseInstrumentClusterVehicleConfigResponse, parseInstrumetnClusterObcPropertyUpdate, RedundantData, SensorsStatus, Temperatures, TRANSMISSION_STATUSES, VEHICLE_TYPE } from "@bimmerz/commands";
+import { AUX_VENT_STATUSES, BRAKE_PADS_STATUSES, buildInstrumentClusterRedundantDataRequest, DRIVER_DOOR_STATUSES, ENGINE_STATUSES, GEARS, HANDBRAKE_STATUSES, IGNITION_STATUS, IGNITION_STATUSES, KNOWN_COMMANDS, OBC_PROPERTIES, OBCProperties, OIL_PRESSURE_STATUSES, parseInstrumentClusterIgnitionStatusResponse, parseInstrumentClusterOdometerResponse, parseInstrumentClusterRedundantDataResponse, parseInstrumentClusterSensorStatusResponse, parseInstrumentClusterSpeedRpmResponse, parseInstrumentClusterTemperatureResponse, parseInstrumentClusterVehicleConfigResponse, parseInstrumetnClusterObcPropertyUpdate, VehicleData, SensorsStatus, Temperatures, TRANSMISSION_STATUSES, VEHICLE_TYPE } from "@bimmerz/commands";
 
 export class InstrumentCluster extends DeviceTwin<InstrumentClusterEvents> {
     private _ignitionStatus: IGNITION_STATUS = IGNITION_STATUSES.OFF;
@@ -62,10 +62,10 @@ export class InstrumentCluster extends DeviceTwin<InstrumentClusterEvents> {
         return this._obcProperties;
     }
 
-    private _redundantData: RedundantData = {};
+    private _vehicleData: VehicleData = {};
 
-    public get redundantData(): Readonly<RedundantData> {
-        return this._redundantData;
+    public get vehicleData(): Readonly<VehicleData> {
+        return this._vehicleData;
     }
 
     constructor(ibusInterface: IBusInterface, logger: Logger) {
@@ -97,8 +97,8 @@ export class InstrumentCluster extends DeviceTwin<InstrumentClusterEvents> {
     }
     
     private handleRedundantDataResponse(message: IBusMessage): void {
-        this._redundantData = parseInstrumentClusterRedundantDataResponse(message);        
-        this.emit('redundantDataResponse', { redundantData: this._redundantData }); 
+        this._vehicleData = parseInstrumentClusterRedundantDataResponse(message);        
+        this.emit('redundantDataResponse', { vehicleData: this._vehicleData }); 
     }
         
     

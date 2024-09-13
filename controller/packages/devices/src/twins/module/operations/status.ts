@@ -10,7 +10,7 @@ export class StatusOperations extends DeviceOperations {
     }
     
     public requestStatus(source: DEVICE, target: DEVICE = KNOWN_DEVICES.GLO): void {        
-        this.ibusInterface.sendMessage(buildStatusRequest(source, target));
+        this.ibusInterface.sendMessage(buildStatusRequest({source, target}));
     }
 
     public announce(source: DEVICE, target: DEVICE = KNOWN_DEVICES.GLO): void {
@@ -23,7 +23,7 @@ export class StatusOperations extends DeviceOperations {
 
     public reportStatus(source: DEVICE, status: MODULE_STATUS, target: DEVICE = KNOWN_DEVICES.GLO): void {
         this.ibusInterface.sendMessage(
-            buildStatusResponse(source, target, status)
+            buildStatusResponse({source, target, status})
         );        
     };    
 }

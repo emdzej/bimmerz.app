@@ -4,6 +4,11 @@ import { Logger } from '@bimmerz/core';
 import { DeviceEvents, DeviceOperations, DeviceOperationsCategory, DeviceOperationsRegistry } from "../devices";
 import { buildStatusRequest, buildStatusResponse, COMMAND, KNOWN_COMMANDS, MODULE_STATUSES } from "@bimmerz/commands";
 
+export type DeviceTwinStatus = {
+    lastActivity?: Date;
+    isPresent: boolean;
+}
+
 export abstract class DeviceTwin<
     TEvents extends DeviceEvents
     > extends EventEmitter<TEvents> {

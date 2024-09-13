@@ -1,5 +1,5 @@
 import { IBusMessageBuilder, IBusMessage, KNOWN_DEVICES } from "@bimmerz/bus";
-import { KNOWN_COMMANDS } from "../../types";
+import { BuilderRegistry, KNOWN_COMMANDS } from "../../types";
 import { DisplayTextArgs } from "./types";
 
 export type DisplayTextBuilder = IBusMessageBuilder<DisplayTextArgs>;
@@ -21,3 +21,11 @@ export function buildDisplayText({ source =  KNOWN_DEVICES.TEL, text } : Display
     }
     return message;
 }
+
+export type TelBuiltCommandArgsTypes = {
+    displayText: DisplayTextArgs;
+};
+
+export const RAD_COMMAND_BUILDERS: BuilderRegistry<TelBuiltCommandArgsTypes> = {
+    displayText: buildDisplayText,
+};

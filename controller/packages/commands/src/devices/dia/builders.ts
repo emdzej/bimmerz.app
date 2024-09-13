@@ -1,5 +1,5 @@
 import { DEVICE, IBusMessage, KNOWN_DEVICES } from "@bimmerz/bus";
-import { KNOWN_COMMANDS } from "../../types";
+import { BuilderRegistry, KNOWN_COMMANDS } from "../../types";
 
 export function buildDiagnosticRequest(payload: number[], target: DEVICE) {
     const message: IBusMessage = {
@@ -31,7 +31,14 @@ export function buildTerminateDiagnostic(target: DEVICE): IBusMessage {
     return buildDiagnosticRequest(payload, target);
 }
 
-export function readCodingData(target: DEVICE, block: number, offset: number, length: number): IBusMessage {
+export type ReadCodingDataArgs = {
+    target: DEVICE;
+    block: number;
+    offset: number;
+    length: number;
+}
+
+export function readCodingData({target, block, offset, length}: ReadCodingDataArgs): IBusMessage {
     const payload = [
         KNOWN_COMMANDS.READ_CODING_DATA,
         block,
@@ -40,6 +47,20 @@ export function readCodingData(target: DEVICE, block: number, offset: number, le
     ];
     return buildDiagnosticRequest(payload, target);
 }
+
+export type DiaBuiltCommandArgsTypes = {
+    requestIdentity: DEVICE;
+    requestIOStatus: DEVICE;
+    terminateDiagnostic: DEVICE;
+    readCodingData: ReadCodingDataArgs;
+};
+
+export const DIA_COMMAND_BUILDERS: BuilderRegistry<DiaBuiltCommandArgsTypes> = {
+    requestIdentity: buildIdentityRequest,
+    requestIOStatus: buildIOStatusRequest,
+    terminateDiagnostic: buildTerminateDiagnostic,
+    readCodingData: readCodingData
+} as const;
 
 /*
 2024-09-10 20:38:46.715	3F 08 ED 06 03 00 00 00 02 DD	DIA	VID	Read memory	Block 03, Offset 00, Length 00 Data="02

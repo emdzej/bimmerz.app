@@ -1,4 +1,4 @@
-import { IGNITION_STATUS, SensorsStatus, VEHICLE_TYPE, Temperatures, OBCProperties, RedundantData } from "@bimmerz/commands";
+import { IGNITION_STATUS, SensorsStatus, VEHICLE_TYPE, Temperatures, OBCProperties, VehicleData } from "@bimmerz/commands";
 import { DeviceEvent, DeviceEvents } from "../../devices";
 
 
@@ -40,7 +40,7 @@ export type OBCPropertiesUpdatedEvent = {
 }
 
 export type RedundantDataResponseEvent = {
-    redundantData: RedundantData;
+    vehicleData: VehicleData;
 }
 
 export type InstrumentClusterEvents = DeviceEvents & {

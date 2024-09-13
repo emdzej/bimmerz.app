@@ -1,5 +1,5 @@
 import { DEVICE, IBusMessageBuilder, IBusMessage, KNOWN_DEVICES } from "@bimmerz/bus";
-import { KNOWN_COMMANDS } from "../../types";
+import { BuilderRegistry, KNOWN_COMMANDS } from "../../types";
 import { IGNITION_STATUS } from "./types";
 
 export type InstrumentClusterRedundantDataRequestBuilder = IBusMessageBuilder<DEVICE>;
@@ -88,3 +88,21 @@ export function buildTemperatureRequest(source: DEVICE): IBusMessage {
     }
     return message;
 }
+
+export type IkeBuiltCommandArgsTypes = {
+    requestVehicleData: DEVICE;
+    requestIgnitionStatus: DEVICE;
+    requestSensorsStatus: DEVICE;
+    responseIgnitionStatus: IgnitionStatusResponseBuilderArgs;
+    requestOdometer: DEVICE;
+    requestTemperature: DEVICE;
+};
+
+export const IKE_COMMAND_BUILDERS: BuilderRegistry<IkeBuiltCommandArgsTypes> = {
+    requestVehicleData: buildInstrumentClusterRedundantDataRequest,
+    requestIgnitionStatus: buildInstrumentClusterIgnitionStatusRequest,
+    requestSensorsStatus: buildInstrumentClusterSensorsStatusRequest,
+    responseIgnitionStatus: buildInstrumentClusterIgnitionStatusResponse,
+    requestOdometer: buildOdometerRequest,
+    requestTemperature: buildTemperatureRequest
+};

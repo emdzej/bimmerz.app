@@ -1,18 +1,22 @@
 {
   "name": "@bimmerz/simulator-cli",
-  "main": "src/index.ts",  
+  "main": "src/index.ts",
   "scripts": {
     "build": "tsc --noEmit",
     "start": "tsx src/index.ts -h hub.iot.solvely.pl",
     "develop": "tsx watch src/index.ts -h hub.iot.solvely.pl"
   },
   "dependencies": {
+    "@bimmerz/bus": "^1.0.0",
+    "@bimmerz/cli-core": "^1.0.0",
     "@bimmerz/commands": "^1.0.0",
     "@bimmerz/core": "^1.0.0",
-    "@bimmerz/bus": "^1.0.0",
     "@bimmerz/devices": "^1.0.0",
     "@bimmerz/mqtt-core": "^1.0.0",
-    "@bimmerz/cli-core": "^1.0.0",
+    "commander": "^12.1.0",
     "mqtt": "^5.10.1"
+  },
+  "devDependencies": {
+    "@types/commander": "^2.12.2"
   }
 }

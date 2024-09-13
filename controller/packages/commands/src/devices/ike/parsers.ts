@@ -81,9 +81,15 @@ export type InstrumetnClusterTemperatureResponseParser = IBusMessageParser<Tempe
 export function parseInstrumentClusterTemperatureResponse(message: IBusMessage): Temperatures {
     validateCommand(KNOWN_COMMANDS.TEMP_UPDATE, message);
 
-    const coolantTemp = message.payload[DATA_BYTE_2_INDEX];    
+    let coolantTemp = message.payload[DATA_BYTE_2_INDEX];    
+    if (coolantTemp > 0x80) {
+        coolantTemp -= 0xFF
+    }
     // .readInt8(DATA_BYTE_1_INDEX);
-    const ambientTemp = message.payload[DATA_BYTE_1_INDEX];
+    let ambientTemp = message.payload[DATA_BYTE_1_INDEX];
+    if (ambientTemp > 0x80) {
+        ambientTemp -= 0xFF;
+    }
     const temperatures = {
         coolant: coolantTemp,
         ambient: ambientTemp

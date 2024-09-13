@@ -1,5 +1,5 @@
 import { DEVICE, IBusMessage, KNOWN_DEVICES } from "@bimmerz/bus";
-import { KNOWN_COMMANDS } from "../../types";
+import { BuilderRegistry, KNOWN_COMMANDS } from "../../types";
 
 export function buldPdcSensorStatusRequest(source: DEVICE): IBusMessage {
     const payload = [
@@ -12,3 +12,11 @@ export function buldPdcSensorStatusRequest(source: DEVICE): IBusMessage {
     }
     return message;
 }
+
+export type PdcBuiltCommandArgsTypes = {
+    requestSensorStatus: DEVICE;
+};
+
+export const PDC_COMMAND_BUILDERS: BuilderRegistry<PdcBuiltCommandArgsTypes> = {
+    requestSensorStatus: buldPdcSensorStatusRequest,
+};

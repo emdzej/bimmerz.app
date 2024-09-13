@@ -139,3 +139,46 @@ export function hexToArray(data: string) {
     return data.split(' ').map((byte) => hexToNumber(byte));
 }
 
+export function stringToArgv(string: string): string[] {
+	const groupsRegex = /[^\s"']+|(?:"|'){2,}|"(?!")([^"]*)"|'(?!')([^']*)'|"|'/g;
+
+	const matches: string[] = [];
+
+	let match;
+
+	while ((match = groupsRegex.exec(string))) {
+		if (match[2]) {
+			// Single quoted group
+			matches.push(match[2]);
+		} else if (match[1]) {
+			// Double quoted group
+			matches.push(match[1]);
+		} else {
+			// No quote group present
+			matches.push(match[0]);
+		}
+	}
+
+	return matches;
+}
+
+export function hasValue(target: any, value: any) {
+    return Object.values(target).includes(value);
+}
+
+export function hasKey(target: any, key: string) {
+    return Object.keys(target).includes(key);
+}
+
+export function parseMember<T extends { [key: string]: number }>(value: string, target: T): T[keyof T] | undefined {
+    if (hasKey(target, value)) {
+        return target[value as keyof T];
+    } else if (hasKey(target, value.toUpperCase())) {
+        return target[value.toUpperCase() as keyof T];
+    } else if (hasKey(target, value.toLowerCase())) {
+        return target[value.toLowerCase() as keyof T];
+    } else if (hasValue(target, parseInt(value))) {
+        return parseInt(value) as T[keyof T];
+    }
+    return undefined;
+}

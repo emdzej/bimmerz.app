@@ -2,7 +2,12 @@ import { DEVICE } from "@bimmerz/bus";
 import { KNOWN_COMMANDS } from "../../types";
 import { MODULE_STATUS } from "./types";
 
-export function buildStatusRequest(source: DEVICE, target: DEVICE) {
+export type DeviceStatusRequestArgs = {
+    source: DEVICE;
+    target: DEVICE;
+};
+
+export function buildStatusRequest({source, target}: DeviceStatusRequestArgs) {
     const payload = [
         KNOWN_COMMANDS.MODULE_STATUS_REQUEST
     ];
@@ -14,7 +19,13 @@ export function buildStatusRequest(source: DEVICE, target: DEVICE) {
     return message;
 }
 
-export function buildStatusResponse(source: DEVICE, target: DEVICE, status: MODULE_STATUS) {
+export type DeviceStatusResponseArgs = {
+    source: DEVICE;
+    target: DEVICE;
+    status: MODULE_STATUS;
+};
+
+export function buildStatusResponse({source, target, status}: DeviceStatusResponseArgs) {
     const payload = [
         KNOWN_COMMANDS.MODULE_STATUS_RESPONSE,
         status

@@ -69,7 +69,9 @@ export type KNOWN_DEVICE = typeof KNOWN_DEVICES[keyof typeof KNOWN_DEVICES];
 
 export type DEVICE = KNOWN_DEVICE | number;
 
-export const KNOWN_DEVICE_NAMES: Record<keyof typeof KNOWN_DEVICES, string> = {
+export type DEVICE_SHORT_NAME = keyof typeof KNOWN_DEVICES;
+
+export const KNOWN_DEVICE_NAMES: Record<DEVICE_SHORT_NAME, string> = {
     ABG: "Airbag",
     AHL: "Adaptive headlight unit",
     ANZV: "Display group",
