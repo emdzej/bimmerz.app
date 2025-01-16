@@ -1,0 +1,867 @@
+
+2025-01-07 10:53:50.208:  3B 05 80 41 07 01 F9
+2025-01-07 10:53:50.208:  ! GT   --> IKE : On-board computer data request, Distance: current value request
+2025-01-07 10:53:50.239:  3B 03 D0 5A B2
+2025-01-07 10:53:50.239:  ! GT   --> LCM : Lamp status request
+2025-01-07 10:53:50.270:  80 07 BF 15 F1 00 00 08 D4
+2025-01-07 10:53:50.270:  ! IKE  --> GLO : Country coding status, Ntwk=E46 Lang=GB_English Clock=24h OutTemp=°C AvgSpd=km/h Limit=km Dist=km ArrTime=24h Consump=l/100_km Motor=Petrol
+2025-01-07 10:53:50.301:  3B 05 80 41 02 01 FC
+2025-01-07 10:53:50.301:  ! GT   --> IKE : On-board computer data request, Date: current value request
+2025-01-07 10:53:50.333:  80 0F FF 24 02 00 2D 2D 2E 2D 2D 2E 31 39 39 39 5E
+2025-01-07 10:53:50.333:  ! IKE  --> LOC : Update Text, Layout=Date  Flags=  F0="--.--.1999"
+2025-01-07 10:53:50.364:  80 05 BF 18 00 FF DD
+2025-01-07 10:53:50.364:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:53:50.395:  80 06 BF 19 D8 80 00 78
+2025-01-07 10:53:50.395:  ! IKE  --> GLO : Temperature, Outside -40°C [-40°F], Coolant -128°C [-198°F]
+2025-01-07 10:53:50.583:  68 03 6A 01 00
+2025-01-07 10:53:50.583:  ! RAD  --> DSP : Device status request
+2025-01-07 10:53:50.598:  68 05 7F A8 37 13 9E
+2025-01-07 10:53:50.598:  ! RAD  --> NAV : TMC data, Type37: Data="13"
+2025-01-07 10:53:50.708:  F0 03 68 01 9A
+2025-01-07 10:53:50.708:  ! BMBT --> RAD : Device status request
+2025-01-07 10:53:50.770:  68 05 BF 02 00 03 D3
+2025-01-07 10:53:50.770:  ! RAD  --> GLO : Device status ready, 
+2025-01-07 10:53:51.646:  76 0C 68 39 09 82 00 20 00 06 00 00 00 86
+2025-01-07 10:53:51.646:  ! CDCD --> RAD : CD_status, CD_Check  Request=Pause  Flags=  CD=6  Track=0  CDs_Loaded=P6
+2025-01-07 10:53:51.989:  76 0C 68 39 09 82 00 20 00 06 00 00 15 93
+2025-01-07 10:53:51.989:  ! CDCD --> RAD : CD_status, CD_Check  Request=Pause  Flags=  CD=6  Track=0  CDs_Loaded=P6
+2025-01-07 10:53:52.286:  80 05 BF 18 00 FF DD
+2025-01-07 10:53:52.286:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:53:52.520:  76 0C 68 39 07 82 00 20 00 06 01 00 15 9C
+2025-01-07 10:53:52.520:  ! CDCD --> RAD : CD_status, End  Request=Pause  Flags=  CD=6  Track=1  CDs_Loaded=P6
+2025-01-07 10:53:53.645:  76 0C 68 39 00 82 00 20 00 06 01 00 15 9B
+2025-01-07 10:53:53.645:  ! CDCD --> RAD : CD_status, Stop  Request=Pause  Flags=  CD=6  Track=1  CDs_Loaded=P6
+2025-01-07 10:53:53.989:  7F 06 C8 A9 0A 30 30 12
+2025-01-07 10:53:53.989:  ! NAV  --> TEL : Telephone data, Current_phone_status Count_0
+2025-01-07 10:53:54.192:  7F 06 C8 A9 03 30 30 1B
+2025-01-07 10:53:54.192:  ! NAV  --> TEL : Telephone data, Current_network_request Count_0
+2025-01-07 10:53:54.286:  80 05 BF 18 00 FF DD
+2025-01-07 10:53:54.286:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:53:55.458:  80 0A BF 13 04 00 00 00 00 84 FF 59
+2025-01-07 10:53:55.458:  ! IKE  --> GLO : IKE sensor status, Brake_Pads_Worn
+2025-01-07 10:53:55.567:  68 05 76 38 00 00 23
+2025-01-07 10:53:55.567:  ! RAD  --> CDCD: CD_control, Status_Request
+2025-01-07 10:53:55.630:  76 0C 68 39 00 82 00 20 00 06 01 00 15 9B
+2025-01-07 10:53:55.630:  ! CDCD --> RAD : CD_status, Stop  Request=Pause  Flags=  CD=6  Track=1  CDs_Loaded=P6
+2025-01-07 10:53:56.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:53:56.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:53:57.958:  7F 04 68 A7 10 A4
+2025-01-07 10:53:57.958:  ! NAV  --> RAD : TMC status request, Update_Class=10
+2025-01-07 10:53:57.989:  7F 04 68 A7 30 84
+2025-01-07 10:53:57.989:  ! NAV  --> RAD : TMC status request, Update_Class=30
+2025-01-07 10:53:58.020:  68 05 7F A8 37 13 9E
+2025-01-07 10:53:58.020:  ! RAD  --> NAV : TMC data, Type37: Data="13"
+2025-01-07 10:53:58.051:  68 05 7F A8 3F 00 85
+2025-01-07 10:53:58.051:  ! RAD  --> NAV : TMC data, Type3F: Data="00"
+2025-01-07 10:53:58.083:  7F 05 68 A7 31 00 84
+2025-01-07 10:53:58.083:  ! NAV  --> RAD : TMC status request, Update_Class=31
+2025-01-07 10:53:58.098:  68 05 7F A8 32 08 80
+2025-01-07 10:53:58.098:  ! RAD  --> NAV : TMC data, Type32: Data="08"
+2025-01-07 10:53:58.254:  80 05 BF 18 00 FF DD
+2025-01-07 10:53:58.254:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:54:00.051:  3B 03 6A 01 53
+2025-01-07 10:54:00.051:  ! GT   --> DSP : Device status request
+2025-01-07 10:54:00.317:  80 05 BF 18 00 FF DD
+2025-01-07 10:54:00.317:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:54:00.317:  80 06 BF 19 80 80 00 20
+2025-01-07 10:54:00.317:  ! IKE  --> GLO : Temperature, Outside -128°C [-198°F], Coolant -128°C [-198°F]
+2025-01-07 10:54:00.817:  F0 03 68 01 9A
+2025-01-07 10:54:00.817:  ! BMBT --> RAD : Device status request
+2025-01-07 10:54:00.833:  68 05 BF 02 00 03 D3
+2025-01-07 10:54:00.833:  ! RAD  --> GLO : Device status ready, 
+2025-01-07 10:54:02.255:  80 05 BF 18 00 FF DD
+2025-01-07 10:54:02.255:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:54:04.067:  7F 06 C8 A9 03 30 30 1B
+2025-01-07 10:54:04.067:  ! NAV  --> TEL : Telephone data, Current_network_request Count_0
+2025-01-07 10:54:04.161:  7F 06 C8 A9 0A 30 30 12
+2025-01-07 10:54:04.161:  ! NAV  --> TEL : Telephone data, Current_phone_status Count_0
+2025-01-07 10:54:04.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:54:04.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:54:06.254:  80 05 BF 18 00 FF DD
+2025-01-07 10:54:06.254:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:54:08.254:  80 05 BF 18 00 FF DD
+2025-01-07 10:54:08.254:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:54:08.661:  7F 14 C8 A2 00 00 50 07 45 50 00 20 48 01 30 00 00 00 00 00 00 1A
+2025-01-07 10:54:08.661:  ! NAV  --> TEL : Current position, 50°7'45.5"N  20°48'1.3"E
+2025-01-07 10:54:08.754:  7F 23 C8 A4 00 01 52 41 44 4C 4F 57 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 32
+2025-01-07 10:54:08.754:  ! NAV  --> TEL : Current location, Town = RADLOW
+2025-01-07 10:54:08.770:  7F 23 C8 A4 00 02 55 4C 49 43 41 20 5A 44 41 52 5A 45 43 3B 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 2A
+2025-01-07 10:54:08.770:  ! NAV  --> TEL : Current location, Street = ULICA ZDARZEC;
+2025-01-07 10:54:10.036:  3B 03 C8 01 F1
+2025-01-07 10:54:10.036:  ! GT   --> TEL : Device status request
+2025-01-07 10:54:10.255:  80 05 BF 18 00 FF DD
+2025-01-07 10:54:10.255:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:54:10.270:  80 06 BF 19 D8 80 00 78
+2025-01-07 10:54:10.270:  ! IKE  --> GLO : Temperature, Outside -40°C [-40°F], Coolant -128°C [-198°F]
+2025-01-07 10:54:10.567:  68 03 6A 01 00
+2025-01-07 10:54:10.567:  ! RAD  --> DSP : Device status request
+2025-01-07 10:54:10.879:  F0 03 68 01 9A
+2025-01-07 10:54:10.879:  ! BMBT --> RAD : Device status request
+2025-01-07 10:54:10.879:  68 05 BF 02 00 03 D3
+2025-01-07 10:54:10.879:  ! RAD  --> GLO : Device status ready, 
+2025-01-07 10:54:12.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:54:12.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:54:14.145:  7F 06 C8 A9 03 30 30 1B
+2025-01-07 10:54:14.145:  ! NAV  --> TEL : Telephone data, Current_network_request Count_0
+2025-01-07 10:54:14.255:  7F 06 C8 A9 0A 30 30 12
+2025-01-07 10:54:14.255:  ! NAV  --> TEL : Telephone data, Current_phone_status Count_0
+2025-01-07 10:54:14.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:54:14.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:54:15.583:  68 05 76 38 00 00 23
+2025-01-07 10:54:15.583:  ! RAD  --> CDCD: CD_control, Status_Request
+2025-01-07 10:54:15.614:  76 0C 68 39 00 82 00 20 00 06 01 00 15 9B
+2025-01-07 10:54:15.614:  ! CDCD --> RAD : CD_status, Stop  Request=Pause  Flags=  CD=6  Track=1  CDs_Loaded=P6
+2025-01-07 10:54:16.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:54:16.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:54:18.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:54:18.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:54:20.036:  3B 03 ED 01 D4
+2025-01-07 10:54:20.036:  ! GT   --> VID : Device status request
+2025-01-07 10:54:20.067:  ED 04 3B 02 00 D0
+2025-01-07 10:54:20.067:  ! VID  --> GT  : Device status ready, 
+2025-01-07 10:54:20.301:  80 05 BF 18 00 FF DD
+2025-01-07 10:54:20.301:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:54:20.333:  80 06 BF 19 D8 80 00 78
+2025-01-07 10:54:20.333:  ! IKE  --> GLO : Temperature, Outside -40°C [-40°F], Coolant -128°C [-198°F]
+2025-01-07 10:54:20.973:  F0 03 68 01 9A
+2025-01-07 10:54:20.973:  ! BMBT --> RAD : Device status request
+2025-01-07 10:54:20.989:  68 05 BF 02 00 03 D3
+2025-01-07 10:54:20.989:  ! RAD  --> GLO : Device status ready, 
+2025-01-07 10:54:22.286:  80 05 BF 18 00 FF DD
+2025-01-07 10:54:22.286:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:54:24.239:  7F 06 C8 A9 03 30 30 1B
+2025-01-07 10:54:24.239:  ! NAV  --> TEL : Telephone data, Current_network_request Count_0
+2025-01-07 10:54:24.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:54:24.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:54:24.301:  7F 06 C8 A9 0A 30 30 12
+2025-01-07 10:54:24.301:  ! NAV  --> TEL : Telephone data, Current_phone_status Count_0
+2025-01-07 10:54:26.271:  80 05 BF 18 00 FF DD
+2025-01-07 10:54:26.271:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:54:28.271:  80 05 BF 18 00 FF DD
+2025-01-07 10:54:28.271:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:54:30.007:  3B 03 F0 01 C9
+2025-01-07 10:54:30.007:  ! GT   --> BMBT: Device status request
+2025-01-07 10:54:30.067:  F0 04 3B 02 30 FD
+2025-01-07 10:54:30.067:  ! BMBT --> GT  : Device status ready, Bit4 Bit5
+2025-01-07 10:54:30.286:  80 05 BF 18 00 FF DD
+2025-01-07 10:54:30.286:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:54:30.317:  80 06 BF 19 D8 80 00 78
+2025-01-07 10:54:30.317:  ! IKE  --> GLO : Temperature, Outside -40°C [-40°F], Coolant -128°C [-198°F]
+2025-01-07 10:54:30.583:  68 03 6A 01 00
+2025-01-07 10:54:30.583:  ! RAD  --> DSP : Device status request
+2025-01-07 10:54:31.036:  F0 03 68 01 9A
+2025-01-07 10:54:31.036:  ! BMBT --> RAD : Device status request
+2025-01-07 10:54:31.067:  68 05 BF 02 00 03 D3
+2025-01-07 10:54:31.067:  ! RAD  --> GLO : Device status ready, 
+2025-01-07 10:54:32.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:54:32.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:54:34.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:54:34.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:54:34.302:  7F 06 C8 A9 03 30 30 1B
+2025-01-07 10:54:34.302:  ! NAV  --> TEL : Telephone data, Current_network_request Count_0
+2025-01-07 10:54:34.504:  7F 06 C8 A9 0A 30 30 12
+2025-01-07 10:54:34.504:  ! NAV  --> TEL : Telephone data, Current_phone_status Count_0
+2025-01-07 10:54:35.567:  68 05 76 38 00 00 23
+2025-01-07 10:54:35.567:  ! RAD  --> CDCD: CD_control, Status_Request
+2025-01-07 10:54:35.598:  76 0C 68 39 00 82 00 20 00 06 01 00 15 9B
+2025-01-07 10:54:35.598:  ! CDCD --> RAD : CD_status, Stop  Request=Pause  Flags=  CD=6  Track=1  CDs_Loaded=P6
+2025-01-07 10:54:36.286:  80 05 BF 18 00 FF DD
+2025-01-07 10:54:36.286:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:54:38.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:54:38.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:54:38.614:  7F 14 C8 A2 00 00 50 07 45 50 00 20 48 01 30 00 00 00 00 00 00 1A
+2025-01-07 10:54:38.614:  ! NAV  --> TEL : Current position, 50°7'45.5"N  20°48'1.3"E
+2025-01-07 10:54:38.661:  7F 23 C8 A4 00 01 52 41 44 4C 4F 57 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 32
+2025-01-07 10:54:38.661:  ! NAV  --> TEL : Current location, Town = RADLOW
+2025-01-07 10:54:38.708:  7F 23 C8 A4 00 02 55 4C 49 43 41 20 5A 44 41 52 5A 45 43 3B 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 2A
+2025-01-07 10:54:38.708:  ! NAV  --> TEL : Current location, Street = ULICA ZDARZEC;
+2025-01-07 10:54:40.020:  3B 03 80 01 B9
+2025-01-07 10:54:40.020:  ! GT   --> IKE : Device status request
+2025-01-07 10:54:40.036:  80 04 BF 02 00 39
+2025-01-07 10:54:40.036:  ! IKE  --> GLO : Device status ready, 
+2025-01-07 10:54:40.286:  80 05 BF 18 00 FF DD
+2025-01-07 10:54:40.286:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:54:40.317:  80 06 BF 19 80 80 00 20
+2025-01-07 10:54:40.317:  ! IKE  --> GLO : Temperature, Outside -128°C [-198°F], Coolant -128°C [-198°F]
+2025-01-07 10:54:41.208:  F0 03 68 01 9A
+2025-01-07 10:54:41.208:  ! BMBT --> RAD : Device status request
+2025-01-07 10:54:41.239:  68 05 BF 02 00 03 D3
+2025-01-07 10:54:41.239:  ! RAD  --> GLO : Device status ready, 
+2025-01-07 10:54:42.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:54:42.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:54:44.271:  80 05 BF 18 00 FF DD
+2025-01-07 10:54:44.271:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:54:46.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:54:46.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:54:48.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:54:48.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:54:50.005:  3B 03 6A 01 53
+2025-01-07 10:54:50.005:  ! GT   --> DSP : Device status request
+2025-01-07 10:54:50.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:54:50.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:54:50.301:  80 06 BF 19 D8 80 00 78
+2025-01-07 10:54:50.301:  ! IKE  --> GLO : Temperature, Outside -40°C [-40°F], Coolant -128°C [-198°F]
+2025-01-07 10:54:50.583:  68 03 6A 01 00
+2025-01-07 10:54:50.583:  ! RAD  --> DSP : Device status request
+2025-01-07 10:54:51.192:  F0 03 68 01 9A
+2025-01-07 10:54:51.192:  ! BMBT --> RAD : Device status request
+2025-01-07 10:54:51.223:  68 05 BF 02 00 03 D3
+2025-01-07 10:54:51.223:  ! RAD  --> GLO : Device status ready, 
+2025-01-07 10:54:52.286:  80 05 BF 18 00 FF DD
+2025-01-07 10:54:52.286:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:54:54.286:  80 05 BF 18 00 FF DD
+2025-01-07 10:54:54.286:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:54:55.583:  68 05 76 38 00 00 23
+2025-01-07 10:54:55.583:  ! RAD  --> CDCD: CD_control, Status_Request
+2025-01-07 10:54:55.614:  76 0C 68 39 00 82 00 20 00 06 01 00 15 9B
+2025-01-07 10:54:55.614:  ! CDCD --> RAD : CD_status, Stop  Request=Pause  Flags=  CD=6  Track=1  CDs_Loaded=P6
+2025-01-07 10:54:56.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:54:56.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:54:58.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:54:58.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:55:00.005:  3B 03 C8 01 F1
+2025-01-07 10:55:00.005:  ! GT   --> TEL : Device status request
+2025-01-07 10:55:00.254:  80 05 BF 18 00 FF DD
+2025-01-07 10:55:00.254:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:55:00.270:  80 06 BF 19 D8 80 00 78
+2025-01-07 10:55:00.270:  ! IKE  --> GLO : Temperature, Outside -40°C [-40°F], Coolant -128°C [-198°F]
+2025-01-07 10:55:01.286:  F0 03 68 01 9A
+2025-01-07 10:55:01.286:  ! BMBT --> RAD : Device status request
+2025-01-07 10:55:01.317:  68 05 BF 02 00 03 D3
+2025-01-07 10:55:01.317:  ! RAD  --> GLO : Device status ready, 
+2025-01-07 10:55:02.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:55:02.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:55:04.271:  80 05 BF 18 00 FF DD
+2025-01-07 10:55:04.271:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:55:06.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:55:06.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:55:08.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:55:08.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:55:08.583:  7F 14 C8 A2 00 00 50 07 45 50 00 20 48 01 30 00 00 00 00 00 00 1A
+2025-01-07 10:55:08.583:  ! NAV  --> TEL : Current position, 50°7'45.5"N  20°48'1.3"E
+2025-01-07 10:55:08.614:  7F 23 C8 A4 00 01 52 41 44 4C 4F 57 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 32
+2025-01-07 10:55:08.614:  ! NAV  --> TEL : Current location, Town = RADLOW
+2025-01-07 10:55:08.661:  7F 23 C8 A4 00 02 55 4C 49 43 41 20 5A 44 41 52 5A 45 43 3B 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 2A
+2025-01-07 10:55:08.661:  ! NAV  --> TEL : Current location, Street = ULICA ZDARZEC;
+2025-01-07 10:55:09.989:  3B 03 ED 01 D4
+2025-01-07 10:55:09.989:  ! GT   --> VID : Device status request
+2025-01-07 10:55:10.005:  ED 04 3B 02 00 D0
+2025-01-07 10:55:10.005:  ! VID  --> GT  : Device status ready, 
+2025-01-07 10:55:10.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:55:10.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:55:10.286:  80 06 BF 19 80 80 00 20
+2025-01-07 10:55:10.286:  ! IKE  --> GLO : Temperature, Outside -128°C [-198°F], Coolant -128°C [-198°F]
+2025-01-07 10:55:10.583:  68 03 6A 01 00
+2025-01-07 10:55:10.583:  ! RAD  --> DSP : Device status request
+2025-01-07 10:55:11.364:  F0 03 68 01 9A
+2025-01-07 10:55:11.364:  ! BMBT --> RAD : Device status request
+2025-01-07 10:55:11.380:  68 05 BF 02 00 03 D3
+2025-01-07 10:55:11.380:  ! RAD  --> GLO : Device status ready, 
+2025-01-07 10:55:12.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:55:12.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:55:12.504:  3B 04 F0 4F 12 92
+2025-01-07 10:55:12.504:  ! GT   --> BMBT: RGB control, LCD_on GT
+2025-01-07 10:55:12.567:  ED 05 F0 4F 11 11 57
+2025-01-07 10:55:12.567:  ! VID  --> BMBT: RGB control, LCD_on TV
+2025-01-07 10:55:14.255:  ED 05 F0 4F 12 11 54
+2025-01-07 10:55:14.255:  ! VID  --> BMBT: RGB control, LCD_on GT
+2025-01-07 10:55:14.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:55:14.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:55:15.583:  68 05 76 38 00 00 23
+2025-01-07 10:55:15.583:  ! RAD  --> CDCD: CD_control, Status_Request
+2025-01-07 10:55:15.614:  76 0C 68 39 00 82 00 20 00 06 01 00 15 9B
+2025-01-07 10:55:15.614:  ! CDCD --> RAD : CD_status, Stop  Request=Pause  Flags=  CD=6  Track=1  CDs_Loaded=P6
+2025-01-07 10:55:16.286:  80 05 BF 18 00 FF DD
+2025-01-07 10:55:16.286:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:55:18.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:55:18.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:55:19.973:  3B 03 F0 01 C9
+2025-01-07 10:55:19.973:  ! GT   --> BMBT: Device status request
+2025-01-07 10:55:20.005:  F0 04 3B 02 30 FD
+2025-01-07 10:55:20.005:  ! BMBT --> GT  : Device status ready, Bit4 Bit5
+2025-01-07 10:55:20.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:55:20.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:55:20.301:  80 06 BF 19 80 80 00 20
+2025-01-07 10:55:20.301:  ! IKE  --> GLO : Temperature, Outside -128°C [-198°F], Coolant -128°C [-198°F]
+2025-01-07 10:55:21.442:  F0 03 68 01 9A
+2025-01-07 10:55:21.442:  ! BMBT --> RAD : Device status request
+2025-01-07 10:55:21.473:  68 05 BF 02 00 03 D3
+2025-01-07 10:55:21.473:  ! RAD  --> GLO : Device status ready, 
+2025-01-07 10:55:22.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:55:22.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:55:24.286:  80 05 BF 18 00 FF DD
+2025-01-07 10:55:24.286:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:55:25.942:  F0 04 3B 49 81 07
+2025-01-07 10:55:25.942:  ! BMBT --> GT  : BM_Knob, Right 1 step
+2025-01-07 10:55:26.301:  80 05 BF 18 00 FF DD
+2025-01-07 10:55:26.301:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:55:26.817:  F0 04 3B 48 05 82
+2025-01-07 10:55:26.817:  ! BMBT --> GT  : BM Button, BM_Knob_pressed
+2025-01-07 10:55:26.942:  F0 04 3B 48 85 02
+2025-01-07 10:55:26.942:  ! BMBT --> GT  : BM Button, BM_Knob_released
+2025-01-07 10:55:27.020:  3B 05 BB 4F 01 00 CB
+2025-01-07 10:55:27.020:  ! GT   --> NAJ : RGB control, LCD_off TV
+2025-01-07 10:55:27.020:  3B 05 68 4E 01 00 19
+2025-01-07 10:55:27.020:  ! GT   --> RAD : Audio source selection, 
+2025-01-07 10:55:27.036:  68 04 F0 4A 48 9E
+2025-01-07 10:55:27.036:  ! RAD  --> BMBT: Cassette control, State_unknown, Data="48"
+2025-01-07 10:55:27.051:  68 04 F0 4A 48 9E
+2025-01-07 10:55:27.051:  ! RAD  --> BMBT: Cassette control, State_unknown, Data="48"
+2025-01-07 10:55:27.051:  F0 04 68 4B 05 D2
+2025-01-07 10:55:27.051:  ! BMBT --> RAD : Cassette status, No_Tape
+2025-01-07 10:55:27.129:  F0 04 68 4B 05 D2
+2025-01-07 10:55:27.129:  ! BMBT --> RAD : Cassette status, No_Tape
+2025-01-07 10:55:27.411:  ED 05 F0 4F 11 11 57
+2025-01-07 10:55:27.411:  ! VID  --> BMBT: RGB control, LCD_on TV
+2025-01-07 10:55:28.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:55:28.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:55:29.973:  3B 03 80 01 B9
+2025-01-07 10:55:29.973:  ! GT   --> IKE : Device status request
+2025-01-07 10:55:29.989:  80 04 BF 02 00 39
+2025-01-07 10:55:29.989:  ! IKE  --> GLO : Device status ready, 
+2025-01-07 10:55:30.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:55:30.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:55:30.301:  80 06 BF 19 D8 80 00 78
+2025-01-07 10:55:30.301:  ! IKE  --> GLO : Temperature, Outside -40°C [-40°F], Coolant -128°C [-198°F]
+2025-01-07 10:55:30.583:  68 03 6A 01 00
+2025-01-07 10:55:30.583:  ! RAD  --> DSP : Device status request
+2025-01-07 10:55:31.520:  F0 03 68 01 9A
+2025-01-07 10:55:31.520:  ! BMBT --> RAD : Device status request
+2025-01-07 10:55:31.551:  68 05 BF 02 00 03 D3
+2025-01-07 10:55:31.551:  ! RAD  --> GLO : Device status ready, 
+2025-01-07 10:55:32.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:55:32.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:55:33.911:  F0 04 FF 48 34 77
+2025-01-07 10:55:33.911:  ! BMBT --> LOC : BM Button, MENU_pressed
+2025-01-07 10:55:34.051:  F0 04 FF 48 B4 F7
+2025-01-07 10:55:34.051:  ! BMBT --> LOC : BM Button, MENU_released
+2025-01-07 10:55:34.192:  3B 05 BB 4F 02 00 C8
+2025-01-07 10:55:34.192:  ! GT   --> NAJ : RGB control, LCD_off GT
+2025-01-07 10:55:34.192:  7F 04 43 AB 21 B2
+2025-01-07 10:55:34.192:  ! NAV  --> GTF : Remote control status, , Data="21"
+2025-01-07 10:55:34.208:  3B 05 68 4E 00 00 18
+2025-01-07 10:55:34.208:  ! GT   --> RAD : Audio source selection, 
+2025-01-07 10:55:34.224:  68 04 F0 4A 48 9E
+2025-01-07 10:55:34.224:  ! RAD  --> BMBT: Cassette control, State_unknown, Data="48"
+2025-01-07 10:55:34.224:  F0 04 68 4B 05 D2
+2025-01-07 10:55:34.224:  ! BMBT --> RAD : Cassette status, No_Tape
+2025-01-07 10:55:34.239:  ED 05 F0 4F 12 11 54
+2025-01-07 10:55:34.239:  ! VID  --> BMBT: RGB control, LCD_on GT
+2025-01-07 10:55:34.301:  80 05 BF 18 00 FF DD
+2025-01-07 10:55:34.301:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:55:35.583:  68 05 76 38 00 00 23
+2025-01-07 10:55:35.583:  ! RAD  --> CDCD: CD_control, Status_Request
+2025-01-07 10:55:35.598:  76 0C 68 39 00 82 00 20 00 06 01 00 15 9B
+2025-01-07 10:55:35.598:  ! CDCD --> RAD : CD_status, Stop  Request=Pause  Flags=  CD=6  Track=1  CDs_Loaded=P6
+2025-01-07 10:55:36.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:55:36.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:55:38.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:55:38.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:55:38.520:  7F 14 C8 A2 00 00 50 07 45 50 00 20 48 01 30 00 00 00 00 00 00 1A
+2025-01-07 10:55:38.520:  ! NAV  --> TEL : Current position, 50°7'45.5"N  20°48'1.3"E
+2025-01-07 10:55:38.583:  7F 23 C8 A4 00 01 52 41 44 4C 4F 57 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 32
+2025-01-07 10:55:38.583:  ! NAV  --> TEL : Current location, Town = RADLOW
+2025-01-07 10:55:38.661:  7F 23 C8 A4 00 02 55 4C 49 43 41 20 5A 44 41 52 5A 45 43 3B 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 2A
+2025-01-07 10:55:38.661:  ! NAV  --> TEL : Current location, Street = ULICA ZDARZEC;
+2025-01-07 10:55:39.958:  3B 03 6A 01 53
+2025-01-07 10:55:39.958:  ! GT   --> DSP : Device status request
+2025-01-07 10:55:40.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:55:40.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:55:40.301:  80 06 BF 19 D8 80 00 78
+2025-01-07 10:55:40.301:  ! IKE  --> GLO : Temperature, Outside -40°C [-40°F], Coolant -128°C [-198°F]
+2025-01-07 10:55:41.598:  F0 03 68 01 9A
+2025-01-07 10:55:41.598:  ! BMBT --> RAD : Device status request
+2025-01-07 10:55:41.614:  68 05 BF 02 00 03 D3
+2025-01-07 10:55:41.614:  ! RAD  --> GLO : Device status ready, 
+2025-01-07 10:55:41.645:  F0 04 68 48 23 F7
+2025-01-07 10:55:41.645:  ! BMBT --> RAD : BM Button, MODE_pressed
+2025-01-07 10:55:41.801:  F0 04 68 48 A3 77
+2025-01-07 10:55:41.801:  ! BMBT --> RAD : BM Button, MODE_released
+2025-01-07 10:55:41.880:  68 0B 3B A5 62 01 41 20 46 4D 44 20 90
+2025-01-07 10:55:41.880:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld1,PartTx=" FMD "
+2025-01-07 10:55:41.880:  68 0B 3B A5 62 01 42 20 50 20 34 20 98
+2025-01-07 10:55:41.880:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld2,PartTx=" P 4 "
+2025-01-07 10:55:41.958:  68 0B 3B A5 62 01 43 20 52 45 47 20 8D
+2025-01-07 10:55:41.958:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld3,PartTx=" REG "
+2025-01-07 10:55:41.973:  68 0B 3B A5 62 01 44 20 20 20 20 20 FA
+2025-01-07 10:55:41.973:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld4,PartTx="     "
+2025-01-07 10:55:41.973:  68 0D 3B A5 62 01 45 20 20 52 44 53 20 20 98
+2025-01-07 10:55:41.973:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld5,PartTx="  RDS  "
+2025-01-07 10:55:42.051:  68 1A 3B A5 62 01 46 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 C9
+2025-01-07 10:55:42.051:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld6,PartTx="                    "
+2025-01-07 10:55:42.067:  68 1A 3B A5 62 01 07 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 88
+2025-01-07 10:55:42.067:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld7,EndTx="                    "
+2025-01-07 10:55:42.129:  68 12 3B 23 62 10 03 20 39 32 2E 37 04 20 4D 48 7A 20 20 7A
+2025-01-07 10:55:42.129:  ! RAD  --> GT  : Display Text, Layout=RadioDisplay  Flags=Bit4  F0=   F3:" 92.7"   F4:" MHz  "
+2025-01-07 10:55:42.145:  68 06 3B D4 03 00 00 82
+2025-01-07 10:55:42.145:  ! RAD  --> GT  : NG Radio Station list, Station_List: StnList0=" Btn0_EndTx
+2025-01-07 10:55:42.145:  3B 05 68 22 00 06 72
+2025-01-07 10:55:42.145:  ! GT   --> RAD : Text display confirmation, Screen Text: 7 text messages acknowledged
+2025-01-07 10:55:42.208:  3B 04 68 D4 02 81
+2025-01-07 10:55:42.208:  ! GT   --> RAD : NG Radio Station list,  Station_List_Acknowledged
+2025-01-07 10:55:42.286:  80 05 BF 18 00 FF DD
+2025-01-07 10:55:42.286:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:55:44.254:  80 05 BF 18 00 FF DD
+2025-01-07 10:55:44.254:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:55:44.723:  F0 04 68 48 23 F7
+2025-01-07 10:55:44.723:  ! BMBT --> RAD : BM Button, MODE_pressed
+2025-01-07 10:55:44.864:  F0 04 68 48 A3 77
+2025-01-07 10:55:44.864:  ! BMBT --> RAD : BM Button, MODE_released
+2025-01-07 10:55:44.942:  68 04 F0 4A 48 9E
+2025-01-07 10:55:44.942:  ! RAD  --> BMBT: Cassette control, State_unknown, Data="48"
+2025-01-07 10:55:44.958:  F0 04 68 4B 05 D2
+2025-01-07 10:55:44.958:  ! BMBT --> RAD : Cassette status, No_Tape
+2025-01-07 10:55:45.067:  68 05 76 38 02 00 21
+2025-01-07 10:55:45.067:  ! RAD  --> CDCD: CD_control, Pause
+2025-01-07 10:55:45.067:  68 05 76 38 00 00 23
+2025-01-07 10:55:45.067:  ! RAD  --> CDCD: CD_control, Status_Request
+2025-01-07 10:55:45.083:  76 0C 68 39 00 8C 00 20 00 06 01 00 15 95
+2025-01-07 10:55:45.083:  ! CDCD --> RAD : CD_status, Stop  Flags=  CD=6  Track=1  CDs_Loaded=P6
+2025-01-07 10:55:45.099:  76 0C 68 39 00 8C 00 20 00 06 01 00 15 95
+2025-01-07 10:55:45.099:  ! CDCD --> RAD : CD_status, Stop  Flags=  CD=6  Track=1  CDs_Loaded=P6
+2025-01-07 10:55:45.114:  68 0B 3B A5 62 01 41 43 44 36 20 20 EE
+2025-01-07 10:55:45.114:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld1,PartTx="CD6  "
+2025-01-07 10:55:45.130:  68 0B 3B A5 62 01 42 20 20 20 20 20 FC
+2025-01-07 10:55:45.130:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld2,PartTx="     "
+2025-01-07 10:55:45.208:  68 0B 3B A5 62 01 43 20 20 20 20 20 FD
+2025-01-07 10:55:45.208:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld3,PartTx="     "
+2025-01-07 10:55:45.208:  68 0B 3B A5 62 01 44 20 20 20 20 20 FA
+2025-01-07 10:55:45.208:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld4,PartTx="     "
+2025-01-07 10:55:45.223:  68 0D 3B A5 62 01 45 20 20 20 20 20 20 20 FD
+2025-01-07 10:55:45.223:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld5,PartTx="       "
+2025-01-07 10:55:45.239:  68 1A 3B A5 62 01 46 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 C9
+2025-01-07 10:55:45.239:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld6,PartTx="                    "
+2025-01-07 10:55:45.317:  68 1A 3B A5 62 01 07 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 88
+2025-01-07 10:55:45.317:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld7,EndTx="                    "
+2025-01-07 10:55:45.333:  68 12 3B 23 62 10 54 52 20 30 31 20 20 20 20 20 20 20 20 37
+2025-01-07 10:55:45.333:  ! RAD  --> GT  : Display Text, Layout=RadioDisplay  Flags=Bit4  F0="TR 01        "
+2025-01-07 10:55:45.348:  3B 05 68 22 00 06 72
+2025-01-07 10:55:45.348:  ! GT   --> RAD : Text display confirmation, Screen Text: 7 text messages acknowledged
+2025-01-07 10:55:45.364:  68 15 3B 21 60 00 40 50 31 3A 20 4E 4F 20 44 49 53 43 20 20 20 06 26
+2025-01-07 10:55:45.364:  ! RAD  --> GT  : Menu Text, Layout=Menu  Flags=PartTx  F0="P1: NO DISC   "
+2025-01-07 10:55:45.426:  68 15 3B 21 60 00 41 50 32 3A 20 4E 4F 20 44 49 53 43 20 20 20 06 24
+2025-01-07 10:55:45.426:  ! RAD  --> GT  : Menu Text, Layout=Menu  Flags=PartTx  F1="P2: NO DISC   "
+2025-01-07 10:55:45.442:  68 17 3B 21 60 00 42 50 33 3A 20 4E 4F 20 44 49 53 43 20 20 20 06 06 06 24
+2025-01-07 10:55:45.442:  ! RAD  --> GT  : Menu Text, Layout=Menu  Flags=PartTx  F2="P3: NO DISC   "
+2025-01-07 10:55:45.520:  68 15 3B 21 60 00 45 50 34 3A 20 4E 4F 20 44 49 53 43 20 20 20 06 26
+2025-01-07 10:55:45.520:  ! RAD  --> GT  : Menu Text, Layout=Menu  Flags=PartTx  F5="P4: NO DISC   "
+2025-01-07 10:55:45.536:  68 15 3B 21 60 00 46 50 35 3A 20 4E 4F 20 44 49 53 43 20 20 20 06 24
+2025-01-07 10:55:45.536:  ! RAD  --> GT  : Menu Text, Layout=Menu  Flags=PartTx  F6="P5: NO DISC   "
+2025-01-07 10:55:45.598:  68 17 3B 21 60 00 07 50 36 3A 20 43 44 20 36 20 20 20 20 20 20 06 06 06 69
+2025-01-07 10:55:45.598:  ! RAD  --> GT  : Menu Text, Layout=Menu  Flags=  F7="P6: CD 6      "
+2025-01-07 10:55:45.614:  3B 05 68 22 05 FF 8E
+2025-01-07 10:55:45.614:  ! GT   --> RAD : Text display confirmation, Menu Text: 6 text messages acknowledged
+2025-01-07 10:55:45.614:  68 06 3B A5 60 01 00 91
+2025-01-07 10:55:45.614:  ! RAD  --> GT  : Screen Text, Layout=Menu  FC2=0x01  Fld0,EndTx=""
+2025-01-07 10:55:45.692:  3B 05 68 22 00 00 74
+2025-01-07 10:55:45.692:  ! GT   --> RAD : Text display confirmation, Screen Text: 1 text message acknowledged
+2025-01-07 10:55:46.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:55:46.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:55:46.286:  F0 04 68 48 23 F7
+2025-01-07 10:55:46.286:  ! BMBT --> RAD : BM Button, MODE_pressed
+2025-01-07 10:55:46.442:  F0 04 68 48 A3 77
+2025-01-07 10:55:46.442:  ! BMBT --> RAD : BM Button, MODE_released
+2025-01-07 10:55:46.520:  68 0B 3B A5 62 01 41 20 20 20 20 20 FF
+2025-01-07 10:55:46.520:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld1,PartTx="     "
+2025-01-07 10:55:46.536:  68 0B 3B A5 62 01 42 20 20 20 20 20 FC
+2025-01-07 10:55:46.536:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld2,PartTx="     "
+2025-01-07 10:55:46.536:  68 0B 3B A5 62 01 43 20 20 20 20 20 FD
+2025-01-07 10:55:46.536:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld3,PartTx="     "
+2025-01-07 10:55:46.614:  68 0B 3B A5 62 01 44 20 20 20 20 20 FA
+2025-01-07 10:55:46.614:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld4,PartTx="     "
+2025-01-07 10:55:46.614:  68 0D 3B A5 62 01 45 20 20 20 20 20 20 20 FD
+2025-01-07 10:55:46.614:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld5,PartTx="       "
+2025-01-07 10:55:46.629:  68 1A 3B A5 62 01 46 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 C9
+2025-01-07 10:55:46.629:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld6,PartTx="                    "
+2025-01-07 10:55:46.708:  68 1A 3B A5 62 01 07 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 88
+2025-01-07 10:55:46.708:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld7,EndTx="                    "
+2025-01-07 10:55:46.723:  68 12 3B 23 62 10 4E 4F 20 54 41 50 45 20 20 20 20 20 20 31
+2025-01-07 10:55:46.723:  ! RAD  --> GT  : Display Text, Layout=RadioDisplay  Flags=Bit4  F0="NO TAPE      "
+2025-01-07 10:55:46.723:  68 04 3B 46 0C 1D
+2025-01-07 10:55:46.723:  ! RAD  --> GT  : LCD clear, : Select menu off: Tone menu off
+2025-01-07 10:55:46.739:  3B 05 68 22 00 06 72
+2025-01-07 10:55:46.739:  ! GT   --> RAD : Text display confirmation, Screen Text: 7 text messages acknowledged
+2025-01-07 10:55:47.317:  76 0C 68 39 01 8C 00 20 00 06 01 00 15 94
+2025-01-07 10:55:47.317:  ! CDCD --> RAD : CD_status, Pause  Flags=  CD=6  Track=1  CDs_Loaded=P6
+2025-01-07 10:55:47.348:  68 05 76 38 03 00 20
+2025-01-07 10:55:47.348:  ! RAD  --> CDCD: CD_control, Play
+2025-01-07 10:55:47.380:  76 0C 68 39 02 89 00 20 00 06 01 00 15 92
+2025-01-07 10:55:47.380:  ! CDCD --> RAD : CD_status, Play  Request=Play  Flags=  CD=6  Track=1  CDs_Loaded=P6
+2025-01-07 10:55:47.630:  F0 04 68 48 23 F7
+2025-01-07 10:55:47.630:  ! BMBT --> RAD : BM Button, MODE_pressed
+2025-01-07 10:55:47.723:  F0 04 68 48 A3 77
+2025-01-07 10:55:47.723:  ! BMBT --> RAD : BM Button, MODE_released
+2025-01-07 10:55:47.739:  68 05 76 38 01 00 22
+2025-01-07 10:55:47.739:  ! RAD  --> CDCD: CD_control, Stop
+2025-01-07 10:55:47.754:  68 04 F0 4A 48 9E
+2025-01-07 10:55:47.754:  ! RAD  --> BMBT: Cassette control, State_unknown, Data="48"
+2025-01-07 10:55:47.754:  76 0C 68 39 00 82 00 20 00 06 01 00 15 9B
+2025-01-07 10:55:47.754:  ! CDCD --> RAD : CD_status, Stop  Request=Pause  Flags=  CD=6  Track=1  CDs_Loaded=P6
+2025-01-07 10:55:47.770:  F0 04 68 4B 05 D2
+2025-01-07 10:55:47.770:  ! BMBT --> RAD : Cassette status, No_Tape
+2025-01-07 10:55:47.833:  68 0B 3B A5 62 01 41 20 20 20 20 20 FF
+2025-01-07 10:55:47.833:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld1,PartTx="     "
+2025-01-07 10:55:47.848:  68 0B 3B A5 62 01 42 20 50 20 31 20 9D
+2025-01-07 10:55:47.848:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld2,PartTx=" P 1 "
+2025-01-07 10:55:47.864:  68 0B 3B A5 62 01 43 20 20 20 20 20 FD
+2025-01-07 10:55:47.864:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld3,PartTx="     "
+2025-01-07 10:55:47.880:  68 0B 3B A5 62 01 44 20 20 20 20 20 FA
+2025-01-07 10:55:47.880:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld4,PartTx="     "
+2025-01-07 10:55:47.942:  68 0D 3B A5 62 01 45 20 20 20 20 20 20 20 FD
+2025-01-07 10:55:47.942:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld5,PartTx="       "
+2025-01-07 10:55:47.958:  68 1A 3B A5 62 01 46 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 C9
+2025-01-07 10:55:47.958:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld6,PartTx="                    "
+2025-01-07 10:55:48.020:  68 1A 3B A5 62 01 07 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 88
+2025-01-07 10:55:48.020:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld7,EndTx="                    "
+2025-01-07 10:55:48.036:  68 12 3B 23 62 10 41 55 58 20 20 20 20 20 20 20 20 20 20 5C
+2025-01-07 10:55:48.036:  ! RAD  --> GT  : Display Text, Layout=RadioDisplay  Flags=Bit4  F0="AUX          "
+2025-01-07 10:55:48.051:  68 04 3B 46 0C 1D
+2025-01-07 10:55:48.051:  ! RAD  --> GT  : LCD clear, : Select menu off: Tone menu off
+2025-01-07 10:55:48.051:  68 04 3B 46 0C 1D
+2025-01-07 10:55:48.051:  ! RAD  --> GT  : LCD clear, : Select menu off: Tone menu off
+2025-01-07 10:55:48.067:  3B 05 68 22 00 06 72
+2025-01-07 10:55:48.067:  ! GT   --> RAD : Text display confirmation, Screen Text: 7 text messages acknowledged
+2025-01-07 10:55:48.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:55:48.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:55:49.942:  3B 03 C8 01 F1
+2025-01-07 10:55:49.942:  ! GT   --> TEL : Device status request
+2025-01-07 10:55:50.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:55:50.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:55:50.302:  80 06 BF 19 D8 80 00 78
+2025-01-07 10:55:50.302:  ! IKE  --> GLO : Temperature, Outside -40°C [-40°F], Coolant -128°C [-198°F]
+2025-01-07 10:55:50.598:  68 03 6A 01 00
+2025-01-07 10:55:50.598:  ! RAD  --> DSP : Device status request
+2025-01-07 10:55:51.677:  F0 03 68 01 9A
+2025-01-07 10:55:51.677:  ! BMBT --> RAD : Device status request
+2025-01-07 10:55:51.708:  68 05 BF 02 00 03 D3
+2025-01-07 10:55:51.708:  ! RAD  --> GLO : Device status ready, 
+2025-01-07 10:55:52.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:55:52.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:55:54.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:55:54.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:55:55.395:  68 04 3B 46 02 13
+2025-01-07 10:55:55.395:  ! RAD  --> GT  : LCD clear, : Radio display off
+2025-01-07 10:55:55.426:  68 04 3B 46 0C 1D
+2025-01-07 10:55:55.426:  ! RAD  --> GT  : LCD clear, : Select menu off: Tone menu off
+2025-01-07 10:55:55.458:  7F 04 43 AB 21 B2
+2025-01-07 10:55:55.458:  ! NAV  --> GTF : Remote control status, , Data="21"
+2025-01-07 10:55:55.692:  68 05 76 38 00 00 23
+2025-01-07 10:55:55.692:  ! RAD  --> CDCD: CD_control, Status_Request
+2025-01-07 10:55:55.708:  76 0C 68 39 00 82 00 20 00 06 01 00 15 9B
+2025-01-07 10:55:55.708:  ! CDCD --> RAD : CD_status, Stop  Request=Pause  Flags=  CD=6  Track=1  CDs_Loaded=P6
+2025-01-07 10:55:56.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:55:56.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:55:58.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:55:58.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:55:59.942:  3B 03 ED 01 D4
+2025-01-07 10:55:59.942:  ! GT   --> VID : Device status request
+2025-01-07 10:55:59.973:  ED 04 3B 02 00 D0
+2025-01-07 10:55:59.973:  ! VID  --> GT  : Device status ready, 
+2025-01-07 10:56:00.254:  80 05 BF 18 00 FF DD
+2025-01-07 10:56:00.254:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:56:00.270:  80 06 BF 19 D8 80 00 78
+2025-01-07 10:56:00.270:  ! IKE  --> GLO : Temperature, Outside -40°C [-40°F], Coolant -128°C [-198°F]
+2025-01-07 10:56:01.754:  F0 03 68 01 9A
+2025-01-07 10:56:01.754:  ! BMBT --> RAD : Device status request
+2025-01-07 10:56:01.786:  68 05 BF 02 00 03 D3
+2025-01-07 10:56:01.786:  ! RAD  --> GLO : Device status ready, 
+2025-01-07 10:56:02.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:56:02.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:56:04.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:56:04.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:56:06.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:56:06.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:56:08.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:56:08.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:56:08.473:  7F 14 C8 A2 00 00 50 07 45 50 00 20 48 01 30 00 00 00 00 00 00 1A
+2025-01-07 10:56:08.473:  ! NAV  --> TEL : Current position, 50°7'45.5"N  20°48'1.3"E
+2025-01-07 10:56:08.551:  7F 23 C8 A4 00 01 52 41 44 4C 4F 57 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 32
+2025-01-07 10:56:08.551:  ! NAV  --> TEL : Current location, Town = RADLOW
+2025-01-07 10:56:08.583:  7F 23 C8 A4 00 02 55 4C 49 43 41 20 5A 44 41 52 5A 45 43 3B 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 2A
+2025-01-07 10:56:08.583:  ! NAV  --> TEL : Current location, Street = ULICA ZDARZEC;
+2025-01-07 10:56:09.927:  3B 03 F0 01 C9
+2025-01-07 10:56:09.927:  ! GT   --> BMBT: Device status request
+2025-01-07 10:56:10.005:  F0 04 3B 02 30 FD
+2025-01-07 10:56:10.005:  ! BMBT --> GT  : Device status ready, Bit4 Bit5
+2025-01-07 10:56:10.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:56:10.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:56:10.364:  80 06 BF 19 D8 80 00 78
+2025-01-07 10:56:10.364:  ! IKE  --> GLO : Temperature, Outside -40°C [-40°F], Coolant -128°C [-198°F]
+2025-01-07 10:56:10.614:  68 03 6A 01 00
+2025-01-07 10:56:10.614:  ! RAD  --> DSP : Device status request
+2025-01-07 10:56:11.833:  F0 03 68 01 9A
+2025-01-07 10:56:11.833:  ! BMBT --> RAD : Device status request
+2025-01-07 10:56:11.848:  68 05 BF 02 00 03 D3
+2025-01-07 10:56:11.848:  ! RAD  --> GLO : Device status ready, 
+2025-01-07 10:56:12.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:56:12.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:56:14.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:56:14.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:56:15.599:  68 05 76 38 00 00 23
+2025-01-07 10:56:15.599:  ! RAD  --> CDCD: CD_control, Status_Request
+2025-01-07 10:56:15.677:  76 0C 68 39 00 82 00 20 00 06 01 00 15 9B
+2025-01-07 10:56:15.677:  ! CDCD --> RAD : CD_status, Stop  Request=Pause  Flags=  CD=6  Track=1  CDs_Loaded=P6
+2025-01-07 10:56:16.286:  80 05 BF 18 00 FF DD
+2025-01-07 10:56:16.286:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:56:16.630:  F0 04 68 48 23 F7
+2025-01-07 10:56:16.630:  ! BMBT --> RAD : BM Button, MODE_pressed
+2025-01-07 10:56:16.786:  F0 04 68 48 A3 77
+2025-01-07 10:56:16.786:  ! BMBT --> RAD : BM Button, MODE_released
+2025-01-07 10:56:16.864:  68 0B 3B A5 62 01 41 20 20 20 20 20 FF
+2025-01-07 10:56:16.864:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld1,PartTx="     "
+2025-01-07 10:56:16.880:  68 0B 3B A5 62 01 42 20 50 20 31 20 9D
+2025-01-07 10:56:16.880:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld2,PartTx=" P 1 "
+2025-01-07 10:56:16.911:  68 0B 3B A5 62 01 43 20 20 20 20 20 FD
+2025-01-07 10:56:16.911:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld3,PartTx="     "
+2025-01-07 10:56:16.942:  68 0B 3B A5 62 01 44 20 20 20 20 20 FA
+2025-01-07 10:56:16.942:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld4,PartTx="     "
+2025-01-07 10:56:16.958:  68 0D 3B A5 62 01 45 20 20 20 20 20 20 20 FD
+2025-01-07 10:56:16.958:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld5,PartTx="       "
+2025-01-07 10:56:17.051:  68 1A 3B A5 62 01 46 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 C9
+2025-01-07 10:56:17.051:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld6,PartTx="                    "
+2025-01-07 10:56:17.083:  68 1A 3B A5 62 01 07 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 88
+2025-01-07 10:56:17.083:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld7,EndTx="                    "
+2025-01-07 10:56:17.098:  68 12 3B 23 62 10 41 55 58 20 20 20 20 20 20 20 20 20 20 5C
+2025-01-07 10:56:17.098:  ! RAD  --> GT  : Display Text, Layout=RadioDisplay  Flags=Bit4  F0="AUX          "
+2025-01-07 10:56:17.129:  68 04 3B 46 0C 1D
+2025-01-07 10:56:17.129:  ! RAD  --> GT  : LCD clear, : Select menu off: Tone menu off
+2025-01-07 10:56:17.161:  3B 05 68 22 00 06 72
+2025-01-07 10:56:17.161:  ! GT   --> RAD : Text display confirmation, Screen Text: 7 text messages acknowledged
+2025-01-07 10:56:17.817:  7F 06 C8 A9 0A 30 30 12
+2025-01-07 10:56:17.817:  ! NAV  --> TEL : Telephone data, Current_phone_status Count_0
+2025-01-07 10:56:17.895:  7F 06 C8 A9 03 30 30 1B
+2025-01-07 10:56:17.895:  ! NAV  --> TEL : Telephone data, Current_network_request Count_0
+2025-01-07 10:56:18.286:  80 05 BF 18 00 FF DD
+2025-01-07 10:56:18.286:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:56:19.926:  3B 03 80 01 B9
+2025-01-07 10:56:19.926:  ! GT   --> IKE : Device status request
+2025-01-07 10:56:20.005:  80 04 BF 02 00 39
+2025-01-07 10:56:20.005:  ! IKE  --> GLO : Device status ready, 
+2025-01-07 10:56:20.286:  80 05 BF 18 00 FF DD
+2025-01-07 10:56:20.286:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:56:20.426:  80 06 BF 19 80 80 00 20
+2025-01-07 10:56:20.426:  ! IKE  --> GLO : Temperature, Outside -128°C [-198°F], Coolant -128°C [-198°F]
+2025-01-07 10:56:20.645:  F0 04 68 48 23 F7
+2025-01-07 10:56:20.645:  ! BMBT --> RAD : BM Button, MODE_pressed
+2025-01-07 10:56:20.864:  F0 04 68 48 A3 77
+2025-01-07 10:56:20.864:  ! BMBT --> RAD : BM Button, MODE_released
+2025-01-07 10:56:20.895:  68 04 F0 4A 48 9E
+2025-01-07 10:56:20.895:  ! RAD  --> BMBT: Cassette control, State_unknown, Data="48"
+2025-01-07 10:56:20.926:  68 0B 3B A5 62 01 41 20 46 4D 44 20 90
+2025-01-07 10:56:20.926:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld1,PartTx=" FMD "
+2025-01-07 10:56:20.942:  F0 04 68 4B 05 D2
+2025-01-07 10:56:20.942:  ! BMBT --> RAD : Cassette status, No_Tape
+2025-01-07 10:56:20.973:  68 0B 3B A5 62 01 42 20 20 20 20 20 FC
+2025-01-07 10:56:20.973:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld2,PartTx="     "
+2025-01-07 10:56:21.004:  68 0B 3B A5 62 01 43 20 52 45 47 20 8D
+2025-01-07 10:56:21.004:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld3,PartTx=" REG "
+2025-01-07 10:56:21.021:  68 0B 3B A5 62 01 44 20 20 20 20 20 FA
+2025-01-07 10:56:21.021:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld4,PartTx="     "
+2025-01-07 10:56:21.052:  68 0D 3B A5 62 01 45 20 20 52 44 53 20 20 98
+2025-01-07 10:56:21.052:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld5,PartTx="  RDS  "
+2025-01-07 10:56:21.083:  68 1A 3B A5 62 01 46 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 C9
+2025-01-07 10:56:21.083:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld6,PartTx="                    "
+2025-01-07 10:56:21.114:  68 1A 3B A5 62 01 07 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 88
+2025-01-07 10:56:21.114:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld7,EndTx="                    "
+2025-01-07 10:56:21.145:  68 12 3B 23 62 10 03 20 39 32 2E 37 04 20 4D 48 7A 20 20 7A
+2025-01-07 10:56:21.145:  ! RAD  --> GT  : Display Text, Layout=RadioDisplay  Flags=Bit4  F0=   F3:" 92.7"   F4:" MHz  "
+2025-01-07 10:56:21.161:  68 06 3B D4 03 00 00 82
+2025-01-07 10:56:21.161:  ! RAD  --> GT  : NG Radio Station list, Station_List: StnList0=" Btn0_EndTx
+2025-01-07 10:56:21.192:  3B 05 68 22 00 06 72
+2025-01-07 10:56:21.192:  ! GT   --> RAD : Text display confirmation, Screen Text: 7 text messages acknowledged
+2025-01-07 10:56:21.239:  68 0B 3B A5 62 01 02 20 50 20 34 20 D8
+2025-01-07 10:56:21.239:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld2,EndTx=" P 4 "
+2025-01-07 10:56:21.254:  68 06 3B A5 62 01 00 93
+2025-01-07 10:56:21.254:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld0,EndTx=""
+2025-01-07 10:56:21.286:  3B 04 68 D4 02 81
+2025-01-07 10:56:21.286:  ! GT   --> RAD : NG Radio Station list,  Station_List_Acknowledged
+2025-01-07 10:56:21.301:  3B 05 68 22 00 00 74
+2025-01-07 10:56:21.301:  ! GT   --> RAD : Text display confirmation, Screen Text: 1 text message acknowledged
+2025-01-07 10:56:21.333:  3B 05 68 22 00 00 74
+2025-01-07 10:56:21.333:  ! GT   --> RAD : Text display confirmation, Screen Text: 1 text message acknowledged
+2025-01-07 10:56:21.817:  F0 04 68 48 23 F7
+2025-01-07 10:56:21.817:  ! BMBT --> RAD : BM Button, MODE_pressed
+2025-01-07 10:56:21.926:  F0 03 68 01 9A
+2025-01-07 10:56:21.926:  ! BMBT --> RAD : Device status request
+2025-01-07 10:56:21.958:  68 05 BF 02 00 03 D3
+2025-01-07 10:56:21.958:  ! RAD  --> GLO : Device status ready, 
+2025-01-07 10:56:21.989:  F0 04 68 48 A3 77
+2025-01-07 10:56:21.989:  ! BMBT --> RAD : BM Button, MODE_released
+2025-01-07 10:56:22.020:  68 04 F0 4A 48 9E
+2025-01-07 10:56:22.020:  ! RAD  --> BMBT: Cassette control, State_unknown, Data="48"
+2025-01-07 10:56:22.036:  F0 04 68 4B 05 D2
+2025-01-07 10:56:22.036:  ! BMBT --> RAD : Cassette status, No_Tape
+2025-01-07 10:56:22.114:  68 05 76 38 02 00 21
+2025-01-07 10:56:22.114:  ! RAD  --> CDCD: CD_control, Pause
+2025-01-07 10:56:22.145:  68 05 76 38 00 00 23
+2025-01-07 10:56:22.145:  ! RAD  --> CDCD: CD_control, Status_Request
+2025-01-07 10:56:22.161:  76 0C 68 39 00 8C 00 20 00 06 01 00 15 95
+2025-01-07 10:56:22.161:  ! CDCD --> RAD : CD_status, Stop  Flags=  CD=6  Track=1  CDs_Loaded=P6
+2025-01-07 10:56:22.192:  76 0C 68 39 00 8C 00 20 00 06 01 00 15 95
+2025-01-07 10:56:22.192:  ! CDCD --> RAD : CD_status, Stop  Flags=  CD=6  Track=1  CDs_Loaded=P6
+2025-01-07 10:56:22.223:  68 0B 3B A5 62 01 41 43 44 36 20 20 EE
+2025-01-07 10:56:22.223:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld1,PartTx="CD6  "
+2025-01-07 10:56:22.239:  68 0B 3B A5 62 01 42 20 20 20 20 20 FC
+2025-01-07 10:56:22.239:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld2,PartTx="     "
+2025-01-07 10:56:22.270:  68 0B 3B A5 62 01 43 20 20 20 20 20 FD
+2025-01-07 10:56:22.270:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld3,PartTx="     "
+2025-01-07 10:56:22.301:  80 05 BF 18 00 FF DD
+2025-01-07 10:56:22.301:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:56:22.317:  68 0B 3B A5 62 01 44 20 20 20 20 20 FA
+2025-01-07 10:56:22.317:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld4,PartTx="     "
+2025-01-07 10:56:22.348:  68 0D 3B A5 62 01 45 20 20 20 20 20 20 20 FD
+2025-01-07 10:56:22.348:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld5,PartTx="       "
+2025-01-07 10:56:22.364:  68 1A 3B A5 62 01 46 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 C9
+2025-01-07 10:56:22.364:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld6,PartTx="                    "
+2025-01-07 10:56:22.395:  68 1A 3B A5 62 01 07 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 88
+2025-01-07 10:56:22.395:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld7,EndTx="                    "
+2025-01-07 10:56:22.426:  68 12 3B 23 62 10 54 52 20 30 31 20 20 20 20 20 20 20 20 37
+2025-01-07 10:56:22.426:  ! RAD  --> GT  : Display Text, Layout=RadioDisplay  Flags=Bit4  F0="TR 01        "
+2025-01-07 10:56:22.458:  3B 05 68 22 00 06 72
+2025-01-07 10:56:22.458:  ! GT   --> RAD : Text display confirmation, Screen Text: 7 text messages acknowledged
+2025-01-07 10:56:22.473:  68 15 3B 21 60 00 40 50 31 3A 20 4E 4F 20 44 49 53 43 20 20 20 06 26
+2025-01-07 10:56:22.473:  ! RAD  --> GT  : Menu Text, Layout=Menu  Flags=PartTx  F0="P1: NO DISC   "
+2025-01-07 10:56:22.567:  68 15 3B 21 60 00 41 50 32 3A 20 4E 4F 20 44 49 53 43 20 20 20 06 24
+2025-01-07 10:56:22.567:  ! RAD  --> GT  : Menu Text, Layout=Menu  Flags=PartTx  F1="P2: NO DISC   "
+2025-01-07 10:56:22.583:  68 17 3B 21 60 00 42 50 33 3A 20 4E 4F 20 44 49 53 43 20 20 20 06 06 06 24
+2025-01-07 10:56:22.583:  ! RAD  --> GT  : Menu Text, Layout=Menu  Flags=PartTx  F2="P3: NO DISC   "
+2025-01-07 10:56:22.614:  68 15 3B 21 60 00 45 50 34 3A 20 4E 4F 20 44 49 53 43 20 20 20 06 26
+2025-01-07 10:56:22.614:  ! RAD  --> GT  : Menu Text, Layout=Menu  Flags=PartTx  F5="P4: NO DISC   "
+2025-01-07 10:56:22.645:  68 15 3B 21 60 00 46 50 35 3A 20 4E 4F 20 44 49 53 43 20 20 20 06 24
+2025-01-07 10:56:22.645:  ! RAD  --> GT  : Menu Text, Layout=Menu  Flags=PartTx  F6="P5: NO DISC   "
+2025-01-07 10:56:22.723:  68 17 3B 21 60 00 07 50 36 3A 20 43 44 20 36 20 20 20 20 20 20 06 06 06 69
+2025-01-07 10:56:22.723:  ! RAD  --> GT  : Menu Text, Layout=Menu  Flags=  F7="P6: CD 6      "
+2025-01-07 10:56:22.755:  3B 05 68 22 05 FF 8E
+2025-01-07 10:56:22.755:  ! GT   --> RAD : Text display confirmation, Menu Text: 6 text messages acknowledged
+2025-01-07 10:56:22.770:  68 06 3B A5 60 01 00 91
+2025-01-07 10:56:22.770:  ! RAD  --> GT  : Screen Text, Layout=Menu  FC2=0x01  Fld0,EndTx=""
+2025-01-07 10:56:22.802:  3B 05 68 22 00 00 74
+2025-01-07 10:56:22.802:  ! GT   --> RAD : Text display confirmation, Screen Text: 1 text message acknowledged
+2025-01-07 10:56:23.254:  F0 04 68 48 23 F7
+2025-01-07 10:56:23.254:  ! BMBT --> RAD : BM Button, MODE_pressed
+2025-01-07 10:56:23.348:  F0 04 68 48 A3 77
+2025-01-07 10:56:23.348:  ! BMBT --> RAD : BM Button, MODE_released
+2025-01-07 10:56:23.442:  68 0B 3B A5 62 01 41 20 20 20 20 20 FF
+2025-01-07 10:56:23.442:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld1,PartTx="     "
+2025-01-07 10:56:23.505:  68 0B 3B A5 62 01 42 20 20 20 20 20 FC
+2025-01-07 10:56:23.505:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld2,PartTx="     "
+2025-01-07 10:56:23.567:  68 0B 3B A5 62 01 43 20 20 20 20 20 FD
+2025-01-07 10:56:23.567:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld3,PartTx="     "
+2025-01-07 10:56:23.614:  68 0B 3B A5 62 01 44 20 20 20 20 20 FA
+2025-01-07 10:56:23.614:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld4,PartTx="     "
+2025-01-07 10:56:23.629:  68 0D 3B A5 62 01 45 20 20 20 20 20 20 20 FD
+2025-01-07 10:56:23.629:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld5,PartTx="       "
+2025-01-07 10:56:23.661:  68 1A 3B A5 62 01 46 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 C9
+2025-01-07 10:56:23.661:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld6,PartTx="                    "
+2025-01-07 10:56:23.676:  68 1A 3B A5 62 01 07 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 88
+2025-01-07 10:56:23.676:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld7,EndTx="                    "
+2025-01-07 10:56:23.708:  68 12 3B 23 62 10 4E 4F 20 54 41 50 45 20 20 20 20 20 20 31
+2025-01-07 10:56:23.708:  ! RAD  --> GT  : Display Text, Layout=RadioDisplay  Flags=Bit4  F0="NO TAPE      "
+2025-01-07 10:56:23.739:  68 04 3B 46 0C 1D
+2025-01-07 10:56:23.739:  ! RAD  --> GT  : LCD clear, : Select menu off: Tone menu off
+2025-01-07 10:56:23.755:  3B 05 68 22 00 06 72
+2025-01-07 10:56:23.755:  ! GT   --> RAD : Text display confirmation, Screen Text: 7 text messages acknowledged
+2025-01-07 10:56:23.958:  68 04 3B 46 0C 1D
+2025-01-07 10:56:23.958:  ! RAD  --> GT  : LCD clear, : Select menu off: Tone menu off
+2025-01-07 10:56:24.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:56:24.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:56:24.348:  76 0C 68 39 01 8C 00 20 00 06 01 00 15 94
+2025-01-07 10:56:24.348:  ! CDCD --> RAD : CD_status, Pause  Flags=  CD=6  Track=1  CDs_Loaded=P6
+2025-01-07 10:56:24.364:  68 05 76 38 03 00 20
+2025-01-07 10:56:24.364:  ! RAD  --> CDCD: CD_control, Play
+2025-01-07 10:56:24.395:  76 0C 68 39 02 89 00 20 00 06 01 00 15 92
+2025-01-07 10:56:24.395:  ! CDCD --> RAD : CD_status, Play  Request=Play  Flags=  CD=6  Track=1  CDs_Loaded=P6
+2025-01-07 10:56:24.708:  F0 04 68 48 23 F7
+2025-01-07 10:56:24.708:  ! BMBT --> RAD : BM Button, MODE_pressed
+2025-01-07 10:56:24.895:  F0 04 68 48 A3 77
+2025-01-07 10:56:24.895:  ! BMBT --> RAD : BM Button, MODE_released
+2025-01-07 10:56:24.958:  68 05 76 38 01 00 22
+2025-01-07 10:56:24.958:  ! RAD  --> CDCD: CD_control, Stop
+2025-01-07 10:56:25.005:  68 04 F0 4A 48 9E
+2025-01-07 10:56:25.005:  ! RAD  --> BMBT: Cassette control, State_unknown, Data="48"
+2025-01-07 10:56:25.067:  76 0C 68 39 00 82 00 20 00 06 01 00 15 9B
+2025-01-07 10:56:25.067:  ! CDCD --> RAD : CD_status, Stop  Request=Pause  Flags=  CD=6  Track=1  CDs_Loaded=P6
+2025-01-07 10:56:25.083:  F0 04 68 4B 05 D2
+2025-01-07 10:56:25.083:  ! BMBT --> RAD : Cassette status, No_Tape
+2025-01-07 10:56:25.114:  68 0B 3B A5 62 01 41 20 20 20 20 20 FF
+2025-01-07 10:56:25.114:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld1,PartTx="     "
+2025-01-07 10:56:25.145:  68 0B 3B A5 62 01 42 20 50 20 31 20 9D
+2025-01-07 10:56:25.145:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld2,PartTx=" P 1 "
+2025-01-07 10:56:25.176:  68 0B 3B A5 62 01 43 20 20 20 20 20 FD
+2025-01-07 10:56:25.176:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld3,PartTx="     "
+2025-01-07 10:56:25.192:  68 0B 3B A5 62 01 44 20 20 20 20 20 FA
+2025-01-07 10:56:25.192:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld4,PartTx="     "
+2025-01-07 10:56:25.223:  68 0D 3B A5 62 01 45 20 20 20 20 20 20 20 FD
+2025-01-07 10:56:25.223:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld5,PartTx="       "
+2025-01-07 10:56:25.254:  68 1A 3B A5 62 01 46 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 C9
+2025-01-07 10:56:25.254:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld6,PartTx="                    "
+2025-01-07 10:56:25.270:  68 1A 3B A5 62 01 07 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 88
+2025-01-07 10:56:25.270:  ! RAD  --> GT  : Screen Text, Layout=RadioDisplay  FC2=0x01  Fld7,EndTx="                    "
+2025-01-07 10:56:25.302:  68 12 3B 23 62 10 41 55 58 20 20 20 20 20 20 20 20 20 20 5C
+2025-01-07 10:56:25.302:  ! RAD  --> GT  : Display Text, Layout=RadioDisplay  Flags=Bit4  F0="AUX          "
+2025-01-07 10:56:25.333:  68 04 3B 46 0C 1D
+2025-01-07 10:56:25.333:  ! RAD  --> GT  : LCD clear, : Select menu off: Tone menu off
+2025-01-07 10:56:25.348:  68 04 3B 46 0C 1D
+2025-01-07 10:56:25.348:  ! RAD  --> GT  : LCD clear, : Select menu off: Tone menu off
+2025-01-07 10:56:25.379:  3B 05 68 22 00 06 72
+2025-01-07 10:56:25.379:  ! GT   --> RAD : Text display confirmation, Screen Text: 7 text messages acknowledged
+2025-01-07 10:56:26.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:56:26.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:56:27.895:  7F 06 C8 A9 03 30 30 1B
+2025-01-07 10:56:27.895:  ! NAV  --> TEL : Telephone data, Current_network_request Count_0
+2025-01-07 10:56:28.098:  7F 06 C8 A9 0A 30 30 12
+2025-01-07 10:56:28.098:  ! NAV  --> TEL : Telephone data, Current_phone_status Count_0
+2025-01-07 10:56:28.286:  80 05 BF 18 00 FF DD
+2025-01-07 10:56:28.286:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:56:30.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:56:30.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:56:30.349:  80 06 BF 19 80 80 00 20
+2025-01-07 10:56:30.349:  ! IKE  --> GLO : Temperature, Outside -128°C [-198°F], Coolant -128°C [-198°F]
+2025-01-07 10:56:30.598:  68 03 6A 01 00
+2025-01-07 10:56:30.598:  ! RAD  --> DSP : Device status request
+2025-01-07 10:56:31.989:  F0 03 68 01 9A
+2025-01-07 10:56:31.989:  ! BMBT --> RAD : Device status request
+2025-01-07 10:56:32.083:  68 05 BF 02 00 03 D3
+2025-01-07 10:56:32.083:  ! RAD  --> GLO : Device status ready, 
+2025-01-07 10:56:32.379:  80 05 BF 18 00 FF DD
+2025-01-07 10:56:32.379:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:56:32.567:  68 04 3B 46 02 13
+2025-01-07 10:56:32.567:  ! RAD  --> GT  : LCD clear, : Radio display off
+2025-01-07 10:56:32.614:  68 04 3B 46 0C 1D
+2025-01-07 10:56:32.614:  ! RAD  --> GT  : LCD clear, : Select menu off: Tone menu off
+2025-01-07 10:56:32.630:  7F 04 43 AB 21 B2
+2025-01-07 10:56:32.630:  ! NAV  --> GTF : Remote control status, , Data="21"
+2025-01-07 10:56:34.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:56:34.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:56:35.599:  68 05 76 38 00 00 23
+2025-01-07 10:56:35.599:  ! RAD  --> CDCD: CD_control, Status_Request
+2025-01-07 10:56:35.676:  76 0C 68 39 00 82 00 20 00 06 01 00 15 9B
+2025-01-07 10:56:35.676:  ! CDCD --> RAD : CD_status, Stop  Request=Pause  Flags=  CD=6  Track=1  CDs_Loaded=P6
+2025-01-07 10:56:36.271:  80 05 BF 18 00 FF DD
+2025-01-07 10:56:36.271:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:56:37.989:  7F 06 C8 A9 03 30 30 1B
+2025-01-07 10:56:37.989:  ! NAV  --> TEL : Telephone data, Current_network_request Count_0
+2025-01-07 10:56:38.114:  7F 06 C8 A9 0A 30 30 12
+2025-01-07 10:56:38.114:  ! NAV  --> TEL : Telephone data, Current_phone_status Count_0
+2025-01-07 10:56:38.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:56:38.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:56:38.473:  7F 14 C8 A2 00 00 50 07 45 50 00 20 48 01 30 00 00 00 00 00 00 1A
+2025-01-07 10:56:38.473:  ! NAV  --> TEL : Current position, 50°7'45.5"N  20°48'1.3"E
+2025-01-07 10:56:38.520:  7F 23 C8 A4 00 01 52 41 44 4C 4F 57 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 32
+2025-01-07 10:56:38.520:  ! NAV  --> TEL : Current location, Town = RADLOW
+2025-01-07 10:56:38.567:  7F 23 C8 A4 00 02 55 4C 49 43 41 20 5A 44 41 52 5A 45 43 3B 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 2A
+2025-01-07 10:56:38.567:  ! NAV  --> TEL : Current location, Street = ULICA ZDARZEC;
+2025-01-07 10:56:40.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:56:40.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:56:40.302:  80 06 BF 19 D8 80 00 78
+2025-01-07 10:56:40.302:  ! IKE  --> GLO : Temperature, Outside -40°C [-40°F], Coolant -128°C [-198°F]
+2025-01-07 10:56:42.083:  F0 03 68 01 9A
+2025-01-07 10:56:42.083:  ! BMBT --> RAD : Device status request
+2025-01-07 10:56:42.161:  68 05 BF 02 00 03 D3
+2025-01-07 10:56:42.161:  ! RAD  --> GLO : Device status ready, 
+2025-01-07 10:56:42.317:  80 05 BF 18 00 FF DD
+2025-01-07 10:56:42.317:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:56:44.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:56:44.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
+2025-01-07 10:56:46.270:  80 05 BF 18 00 FF DD
+2025-01-07 10:56:46.270:  ! IKE  --> GLO : Speed/RPM, Speed 0 km/h  [0 mph], 25 500 RPM
