@@ -3,8 +3,8 @@
   "main": "src/index.ts",  
   "scripts": {
     "build": "tsc --noEmit",
-    "start": "tsx src/index.ts -h hub.iot.solvely.pl -d /dev/cu.usbserial-0001",
-    "develop": "tsx watch src/index.ts -h hub.iot.solvely.pl -d /dev/cu.usbserial-0001" 
+    "start": "tsx src/index.ts -d /dev/cu.usbserial-0001",
+    "develop": "tsx watch src/index.ts -d /dev/cu.usbserial-0001" 
   },
   "dependencies": {
     "@bimmerz/commands": "^1.0.0",

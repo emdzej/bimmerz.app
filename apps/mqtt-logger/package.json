@@ -3,7 +3,7 @@
   "main": "src/index.ts",
   "scripts": {
     "build": "tsc --noEmit",
-    "start": "tsx src/index.ts -h hub.iot.solvely.pl"
+    "start": "tsx src/index.ts "
   },
   "dependencies": {
     "@bimmerz/commands": "^1.0.0",
