@@ -16,82 +16,38 @@ A new CLI generated with oclif
 # Usage
 <!-- usage -->
 ```sh-session
-$ npm install -g mycli123
-$ mycli123 COMMAND
+$ npm install -g @bimmerz/vin-cli
+$ vin COMMAND
 running command...
-$ mycli123 (--version)
-mycli123/0.0.0 darwin-arm64 node-v20.12.2
-$ mycli123 --help [COMMAND]
+$ vin (--version)
+@bimmerz/vin-cli/0.0.1 darwin-arm64 node-v23.6.1
+$ vin --help [COMMAND]
 USAGE
-  $ mycli123 COMMAND
+  $ vin COMMAND
 ...
 ```
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`mycli123 hello PERSON`](#mycli123-hello-person)
-* [`mycli123 hello world`](#mycli123-hello-world)
-* [`mycli123 help [COMMAND]`](#mycli123-help-command)
-* [`mycli123 plugins`](#mycli123-plugins)
-* [`mycli123 plugins add PLUGIN`](#mycli123-plugins-add-plugin)
-* [`mycli123 plugins:inspect PLUGIN...`](#mycli123-pluginsinspect-plugin)
-* [`mycli123 plugins install PLUGIN`](#mycli123-plugins-install-plugin)
-* [`mycli123 plugins link PATH`](#mycli123-plugins-link-path)
-* [`mycli123 plugins remove [PLUGIN]`](#mycli123-plugins-remove-plugin)
-* [`mycli123 plugins reset`](#mycli123-plugins-reset)
-* [`mycli123 plugins uninstall [PLUGIN]`](#mycli123-plugins-uninstall-plugin)
-* [`mycli123 plugins unlink [PLUGIN]`](#mycli123-plugins-unlink-plugin)
-* [`mycli123 plugins update`](#mycli123-plugins-update)
+* [`vin help [COMMAND]`](#vin-help-command)
+* [`vin plugins`](#vin-plugins)
+* [`vin plugins add PLUGIN`](#vin-plugins-add-plugin)
+* [`vin plugins:inspect PLUGIN...`](#vin-pluginsinspect-plugin)
+* [`vin plugins install PLUGIN`](#vin-plugins-install-plugin)
+* [`vin plugins link PATH`](#vin-plugins-link-path)
+* [`vin plugins remove [PLUGIN]`](#vin-plugins-remove-plugin)
+* [`vin plugins reset`](#vin-plugins-reset)
+* [`vin plugins uninstall [PLUGIN]`](#vin-plugins-uninstall-plugin)
+* [`vin plugins unlink [PLUGIN]`](#vin-plugins-unlink-plugin)
+* [`vin plugins update`](#vin-plugins-update)
 
-## `mycli123 hello PERSON`
+## `vin help [COMMAND]`
 
-Say hello
+Display help for vin.
 
 ```
 USAGE
-  $ mycli123 hello PERSON -f <value>
-
-ARGUMENTS
-  PERSON  Person to say hello to
-
-FLAGS
-  -f, --from=<value>  (required) Who is saying hello
-
-DESCRIPTION
-  Say hello
-
-EXAMPLES
-  $ mycli123 hello friend --from oclif
-  hello friend from oclif! (./src/commands/hello/index.ts)
-```
-
-_See code: [src/commands/hello/index.ts](https://github.com/mdonnalley/mycli123/blob/v0.0.0/src/commands/hello/index.ts)_
-
-## `mycli123 hello world`
-
-Say hello world
-
-```
-USAGE
-  $ mycli123 hello world
-
-DESCRIPTION
-  Say hello world
-
-EXAMPLES
-  $ mycli123 hello world
-  hello world! (./src/commands/hello/world.ts)
-```
-
-_See code: [src/commands/hello/world.ts](https://github.com/mdonnalley/mycli123/blob/v0.0.0/src/commands/hello/world.ts)_
-
-## `mycli123 help [COMMAND]`
-
-Display help for mycli123.
-
-```
-USAGE
-  $ mycli123 help [COMMAND...] [-n]
+  $ vin help [COMMAND...] [-n]
 
 ARGUMENTS
   COMMAND...  Command to show help for.
@@ -100,18 +56,18 @@ FLAGS
   -n, --nested-commands  Include all nested commands in the output.
 
 DESCRIPTION
-  Display help for mycli123.
+  Display help for vin.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v6.0.21/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v6.2.22/src/commands/help.ts)_
 
-## `mycli123 plugins`
+## `vin plugins`
 
 List installed plugins.
 
 ```
 USAGE
-  $ mycli123 plugins [--json] [--core]
+  $ vin plugins [--json] [--core]
 
 FLAGS
   --core  Show core plugins.
@@ -123,18 +79,18 @@ DESCRIPTION
   List installed plugins.
 
 EXAMPLES
-  $ mycli123 plugins
+  $ vin plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.0.16/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.26/src/commands/plugins/index.ts)_
 
-## `mycli123 plugins add PLUGIN`
+## `vin plugins add PLUGIN`
 
-Installs a plugin into mycli123.
+Installs a plugin into vin.
 
 ```
 USAGE
-  $ mycli123 plugins add PLUGIN... [--json] [-f] [-h] [-s | -v]
+  $ vin plugins add PLUGIN... [--json] [-f] [-h] [-s | -v]
 
 ARGUMENTS
   PLUGIN...  Plugin to install.
@@ -149,39 +105,39 @@ GLOBAL FLAGS
   --json  Format output as json.
 
 DESCRIPTION
-  Installs a plugin into mycli123.
+  Installs a plugin into vin.
 
-  Uses bundled npm executable to install plugins into /Users/mdonnalley/.local/share/mycli123
+  Uses npm to install plugins.
 
   Installation of a user-installed plugin will override a core plugin.
 
-  Use the MYCLI123_NPM_LOG_LEVEL environment variable to set the npm loglevel.
-  Use the MYCLI123_NPM_REGISTRY environment variable to set the npm registry.
+  Use the VIN_NPM_LOG_LEVEL environment variable to set the npm loglevel.
+  Use the VIN_NPM_REGISTRY environment variable to set the npm registry.
 
 ALIASES
-  $ mycli123 plugins add
+  $ vin plugins add
 
 EXAMPLES
   Install a plugin from npm registry.
 
-    $ mycli123 plugins add myplugin
+    $ vin plugins add myplugin
 
   Install a plugin from a github url.
 
-    $ mycli123 plugins add https://github.com/someuser/someplugin
+    $ vin plugins add https://github.com/someuser/someplugin
 
   Install a plugin from a github slug.
 
-    $ mycli123 plugins add someuser/someplugin
+    $ vin plugins add someuser/someplugin
 ```
 
-## `mycli123 plugins:inspect PLUGIN...`
+## `vin plugins:inspect PLUGIN...`
 
 Displays installation properties of a plugin.
 
 ```
 USAGE
-  $ mycli123 plugins inspect PLUGIN...
+  $ vin plugins inspect PLUGIN...
 
 ARGUMENTS
   PLUGIN...  [default: .] Plugin to inspect.
@@ -197,18 +153,18 @@ DESCRIPTION
   Displays installation properties of a plugin.
 
 EXAMPLES
-  $ mycli123 plugins inspect myplugin
+  $ vin plugins inspect myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.0.16/src/commands/plugins/inspect.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.26/src/commands/plugins/inspect.ts)_
 
-## `mycli123 plugins install PLUGIN`
+## `vin plugins install PLUGIN`
 
-Installs a plugin into mycli123.
+Installs a plugin into vin.
 
 ```
 USAGE
-  $ mycli123 plugins install PLUGIN... [--json] [-f] [-h] [-s | -v]
+  $ vin plugins install PLUGIN... [--json] [-f] [-h] [-s | -v]
 
 ARGUMENTS
   PLUGIN...  Plugin to install.
@@ -223,41 +179,41 @@ GLOBAL FLAGS
   --json  Format output as json.
 
 DESCRIPTION
-  Installs a plugin into mycli123.
+  Installs a plugin into vin.
 
-  Uses bundled npm executable to install plugins into /Users/mdonnalley/.local/share/mycli123
+  Uses npm to install plugins.
 
   Installation of a user-installed plugin will override a core plugin.
 
-  Use the MYCLI123_NPM_LOG_LEVEL environment variable to set the npm loglevel.
-  Use the MYCLI123_NPM_REGISTRY environment variable to set the npm registry.
+  Use the VIN_NPM_LOG_LEVEL environment variable to set the npm loglevel.
+  Use the VIN_NPM_REGISTRY environment variable to set the npm registry.
 
 ALIASES
-  $ mycli123 plugins add
+  $ vin plugins add
 
 EXAMPLES
   Install a plugin from npm registry.
 
-    $ mycli123 plugins install myplugin
+    $ vin plugins install myplugin
 
   Install a plugin from a github url.
 
-    $ mycli123 plugins install https://github.com/someuser/someplugin
+    $ vin plugins install https://github.com/someuser/someplugin
 
   Install a plugin from a github slug.
 
-    $ mycli123 plugins install someuser/someplugin
+    $ vin plugins install someuser/someplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.0.16/src/commands/plugins/install.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.26/src/commands/plugins/install.ts)_
 
-## `mycli123 plugins link PATH`
+## `vin plugins link PATH`
 
 Links a plugin into the CLI for development.
 
 ```
 USAGE
-  $ mycli123 plugins link PATH [-h] [--install] [-v]
+  $ vin plugins link PATH [-h] [--install] [-v]
 
 ARGUMENTS
   PATH  [default: .] path to plugin
@@ -269,6 +225,7 @@ FLAGS
 
 DESCRIPTION
   Links a plugin into the CLI for development.
+
   Installation of a linked plugin will override a user-installed or core plugin.
 
   e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello'
@@ -276,18 +233,18 @@ DESCRIPTION
 
 
 EXAMPLES
-  $ mycli123 plugins link myplugin
+  $ vin plugins link myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.0.16/src/commands/plugins/link.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.26/src/commands/plugins/link.ts)_
 
-## `mycli123 plugins remove [PLUGIN]`
+## `vin plugins remove [PLUGIN]`
 
 Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ mycli123 plugins remove [PLUGIN...] [-h] [-v]
+  $ vin plugins remove [PLUGIN...] [-h] [-v]
 
 ARGUMENTS
   PLUGIN...  plugin to uninstall
@@ -300,35 +257,35 @@ DESCRIPTION
   Removes a plugin from the CLI.
 
 ALIASES
-  $ mycli123 plugins unlink
-  $ mycli123 plugins remove
+  $ vin plugins unlink
+  $ vin plugins remove
 
 EXAMPLES
-  $ mycli123 plugins remove myplugin
+  $ vin plugins remove myplugin
 ```
 
-## `mycli123 plugins reset`
+## `vin plugins reset`
 
 Remove all user-installed and linked plugins.
 
 ```
 USAGE
-  $ mycli123 plugins reset [--hard] [--reinstall]
+  $ vin plugins reset [--hard] [--reinstall]
 
 FLAGS
   --hard       Delete node_modules and package manager related files in addition to uninstalling plugins.
   --reinstall  Reinstall all plugins after uninstalling.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.0.16/src/commands/plugins/reset.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.26/src/commands/plugins/reset.ts)_
 
-## `mycli123 plugins uninstall [PLUGIN]`
+## `vin plugins uninstall [PLUGIN]`
 
 Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ mycli123 plugins uninstall [PLUGIN...] [-h] [-v]
+  $ vin plugins uninstall [PLUGIN...] [-h] [-v]
 
 ARGUMENTS
   PLUGIN...  plugin to uninstall
@@ -341,22 +298,22 @@ DESCRIPTION
   Removes a plugin from the CLI.
 
 ALIASES
-  $ mycli123 plugins unlink
-  $ mycli123 plugins remove
+  $ vin plugins unlink
+  $ vin plugins remove
 
 EXAMPLES
-  $ mycli123 plugins uninstall myplugin
+  $ vin plugins uninstall myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.0.16/src/commands/plugins/uninstall.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.26/src/commands/plugins/uninstall.ts)_
 
-## `mycli123 plugins unlink [PLUGIN]`
+## `vin plugins unlink [PLUGIN]`
 
 Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ mycli123 plugins unlink [PLUGIN...] [-h] [-v]
+  $ vin plugins unlink [PLUGIN...] [-h] [-v]
 
 ARGUMENTS
   PLUGIN...  plugin to uninstall
@@ -369,20 +326,20 @@ DESCRIPTION
   Removes a plugin from the CLI.
 
 ALIASES
-  $ mycli123 plugins unlink
-  $ mycli123 plugins remove
+  $ vin plugins unlink
+  $ vin plugins remove
 
 EXAMPLES
-  $ mycli123 plugins unlink myplugin
+  $ vin plugins unlink myplugin
 ```
 
-## `mycli123 plugins update`
+## `vin plugins update`
 
 Update installed plugins.
 
 ```
 USAGE
-  $ mycli123 plugins update [-h] [-v]
+  $ vin plugins update [-h] [-v]
 
 FLAGS
   -h, --help     Show CLI help.
@@ -392,5 +349,5 @@ DESCRIPTION
   Update installed plugins.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.0.16/src/commands/plugins/update.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.26/src/commands/plugins/update.ts)_
 <!-- commandsstop -->

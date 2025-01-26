@@ -1,7 +1,7 @@
 import { Box, Tabs, Tab, Alert } from '@mui/material';
 import { useState, SyntheticEvent } from 'react';
 import './App.css'
-import { EncodeVin, DecodeVin, TabPanel } from './components';
+import { EncodeVin, DecodeVin, TabPanel, Footer } from './components';
 
 function App() {
   const [value, setValue] = useState(0);
@@ -26,6 +26,7 @@ function App() {
       <TabPanel value={value} index={1}>
         <DecodeVin />
       </TabPanel>
+      <Footer />
     </>
   )
 }
