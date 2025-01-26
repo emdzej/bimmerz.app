@@ -1,7 +1,6 @@
 {
   "name": "bimmerz",
-  "scripts": {
-    "preinstall": "npx only-allow pnpm", 
+  "scripts": {    
     "build": "npm run build --workspaces",
     "mqtt:start": "npm -w apps/mqtt start",
     "mqtt:develop": "npm -w apps/mqtt develop",

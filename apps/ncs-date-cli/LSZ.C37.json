@@ -1,0 +1,8852 @@
+[
+  {
+    "id": 0,
+    "name": "DATEINAME",
+    "fields": [
+      {
+        "type": "S",
+        "name": "NAME"
+      }
+    ],
+    "values": [
+      {
+        "NAME": "LSZ.C37"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "name": "SGID_CODIERINDEX",
+    "fields": [
+      {
+        "type": "B",
+        "name": "WERT"
+      },
+      {
+        "collection": true,
+        "range": false,
+        "type": "B",
+        "name": "WERT2"
+      }
+    ],
+    "values": [
+      {
+        "WERT": 55,
+        "WERT2": []
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "SGID_HARDWARENUMMER",
+    "fields": [
+      {
+        "type": "S",
+        "name": "WERT"
+      },
+      {
+        "collection": true,
+        "range": false,
+        "type": "S",
+        "name": "WERT2"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "SGID_SWNUMMER",
+    "fields": [
+      {
+        "type": "S",
+        "name": "WERT"
+      },
+      {
+        "collection": true,
+        "range": false,
+        "type": "S",
+        "name": "WERT2"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "SPEICHERORG",
+    "fields": [
+      {
+        "type": "S",
+        "name": "STRUKTUR"
+      },
+      {
+        "type": "S",
+        "name": "TYP"
+      }
+    ],
+    "values": [
+      {
+        "STRUKTUR": "BYTE",
+        "TYP": "BLOCK"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "ANLIEFERZUSTAND",
+    "fields": [
+      {
+        "collection": true,
+        "range": false,
+        "type": "B",
+        "name": "WERT"
+      }
+    ],
+    "values": [
+      {
+        "WERT": [
+          0
+        ]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "CODIERDATENBLOCK",
+    "fields": [
+      {
+        "optional": true,
+        "type": "L",
+        "name": "BLOCKNR"
+      },
+      {
+        "type": "L",
+        "name": "WORTADR"
+      },
+      {
+        "type": "W",
+        "name": "BYTEADR"
+      },
+      {
+        "type": "S",
+        "name": "BEZEICHNUNG"
+      }
+    ],
+    "values": [
+      {
+        "BLOCKNR": 0,
+        "WORTADR": 0,
+        "BYTEADR": 31,
+        "BEZEICHNUNG": "LAMPEN_PWM_ANSTEUERUNG_1"
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 0,
+        "BYTEADR": 31,
+        "BEZEICHNUNG": "LAMPENUEBERWACHUNG"
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 0,
+        "BYTEADR": 31,
+        "BEZEICHNUNG": "LICHTCODIERUNG"
+      },
+      {
+        "BLOCKNR": 3,
+        "WORTADR": 0,
+        "BYTEADR": 31,
+        "BEZEICHNUNG": "LWR_CODIERDATEN"
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 0,
+        "BYTEADR": 31,
+        "BEZEICHNUNG": "LWR_DYNAM_CODIERDATEN"
+      },
+      {
+        "BLOCKNR": 5,
+        "WORTADR": 0,
+        "BYTEADR": 31,
+        "BEZEICHNUNG": "FUNKTIONSERWEITERUNG"
+      },
+      {
+        "BLOCKNR": 6,
+        "WORTADR": 0,
+        "BYTEADR": 31,
+        "BEZEICHNUNG": "PROGRAMMBLOCK_1"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "HERSTELLERDATENBLOCK",
+    "fields": [
+      {
+        "optional": true,
+        "type": "L",
+        "name": "BLOCKNR"
+      },
+      {
+        "type": "L",
+        "name": "WORTADR"
+      },
+      {
+        "type": "W",
+        "name": "BYTEADR"
+      },
+      {
+        "type": "S",
+        "name": "BEZEICHNUNG"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "RESERVIERTDATENBLOCK",
+    "fields": [
+      {
+        "optional": true,
+        "type": "L",
+        "name": "BLOCKNR"
+      },
+      {
+        "type": "L",
+        "name": "WORTADR"
+      },
+      {
+        "type": "W",
+        "name": "BYTEADR"
+      },
+      {
+        "type": "S",
+        "name": "BEZEICHNUNG"
+      }
+    ],
+    "values": [
+      {
+        "BLOCKNR": 7,
+        "WORTADR": 0,
+        "BYTEADR": 31,
+        "BEZEICHNUNG": "PROGRAMMBLOCK_2"
+      },
+      {
+        "BLOCKNR": 8,
+        "WORTADR": 0,
+        "BYTEADR": 31,
+        "BEZEICHNUNG": "PROGRAMMBLOCK_3"
+      },
+      {
+        "BLOCKNR": 9,
+        "WORTADR": 0,
+        "BYTEADR": 31,
+        "BEZEICHNUNG": "PROGRAMMBLOCK_4"
+      },
+      {
+        "BLOCKNR": 10,
+        "WORTADR": 0,
+        "BYTEADR": 31,
+        "BEZEICHNUNG": "PROGRAMMBLOCK_5"
+      },
+      {
+        "BLOCKNR": 11,
+        "WORTADR": 0,
+        "BYTEADR": 31,
+        "BEZEICHNUNG": "PROGRAMMBLOCK_6"
+      },
+      {
+        "BLOCKNR": 12,
+        "WORTADR": 0,
+        "BYTEADR": 31,
+        "BEZEICHNUNG": "PROGRAMMBLOCK_7"
+      },
+      {
+        "BLOCKNR": 13,
+        "WORTADR": 0,
+        "BYTEADR": 31,
+        "BEZEICHNUNG": "PROGRAMMBLOCK_8"
+      },
+      {
+        "BLOCKNR": 14,
+        "WORTADR": 0,
+        "BYTEADR": 31,
+        "BEZEICHNUNG": "PROGRAMMBLOCK_9"
+      },
+      {
+        "BLOCKNR": 15,
+        "WORTADR": 0,
+        "BYTEADR": 31,
+        "BEZEICHNUNG": "PROGRAMMBLOCK_10"
+      },
+      {
+        "BLOCKNR": 16,
+        "WORTADR": 0,
+        "BYTEADR": 31,
+        "BEZEICHNUNG": "PROGRAMMBLOCK_11"
+      },
+      {
+        "BLOCKNR": 17,
+        "WORTADR": 0,
+        "BYTEADR": 31,
+        "BEZEICHNUNG": "PROGRAMMBLOCK_12"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "UNBELEGT1",
+    "fields": [
+      {
+        "optional": true,
+        "type": "L",
+        "name": "BLOCKNR"
+      },
+      {
+        "type": "L",
+        "name": "WORTADR"
+      },
+      {
+        "type": "W",
+        "name": "BYTEADR"
+      },
+      {
+        "optional": true,
+        "type": "B",
+        "name": "INDEX"
+      },
+      {
+        "collection": true,
+        "range": false,
+        "type": "B",
+        "name": "MASKE"
+      }
+    ],
+    "values": [
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 2,
+        "BYTEADR": 1,
+        "INDEX": null,
+        "MASKE": [
+          192
+        ]
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 3,
+        "BYTEADR": 1,
+        "INDEX": null,
+        "MASKE": [
+          32
+        ]
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 6,
+        "BYTEADR": 1,
+        "INDEX": null,
+        "MASKE": [
+          192
+        ]
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 10,
+        "BYTEADR": 1,
+        "INDEX": 97,
+        "MASKE": [
+          64
+        ]
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 10,
+        "BYTEADR": 1,
+        "INDEX": null,
+        "MASKE": [
+          128
+        ]
+      },
+      {
+        "BLOCKNR": 3,
+        "WORTADR": 30,
+        "BYTEADR": 1,
+        "INDEX": null,
+        "MASKE": [
+          192
+        ]
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 0,
+        "BYTEADR": 1,
+        "INDEX": null,
+        "MASKE": [
+          192
+        ]
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 29,
+        "BYTEADR": 1,
+        "INDEX": null,
+        "MASKE": [
+          3
+        ]
+      },
+      {
+        "BLOCKNR": 5,
+        "WORTADR": 0,
+        "BYTEADR": 1,
+        "INDEX": null,
+        "MASKE": [
+          8
+        ]
+      },
+      {
+        "BLOCKNR": 5,
+        "WORTADR": 0,
+        "BYTEADR": 1,
+        "INDEX": null,
+        "MASKE": [
+          128
+        ]
+      },
+      {
+        "BLOCKNR": 5,
+        "WORTADR": 1,
+        "BYTEADR": 1,
+        "INDEX": null,
+        "MASKE": [
+          248
+        ]
+      },
+      {
+        "BLOCKNR": 5,
+        "WORTADR": 8,
+        "BYTEADR": 1,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ]
+      },
+      {
+        "BLOCKNR": 5,
+        "WORTADR": 9,
+        "BYTEADR": 1,
+        "INDEX": 99,
+        "MASKE": [
+          254
+        ]
+      },
+      {
+        "BLOCKNR": 5,
+        "WORTADR": 10,
+        "BYTEADR": 21,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ]
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "UNBELEGT2",
+    "fields": [
+      {
+        "collection": true,
+        "range": false,
+        "type": "B",
+        "name": "WERT"
+      }
+    ],
+    "values": [
+      {
+        "WERT": [
+          0
+        ]
+      },
+      {
+        "WERT": [
+          0
+        ]
+      },
+      {
+        "WERT": [
+          0
+        ]
+      },
+      {
+        "WERT": [
+          0
+        ]
+      },
+      {
+        "WERT": [
+          0
+        ]
+      },
+      {
+        "WERT": [
+          0
+        ]
+      },
+      {
+        "WERT": [
+          0
+        ]
+      },
+      {
+        "WERT": [
+          0
+        ]
+      },
+      {
+        "WERT": [
+          0
+        ]
+      },
+      {
+        "WERT": [
+          0
+        ]
+      },
+      {
+        "WERT": [
+          12
+        ]
+      },
+      {
+        "WERT": [
+          4
+        ]
+      },
+      {
+        "WERT": [
+          0
+        ]
+      },
+      {
+        "WERT": [
+          0
+        ]
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "KENNUNG_K",
+    "fields": [
+      {
+        "type": "S",
+        "name": "IDENT"
+      },
+      {
+        "type": "S",
+        "name": "WERT1"
+      },
+      {
+        "collection": true,
+        "range": false,
+        "type": "S",
+        "name": "WERTN"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "KENNUNG_D",
+    "fields": [
+      {
+        "type": "W",
+        "name": "HEXWERT1"
+      },
+      {
+        "type": "W",
+        "name": "HEXWERT2"
+      },
+      {
+        "collection": true,
+        "range": true,
+        "type": "W",
+        "name": "HEXWERTN1"
+      },
+      {
+        "collection": true,
+        "range": true,
+        "type": "W",
+        "name": "HEXWERTN2"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "KENNUNG_X",
+    "fields": [
+      {
+        "type": "W",
+        "name": "HEXWERT1"
+      },
+      {
+        "type": "W",
+        "name": "HEXWERT2"
+      },
+      {
+        "collection": true,
+        "range": true,
+        "type": "W",
+        "name": "HEXWERTN1"
+      },
+      {
+        "collection": true,
+        "range": true,
+        "type": "W",
+        "name": "HEXWERTN2"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "KENNUNG_ALL",
+    "fields": [
+      {
+        "type": "S",
+        "name": "KENNUNG"
+      },
+      {
+        "type": "W",
+        "name": "HEXWERT1"
+      },
+      {
+        "collection": true,
+        "range": false,
+        "type": "W",
+        "name": "HEXWERTN"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "PARZUWEISUNG_PSW2",
+    "fields": [
+      {
+        "collection": true,
+        "range": false,
+        "type": "B",
+        "name": "DATUM"
+      }
+    ],
+    "values": [
+      {
+        "DATUM": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "PARZUWEISUNG_PSW1",
+    "fields": [
+      {
+        "type": "W",
+        "name": "PSW"
+      },
+      {
+        "collection": true,
+        "range": false,
+        "type": "B",
+        "name": "DATUM"
+      }
+    ],
+    "values": [
+      {
+        "PSW": 7,
+        "DATUM": [
+          114
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          32
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          64
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          114
+        ]
+      },
+      {
+        "PSW": 18,
+        "DATUM": [
+          35
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          64
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          33
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          32
+        ]
+      },
+      {
+        "PSW": 18,
+        "DATUM": [
+          114
+        ]
+      },
+      {
+        "PSW": 109,
+        "DATUM": [
+          164
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          32,
+          32
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          239,
+          239
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          114,
+          114
+        ]
+      },
+      {
+        "PSW": 18,
+        "DATUM": [
+          249,
+          249
+        ]
+      },
+      {
+        "PSW": 109,
+        "DATUM": [
+          248,
+          248
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          32,
+          32
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          248,
+          248
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          32
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          64
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          33
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          114
+        ]
+      },
+      {
+        "PSW": 18,
+        "DATUM": [
+          32
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          34,
+          34
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          32,
+          32
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          242,
+          242
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          32
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          64
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          114
+        ]
+      },
+      {
+        "PSW": 18,
+        "DATUM": [
+          35
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          34,
+          34
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          114,
+          114
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          32,
+          32
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          32
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          33
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          114
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          64
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          33
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          32
+        ]
+      },
+      {
+        "PSW": 18,
+        "DATUM": [
+          164
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          32
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          114
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          35
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          32
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          33
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          114
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          32,
+          32
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          215,
+          215
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          114,
+          114
+        ]
+      },
+      {
+        "PSW": 18,
+        "DATUM": [
+          229,
+          229
+        ]
+      },
+      {
+        "PSW": 109,
+        "DATUM": [
+          35,
+          35
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          32,
+          32
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          35,
+          35
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          114
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          114
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          187
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          91
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          182
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          194
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          7
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          32
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          3
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          2
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          3
+        ]
+      },
+      {
+        "PSW": 18,
+        "DATUM": [
+          4
+        ]
+      },
+      {
+        "PSW": 109,
+        "DATUM": [
+          5
+        ]
+      },
+      {
+        "PSW": 20,
+        "DATUM": [
+          6
+        ]
+      },
+      {
+        "PSW": 110,
+        "DATUM": [
+          7
+        ]
+      },
+      {
+        "PSW": 111,
+        "DATUM": [
+          8
+        ]
+      },
+      {
+        "PSW": 126,
+        "DATUM": [
+          9
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          3
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          3
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          3
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          3
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          3
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          3
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          3
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          3
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          3
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          3
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          3
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          3
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          3
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          3
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          3
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          3
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          3
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          3
+        ]
+      },
+      {
+        "PSW": 66,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 65,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 66,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 65,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 66,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 65,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 66,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 65,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          10
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          16
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          100
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          20
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          32
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          3
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          7
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 692,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 69,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 70,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 693,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          3
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          4
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          2
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          6
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          2
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          13
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          2
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          143
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          49
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          159
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          5
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          2
+        ]
+      },
+      {
+        "PSW": 18,
+        "DATUM": [
+          3
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          2
+        ]
+      },
+      {
+        "PSW": 18,
+        "DATUM": [
+          3
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          33
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          160
+        ]
+      },
+      {
+        "PSW": 18,
+        "DATUM": [
+          242
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          17
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          238
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          9
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          30
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          7
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          40
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          90
+        ]
+      },
+      {
+        "PSW": 18,
+        "DATUM": [
+          150
+        ]
+      },
+      {
+        "PSW": 109,
+        "DATUM": [
+          240
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          10
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          245
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          248
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          132
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          100
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          5,
+          47,
+          79,
+          127
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          21
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          33
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          64
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          33
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          32
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          64
+        ]
+      },
+      {
+        "PSW": 18,
+        "DATUM": [
+          249
+        ]
+      },
+      {
+        "PSW": 109,
+        "DATUM": [
+          114
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          33
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          33
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          171
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          164
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          32
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          64
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          215
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          32
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          217
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          114
+        ]
+      },
+      {
+        "PSW": 18,
+        "DATUM": [
+          203
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 524,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 525,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          39
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          170
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          127
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          215
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          132
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          154
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          255
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          254
+        ]
+      },
+      {
+        "PSW": 18,
+        "DATUM": [
+          124
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          147
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          192
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          163
+        ]
+      },
+      {
+        "PSW": 18,
+        "DATUM": [
+          190
+        ]
+      },
+      {
+        "PSW": 109,
+        "DATUM": [
+          141
+        ]
+      },
+      {
+        "PSW": 20,
+        "DATUM": [
+          254
+        ]
+      },
+      {
+        "PSW": 110,
+        "DATUM": [
+          117
+        ]
+      },
+      {
+        "PSW": 111,
+        "DATUM": [
+          162
+        ]
+      },
+      {
+        "PSW": 126,
+        "DATUM": [
+          133
+        ]
+      },
+      {
+        "PSW": 91,
+        "DATUM": [
+          172
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          92
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          25
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          182
+        ]
+      },
+      {
+        "PSW": 18,
+        "DATUM": [
+          10
+        ]
+      },
+      {
+        "PSW": 109,
+        "DATUM": [
+          144
+        ]
+      },
+      {
+        "PSW": 20,
+        "DATUM": [
+          189
+        ]
+      },
+      {
+        "PSW": 110,
+        "DATUM": [
+          142
+        ]
+      },
+      {
+        "PSW": 111,
+        "DATUM": [
+          254
+        ]
+      },
+      {
+        "PSW": 126,
+        "DATUM": [
+          62
+        ]
+      },
+      {
+        "PSW": 91,
+        "DATUM": [
+          152
+        ]
+      },
+      {
+        "PSW": 19,
+        "DATUM": [
+          114
+        ]
+      },
+      {
+        "PSW": 112,
+        "DATUM": [
+          185
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          92
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          25
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          182
+        ]
+      },
+      {
+        "PSW": 18,
+        "DATUM": [
+          10
+        ]
+      },
+      {
+        "PSW": 109,
+        "DATUM": [
+          144
+        ]
+      },
+      {
+        "PSW": 20,
+        "DATUM": [
+          189
+        ]
+      },
+      {
+        "PSW": 110,
+        "DATUM": [
+          142
+        ]
+      },
+      {
+        "PSW": 111,
+        "DATUM": [
+          254
+        ]
+      },
+      {
+        "PSW": 126,
+        "DATUM": [
+          62
+        ]
+      },
+      {
+        "PSW": 91,
+        "DATUM": [
+          152
+        ]
+      },
+      {
+        "PSW": 19,
+        "DATUM": [
+          114
+        ]
+      },
+      {
+        "PSW": 112,
+        "DATUM": [
+          185
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          47
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          16
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          236
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          16
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          7
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          3
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          16
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          234
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          55
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          10
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          7
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          7
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 61,
+        "DATUM": [
+          136,
+          136,
+          136,
+          136,
+          136,
+          136,
+          136,
+          136,
+          113,
+          94,
+          81,
+          71,
+          63,
+          54,
+          47,
+          47,
+          47
+        ]
+      },
+      {
+        "PSW": 62,
+        "DATUM": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          7
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          3
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 526,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          21,
+          253,
+          21,
+          254,
+          21
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          17,
+          253,
+          17,
+          254,
+          17
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          19,
+          253,
+          19,
+          254,
+          19
+        ]
+      },
+      {
+        "PSW": 18,
+        "DATUM": [
+          23,
+          253,
+          23,
+          254,
+          23
+        ]
+      },
+      {
+        "PSW": 109,
+        "DATUM": [
+          19,
+          253,
+          19,
+          254,
+          19
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          18,
+          253,
+          18,
+          254,
+          18
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          19,
+          253,
+          19,
+          254,
+          19
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          20,
+          253,
+          20,
+          254,
+          20
+        ]
+      },
+      {
+        "PSW": 18,
+        "DATUM": [
+          16,
+          253,
+          16,
+          254,
+          16
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          134
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          167
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          102
+        ]
+      },
+      {
+        "PSW": 18,
+        "DATUM": [
+          148
+        ]
+      },
+      {
+        "PSW": 109,
+        "DATUM": [
+          153
+        ]
+      },
+      {
+        "PSW": 20,
+        "DATUM": [
+          184
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          192
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          181
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          239
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          109
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          103
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          125
+        ]
+      },
+      {
+        "PSW": 18,
+        "DATUM": [
+          102
+        ]
+      },
+      {
+        "PSW": 109,
+        "DATUM": [
+          88
+        ]
+      },
+      {
+        "PSW": 20,
+        "DATUM": [
+          54
+        ]
+      },
+      {
+        "PSW": 110,
+        "DATUM": [
+          67
+        ]
+      },
+      {
+        "PSW": 111,
+        "DATUM": [
+          67
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          71
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          70
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          97
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          137
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          109
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          221
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          25
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          23
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          5
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          4
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          9
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          12
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          10
+        ]
+      },
+      {
+        "PSW": 18,
+        "DATUM": [
+          9
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          8
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          10
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          9
+        ]
+      },
+      {
+        "PSW": 18,
+        "DATUM": [
+          8
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          8
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          4
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          70
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          150
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          180
+        ]
+      },
+      {
+        "PSW": 18,
+        "DATUM": [
+          155
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          70
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          150
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          180
+        ]
+      },
+      {
+        "PSW": 18,
+        "DATUM": [
+          155
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          7
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          10
+        ]
+      },
+      {
+        "PSW": 9,
+        "DATUM": [
+          15
+        ]
+      },
+      {
+        "PSW": 18,
+        "DATUM": [
+          12
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          3
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          3
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          5
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          2
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          14
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          2
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          8
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          6
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          192
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          24
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          15
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          45
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 1037,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1038,
+        "DATUM": [
+          3
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          32
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          248
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          32
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          248
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          32
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          203
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          161
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          161
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          109
+        ]
+      },
+      {
+        "PSW": 8,
+        "DATUM": [
+          109
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          54
+        ]
+      },
+      {
+        "PSW": 2,
+        "DATUM": [
+          0
+        ]
+      },
+      {
+        "PSW": 1,
+        "DATUM": [
+          1
+        ]
+      },
+      {
+        "PSW": 7,
+        "DATUM": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "PARZUWEISUNG_DIR",
+    "fields": [
+      {
+        "optional": true,
+        "type": "L",
+        "name": "BLOCKNR"
+      },
+      {
+        "type": "L",
+        "name": "WORTADR"
+      },
+      {
+        "type": "W",
+        "name": "BYTEADR"
+      },
+      {
+        "type": "W",
+        "name": "FSW"
+      },
+      {
+        "optional": true,
+        "type": "B",
+        "name": "INDEX"
+      },
+      {
+        "collection": true,
+        "range": false,
+        "type": "B",
+        "name": "MASKE"
+      },
+      {
+        "collection": true,
+        "range": false,
+        "type": "A",
+        "name": "OPERATION"
+      },
+      {
+        "type": "B",
+        "name": "EINHEIT"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "PARZUWEISUNG_FSW",
+    "fields": [
+      {
+        "optional": true,
+        "type": "L",
+        "name": "BLOCKNR"
+      },
+      {
+        "type": "L",
+        "name": "WORTADR"
+      },
+      {
+        "type": "W",
+        "name": "BYTEADR"
+      },
+      {
+        "type": "W",
+        "name": "FSW"
+      },
+      {
+        "optional": true,
+        "type": "B",
+        "name": "INDEX"
+      },
+      {
+        "collection": true,
+        "range": false,
+        "type": "B",
+        "name": "MASKE"
+      },
+      {
+        "optional": true,
+        "type": "B",
+        "name": "EINHEIT"
+      },
+      {
+        "optional": true,
+        "type": "B",
+        "name": "INDIVID"
+      }
+    ],
+    "values": [
+      {
+        "BLOCKNR": 0,
+        "WORTADR": 0,
+        "BYTEADR": 1,
+        "FSW": 607,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 0,
+        "WORTADR": 1,
+        "BYTEADR": 1,
+        "FSW": 1195,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 0,
+        "WORTADR": 2,
+        "BYTEADR": 1,
+        "FSW": 1495,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 0,
+        "WORTADR": 3,
+        "BYTEADR": 2,
+        "FSW": 1570,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 0,
+        "WORTADR": 5,
+        "BYTEADR": 2,
+        "FSW": 667,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 0,
+        "WORTADR": 7,
+        "BYTEADR": 1,
+        "FSW": 669,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 0,
+        "WORTADR": 8,
+        "BYTEADR": 1,
+        "FSW": 1496,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 0,
+        "WORTADR": 9,
+        "BYTEADR": 2,
+        "FSW": 608,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 0,
+        "WORTADR": 11,
+        "BYTEADR": 1,
+        "FSW": 1196,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 0,
+        "WORTADR": 12,
+        "BYTEADR": 2,
+        "FSW": 1474,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 0,
+        "WORTADR": 14,
+        "BYTEADR": 1,
+        "FSW": 1530,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 0,
+        "WORTADR": 15,
+        "BYTEADR": 1,
+        "FSW": 1497,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 0,
+        "WORTADR": 16,
+        "BYTEADR": 1,
+        "FSW": 1532,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 0,
+        "WORTADR": 17,
+        "BYTEADR": 1,
+        "FSW": 1531,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 0,
+        "WORTADR": 18,
+        "BYTEADR": 2,
+        "FSW": 1571,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 0,
+        "WORTADR": 20,
+        "BYTEADR": 2,
+        "FSW": 609,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 0,
+        "WORTADR": 22,
+        "BYTEADR": 1,
+        "FSW": 610,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 0,
+        "WORTADR": 23,
+        "BYTEADR": 1,
+        "FSW": 694,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 0,
+        "WORTADR": 24,
+        "BYTEADR": 1,
+        "FSW": 611,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 0,
+        "WORTADR": 25,
+        "BYTEADR": 1,
+        "FSW": 676,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 0,
+        "WORTADR": 26,
+        "BYTEADR": 1,
+        "FSW": 612,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 0,
+        "WORTADR": 27,
+        "BYTEADR": 1,
+        "FSW": 613,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 0,
+        "WORTADR": 28,
+        "BYTEADR": 1,
+        "FSW": 695,
+        "INDEX": null,
+        "MASKE": [
+          15
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 0,
+        "WORTADR": 28,
+        "BYTEADR": 1,
+        "FSW": 696,
+        "INDEX": null,
+        "MASKE": [
+          240
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 0,
+        "WORTADR": 29,
+        "BYTEADR": 1,
+        "FSW": 697,
+        "INDEX": null,
+        "MASKE": [
+          63
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 0,
+        "WORTADR": 29,
+        "BYTEADR": 1,
+        "FSW": 698,
+        "INDEX": null,
+        "MASKE": [
+          192
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 0,
+        "WORTADR": 30,
+        "BYTEADR": 1,
+        "FSW": 1452,
+        "INDEX": null,
+        "MASKE": [
+          63
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 0,
+        "WORTADR": 30,
+        "BYTEADR": 1,
+        "FSW": 1198,
+        "INDEX": null,
+        "MASKE": [
+          64
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 0,
+        "WORTADR": 30,
+        "BYTEADR": 1,
+        "FSW": 1453,
+        "INDEX": null,
+        "MASKE": [
+          128
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 0,
+        "BYTEADR": 1,
+        "FSW": 616,
+        "INDEX": null,
+        "MASKE": [
+          1
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 0,
+        "BYTEADR": 1,
+        "FSW": 1199,
+        "INDEX": null,
+        "MASKE": [
+          2
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 0,
+        "BYTEADR": 1,
+        "FSW": 1498,
+        "INDEX": null,
+        "MASKE": [
+          4
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 0,
+        "BYTEADR": 1,
+        "FSW": 1544,
+        "INDEX": null,
+        "MASKE": [
+          24
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 0,
+        "BYTEADR": 1,
+        "FSW": 528,
+        "INDEX": null,
+        "MASKE": [
+          96
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 0,
+        "BYTEADR": 1,
+        "FSW": 1513,
+        "INDEX": null,
+        "MASKE": [
+          128
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 1,
+        "BYTEADR": 1,
+        "FSW": 1499,
+        "INDEX": null,
+        "MASKE": [
+          1
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 1,
+        "BYTEADR": 1,
+        "FSW": 617,
+        "INDEX": null,
+        "MASKE": [
+          6
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 1,
+        "BYTEADR": 1,
+        "FSW": 1200,
+        "INDEX": null,
+        "MASKE": [
+          8
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 1,
+        "BYTEADR": 1,
+        "FSW": 1470,
+        "INDEX": null,
+        "MASKE": [
+          48
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 1,
+        "BYTEADR": 1,
+        "FSW": 1533,
+        "INDEX": null,
+        "MASKE": [
+          64
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 1,
+        "BYTEADR": 1,
+        "FSW": 1509,
+        "INDEX": null,
+        "MASKE": [
+          128
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 2,
+        "BYTEADR": 1,
+        "FSW": 618,
+        "INDEX": null,
+        "MASKE": [
+          1
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 2,
+        "BYTEADR": 1,
+        "FSW": 1534,
+        "INDEX": null,
+        "MASKE": [
+          2
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 2,
+        "BYTEADR": 1,
+        "FSW": 1545,
+        "INDEX": null,
+        "MASKE": [
+          12
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 2,
+        "BYTEADR": 1,
+        "FSW": 1535,
+        "INDEX": null,
+        "MASKE": [
+          48
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 3,
+        "BYTEADR": 1,
+        "FSW": 699,
+        "INDEX": null,
+        "MASKE": [
+          1
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 3,
+        "BYTEADR": 1,
+        "FSW": 700,
+        "INDEX": null,
+        "MASKE": [
+          2
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 3,
+        "BYTEADR": 1,
+        "FSW": 1573,
+        "INDEX": null,
+        "MASKE": [
+          4
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 3,
+        "BYTEADR": 1,
+        "FSW": 701,
+        "INDEX": null,
+        "MASKE": [
+          8
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 3,
+        "BYTEADR": 1,
+        "FSW": 702,
+        "INDEX": null,
+        "MASKE": [
+          16
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 3,
+        "BYTEADR": 1,
+        "FSW": 703,
+        "INDEX": null,
+        "MASKE": [
+          192
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 4,
+        "BYTEADR": 1,
+        "FSW": 619,
+        "INDEX": null,
+        "MASKE": [
+          1
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 4,
+        "BYTEADR": 1,
+        "FSW": 1201,
+        "INDEX": null,
+        "MASKE": [
+          2
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 4,
+        "BYTEADR": 1,
+        "FSW": 1500,
+        "INDEX": null,
+        "MASKE": [
+          4
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 4,
+        "BYTEADR": 1,
+        "FSW": 1536,
+        "INDEX": null,
+        "MASKE": [
+          24
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 4,
+        "BYTEADR": 1,
+        "FSW": 620,
+        "INDEX": null,
+        "MASKE": [
+          96
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 4,
+        "BYTEADR": 1,
+        "FSW": 1514,
+        "INDEX": null,
+        "MASKE": [
+          128
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 5,
+        "BYTEADR": 1,
+        "FSW": 1501,
+        "INDEX": null,
+        "MASKE": [
+          1
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 5,
+        "BYTEADR": 1,
+        "FSW": 621,
+        "INDEX": null,
+        "MASKE": [
+          6
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 5,
+        "BYTEADR": 1,
+        "FSW": 1202,
+        "INDEX": null,
+        "MASKE": [
+          8
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 5,
+        "BYTEADR": 1,
+        "FSW": 622,
+        "INDEX": null,
+        "MASKE": [
+          48
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 5,
+        "BYTEADR": 1,
+        "FSW": 1537,
+        "INDEX": null,
+        "MASKE": [
+          64
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 5,
+        "BYTEADR": 1,
+        "FSW": 1502,
+        "INDEX": null,
+        "MASKE": [
+          128
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 6,
+        "BYTEADR": 1,
+        "FSW": 623,
+        "INDEX": null,
+        "MASKE": [
+          1
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 6,
+        "BYTEADR": 1,
+        "FSW": 1538,
+        "INDEX": null,
+        "MASKE": [
+          2
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 6,
+        "BYTEADR": 1,
+        "FSW": 704,
+        "INDEX": null,
+        "MASKE": [
+          12
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 6,
+        "BYTEADR": 1,
+        "FSW": 624,
+        "INDEX": null,
+        "MASKE": [
+          48
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 7,
+        "BYTEADR": 1,
+        "FSW": 705,
+        "INDEX": null,
+        "MASKE": [
+          1
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 7,
+        "BYTEADR": 1,
+        "FSW": 1574,
+        "INDEX": null,
+        "MASKE": [
+          2
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 7,
+        "BYTEADR": 1,
+        "FSW": 1575,
+        "INDEX": null,
+        "MASKE": [
+          4
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 7,
+        "BYTEADR": 1,
+        "FSW": 706,
+        "INDEX": null,
+        "MASKE": [
+          8
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 7,
+        "BYTEADR": 1,
+        "FSW": 707,
+        "INDEX": null,
+        "MASKE": [
+          16
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 7,
+        "BYTEADR": 1,
+        "FSW": 708,
+        "INDEX": null,
+        "MASKE": [
+          32
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 7,
+        "BYTEADR": 1,
+        "FSW": 709,
+        "INDEX": null,
+        "MASKE": [
+          64
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 7,
+        "BYTEADR": 1,
+        "FSW": 710,
+        "INDEX": null,
+        "MASKE": [
+          128
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 8,
+        "BYTEADR": 1,
+        "FSW": 625,
+        "INDEX": null,
+        "MASKE": [
+          1
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 8,
+        "BYTEADR": 1,
+        "FSW": 1203,
+        "INDEX": null,
+        "MASKE": [
+          2
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 8,
+        "BYTEADR": 1,
+        "FSW": 1503,
+        "INDEX": null,
+        "MASKE": [
+          4
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 8,
+        "BYTEADR": 1,
+        "FSW": 1541,
+        "INDEX": null,
+        "MASKE": [
+          24
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 8,
+        "BYTEADR": 1,
+        "FSW": 626,
+        "INDEX": null,
+        "MASKE": [
+          96
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 8,
+        "BYTEADR": 1,
+        "FSW": 627,
+        "INDEX": null,
+        "MASKE": [
+          128
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 9,
+        "BYTEADR": 1,
+        "FSW": 1504,
+        "INDEX": null,
+        "MASKE": [
+          1
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 9,
+        "BYTEADR": 1,
+        "FSW": 628,
+        "INDEX": null,
+        "MASKE": [
+          6
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 9,
+        "BYTEADR": 1,
+        "FSW": 1204,
+        "INDEX": null,
+        "MASKE": [
+          8
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 9,
+        "BYTEADR": 1,
+        "FSW": 630,
+        "INDEX": null,
+        "MASKE": [
+          48
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 9,
+        "BYTEADR": 1,
+        "FSW": 1539,
+        "INDEX": null,
+        "MASKE": [
+          64
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 9,
+        "BYTEADR": 1,
+        "FSW": 1510,
+        "INDEX": null,
+        "MASKE": [
+          128
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 10,
+        "BYTEADR": 1,
+        "FSW": 629,
+        "INDEX": null,
+        "MASKE": [
+          1
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 10,
+        "BYTEADR": 1,
+        "FSW": 1540,
+        "INDEX": null,
+        "MASKE": [
+          2
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 10,
+        "BYTEADR": 1,
+        "FSW": 1542,
+        "INDEX": null,
+        "MASKE": [
+          12
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 10,
+        "BYTEADR": 1,
+        "FSW": 631,
+        "INDEX": null,
+        "MASKE": [
+          48
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 11,
+        "BYTEADR": 1,
+        "FSW": 517,
+        "INDEX": null,
+        "MASKE": [
+          1
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 11,
+        "BYTEADR": 1,
+        "FSW": 1446,
+        "INDEX": null,
+        "MASKE": [
+          2
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 11,
+        "BYTEADR": 1,
+        "FSW": 675,
+        "INDEX": null,
+        "MASKE": [
+          4
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 11,
+        "BYTEADR": 1,
+        "FSW": 677,
+        "INDEX": null,
+        "MASKE": [
+          8
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 11,
+        "BYTEADR": 1,
+        "FSW": 678,
+        "INDEX": null,
+        "MASKE": [
+          16
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 11,
+        "BYTEADR": 1,
+        "FSW": 679,
+        "INDEX": null,
+        "MASKE": [
+          32
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 11,
+        "BYTEADR": 1,
+        "FSW": 1482,
+        "INDEX": null,
+        "MASKE": [
+          64
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 11,
+        "BYTEADR": 1,
+        "FSW": 523,
+        "INDEX": null,
+        "MASKE": [
+          128
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 12,
+        "BYTEADR": 1,
+        "FSW": 532,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 13,
+        "BYTEADR": 1,
+        "FSW": 632,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 14,
+        "BYTEADR": 1,
+        "FSW": 633,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 15,
+        "BYTEADR": 1,
+        "FSW": 634,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 16,
+        "BYTEADR": 1,
+        "FSW": 635,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 17,
+        "BYTEADR": 1,
+        "FSW": 636,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 18,
+        "BYTEADR": 1,
+        "FSW": 1483,
+        "INDEX": null,
+        "MASKE": [
+          1
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 18,
+        "BYTEADR": 1,
+        "FSW": 524,
+        "INDEX": null,
+        "MASKE": [
+          14
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 18,
+        "BYTEADR": 1,
+        "FSW": 525,
+        "INDEX": null,
+        "MASKE": [
+          112
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 18,
+        "BYTEADR": 1,
+        "FSW": 2092,
+        "INDEX": null,
+        "MASKE": [
+          128
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 19,
+        "BYTEADR": 1,
+        "FSW": 637,
+        "INDEX": null,
+        "MASKE": [
+          1
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 19,
+        "BYTEADR": 1,
+        "FSW": 638,
+        "INDEX": null,
+        "MASKE": [
+          2
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 19,
+        "BYTEADR": 1,
+        "FSW": 1515,
+        "INDEX": null,
+        "MASKE": [
+          4
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 19,
+        "BYTEADR": 1,
+        "FSW": 639,
+        "INDEX": null,
+        "MASKE": [
+          8
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 19,
+        "BYTEADR": 1,
+        "FSW": 640,
+        "INDEX": null,
+        "MASKE": [
+          16
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 19,
+        "BYTEADR": 1,
+        "FSW": 1520,
+        "INDEX": null,
+        "MASKE": [
+          32
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 19,
+        "BYTEADR": 1,
+        "FSW": 1516,
+        "INDEX": null,
+        "MASKE": [
+          64
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 19,
+        "BYTEADR": 1,
+        "FSW": 1521,
+        "INDEX": null,
+        "MASKE": [
+          128
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 20,
+        "BYTEADR": 1,
+        "FSW": 686,
+        "INDEX": null,
+        "MASKE": [
+          1
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 20,
+        "BYTEADR": 1,
+        "FSW": 687,
+        "INDEX": null,
+        "MASKE": [
+          2
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 20,
+        "BYTEADR": 1,
+        "FSW": 711,
+        "INDEX": null,
+        "MASKE": [
+          4
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 20,
+        "BYTEADR": 1,
+        "FSW": 1552,
+        "INDEX": null,
+        "MASKE": [
+          8
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 20,
+        "BYTEADR": 1,
+        "FSW": 1553,
+        "INDEX": null,
+        "MASKE": [
+          16
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 20,
+        "BYTEADR": 1,
+        "FSW": 691,
+        "INDEX": null,
+        "MASKE": [
+          32
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 20,
+        "BYTEADR": 1,
+        "FSW": 689,
+        "INDEX": null,
+        "MASKE": [
+          64
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 20,
+        "BYTEADR": 1,
+        "FSW": 716,
+        "INDEX": null,
+        "MASKE": [
+          128
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 21,
+        "BYTEADR": 1,
+        "FSW": 1562,
+        "INDEX": null,
+        "MASKE": [
+          1
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 21,
+        "BYTEADR": 1,
+        "FSW": 1559,
+        "INDEX": null,
+        "MASKE": [
+          14
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 21,
+        "BYTEADR": 1,
+        "FSW": 1560,
+        "INDEX": null,
+        "MASKE": [
+          240
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 22,
+        "BYTEADR": 1,
+        "FSW": 1561,
+        "INDEX": null,
+        "MASKE": [
+          15
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 22,
+        "BYTEADR": 1,
+        "FSW": 1485,
+        "INDEX": null,
+        "MASKE": [
+          16
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 22,
+        "BYTEADR": 1,
+        "FSW": 1566,
+        "INDEX": null,
+        "MASKE": [
+          32
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 22,
+        "BYTEADR": 1,
+        "FSW": 1567,
+        "INDEX": null,
+        "MASKE": [
+          64
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 22,
+        "BYTEADR": 1,
+        "FSW": 693,
+        "INDEX": null,
+        "MASKE": [
+          128
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 23,
+        "BYTEADR": 1,
+        "FSW": 719,
+        "INDEX": null,
+        "MASKE": [
+          15
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 23,
+        "BYTEADR": 1,
+        "FSW": 720,
+        "INDEX": null,
+        "MASKE": [
+          240
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 24,
+        "BYTEADR": 1,
+        "FSW": 2007,
+        "INDEX": null,
+        "MASKE": [
+          1
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 24,
+        "BYTEADR": 1,
+        "FSW": 1565,
+        "INDEX": null,
+        "MASKE": [
+          14
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 24,
+        "BYTEADR": 1,
+        "FSW": 692,
+        "INDEX": null,
+        "MASKE": [
+          16
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 24,
+        "BYTEADR": 1,
+        "FSW": 721,
+        "INDEX": null,
+        "MASKE": [
+          32
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 24,
+        "BYTEADR": 1,
+        "FSW": 1563,
+        "INDEX": null,
+        "MASKE": [
+          64
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 24,
+        "BYTEADR": 1,
+        "FSW": 717,
+        "INDEX": null,
+        "MASKE": [
+          128
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 25,
+        "BYTEADR": 1,
+        "FSW": 1564,
+        "INDEX": null,
+        "MASKE": [
+          15
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 25,
+        "BYTEADR": 1,
+        "FSW": 718,
+        "INDEX": null,
+        "MASKE": [
+          240
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 26,
+        "BYTEADR": 1,
+        "FSW": 1486,
+        "INDEX": null,
+        "MASKE": [
+          1
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 26,
+        "BYTEADR": 1,
+        "FSW": 1487,
+        "INDEX": null,
+        "MASKE": [
+          2
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 26,
+        "BYTEADR": 1,
+        "FSW": 2104,
+        "INDEX": null,
+        "MASKE": [
+          4
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 26,
+        "BYTEADR": 1,
+        "FSW": 2103,
+        "INDEX": null,
+        "MASKE": [
+          8
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 26,
+        "BYTEADR": 1,
+        "FSW": 1488,
+        "INDEX": null,
+        "MASKE": [
+          240
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 27,
+        "BYTEADR": 1,
+        "FSW": 1527,
+        "INDEX": null,
+        "MASKE": [
+          3
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 27,
+        "BYTEADR": 1,
+        "FSW": 1209,
+        "INDEX": null,
+        "MASKE": [
+          4
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 27,
+        "BYTEADR": 1,
+        "FSW": 1554,
+        "INDEX": null,
+        "MASKE": [
+          8
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 27,
+        "BYTEADR": 1,
+        "FSW": 1556,
+        "INDEX": null,
+        "MASKE": [
+          16
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 27,
+        "BYTEADR": 1,
+        "FSW": 1555,
+        "INDEX": null,
+        "MASKE": [
+          32
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 27,
+        "BYTEADR": 1,
+        "FSW": 690,
+        "INDEX": null,
+        "MASKE": [
+          64
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 27,
+        "BYTEADR": 1,
+        "FSW": 670,
+        "INDEX": null,
+        "MASKE": [
+          128
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 28,
+        "BYTEADR": 1,
+        "FSW": 641,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 29,
+        "BYTEADR": 1,
+        "FSW": 1518,
+        "INDEX": null,
+        "MASKE": [
+          1
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 29,
+        "BYTEADR": 1,
+        "FSW": 642,
+        "INDEX": null,
+        "MASKE": [
+          2
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 29,
+        "BYTEADR": 1,
+        "FSW": 643,
+        "INDEX": null,
+        "MASKE": [
+          4
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 29,
+        "BYTEADR": 1,
+        "FSW": 1476,
+        "INDEX": null,
+        "MASKE": [
+          8
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 29,
+        "BYTEADR": 1,
+        "FSW": 680,
+        "INDEX": null,
+        "MASKE": [
+          48
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 29,
+        "BYTEADR": 1,
+        "FSW": 681,
+        "INDEX": null,
+        "MASKE": [
+          192
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 1,
+        "WORTADR": 30,
+        "BYTEADR": 1,
+        "FSW": 645,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 0,
+        "BYTEADR": 1,
+        "FSW": 646,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 1,
+        "BYTEADR": 1,
+        "FSW": 647,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 2,
+        "BYTEADR": 1,
+        "FSW": 541,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 3,
+        "BYTEADR": 1,
+        "FSW": 648,
+        "INDEX": null,
+        "MASKE": [
+          1
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 3,
+        "BYTEADR": 1,
+        "FSW": 649,
+        "INDEX": null,
+        "MASKE": [
+          2
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 3,
+        "BYTEADR": 1,
+        "FSW": 650,
+        "INDEX": null,
+        "MASKE": [
+          4
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 3,
+        "BYTEADR": 1,
+        "FSW": 651,
+        "INDEX": null,
+        "MASKE": [
+          8
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 3,
+        "BYTEADR": 1,
+        "FSW": 1450,
+        "INDEX": null,
+        "MASKE": [
+          16
+        ],
+        "EINHEIT": 104,
+        "INDIVID": 0
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 3,
+        "BYTEADR": 1,
+        "FSW": 1481,
+        "INDEX": 98,
+        "MASKE": [
+          32
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 3,
+        "BYTEADR": 1,
+        "FSW": 1478,
+        "INDEX": null,
+        "MASKE": [
+          64
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 3,
+        "BYTEADR": 1,
+        "FSW": 1190,
+        "INDEX": null,
+        "MASKE": [
+          128
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 4,
+        "BYTEADR": 1,
+        "FSW": 1205,
+        "INDEX": null,
+        "MASKE": [
+          1
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 4,
+        "BYTEADR": 1,
+        "FSW": 1505,
+        "INDEX": null,
+        "MASKE": [
+          2
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 4,
+        "BYTEADR": 1,
+        "FSW": 1511,
+        "INDEX": null,
+        "MASKE": [
+          4
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 4,
+        "BYTEADR": 1,
+        "FSW": 652,
+        "INDEX": null,
+        "MASKE": [
+          8
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 4,
+        "BYTEADR": 1,
+        "FSW": 1506,
+        "INDEX": null,
+        "MASKE": [
+          16
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 4,
+        "BYTEADR": 1,
+        "FSW": 653,
+        "INDEX": null,
+        "MASKE": [
+          32
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 4,
+        "BYTEADR": 1,
+        "FSW": 1512,
+        "INDEX": null,
+        "MASKE": [
+          64
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 4,
+        "BYTEADR": 1,
+        "FSW": 1524,
+        "INDEX": null,
+        "MASKE": [
+          128
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 5,
+        "BYTEADR": 1,
+        "FSW": 1550,
+        "INDEX": null,
+        "MASKE": [
+          1
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 5,
+        "BYTEADR": 1,
+        "FSW": 1522,
+        "INDEX": null,
+        "MASKE": [
+          2
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 5,
+        "BYTEADR": 1,
+        "FSW": 654,
+        "INDEX": null,
+        "MASKE": [
+          4
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 5,
+        "BYTEADR": 1,
+        "FSW": 1451,
+        "INDEX": null,
+        "MASKE": [
+          8
+        ],
+        "EINHEIT": 104,
+        "INDIVID": 0
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 5,
+        "BYTEADR": 1,
+        "FSW": 655,
+        "INDEX": null,
+        "MASKE": [
+          48
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 5,
+        "BYTEADR": 1,
+        "FSW": 656,
+        "INDEX": null,
+        "MASKE": [
+          192
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 6,
+        "BYTEADR": 1,
+        "FSW": 657,
+        "INDEX": null,
+        "MASKE": [
+          1
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 6,
+        "BYTEADR": 1,
+        "FSW": 1551,
+        "INDEX": null,
+        "MASKE": [
+          2
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 6,
+        "BYTEADR": 1,
+        "FSW": 1197,
+        "INDEX": null,
+        "MASKE": [
+          4
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 6,
+        "BYTEADR": 1,
+        "FSW": 658,
+        "INDEX": null,
+        "MASKE": [
+          8
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 6,
+        "BYTEADR": 1,
+        "FSW": 1444,
+        "INDEX": null,
+        "MASKE": [
+          16
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 6,
+        "BYTEADR": 1,
+        "FSW": 519,
+        "INDEX": null,
+        "MASKE": [
+          32
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 6,
+        "BYTEADR": 1,
+        "FSW": 1528,
+        "INDEX": null,
+        "MASKE": [
+          64
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 6,
+        "BYTEADR": 1,
+        "FSW": 659,
+        "INDEX": null,
+        "MASKE": [
+          128
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 7,
+        "BYTEADR": 1,
+        "FSW": 1207,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 8,
+        "BYTEADR": 1,
+        "FSW": 533,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 9,
+        "BYTEADR": 1,
+        "FSW": 534,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 10,
+        "BYTEADR": 1,
+        "FSW": 660,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 11,
+        "BYTEADR": 1,
+        "FSW": 661,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 12,
+        "BYTEADR": 1,
+        "FSW": 542,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": 0
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 13,
+        "BYTEADR": 1,
+        "FSW": 535,
+        "INDEX": null,
+        "MASKE": [
+          1
+        ],
+        "EINHEIT": 104,
+        "INDIVID": 0
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 13,
+        "BYTEADR": 1,
+        "FSW": 1557,
+        "INDEX": null,
+        "MASKE": [
+          2
+        ],
+        "EINHEIT": 104,
+        "INDIVID": 0
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 13,
+        "BYTEADR": 1,
+        "FSW": 538,
+        "INDEX": null,
+        "MASKE": [
+          4
+        ],
+        "EINHEIT": 104,
+        "INDIVID": 0
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 13,
+        "BYTEADR": 1,
+        "FSW": 1443,
+        "INDEX": null,
+        "MASKE": [
+          8
+        ],
+        "EINHEIT": 104,
+        "INDIVID": 0
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 13,
+        "BYTEADR": 1,
+        "FSW": 1558,
+        "INDEX": null,
+        "MASKE": [
+          16
+        ],
+        "EINHEIT": 104,
+        "INDIVID": 0
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 13,
+        "BYTEADR": 1,
+        "FSW": 537,
+        "INDEX": null,
+        "MASKE": [
+          32
+        ],
+        "EINHEIT": 104,
+        "INDIVID": 0
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 13,
+        "BYTEADR": 1,
+        "FSW": 536,
+        "INDEX": null,
+        "MASKE": [
+          64
+        ],
+        "EINHEIT": 104,
+        "INDIVID": 0
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 13,
+        "BYTEADR": 1,
+        "FSW": 539,
+        "INDEX": null,
+        "MASKE": [
+          128
+        ],
+        "EINHEIT": 104,
+        "INDIVID": 0
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 14,
+        "BYTEADR": 1,
+        "FSW": 546,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 15,
+        "BYTEADR": 1,
+        "FSW": 547,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 16,
+        "BYTEADR": 1,
+        "FSW": 526,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 17,
+        "BYTEADR": 1,
+        "FSW": 540,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 18,
+        "BYTEADR": 4,
+        "FSW": 578,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 22,
+        "BYTEADR": 1,
+        "FSW": 662,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 23,
+        "BYTEADR": 1,
+        "FSW": 1526,
+        "INDEX": 97,
+        "MASKE": [
+          1
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 23,
+        "BYTEADR": 1,
+        "FSW": 1507,
+        "INDEX": null,
+        "MASKE": [
+          2
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 23,
+        "BYTEADR": 1,
+        "FSW": 1572,
+        "INDEX": null,
+        "MASKE": [
+          4
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 23,
+        "BYTEADR": 1,
+        "FSW": 1447,
+        "INDEX": null,
+        "MASKE": [
+          8
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 23,
+        "BYTEADR": 1,
+        "FSW": 1547,
+        "INDEX": null,
+        "MASKE": [
+          16
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 23,
+        "BYTEADR": 1,
+        "FSW": 1549,
+        "INDEX": null,
+        "MASKE": [
+          32
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 23,
+        "BYTEADR": 1,
+        "FSW": 1508,
+        "INDEX": null,
+        "MASKE": [
+          64
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 23,
+        "BYTEADR": 1,
+        "FSW": 1548,
+        "INDEX": null,
+        "MASKE": [
+          128
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 24,
+        "BYTEADR": 1,
+        "FSW": 663,
+        "INDEX": null,
+        "MASKE": [
+          1
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 24,
+        "BYTEADR": 1,
+        "FSW": 1211,
+        "INDEX": null,
+        "MASKE": [
+          2
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 24,
+        "BYTEADR": 1,
+        "FSW": 1525,
+        "INDEX": null,
+        "MASKE": [
+          4
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 24,
+        "BYTEADR": 1,
+        "FSW": 1206,
+        "INDEX": null,
+        "MASKE": [
+          8
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 24,
+        "BYTEADR": 1,
+        "FSW": 1529,
+        "INDEX": null,
+        "MASKE": [
+          16
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 24,
+        "BYTEADR": 1,
+        "FSW": 665,
+        "INDEX": null,
+        "MASKE": [
+          32
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 24,
+        "BYTEADR": 1,
+        "FSW": 644,
+        "INDEX": null,
+        "MASKE": [
+          64
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 24,
+        "BYTEADR": 1,
+        "FSW": 1517,
+        "INDEX": null,
+        "MASKE": [
+          128
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 25,
+        "BYTEADR": 1,
+        "FSW": 1543,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 26,
+        "BYTEADR": 1,
+        "FSW": 1546,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 27,
+        "BYTEADR": 1,
+        "FSW": 666,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 28,
+        "BYTEADR": 1,
+        "FSW": 1519,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 29,
+        "BYTEADR": 1,
+        "FSW": 1480,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 2,
+        "WORTADR": 30,
+        "BYTEADR": 1,
+        "FSW": 1523,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 3,
+        "WORTADR": 0,
+        "BYTEADR": 1,
+        "FSW": 1210,
+        "INDEX": null,
+        "MASKE": [
+          1
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 3,
+        "WORTADR": 0,
+        "BYTEADR": 1,
+        "FSW": 1479,
+        "INDEX": null,
+        "MASKE": [
+          2
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 3,
+        "WORTADR": 0,
+        "BYTEADR": 1,
+        "FSW": 723,
+        "INDEX": null,
+        "MASKE": [
+          4
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 3,
+        "WORTADR": 0,
+        "BYTEADR": 1,
+        "FSW": 668,
+        "INDEX": null,
+        "MASKE": [
+          8
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 3,
+        "WORTADR": 0,
+        "BYTEADR": 1,
+        "FSW": 1576,
+        "INDEX": null,
+        "MASKE": [
+          16
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 3,
+        "WORTADR": 0,
+        "BYTEADR": 1,
+        "FSW": 1577,
+        "INDEX": null,
+        "MASKE": [
+          32
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 3,
+        "WORTADR": 0,
+        "BYTEADR": 1,
+        "FSW": 712,
+        "INDEX": null,
+        "MASKE": [
+          64
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 3,
+        "WORTADR": 0,
+        "BYTEADR": 1,
+        "FSW": 713,
+        "INDEX": null,
+        "MASKE": [
+          128
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 3,
+        "WORTADR": 1,
+        "BYTEADR": 1,
+        "FSW": 1578,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 3,
+        "WORTADR": 2,
+        "BYTEADR": 1,
+        "FSW": 1579,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 3,
+        "WORTADR": 3,
+        "BYTEADR": 1,
+        "FSW": 1580,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 3,
+        "WORTADR": 4,
+        "BYTEADR": 1,
+        "FSW": 1597,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 3,
+        "WORTADR": 5,
+        "BYTEADR": 1,
+        "FSW": 1600,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 3,
+        "WORTADR": 6,
+        "BYTEADR": 1,
+        "FSW": 1601,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 3,
+        "WORTADR": 7,
+        "BYTEADR": 1,
+        "FSW": 1602,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 3,
+        "WORTADR": 8,
+        "BYTEADR": 1,
+        "FSW": 1581,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 3,
+        "WORTADR": 9,
+        "BYTEADR": 1,
+        "FSW": 1582,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 3,
+        "WORTADR": 10,
+        "BYTEADR": 1,
+        "FSW": 1598,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 3,
+        "WORTADR": 11,
+        "BYTEADR": 1,
+        "FSW": 1599,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 3,
+        "WORTADR": 12,
+        "BYTEADR": 1,
+        "FSW": 1584,
+        "INDEX": null,
+        "MASKE": [
+          7
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 3,
+        "WORTADR": 12,
+        "BYTEADR": 1,
+        "FSW": 1583,
+        "INDEX": null,
+        "MASKE": [
+          56
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 3,
+        "WORTADR": 12,
+        "BYTEADR": 1,
+        "FSW": 1585,
+        "INDEX": null,
+        "MASKE": [
+          64
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 3,
+        "WORTADR": 12,
+        "BYTEADR": 1,
+        "FSW": 715,
+        "INDEX": null,
+        "MASKE": [
+          128
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 3,
+        "WORTADR": 13,
+        "BYTEADR": 17,
+        "FSW": 1596,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 3,
+        "WORTADR": 30,
+        "BYTEADR": 1,
+        "FSW": 1569,
+        "INDEX": null,
+        "MASKE": [
+          1
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 3,
+        "WORTADR": 30,
+        "BYTEADR": 1,
+        "FSW": 714,
+        "INDEX": null,
+        "MASKE": [
+          14
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 3,
+        "WORTADR": 30,
+        "BYTEADR": 1,
+        "FSW": 1603,
+        "INDEX": null,
+        "MASKE": [
+          16
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 3,
+        "WORTADR": 30,
+        "BYTEADR": 1,
+        "FSW": 1586,
+        "INDEX": null,
+        "MASKE": [
+          32
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 0,
+        "BYTEADR": 1,
+        "FSW": 1484,
+        "INDEX": null,
+        "MASKE": [
+          3
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 0,
+        "BYTEADR": 1,
+        "FSW": 1475,
+        "INDEX": null,
+        "MASKE": [
+          4
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 0,
+        "BYTEADR": 1,
+        "FSW": 1477,
+        "INDEX": null,
+        "MASKE": [
+          8
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 0,
+        "BYTEADR": 1,
+        "FSW": 579,
+        "INDEX": null,
+        "MASKE": [
+          16
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 0,
+        "BYTEADR": 1,
+        "FSW": 580,
+        "INDEX": null,
+        "MASKE": [
+          32
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 1,
+        "BYTEADR": 5,
+        "FSW": 1489,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 6,
+        "BYTEADR": 5,
+        "FSW": 1490,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 11,
+        "BYTEADR": 1,
+        "FSW": 1493,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 12,
+        "BYTEADR": 1,
+        "FSW": 575,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 13,
+        "BYTEADR": 1,
+        "FSW": 1494,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 14,
+        "BYTEADR": 1,
+        "FSW": 581,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 15,
+        "BYTEADR": 1,
+        "FSW": 582,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 16,
+        "BYTEADR": 1,
+        "FSW": 583,
+        "INDEX": null,
+        "MASKE": [
+          31
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 16,
+        "BYTEADR": 1,
+        "FSW": 584,
+        "INDEX": null,
+        "MASKE": [
+          224
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 17,
+        "BYTEADR": 1,
+        "FSW": 1491,
+        "INDEX": null,
+        "MASKE": [
+          15
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 17,
+        "BYTEADR": 1,
+        "FSW": 1492,
+        "INDEX": null,
+        "MASKE": [
+          240
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 18,
+        "BYTEADR": 1,
+        "FSW": 585,
+        "INDEX": null,
+        "MASKE": [
+          15
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 18,
+        "BYTEADR": 1,
+        "FSW": 586,
+        "INDEX": null,
+        "MASKE": [
+          240
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 19,
+        "BYTEADR": 1,
+        "FSW": 587,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 20,
+        "BYTEADR": 1,
+        "FSW": 588,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 21,
+        "BYTEADR": 1,
+        "FSW": 589,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 22,
+        "BYTEADR": 1,
+        "FSW": 590,
+        "INDEX": null,
+        "MASKE": [
+          15
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 22,
+        "BYTEADR": 1,
+        "FSW": 591,
+        "INDEX": null,
+        "MASKE": [
+          240
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 23,
+        "BYTEADR": 1,
+        "FSW": 592,
+        "INDEX": null,
+        "MASKE": [
+          15
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 23,
+        "BYTEADR": 1,
+        "FSW": 593,
+        "INDEX": null,
+        "MASKE": [
+          240
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 24,
+        "BYTEADR": 1,
+        "FSW": 594,
+        "INDEX": null,
+        "MASKE": [
+          7
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 24,
+        "BYTEADR": 1,
+        "FSW": 595,
+        "INDEX": null,
+        "MASKE": [
+          248
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 25,
+        "BYTEADR": 1,
+        "FSW": 596,
+        "INDEX": null,
+        "MASKE": [
+          7
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 25,
+        "BYTEADR": 1,
+        "FSW": 597,
+        "INDEX": null,
+        "MASKE": [
+          248
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 26,
+        "BYTEADR": 1,
+        "FSW": 598,
+        "INDEX": null,
+        "MASKE": [
+          15
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 26,
+        "BYTEADR": 1,
+        "FSW": 599,
+        "INDEX": null,
+        "MASKE": [
+          240
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 27,
+        "BYTEADR": 1,
+        "FSW": 600,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 28,
+        "BYTEADR": 1,
+        "FSW": 601,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 29,
+        "BYTEADR": 1,
+        "FSW": 602,
+        "INDEX": null,
+        "MASKE": [
+          4
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 29,
+        "BYTEADR": 1,
+        "FSW": 603,
+        "INDEX": null,
+        "MASKE": [
+          120
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 29,
+        "BYTEADR": 1,
+        "FSW": 604,
+        "INDEX": null,
+        "MASKE": [
+          128
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 4,
+        "WORTADR": 30,
+        "BYTEADR": 1,
+        "FSW": 605,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 5,
+        "WORTADR": 0,
+        "BYTEADR": 1,
+        "FSW": 2098,
+        "INDEX": null,
+        "MASKE": [
+          1
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 5,
+        "WORTADR": 0,
+        "BYTEADR": 1,
+        "FSW": 2093,
+        "INDEX": null,
+        "MASKE": [
+          2
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 5,
+        "WORTADR": 0,
+        "BYTEADR": 1,
+        "FSW": 2094,
+        "INDEX": null,
+        "MASKE": [
+          4
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 5,
+        "WORTADR": 0,
+        "BYTEADR": 1,
+        "FSW": 2135,
+        "INDEX": null,
+        "MASKE": [
+          16
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 5,
+        "WORTADR": 0,
+        "BYTEADR": 1,
+        "FSW": 2100,
+        "INDEX": null,
+        "MASKE": [
+          32
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 5,
+        "WORTADR": 0,
+        "BYTEADR": 1,
+        "FSW": 2095,
+        "INDEX": null,
+        "MASKE": [
+          64
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 5,
+        "WORTADR": 1,
+        "BYTEADR": 1,
+        "FSW": 2091,
+        "INDEX": null,
+        "MASKE": [
+          7
+        ],
+        "EINHEIT": 104,
+        "INDIVID": 0
+      },
+      {
+        "BLOCKNR": 5,
+        "WORTADR": 2,
+        "BYTEADR": 1,
+        "FSW": 2101,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 5,
+        "WORTADR": 3,
+        "BYTEADR": 1,
+        "FSW": 2102,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 5,
+        "WORTADR": 4,
+        "BYTEADR": 1,
+        "FSW": 2105,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 5,
+        "WORTADR": 5,
+        "BYTEADR": 1,
+        "FSW": 2096,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 5,
+        "WORTADR": 6,
+        "BYTEADR": 1,
+        "FSW": 2097,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 5,
+        "WORTADR": 7,
+        "BYTEADR": 1,
+        "FSW": 2134,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 5,
+        "WORTADR": 9,
+        "BYTEADR": 1,
+        "FSW": 2232,
+        "INDEX": 99,
+        "MASKE": [
+          1
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      },
+      {
+        "BLOCKNR": 6,
+        "WORTADR": 0,
+        "BYTEADR": 31,
+        "FSW": 1587,
+        "INDEX": null,
+        "MASKE": [
+          255
+        ],
+        "EINHEIT": 104,
+        "INDIVID": null
+      }
+    ]
+  }
+]

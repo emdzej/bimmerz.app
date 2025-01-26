@@ -1,0 +1,17 @@
+{
+  "name": "@bimmerz/ncs-data",
+  "main": "src/index.ts",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {        
+    "@types/pino": "^7.0.5"
+  },
+  "peerDependencies": {    
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "pino": "^8.14.1"
+  }
+}

@@ -125,18 +125,18 @@ export function numberToHex(data: number, length = 2) {
 	return data.toString(16).toUpperCase().padStart(length, '0');	
 }
 
-export function arrayToHex(data: number[]) {
-    return data.map((byte) => numberToHex(byte)).join(' ');	
+export function arrayToHex(data: number[], separator = ' ') {
+    return data.map((byte) => numberToHex(byte)).join(separator);	
 }
 
 export function hexToNumber(data: string) {
     return parseInt(data, 16);
 }
 
-export function hexToArray(data: string) {
+export function hexToArray(data: string, separator: string = " ") {
     // convert a hex string to an array of numbers
     // e.g. '01 02 03 FF' -> [1, 2, 3, 255 ]
-    return data.split(' ').map((byte) => hexToNumber(byte));
+    return data.split(separator).map((byte) => hexToNumber(byte));
 }
 
 export function stringToArgv(string: string): string[] {
@@ -181,4 +181,12 @@ export function parseMember<T extends { [key: string]: number }>(value: string, 
         return parseInt(value) as T[keyof T];
     }
     return undefined;
+}
+
+export function calculateCrc(buffer: Buffer, offset: number, length: number): number {
+    let crc = 0x00;
+    for (let i = offset; i < offset + length; i++) {
+        crc ^= buffer[i];     
+    }
+    return crc;
 }
