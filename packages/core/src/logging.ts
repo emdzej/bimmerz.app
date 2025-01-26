@@ -1,4 +1,4 @@
-import logger, { LoggerOptions } from "pino";
+import logger from "pino";
 
 export type LoggingFunction = {
     <T extends object>(obj: T, msg?: string, ...args: any[]): void;
@@ -50,7 +50,7 @@ export class ConsoleLogger implements Logger {
     public trace: LoggingFunction;
     private _logger: Logger;
 
-    constructor(name: string, level: LogLevel = "debug") {
+    constructor(_name: string, level: LogLevel = "debug") {
         this._logger = console;
         if (level === "debug") {
             this.debug = this._logger.debug.bind(this._logger);

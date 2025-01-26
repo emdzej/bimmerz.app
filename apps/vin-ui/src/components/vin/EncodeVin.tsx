@@ -8,11 +8,7 @@ import { useMemo, useState } from "react";
 import { IconButton, InputAdornment } from "@mui/material";
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
-export type EncodeVinProps = {
-
-}
-
-export function EncodeVin(props: EncodeVinProps) {
+export function EncodeVin() {
   const [vin, setVin] = useState<string>('')
   const [vinError, setVinError] = useState<string>('')
   const [tunerPro, setTunerPro] = useState<boolean>(false);

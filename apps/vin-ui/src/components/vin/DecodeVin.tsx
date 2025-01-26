@@ -1,5 +1,5 @@
-import { arrayToHex, hexToArray } from "@bimmerz/core";
-import { decodeVin, encodeVin, isValidVin } from "@bimmerz/vin";
+import { hexToArray } from "@bimmerz/core";
+import { decodeVin } from "@bimmerz/vin";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField"
@@ -8,11 +8,7 @@ import { useCallback, useMemo, useState } from "react";
 import { IconButton, InputAdornment } from "@mui/material";
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
-export type DecodeVinProps = {
-
-}
-
-export function DecodeVin(props: DecodeVinProps) {
+export function DecodeVin() {
   const [encodedVin, setEncodedVin] = useState<string>('')
   const [vinError, setVinError] = useState<string>('')
   const [tunerPro, setTunerPro] = useState<boolean>(false);
