@@ -43,7 +43,11 @@ export default defineConfig({
   ],
 
   themeConfig: {
-    logo: "/icon.svg",
+    logo: {
+      light: "/icon-light.svg",
+      dark: "/icon-dark.svg",
+      alt: "bimmerz",
+    },
 
     nav: [{ text: "Tools", link: "/tools/" }],
 

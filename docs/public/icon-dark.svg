@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 60" fill="none">
+  <!--
+    Dark-theme variant of the ///B emblem. B fills with white so it
+    reads against the dark page background. Geometry identical to
+    `icon-light.svg`; only the B's fill differs.
+
+    Loaded by VitePress's image `dark` slot when the page is in dark
+    mode. The other variant (`icon-light.svg`) is used in light mode
+    — `currentColor` doesn't propagate through `<img src>`, so we
+    ship two flat-coloured files instead.
+  -->
+  <polygon points="22,0 33,0 12,60 1,60" fill="#1c69d4" />
+  <polygon points="33,0 44,0 23,60 12,60" fill="#0a1f4d" />
+  <polygon points="44,0 55,0 34,60 23,60" fill="#c41e3a" />
+  <g transform="matrix(1 0 -0.35 1 0 0)">
+    <path
+      transform="translate(55, 60) scale(0.0409 -0.0409) translate(-151, 0)"
+      fill="#ffffff"
+      fill-rule="evenodd"
+      d="M151 1466H999Q1211 1466 1324.5 1361Q1438 1256 1438 1101Q1438 971 1357 878Q1303 816 1199 780Q1357 742 1431.5 649.5Q1506 557 1506 417Q1506 303 1453 212Q1400 121 1308 68Q1251 35 1136 20Q983 0 933 0H151ZM608 891H805Q911 891 952.5 927.5Q994 964 994 1033Q994 1097 952.5 1133Q911 1169 808 1169H608ZM608 315H839Q956 315 1004 356.5Q1052 398 1052 468Q1052 533 1004.5 572.5Q957 612 838 612H608Z"
+    />
+  </g>
+</svg>

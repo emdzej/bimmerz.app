@@ -25,9 +25,12 @@ jobs:
           fetch-depth: 0  # `lastUpdated` reads git log; needs full history.
 
       - name: Setup pnpm
+        # `packageManager` in package.json (pnpm@10.33.1) is the
+        # canonical version source; pnpm/action-setup reads it
+        # automatically. Pinning `version:` here as well makes the
+        # action bail with ERR_PNPM_BAD_PM_VERSION when the two
+        # values aren't byte-identical.
         uses: pnpm/action-setup@v4
-        with:
-          version: 10
 
       - name: Setup Node
         uses: actions/setup-node@v4

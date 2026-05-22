@@ -6,7 +6,8 @@ hero:
   text: Modern tooling for your old cars.
   tagline: Open-source replacements for BMW's diagnostic, coding, and documentation software. Cross-platform, browser-native where it matters, no installer.
   image:
-    src: /icon.svg
+    light: /icon-light.svg
+    dark: /icon-dark.svg
     alt: bimmerz
   actions:
     - theme: brand
