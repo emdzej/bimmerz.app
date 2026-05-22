@@ -1,11 +1,11 @@
 # INPAX
 
-> BMW's dealer diagnostic tool, running in your browser.
+> BMW's diagnostic tool, running in your browser.
 
-Pick an INPA script, see the same screens, menus, and F-key shortcuts the
-dealer tool shows — backed by the original `.ipo` bytecode BMW ships
-unchanged. Useful for live measurement displays, troubleshooting trees,
-and any other diagnostic procedure your shop manual references.
+Pick an INPA script and run it against your ECU — live data, ECU
+configuration, and the built-in diagnostic procedures BMW shipped in
+the original `.ipo` bytecode. Same scripts the dealer tool runs, in a
+browser tab instead of a Windows VM.
 
 ## How to use it
 

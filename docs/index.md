@@ -23,7 +23,7 @@ features:
     linkText: Open
 
   - title: INPAX
-    details: BMW's dealer diagnostic tool, running in your browser. Live measurement displays, troubleshooting trees, F-key shortcuts.
+    details: BMW's diagnostic tool, running in your browser. Live data, ECU configuration, and built-in diagnostic procedures.
     link: /tools/inpax/
     linkText: Open
 

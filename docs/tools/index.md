@@ -9,7 +9,7 @@ documentation, or bus communication.
 | Tool | What it's for |
 |---|---|
 | [**EDIABASX**](./ediabasx/) | Read fault codes and run diagnostic jobs against your ECUs. |
-| [**INPAX**](./inpax/) | Run BMW's interactive diagnostic scripts — live measurements, troubleshooting trees, F-key shortcuts. |
+| [**INPAX**](./inpax/) | Run BMW's diagnostic scripts — live data, ECU configuration, and the built-in diagnostic procedures. |
 | [**NCSX**](./ncsx/) | Read and write ECU coding. Tick boxes for the options you want; no hex required. |
 
 ## Bus & ECU

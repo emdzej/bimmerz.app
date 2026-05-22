@@ -1,31 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 60" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 60" fill="none">
   <!--
     ///B emblem riff. Three M-tricolour parallelograms (light blue,
-    dark blue, red) leaning ~19° down-left, then a heavy B rendered
-    as system-font text so the glyph is a real B, not a hand-drawn
-    approximation.
-    The text sits inside a `skewX(-19)` group so its slant matches
-    the stripes exactly, positioned so the character's left edge
-    starts at the red stripe's top-right corner (x=55). The same
-    skew then carries the character's bottom-left to (34, baseline),
-    tracing the red stripe's right edge.
-    `font-size=78` puts the cap-height close to the stripes' 60-pixel
-    height; the slight (~3px) difference at the top is the trade-off
-    for using real glyph metrics over a hand-drawn path.
+    dark blue, red) leaning ~19° down-left, then a literal Arial
+    Black 'B' glyph (extracted from the system font via fonttools)
+    embedded as an SVG path.
+    The path is in TrueType coordinates (y axis points up, em = 2048,
+    cap-height = 1466). The chained transform handles three things in
+    order (right-to-left in SVG's matrix-multiplication convention):
+      1. `translate(-151, 0)` shifts the glyph so its left side
+         bearing (font x=151) sits at x=0.
+      2. `scale(0.0409, -0.0409)` scales the em-2048 design size to
+         our viewBox and flips the y-axis (TrueType up → SVG down).
+         60/1466 ≈ 0.0409, so cap-height ends up at 60 — same as the
+         stripes.
+      3. `translate(55, 60)` puts the glyph's top-left at (55, 0),
+         which is the red stripe's top-right corner. The glyph then
+         shares the same slant as the stripes — implemented as a
+         matrix transform rather than `skewX(-19)` so the slope
+         lines up to the last unit. Stripes use a 21/60 horizontal-
+         per-vertical slope (= atan(21/60) ≈ 19.29°), so the matrix
+         applies x → x + 0·y, y → y, then x → x − 0.35·y as the
+         skew. `skewX(-19)` was off by 0.06 (tan 19 ≈ 0.344 vs the
+         stripes' 0.35) — a tenth-of-a-pixel difference per row,
+         enough to visibly drift apart at the B's bottom edge.
     Transparent background; the B uses `currentColor` so it picks up
     the page text colour (dark on light theme, light on dark).
   -->
   <polygon points="22,0 33,0 12,60 1,60" fill="#1c69d4" />
   <polygon points="33,0 44,0 23,60 12,60" fill="#0a1f4d" />
   <polygon points="44,0 55,0 34,60 23,60" fill="#c41e3a" />
-  <g transform="skewX(-19)">
-    <text
-      x="55"
-      y="58"
-      font-family="'Arial Black', 'Helvetica Neue', Helvetica, Arial, sans-serif"
-      font-size="78"
-      font-weight="900"
+  <!--
+    `matrix(a b c d e f)` maps (x, y) → (a·x + c·y + e, b·x + d·y + f).
+    With a=d=1, b=0, c=-0.35: x' = x − 0.35·y, y' = y. That's the
+    exact slope of the stripes (21/60).
+  -->
+  <g transform="matrix(1 0 -0.35 1 0 0)">
+    <path
+      transform="translate(55, 60) scale(0.0409 -0.0409) translate(-151, 0)"
       fill="currentColor"
-    >B</text>
+      fill-rule="evenodd"
+      d="M151 1466H999Q1211 1466 1324.5 1361Q1438 1256 1438 1101Q1438 971 1357 878Q1303 816 1199 780Q1357 742 1431.5 649.5Q1506 557 1506 417Q1506 303 1453 212Q1400 121 1308 68Q1251 35 1136 20Q983 0 933 0H151ZM608 891H805Q911 891 952.5 927.5Q994 964 994 1033Q994 1097 952.5 1133Q911 1169 808 1169H608ZM608 315H839Q956 315 1004 356.5Q1052 398 1052 468Q1052 533 1004.5 572.5Q957 612 838 612H608Z"
+    />
   </g>
 </svg>
