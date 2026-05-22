@@ -1,10 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#2563eb"/>
-      <stop offset="1" stop-color="#06b6d4"/>
-    </linearGradient>
-  </defs>
-  <rect width="64" height="64" rx="14" fill="url(#g)"/>
-  <text x="32" y="42" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="28" font-weight="700" fill="#ffffff">b</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 60" fill="none">
+  <!--
+    Logo riff on BMW's ///M emblem — three slanted M-tricolour stripes
+    on the left, italic-bold B sitting against the red stripe like the
+    M does on the original. Transparent background; the B picks up the
+    page's text colour via `currentColor`, so it reads black on the
+    light theme and white on the dark theme.
+  -->
+  <polygon points="6,0 17,0 -5,60 -16,60" fill="#1c69d4" />
+  <polygon points="17,0 28,0 6,60 -5,60" fill="#0a1f4d" />
+  <polygon points="28,0 39,0 17,60 6,60" fill="#c41e3a" />
+  <text
+    x="30"
+    y="55"
+    font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif"
+    font-size="68"
+    font-weight="900"
+    font-style="italic"
+    fill="currentColor"
+  >B</text>
 </svg>
