@@ -45,10 +45,7 @@ export default defineConfig({
   themeConfig: {
     logo: "/icon.svg",
 
-    nav: [
-      { text: "Tools", link: "/tools/" },
-      { text: "GitHub", link: "https://github.com/emdzej" },
-    ],
+    nav: [{ text: "Tools", link: "/tools/" }],
 
     sidebar: {
       "/tools/": [
