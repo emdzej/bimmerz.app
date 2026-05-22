@@ -1,0 +1,19 @@
+{
+  "name": "bimmerz.app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Product and documentation site for the bimmerz suite — xbusx, inpax, ediabasx, ncsx, tisx, etkx, wdsx. Modern tooling and SDKs for your old cars.",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/emdzej/bimmerz.app.git"
+  }
+}
