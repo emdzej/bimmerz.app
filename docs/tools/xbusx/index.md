@@ -1,9 +1,9 @@
-# xbusx
+# XBUSX
 
 > Decode and interact with your BMW's comfort bus.
 
 The I-Bus and K-Bus are the chatty backbone behind your IKE, lights,
-radio, steering-wheel buttons, and door locks. `xbusx` lets you watch
+radio, steering-wheel buttons, and door locks. `XBUSX` lets you watch
 those messages live in human-readable form, look up what each one means
 in a citation-backed reference manual, and send commands back to specific
 devices — useful for retrofits, troubleshooting comfort modules, or
@@ -27,7 +27,7 @@ repo if you only need the documentation side.
 
 The bus interface needs a hardware tap (USB serial or DIY hardwire) on
 the same machine as the app; the web app, when it ships, will reach the
-cable via Web Serial the same way `ediabasx`, `inpax`, and `ncsx` do.
+cable via Web Serial the same way `EDIABASX`, `INPAX`, and `NCSX` do.
 
 ## Links
 

@@ -1,4 +1,4 @@
-# tisx
+# TISX
 
 > Your BMW's service manual on tap, in a modern browser.
 
@@ -13,7 +13,7 @@ tree.
 
 **Self-hosted.** TIS data isn't something you can simply pick up off your
 local drive in a browser — it lives in an InstallShield-archived MDB
-database, ITW images, and compressed RTF documents. `tisx` ships a Docker
+database, ITW images, and compressed RTF documents. `TISX` ships a Docker
 prep pipeline that converts your TIS disc contents into a single portable
 SQLite file, then a Docker compose stack to run the viewer.
 

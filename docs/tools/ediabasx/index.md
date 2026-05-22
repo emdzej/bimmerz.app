@@ -1,4 +1,4 @@
-# ediabasx
+# EDIABASX
 
 > Talk to your BMW's ECUs from a browser tab.
 

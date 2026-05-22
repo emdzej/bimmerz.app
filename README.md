@@ -1,7 +1,7 @@
 # bimmerz.app
 
-Product and documentation site for the **bimmerz** suite — `ediabasx`,
-`inpax`, `ncsx`, `xbusx`, `tisx`, `etkx`, `wdsx`. Modern tooling and SDKs
+Product and documentation site for the **bimmerz** suite — `EDIABASX`,
+`INPAX`, `NCSX`, `XBUSX`, `TISX`, `ETKX`, `WDSX`. Modern tooling and SDKs
 for your old cars.
 
 Built with [VitePress](https://vitepress.dev/). Auto-deploys to

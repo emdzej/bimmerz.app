@@ -1,4 +1,4 @@
-# wdsx — user guide
+# WDSX — user guide
 
 > This guide is a stub. Content is coming as the docs settle.
 

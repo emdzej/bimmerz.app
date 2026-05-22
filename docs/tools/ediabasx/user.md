@@ -1,4 +1,4 @@
-# ediabasx — user guide
+# EDIABASX — user guide
 
 > This guide is a stub. Content is coming as the docs settle.
 

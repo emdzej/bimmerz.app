@@ -1,4 +1,4 @@
-# inpax
+# INPAX
 
 > BMW's dealer diagnostic tool, running in your browser.
 

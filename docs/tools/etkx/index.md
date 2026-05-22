@@ -1,4 +1,4 @@
-# etkx
+# ETKX
 
 > Look up any part on your BMW — diagrams, numbers, the lot.
 
@@ -10,7 +10,7 @@ superseded by. Modern Svelte frontend on top of a fast backend service.
 ## How to use it
 
 **Self-hosted.** ETK data sits in a 1990s-era Transbase database that no
-modern OS speaks natively. `etkx` ships a migration tool to extract that
+modern OS speaks natively. `ETKX` ships a migration tool to extract that
 data into a portable SQLite file, then a Spring Boot service + Svelte
 frontend you can run locally:
 

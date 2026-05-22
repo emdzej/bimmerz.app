@@ -56,21 +56,21 @@ export default defineConfig({
         {
           text: "Diagnostic & coding",
           items: [
-            toolEntry("ediabasx", "ediabasx"),
-            toolEntry("inpax", "inpax"),
-            toolEntry("ncsx", "ncsx"),
+            toolEntry("ediabasx", "EDIABASX"),
+            toolEntry("inpax", "INPAX"),
+            toolEntry("ncsx", "NCSX"),
           ],
         },
         {
           text: "Bus & ECU",
-          items: [toolEntry("xbusx", "xbusx")],
+          items: [toolEntry("xbusx", "XBUSX")],
         },
         {
-          text: "Documentation",
+          text: "Aftersales support",
           items: [
-            toolEntry("tisx", "tisx"),
-            toolEntry("etkx", "etkx"),
-            toolEntry("wdsx", "wdsx"),
+            toolEntry("tisx", "TISX"),
+            toolEntry("etkx", "ETKX"),
+            toolEntry("wdsx", "WDSX"),
           ],
         },
       ],

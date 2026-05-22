@@ -1,4 +1,4 @@
-# tisx — user guide
+# TISX — user guide
 
 > This guide is a stub. Content is coming as the docs settle.
 

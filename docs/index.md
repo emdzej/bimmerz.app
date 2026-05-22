@@ -17,37 +17,37 @@ hero:
       link: https://github.com/emdzej
 
 features:
-  - title: ediabasx
+  - title: EDIABASX
     details: Talk to your BMW's ECUs from a browser tab. Read fault codes, query live values, run any diagnostic job.
     link: /tools/ediabasx/
     linkText: Open
 
-  - title: inpax
+  - title: INPAX
     details: BMW's dealer diagnostic tool, running in your browser. Live measurement displays, troubleshooting trees, F-key shortcuts.
     link: /tools/inpax/
     linkText: Open
 
-  - title: ncsx
+  - title: NCSX
     details: Code your BMW from a browser tab. Read options in plain English, tick the box, write the change back.
     link: /tools/ncsx/
     linkText: Open
 
-  - title: xbusx
+  - title: XBUSX
     details: Decode and interact with your BMW's comfort bus — IKE, lights, radio, steering-wheel buttons, door locks.
     link: /tools/xbusx/
     linkText: Open
 
-  - title: tisx
+  - title: TISX
     details: Your BMW's service manual on tap. Repair procedures, service-position diagrams, technical bulletins.
     link: /tools/tisx/
     linkText: Open
 
-  - title: etkx
+  - title: ETKX
     details: Look up any part on your BMW. Diagrams, current numbers, supersession history, all searchable.
     link: /tools/etkx/
     linkText: Open
 
-  - title: wdsx
+  - title: WDSX
     details: BMW's wiring diagrams in a browser that works. Trace a circuit, follow pin numbers, save it offline for the garage.
     link: /tools/wdsx/
     linkText: Open
@@ -56,11 +56,9 @@ features:
 ## Why bimmerz exists
 
 BMW's diagnostic, coding, and documentation tools — EDIABAS, INPA, NCS
-Expert, TIS, ETK, WDS — were built for Windows XP, ship as 32-bit
-binaries, and need a specific decade-old cable driver to do anything
-useful. Getting them running today means VMs, OBDLink serial-to-USB
-juggling, and watching for surprise blue-screens whenever Windows Update
-touches the registry.
+Expert, TIS, ETK, WDS — were built for Windows. Some of them only run on
+older versions like XP. Running them on a modern machine usually means a
+VM and a fragile chain of legacy drivers.
 
 Most owners just want to read a fault code, change a coding setting, or
 look up a part number. The whole stack should fit in a browser tab.

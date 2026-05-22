@@ -1,4 +1,4 @@
-# ncsx
+# NCSX
 
 > Code your BMW from a browser tab — checkboxes instead of hex.
 

@@ -1,4 +1,4 @@
-# wdsx
+# WDSX
 
 > BMW's wiring diagrams, finally in a browser that works.
 
@@ -13,7 +13,7 @@ keyboard-driven modern app.
 
 **Self-hosted.** WDS ships as a tangle of proprietary HTML / SVG /
 applet-driven data that needs converting before it can be served cleanly.
-`wdsx` includes an importer CLI to convert your WDS data dump, then a
+`WDSX` includes an importer CLI to convert your WDS data dump, then a
 SvelteKit viewer to read it:
 
 ```bash
