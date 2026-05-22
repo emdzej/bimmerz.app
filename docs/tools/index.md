@@ -28,13 +28,17 @@ documentation, or bus communication.
 
 ## Web app vs self-hosted
 
-The diagnostic and coding tools (`ediabasx`, `inpax`, `ncsx`) run as live
-web apps because the BMW data they need is small enough to read from your
-own disk via the browser's File System Access API — nothing is uploaded,
-everything stays on your machine.
+The diagnostic and coding tools — [`ediabasx`](./ediabasx/),
+[`inpax`](./inpax/), and [`ncsx`](./ncsx/) — run as live web apps. They
+read the BMW data they need from your own disk via the browser's File
+System Access API; nothing is uploaded.
 
-The documentation tools (`tisx`, `etkx`, `wdsx`) and the bus tool
-(`xbusx`) need a one-time data-import or migration step that's too heavy
-for the browser to do alone — InstallShield archives, Transbase
-migrations, or hardware bus taps. Those are self-hosted: clone the repo,
+The documentation tools — [`tisx`](./tisx/), [`etkx`](./etkx/), and
+[`wdsx`](./wdsx/) — need a one-time data-import or migration step that's
+too heavy for the browser to do alone (InstallShield archives, Transbase
+migrations, RTF decompression). Those are self-hosted: clone the repo,
 run the importer, then serve the viewer locally.
+
+[`xbusx`](./xbusx/) is the odd one out for now. The protocol library and
+CLI are usable today; a hosted web app is on the roadmap but isn't
+deployed yet, so it's source-only for the moment.
