@@ -1,28 +1,35 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 60" fill="none">
   <!--
-    ///B emblem riff. Three slanted M-tricolour parallelograms on the
-    left, heavy B sitting on the red stripe so its left stem visually
-    replaces the stripe's right edge — same trick as BMW's ///M letter
-    on the original badge. Stripes and B share the same `skewX(-19)`
-    lean, and the B's cap-height matches the stripe height so the
-    emblem reads as one block.
+    ///B emblem riff. Three M-tricolour parallelograms (light blue,
+    dark blue, red) leaning ~19° down-left, then a heavy B drawn as a
+    path so its bounds match the stripes' exactly (0..60 vertical,
+    cap-top to baseline = full stripe height). The path is positioned
+    at unskewed x=55 — the same x as the red stripe's top-right
+    corner — and shares the same skewX(-19) lean, so the B's left
+    edge traces the red stripe's right edge and the two visually
+    merge into one block.
     Transparent background; the B uses `currentColor` so it picks up
     the page text colour (dark on light theme, light on dark).
   -->
-  <!-- Polygon points run top-left → top-right → bottom-right →
-       bottom-left; getting that order wrong yields a self-intersecting
-       bowtie shape, which is what bit the previous revision. -->
   <polygon points="22,0 33,0 12,60 1,60" fill="#1c69d4" />
   <polygon points="33,0 44,0 23,60 12,60" fill="#0a1f4d" />
   <polygon points="44,0 55,0 34,60 23,60" fill="#c41e3a" />
-  <g transform="skewX(-19)">
-    <text
-      x="48"
-      y="58"
-      font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif"
-      font-size="76"
-      font-weight="900"
-      fill="currentColor"
-    >B</text>
-  </g>
+  <!--
+    B path: 42 wide × 60 tall, drawn at the origin. Outer outline for
+    each bowl + an inner cutout; the `fill-rule="evenodd"` turns the
+    cutouts into holes. The bottom bowl is intentionally a touch wider
+    than the top — the classic B asymmetry.
+  -->
+  <path
+    transform="skewX(-19) translate(55, 0)"
+    fill="#ffffff"
+    stroke="#0a1424"
+    stroke-width="2"
+    stroke-linejoin="round"
+    fill-rule="evenodd"
+    d="M 0 0 L 30 0 C 38 0 40 6 40 15 C 40 24 38 30 30 30 L 0 30 Z
+       M 8 7 L 26 7 C 30 7 32 10 32 15 C 32 20 30 22 26 22 L 8 22 Z
+       M 0 30 L 30 30 C 40 30 42 36 42 45 C 42 54 40 60 30 60 L 0 60 Z
+       M 8 38 L 26 38 C 32 38 34 41 34 45 C 34 50 32 53 26 53 L 8 53 Z"
+  />
 </svg>
