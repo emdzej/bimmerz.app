@@ -1,22 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 60" fill="none">
   <!--
-    ///B emblem riff. Three slanted M-tricolour stripes on the left
-    (light blue, dark blue, red) and a heavy sans-serif B on the
-    right. The B sits inside a `skewX(-19)` transform so its slant
-    matches the stripes exactly (every parallelogram + the letter
-    share the same 60/21 ≈ 19° lean). The B's left stem hugs the
-    red stripe's right edge, mirroring how the BMW M letter sits on
-    the original badge.
+    ///B emblem riff. Three slanted M-tricolour stripes on the left,
+    bold B sitting on top of the red stripe (visually replacing its
+    right edge — same trick as BMW's ///M letter on the original
+    badge). Stripes and B share the same `skewX(-19)` lean.
+    Transparent background; the B uses `currentColor` so it picks up
+    the page's text colour (dark on light theme, light on dark).
   -->
-  <polygon points="5,0 15,0 -16,60 -6,60" fill="#1c69d4" />
-  <polygon points="15,0 25,0 -6,60 4,60" fill="#0a1f4d" />
-  <polygon points="25,0 35,0 4,60 14,60" fill="#c41e3a" />
+  <polygon points="22,0 33,0 1,60 12,60" fill="#1c69d4" />
+  <polygon points="33,0 44,0 12,60 23,60" fill="#0a1f4d" />
+  <polygon points="44,0 55,0 23,60 34,60" fill="#c41e3a" />
   <g transform="skewX(-19)">
     <text
-      x="35"
-      y="54"
-      font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif"
-      font-size="70"
+      x="47"
+      y="55"
+      font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif"
+      font-size="62"
       font-weight="900"
       fill="currentColor"
     >B</text>
