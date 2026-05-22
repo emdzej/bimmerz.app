@@ -13,16 +13,26 @@ and any other diagnostic procedure your shop manual references.
 Point it at your INPA install, browse the script catalogue, pick one,
 plug in your cable. Files stay on your machine.
 
-**From a terminal** — disassemble, inspect, or run scripts headlessly:
+**From a terminal** — install the CLI globally and drive scripts from
+the shell or an interactive TUI:
 
 ```bash
-git clone https://github.com/emdzej/inpax
-cd inpax && pnpm install && pnpm build
-pnpm cli run script.ipo
+npm install -g @emdzej/inpax-cli
+inpax info script.ipo
+inpax disasm script.ipo
+inpax run script.ipo                       # interactive TUI
+inpax run script.ipo --headless            # batch mode
+```
+
+Two more globally-installable tools ship alongside the CLI:
+
+```bash
+npm install -g @emdzej/inpax-compiler      # IPS → IPO compiler
+npm install -g @emdzej/inpax-ipo-editor    # TUI editor for IPO constants
 ```
 
 Chromium-based browsers on desktop (Chrome, Edge, Opera, Brave) for the
-web app. Node 20+ for the CLI.
+web app. Node 20+ for the CLI tools.
 
 ## Links
 
