@@ -1,21 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 60" fill="none">
   <!--
-    ///B emblem riff. Three slanted M-tricolour stripes on the left,
-    bold B sitting on top of the red stripe (visually replacing its
-    right edge — same trick as BMW's ///M letter on the original
-    badge). Stripes and B share the same `skewX(-19)` lean.
+    ///B emblem riff. Three slanted M-tricolour parallelograms on the
+    left, heavy B sitting on the red stripe so its left stem visually
+    replaces the stripe's right edge — same trick as BMW's ///M letter
+    on the original badge. Stripes and B share the same `skewX(-19)`
+    lean, and the B's cap-height matches the stripe height so the
+    emblem reads as one block.
     Transparent background; the B uses `currentColor` so it picks up
-    the page's text colour (dark on light theme, light on dark).
+    the page text colour (dark on light theme, light on dark).
   -->
-  <polygon points="22,0 33,0 1,60 12,60" fill="#1c69d4" />
-  <polygon points="33,0 44,0 12,60 23,60" fill="#0a1f4d" />
-  <polygon points="44,0 55,0 23,60 34,60" fill="#c41e3a" />
+  <!-- Polygon points run top-left → top-right → bottom-right →
+       bottom-left; getting that order wrong yields a self-intersecting
+       bowtie shape, which is what bit the previous revision. -->
+  <polygon points="22,0 33,0 12,60 1,60" fill="#1c69d4" />
+  <polygon points="33,0 44,0 23,60 12,60" fill="#0a1f4d" />
+  <polygon points="44,0 55,0 34,60 23,60" fill="#c41e3a" />
   <g transform="skewX(-19)">
     <text
-      x="47"
-      y="55"
+      x="48"
+      y="58"
       font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif"
-      font-size="62"
+      font-size="76"
       font-weight="900"
       fill="currentColor"
     >B</text>
