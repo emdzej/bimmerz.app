@@ -49,7 +49,10 @@ export default defineConfig({
       alt: "bimmerz",
     },
 
-    nav: [{ text: "Tools", link: "/tools/" }],
+    nav: [
+      { text: "Tools", link: "/tools/" },
+      { text: "Credits", link: "/credits" },
+    ],
 
     sidebar: {
       "/tools/": [
