@@ -13,9 +13,13 @@ Covers E31, E38, E39, E46, E52, E53, E83, E85, E86, and E87 (~1989–2013).
 
 ## How to use it
 
-**Not yet hosted.** The protocol library and CLI are usable today; the
-browser web app is on the roadmap but isn't deployed yet. Clone the repo
-to run the CLI or build against the protocol library:
+**In your browser** — [xbusx.bimmerz.app](https://xbusx.bimmerz.app).
+Plug a USB-serial tap into the I-Bus or K-Bus, point the app at the port,
+and watch telegrams decode in real time. Files and bus traffic stay on
+your machine.
+
+**From a terminal** — the CLI and protocol library aren't published to
+npm yet; clone the repo to run them:
 
 ```bash
 git clone https://github.com/emdzej/xbusx
@@ -26,8 +30,9 @@ The protocol reference itself is just markdown — browse it on the GitHub
 repo if you only need the documentation side.
 
 The bus interface needs a hardware tap (USB serial or DIY hardwire) on
-the same machine as the app; the web app, when it ships, will reach the
-cable via Web Serial the same way `EDIABASX`, `INPAX`, and `NCSX` do.
+the same machine as the app; the web app reaches the cable via Web Serial
+the same way `EDIABASX`, `INPAX`, and `NCSX` do, so the same Chromium-based
+browsers (Chrome, Edge, Opera, Brave) work.
 
 ## Links
 
