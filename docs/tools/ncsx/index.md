@@ -20,6 +20,19 @@ or ZCS) works across the FA-master and ZCS-master chassis families.
 Chromium-based browsers on desktop (Chrome, Edge, Opera, Brave) — uses
 Web Serial for the cable and File System Access for your install folder.
 
+## Community patches
+
+`NCSX` reads and writes patches as shareable `.ncsxpatch.yaml` files —
+small YAML blobs that describe the FSW / PSW changes a specific retrofit
+or coding tweak needs across one or more ECU modules. Drop one into the
+app and it applies the staged changes; capture one from your own session
+and you can share it back.
+
+A growing catalogue lives at
+[ncsx-community-patches](https://github.com/emdzej/ncsx-community-patches) —
+browse by chassis and feature, pick what you want, save it locally,
+apply it through the in-browser app. Contributions welcome.
+
 ## Links
 
 - [GitHub](https://github.com/emdzej/ncsx)

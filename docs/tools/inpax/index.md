@@ -34,6 +34,21 @@ npm install -g @emdzej/inpax-ipo-editor    # TUI editor for IPO constants
 Chromium-based browsers on desktop (Chrome, Edge, Opera, Brave) for the
 web app. Node 20+ for the CLI tools.
 
+## Community patches
+
+Compiled `.IPO` files are bytecode — once published, BMW never updates
+the strings, thresholds, or jump tables a script ships with. `inpax`'s
+`patch` command (and the in-browser editor) let you apply non-invasive
+constant-level tweaks without touching the original file: translations
+for the German prompts, label corrections, threshold overrides, and so
+on.
+
+The shared catalogue lives at
+[ipo-community-patches](https://github.com/emdzej/ipo-community-patches) —
+patch files indexed by script and chassis, free to download and apply.
+Contributions welcome — submit a PR with your patch and a short
+description of what it changes.
+
 ## Links
 
 - [GitHub](https://github.com/emdzej/inpax)
