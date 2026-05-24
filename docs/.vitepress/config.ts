@@ -50,6 +50,11 @@ export default defineConfig({
     },
 
     nav: [
+      // External link to the bimmerz-hub launcher — single-click jump
+      // from any docs page to the dashboard. Comes first because
+      // visitors who already know the suite want the hub, not the
+      // tools intro.
+      { text: "Hub", link: "https://hub.bimmerz.app" },
       { text: "Tools", link: "/tools/" },
       { text: "Credits", link: "/credits" },
     ],
