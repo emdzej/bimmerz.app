@@ -1,6 +1,6 @@
 # Tools
 
-The bimmerz suite is split across seven projects. Each one tackles a
+The bimmerz suite is split across eight projects. Each one tackles a
 specific slice of what BMW's factory toolchain does — diagnostics, coding,
 documentation, or bus communication.
 
@@ -11,6 +11,7 @@ documentation, or bus communication.
 | [**EDIABASX**](./ediabasx/) | Read fault codes and run diagnostic jobs against your ECUs. |
 | [**INPAX**](./inpax/) | Run BMW's diagnostic scripts — live data, ECU configuration, and the built-in diagnostic procedures. |
 | [**NCSX**](./ncsx/) | Read and write ECU coding. Tick boxes for the options you want; no hex required. |
+| [**NFSX**](./nfsx/) | Flash ECU firmware from the CLI — IPO-driven, direct DS2, or C167 bootmode. |
 
 ## Bus & ECU
 
@@ -33,6 +34,10 @@ The diagnostic, coding, and bus tools — [`EDIABASX`](./ediabasx/),
 live web apps. They read the BMW data they need from your own disk via
 the browser's File System Access API and reach the cable through Web
 Serial; nothing is uploaded.
+
+[`NFSX`](./nfsx/) is a Node.js CLI tool. It uses `ediabasx` for the
+transport layer (IPO-driven and directmode paths); bootmode talks to
+the serial port directly.
 
 The aftersales-support tools — [`TISX`](./tisx/), [`ETKX`](./etkx/), and
 [`WDSX`](./wdsx/) — need a one-time data-import or migration step that's

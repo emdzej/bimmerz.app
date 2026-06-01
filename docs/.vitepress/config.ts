@@ -68,6 +68,7 @@ export default defineConfig({
             toolEntry("ediabasx", "EDIABASX"),
             toolEntry("inpax", "INPAX"),
             toolEntry("ncsx", "NCSX"),
+            toolEntry("nfsx", "NFSX"),
           ],
         },
         {

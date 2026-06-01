@@ -33,6 +33,11 @@ features:
     link: /tools/ncsx/
     linkText: Open
 
+  - title: NFSX
+    details: Flash your BMW's ECUs from the command line. Three paths — IPO-driven, direct DS2, and C167 bootmode.
+    link: /tools/nfsx/
+    linkText: Open
+
   - title: XBUSX
     details: Decode and interact with your BMW's comfort bus — IKE, lights, radio, steering-wheel buttons, door locks.
     link: /tools/xbusx/
