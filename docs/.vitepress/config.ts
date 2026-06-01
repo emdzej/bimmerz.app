@@ -54,6 +54,7 @@ export default defineConfig({
       { text: "Tools", link: "/tools/" },
       { text: "News", link: "/news/" },
       { text: "Credits", link: "/credits" },
+      { text: "Support", link: "/support" },
     ],
 
     sidebar: {
