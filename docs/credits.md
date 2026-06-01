@@ -59,7 +59,7 @@ them too.
   reversing the BMW Windows binaries (NCSEXPER, INPA, TIS, …)
   tractable. Without it most of these projects wouldn't exist.
 - **[GhidraMCP](https://github.com/lauriewired/ghidramcp)** by
-  LaurieWired — MCP bridge for Ghidra, letting Claude drive the
+  LaurieWired — MCP bridge for Ghidra, letting AI agents drive the
   decompiler directly during reverse-engineering sessions.
 - **[c166-ghidra-module](https://github.com/keyhana/c166-ghidra-module/releases)**
   by keyhana — Ghidra processor module for the Infineon C166/C167
