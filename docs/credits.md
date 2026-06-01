@@ -36,6 +36,21 @@ them too.
 - **[wilhelm-docs](https://github.com/piersholt/wilhelm-docs)** by
   Piers Holt — the second of the three I-Bus / K-Bus sources, with
   particular strength on Logic7 and radio messages.
+- **[MiniMon](http://www.perschl.at/minimon/)** by Christian Perschl —
+  C167 bootstrap monitor distributed by Infineon as freeware
+  (Application Note AP16064). `nfsx` bootmode bundles the original
+  loader and monitor HEX blobs.
+- **Infineon AP16012** — *C16x Bootstrap Loader* application note.
+  Documents the bootstrap protocol that `nfsx-bootmode` implements.
+- **[C167BootTool](https://github.com/EcuProg7/C167BootTool)** by
+  EcuProg7 — independent open-source C167 host implementation (GPL v3),
+  cross-referenced during bootmode development.
+- **ME7BootTool.py** — open-source Python flasher. Reference for the
+  MiniMon command protocol.
+- **Community TunerPro XDF patchlists** (MS42 v1.7.1, MS43 v2.9.2) —
+  firmware layout tables (UIF base, ISN offset, immo-clear range, ECU
+  number, software version) extracted from these community-maintained
+  definition files.
 
 ## Tools
 
@@ -43,6 +58,15 @@ them too.
   software reverse-engineering platform. The decompiler that makes
   reversing the BMW Windows binaries (NCSEXPER, INPA, TIS, …)
   tractable. Without it most of these projects wouldn't exist.
+- **[GhidraMCP](https://github.com/lauriewired/ghidramcp)** by
+  LaurieWired — MCP bridge for Ghidra, letting Claude drive the
+  decompiler directly during reverse-engineering sessions.
+- **[c166-ghidra-module](https://github.com/keyhana/c166-ghidra-module/releases)**
+  by keyhana — Ghidra processor module for the Infineon C166/C167
+  instruction set. DPP-aware disassembly and decompilation of ECU
+  firmware (MS42, MS43, etc.).
+- **[dacigg](https://gitlab.com/opendumbphone/s45/dacigg)** — C166
+  disassembler used for annotating bootloader blobs.
 
 ## Bigger picture
 
