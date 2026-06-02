@@ -28,25 +28,36 @@ modified binary back via a download.
 ## Features
 
 - **Hex view** — virtualised, handles multi-MB firmware without jank.
-  Cursor + keyboard nav, jump-to-offset (`g`), data interpretation
-  panel (u8…f64 LE+BE, ASCII, UTF-8), inline hex-pair editing
+  Cursor + keyboard nav, jump-to-offset (`g`), inline hex-pair editing
   (double-click → type `FF AA CC`, Enter commits), contents column
   switchable to ASCII / u8 / u16 / i16 / u32 / i32 with an optional
-  bars-mode visualisation for spotting tables.
+  bars-mode visualisation. Clicking any element in the contents view
+  jumps the cursor to its byte range — a u16 click highlights two
+  bytes, a u32 four.
+- **"At cursor" panel** — every numeric interpretation in one place
+  (paired LE/BE columns), edit-as-type with dec/hex base toggle,
+  auto-populates with the cursor's current value, collapses to a
+  single header when you don't need it.
 - **Bookmarks** — named offsets with descriptions, organised into one
   level of folders, persisted to local storage.
-- **Structured editor** — categories with item counts on the left;
-  per-kind editors on the right:
-  - Constants — engineering value via MATH equation, edit + write
-    through linear inverse (raw fallback for non-linear).
+- **Structured editor** — categories with item counts on the left,
+  search filter; per-kind editors on the right:
+  - Constants — engineering value via MATH equation, write through
+    linear inverse (raw fallback for non-linear), `outputtype="3"`
+    pre-selects hex display.
   - Flags — checkbox toggling the masked bit.
   - Patches — applied / virgin / mixed state per entry, Apply or
     Revert at the entry and whole-patch level (the "virginise" flow).
-  - Tables — row/column grid with axis labels, inline cell editing,
-    hex/decimal toggle, optional heatmap colouring by value.
+  - Tables — row/column grid with axis labels resolved through
+    `<embedinfo>` (shared RPM / load axes auto-resolve), inline cell
+    editing, dec/hex toggle, heatmap colouring on by default, and
+    support for non-contiguous sub-views via the stride formula.
 - **Cross-link** — selecting a structured item highlights its byte
   range in the hex view; "Jump 0x… →" pops the RAW tab open at that
   address.
+- **Encrypted XDF detection** — `.xdf` files protected with TunerPro
+  Pro passwords are detected up front and refused cleanly instead of
+  surfacing garbled items.
 
 ## Links
 
