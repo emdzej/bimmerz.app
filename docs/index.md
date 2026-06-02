@@ -38,6 +38,11 @@ features:
     link: /tools/nfsx/
     linkText: Open
 
+  - title: TUNEX
+    details: Edit ECU firmware in your browser. Hex view with type interpretation, plus structured editing via TunerPro .xdf definitions.
+    link: /tools/tunex/
+    linkText: Open
+
   - title: XBUSX
     details: Decode and interact with your BMW's comfort bus — IKE, lights, radio, steering-wheel buttons, door locks.
     link: /tools/xbusx/

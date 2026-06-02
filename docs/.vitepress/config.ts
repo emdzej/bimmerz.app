@@ -67,6 +67,7 @@ export default defineConfig({
             toolEntry("inpax", "INPAX"),
             toolEntry("ncsx", "NCSX"),
             toolEntry("nfsx", "NFSX"),
+            toolEntry("tunex", "TUNEX"),
           ],
         },
         {
