@@ -104,16 +104,67 @@ flash driver). Default is MiniMon + custom stubs.
 
 Options: `--baud 19200`, `--calculate-checksum`, `--skip-verify`.
 
-## Checksum verification
+## Flash (MS45)
 
-Verify or recompute MS42/MS43 firmware checksums (no hardware needed):
+MS45.0 (E46) and MS45.1 (E60/E65) DMEs via the EDIABAS `D_Motor`
+group. You need an ECU dir containing `MS450DS0.prg` / `10MDS45.prg`
+(from your BMW Standard Tools install).
 
 ```bash
-nfsx checksum -f firmware.bin
-nfsx checksum -f firmware.bin --rewrite -o patched.bin
+# IDENT — variant, VIN, HW/SW ref, diag protocol
+nfsx ms45 probe
+
+# Read the 116 KB tune blob
+nfsx ms45 read -o tune.bin -m tune
+
+# Read full flash: <output>.bin + <output>_MPC.bin
+nfsx ms45 read -o full.bin -m full
+
+# Flash a tune (CRC-32 + RSA-1024 signature recomputed automatically)
+nfsx ms45 write -i tune.bin -m tune
+
+# Flash a full program (needs both external + MPC files)
+nfsx ms45 write -i full.bin --mpc full_MPC.bin -m full
 ```
 
-Auto-detects MS42 (3 CRC-16) vs MS43 (3 CRC-16 + 2 add-32).
+Options: `--skip-checksum`, `--skip-sign`, `--skip-verify`, `--yes`
+(skip the "type FLASH to proceed" confirmation), `--ecu-dir <path>`.
+
+## Checksum verification (MS42 / MS43 / MS45)
+
+Verify or recompute firmware checksums offline (no hardware needed):
+
+```bash
+# MS42 / MS43 — CRC-16 (+ MS43 add-32)
+nfsx checksum -f firmware.bin
+nfsx checksum -f firmware.bin --rewrite -o patched.bin
+
+# MS45 — CRC-32/MPEG-2 + RSA-1024 signature
+nfsx ms45 checksum -f tune.bin
+nfsx ms45 checksum -f full.bin --mpc full_MPC.bin --rewrite
+```
+
+Auto-detects the ECU variant from the BIN's header pointers.
+
+## Offline BIN tune (MS42 / MS43)
+
+Read or write firmware fields without an ECU connection:
+
+```bash
+# Read VIN, immobilizer status, ECU number, software version, UIF
+nfsx tune read -f firmware.bin --feature vin
+nfsx tune read -f firmware.bin --feature immo
+nfsx tune read -f firmware.bin --feature uif
+
+# Write a new VIN (stamps all 14 UIF rows)
+nfsx tune apply -f firmware.bin --feature vin --value WBAXX...
+
+# Virginize — clear ISN + EWS pairing so the DME re-pairs via INPA
+nfsx tune apply -f firmware.bin --feature virginize
+```
+
+Checksums are recomputed automatically after every `apply`. Pass
+`--skip-checksum` to disable.
 
 ## Verify after flash
 
