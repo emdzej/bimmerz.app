@@ -75,6 +75,21 @@ export default defineConfig({
           items: [toolEntry("xbusx", "XBUSX")],
         },
         {
+          text: "Head unit",
+          items: [
+            {
+              text: "NAVX",
+              items: [
+                { text: "Overview", link: "/tools/navx/" },
+                { text: "User guide", link: "/tools/navx/user" },
+                { text: "Car functions (carbus)", link: "/tools/navx/carbus" },
+                { text: "Developer guide", link: "/tools/navx/developer" },
+              ],
+              collapsed: true,
+            },
+          ],
+        },
+        {
           text: "Aftersales support",
           items: [
             toolEntry("tisx", "TISX"),

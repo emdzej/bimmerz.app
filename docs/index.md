@@ -48,6 +48,11 @@ features:
     link: /tools/xbusx/
     linkText: Open
 
+  - title: NAVX
+    details: Your MK4 navigation, opened up. Edit colours, images and voices, run the unit in a browser emulator, add a car screen to the stock unit.
+    link: /tools/navx/
+    linkText: Open
+
   - title: TISX
     details: Your BMW's service manual on tap. Repair procedures, service-position diagrams, technical bulletins.
     link: /tools/tisx/

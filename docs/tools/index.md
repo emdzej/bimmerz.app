@@ -1,6 +1,6 @@
 # Tools
 
-The bimmerz suite is split across eight projects. Each one tackles a
+The bimmerz suite is split across ten projects. Each one tackles a
 specific slice of what BMW's factory toolchain does — diagnostics, coding,
 documentation, or bus communication.
 
@@ -20,6 +20,12 @@ documentation, or bus communication.
 |---|---|
 | [**XBUSX**](./xbusx/) | Watch and interact with the I-Bus / K-Bus comfort messages — IKE, lights, radio, doors, steering wheel. |
 
+## Head unit
+
+| Tool | What it's for |
+|---|---|
+| [**NAVX**](./navx/) | Edit the MK4 navigation software, run it in a browser emulator, and add car functions to the stock unit. |
+
 ## Aftersales support
 
 | Tool | What it's for |
@@ -32,7 +38,7 @@ documentation, or bus communication.
 
 The diagnostic, coding, and bus tools — [`EDIABASX`](./ediabasx/),
 [`INPAX`](./inpax/), [`NCSX`](./ncsx/), [`NFSX`](./nfsx/),
-[`TUNEX`](./tunex/), and [`XBUSX`](./xbusx/) — run as live web apps.
+[`TUNEX`](./tunex/), [`XBUSX`](./xbusx/) and [`NAVX`](./navx/) — run as live web apps.
 They read the BMW data they need from your own disk via the browser's
 File System Access API and reach the cable through Web Serial; nothing
 is uploaded.
