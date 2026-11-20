@@ -48,6 +48,9 @@ then the main menu.
 - **Boot the tools' navboot** runs your edits.
 - **Disc drive**: insert a map DVD image or folder.
 - **Key**: ignition position.
+- **Language**: the language the car is coded for (German, English UK/US,
+  French, Italian, Spanish), applied at power on. As in the car, the nav
+  shows the cluster's coded language when its voice is installed.
 - **Car** panel: the emulated car on the I-Bus — doors, windows, lids,
   lock, lights, reverse with parking distances, speed, rpm, temperatures,
   fuel and battery. Stock screens ignore most of it; the
