@@ -32,7 +32,7 @@ All tools work on the same `navboot`:
 | Tool | Does |
 |---|---|
 | **Colours** | the colour tables with BMW's own item names; themes such as E46 Amber; a preview of the MENU and a map screen in the edited colours |
-| **Images** | icons and bitmaps, recoloured with the theme |
+| **Images** | icons and bitmaps, recoloured with the theme; **replace** any of them with your own picture — rombitmaps #14 (400×234) is the start screen |
 | **Modules** | the modules in the pool, with header and CRC checks |
 | **Voices** | voice prompts: play words, export WAV, replace words |
 
@@ -73,6 +73,8 @@ pnpm navx <command> …
 | `navx verify <navboot>` | check header parity and CRC of every module |
 | `navx colours <navboot> [--module rom_col] [--json]` | dump a colour table with item names |
 | `navx theme <navboot> -o <out> [--theme amber] [--preview <file.html>]` | recolour all colour tables, icons and bitmaps |
+| `navx image list <navboot>` | icons and bitmaps: index, format, size |
+| `navx image replace <navboot> rombitmaps 14 start.png -o <out> [--fit]` | replace an image (here the start screen), encoded in the entry's own format |
 | `navx extract <navboot> <module> -o <file>` | write one module to a file |
 | `navx add <navboot> <module-file> -o <out>` | append a module; the pool grows by its size |
 | `navx voice info` / `export` / `import` | voice prompt files (`.csf`): list, export every word as WAV, replace words |
@@ -81,6 +83,15 @@ pnpm navx <command> …
 | `navx flash --cd <iso or dir> <flashdir>` | install the CD's software into an emulated flash |
 | `navx boot --flash <dir> [--cd <iso or dir>]` | boot the unit in the emulator |
 | `navx run [--cd …] <module> [args…]` | run one program module in the emulator |
+
+### Replacing the start screen
+
+The picture shown while the unit boots is a 400 × 234 GIF (rombitmaps
+#14). Make your own at exactly that size (or let the tool scale it), use
+few colours — the unit shows 256 at most — and replace it in the web app
+or with `navx image replace`. A picture that compresses worse than BMW's
+makes the `rombitmaps` module, and so the `navboot`, grow; the tool says
+so. It is a single still picture: the unit has no boot animation.
 
 ### Putting changes on the unit
 
