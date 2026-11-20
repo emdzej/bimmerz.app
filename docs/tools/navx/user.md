@@ -46,7 +46,9 @@ then the main menu.
 - Use the bezel: scroll on the dial to turn it, click to press, click the
   buttons.
 - **Boot the tools' navboot** runs your edits.
-- **Disc drive**: insert a map DVD image or folder.
+- **Disc drive**: insert a map DVD image (`.iso`). With it, GPS-Navigation
+  opens destination input and reads the countries from the disc. There is
+  no GPS yet: the position stays at the software's default.
 - **Key**: ignition position.
 - **Language**: the language the car is coded for (German, English UK/US,
   French, Italian, Spanish), applied at power on. As in the car, the nav
