@@ -31,7 +31,7 @@ All tools work on the same `navboot`:
 
 | Tool | Does |
 |---|---|
-| **Colours** | the colour tables with BMW's own item names; themes such as E46 Amber |
+| **Colours** | the colour tables with BMW's own item names; themes such as E46 Amber; a preview of the MENU and a map screen in the edited colours |
 | **Images** | icons and bitmaps, recoloured with the theme |
 | **Modules** | the modules in the pool, with header and CRC checks |
 | **Voices** | voice prompts: play words, export WAV, replace words |
@@ -52,6 +52,12 @@ then the main menu.
   lock, lights, reverse with parking distances, speed, rpm, temperatures,
   fuel and battery. Stock screens ignore most of it; the
   [car functions](./carbus) show it.
+- **Audio** (in the Car panel): an emulated radio and CD changer. FM, AM,
+  MODE, the presets and ◁ ▷ on the bezel work as in the car, and the nav
+  shows the radio's screen (`FM 87.6`, `CD 1 Track 01`). Set stations,
+  discs and tracks from the panel.
+- Long presses work: hold a button for a second (MENU hold, storing a
+  preset).
 
 ## Command line
 
