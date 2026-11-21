@@ -9,7 +9,9 @@ built into the unit's `navboot` on a modified update CD and adds:
 - a **data view**: speed, rpm, coolant and outside temperature, fuel,
   battery voltage, odometer, gear, engine and handbrake;
 - a **PDC view** in reverse: parking-sensor distances front and rear;
-- a **popup** of the car screen when a door, lid or window opens.
+- a **popup** of the car screen when a door, lid or window opens;
+- **day and night colours**: switches the nav between colour set 1
+  (day) and set 2 (night) by the rain/light sensor.
 
 It uses the unit's own I-Bus connection. No extra hardware, and no stock
 module is changed; carbus is added next to them.
@@ -27,6 +29,11 @@ using Lock / Unlock. Keep the stock V32 CD at hand — it is the way back.
 your car plus a tool that adds it to **your own** V32 CD image. No BMW
 software is distributed: the disc is built from the CD you own.
 
+A module can be built for **one car**: it reads the VIN from the light
+module when the ignition is on, and works only in the car it was built
+for. In another car it stays inactive and leaves the stock software as
+it is. Modules can also be built without this limit.
+
 ## Requirements
 
 - A BMW MK4 unit running the V32 software (BMW sets `V_2/RR/0101/BMWC01S`
@@ -34,7 +41,7 @@ software is distributed: the disc is built from the CD you own.
 - Your own stock V32 software CD image (`.iso`). carbus doesn't ship any
   BMW software: you build the update disc from your CD.
 - The carbus module for your car (a file named `display_clock`, about
-  20 KB) and the [NAVX CLI](./user#command-line).
+  22 KB) and the [NAVX CLI](./user#command-line).
 - A CD-R. The modified image is about 281 MB.
 
 carbus comes in variants by body module, because the locking commands
@@ -54,7 +61,7 @@ version in `sw_rel.tbl` (1000 → 1001). The unit's loader installs
 software only when the disc's version differs from the one in flash. All
 other files on the disc stay byte-identical; the command reads the whole
 image back and checks every module before it finishes. `navboot` grows
-by about 20 KB.
+by about 22 KB.
 
 ### Trying it first
 
@@ -151,6 +158,28 @@ or **green**. The nearest distance at each end is shown at the top. The
 view closes 2 s after reverse; any button press dismisses it until the
 next time.
 
+### Day and night colours
+
+The stock software has two colour sets, chosen in **Settings → Colour
+set 1 / 2**. With carbus, set 1 is for the day and set 2 for the night,
+and carbus switches between them:
+
+| Light | carbus |
+|---|---|
+| dark for 30 s (rain/light sensor: darkest level, or lights requested at twilight or in darkness) | colour set 2 |
+| light again for 60 s | colour set 1 |
+| a short tunnel or underpass | no change |
+
+Choosing a set by hand in Settings holds until the light changes the
+other way. The switch needs the **rain/light sensor** (cars with
+automatic headlights). Modules can also be built to follow the low beam
+instead, or with switching off.
+
+Give the two sets their looks with the [Colours tool](./user): choose
+**colour set 1** or **colour set 2** as the scope and apply a theme to
+each, e.g. stock for the day and E46 Amber for the night, or use
+`navx theme --set 2 --theme amber` on the command line.
+
 ## Limits and known risks
 
 - **Not tested in a car.** The message layouts come from community
@@ -159,6 +188,13 @@ next time.
   the fuel byte on an E46 cluster.
 - **No window or sunroof control** — the body module's jobs for them are
   not documented anywhere carbus could use.
+- **Day/night switching** has been checked only with an emulated rain/light
+  sensor. In the car it depends on the sensor's messages reaching the
+  nav, which isn't verified yet. After a switch, the screen that is up
+  repaints only where it changes; the next screen is fully in the new
+  colours.
+- On a 16:9 unit that has booted before, a theme on colour set 1 at full
+  screen doesn't show: the unit keeps its first copy of that table.
 - If carbus stopped while its buttons were up, the BMBT would stay
   disconnected from the stock screens until the unit restarts.
 - Screen size: built for the 16:9 BMBT layout (400 × 234). The 4:3
