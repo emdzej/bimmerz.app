@@ -31,7 +31,7 @@ All tools work on the same `navboot`:
 
 | Tool | Does |
 |---|---|
-| **Colours** | the colour tables with BMW's own item names; themes such as E46 Amber, applied to all tables or to one **colour set** (Settings → Colour set 1 or 2, e.g. a day and a night theme); a preview of the MENU and a map screen in the edited colours |
+| **Colours** | the colour tables with BMW's own item names; themes E46 Amber and M Performance, applied to all tables or to one **colour set** (Settings → Colour set 1 or 2, e.g. a day and a night theme); the table picker shows which colour set and screen each table is for, and a badge names the set you are editing; a preview of the MENU and a map screen in the edited colours |
 | **Images** | icons and bitmaps, recoloured with the theme; **replace** any of them with your own picture — rombitmaps #14 (400×234) is the start screen |
 | **Modules** | the modules in the pool, with header and CRC checks |
 | **Voices** | voice prompts: play words, export WAV, replace words |
@@ -84,8 +84,8 @@ pnpm navx <command> …
 | `navx modules <navboot>` | list the modules in a pool |
 | `navx verify <navboot>` | check header parity and CRC of every module |
 | `navx colours <navboot> [--module rom_col] [--json]` | dump a colour table with item names |
-| `navx theme <navboot> -o <out> [--theme amber] [--preview <file.html>]` | recolour all colour tables, icons and bitmaps |
-| `navx theme <navboot> -o <out> --set 1\|2 [--theme amber] [--images]` | recolour only the tables of colour set 1 or 2; icons stay unless `--images` (both sets share them) |
+| `navx theme <navboot> -o <out> [--theme amber\|m] [--preview <file.html>]` | recolour all colour tables, icons and bitmaps |
+| `navx theme <navboot> -o <out> --set 1\|2 [--theme amber\|m] [--images]` | recolour only the tables of colour set 1 or 2; icons stay unless `--images` (both sets share them) |
 | `navx image list <navboot>` | icons and bitmaps: index, format, size |
 | `navx image replace <navboot> rombitmaps 14 start.png -o <out> [--fit]` | replace an image (here the start screen), encoded in the entry's own format |
 | `navx extract <navboot> <module> -o <file>` | write one module to a file |
