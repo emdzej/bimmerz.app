@@ -47,8 +47,8 @@ then the main menu.
   buttons.
 - **Boot the tools' navboot** runs your edits.
 - **Disc drive**: insert a map DVD image (`.iso`). With it, GPS-Navigation
-  opens destination input and reads the countries from the disc. There is
-  no GPS yet: the position stays at the software's default.
+  opens destination input and reads the countries from the disc, and
+  Map shows where the GPS puts the car.
 - **Key**: ignition position.
 - **Language**: the language the car is coded for (German, English UK/US,
   French, Italian, Spanish), applied at power on. As in the car, the nav
@@ -57,6 +57,12 @@ then the main menu.
   lock, lights, reverse with parking distances, speed, rpm, temperatures,
   fuel and battery. Stock screens ignore most of it; the
   [car functions](./carbus) show it.
+- **GPS** (in the Car panel): where the emulated car is. Choose a fixed
+  position, this browser's location, a GPX file (played at 1–10×) or a
+  route typed as `lat, lon` lines, driven at the speed you set. The nav
+  receives it as from its own receiver, with wheel speed to match. Without
+  GPS it stays at its default position near Wetzlar. Turns are not
+  modelled well yet.
 - **Audio** (in the Car panel): an emulated radio and CD changer. FM, AM,
   MODE, the presets and ◁ ▷ on the bezel work as in the car, and the nav
   shows the radio's screen (`FM 87.6`, `CD 1 Track 01`). Set stations,
