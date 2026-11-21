@@ -11,7 +11,8 @@ built into the unit's `navboot` on a modified update CD and adds:
 - a **PDC view** in reverse: parking-sensor distances front and rear;
 - a **popup** of the car screen when a door, lid or window opens;
 - **day and night colours**: switches the nav between colour set 1
-  (day) and set 2 (night) by the rain/light sensor.
+  (day) and set 2 (night) by the rain/light sensor;
+- a **Setup page** for its own settings, kept in the unit.
 
 It uses the unit's own I-Bus connection. No extra hardware, and no stock
 module is changed; carbus is added next to them.
@@ -41,7 +42,7 @@ it is. Modules can also be built without this limit.
 - Your own stock V32 software CD image (`.iso`). carbus doesn't ship any
   BMW software: you build the update disc from your CD.
 - The carbus module for your car (a file named `display_clock`, about
-  22 KB) and the [NAVX CLI](./user#command-line).
+  25 KB) and the [NAVX CLI](./user#command-line).
 - A CD-R. The modified image is about 281 MB.
 
 carbus comes in variants by body module, because the locking commands
@@ -61,7 +62,7 @@ version in `sw_rel.tbl` (1000 → 1001). The unit's loader installs
 software only when the disc's version differs from the one in flash. All
 other files on the disc stay byte-identical; the command reads the whole
 image back and checks every module before it finishes. `navboot` grows
-by about 22 KB.
+by about 25 KB.
 
 ### Trying it first
 
@@ -106,6 +107,7 @@ don't react until it closes.
 | press the dial | runs the focused button |
 | **Data** / **Car** | switches between the car screen and the data view |
 | **Lock** / **Unlock** | central locking (all doors) |
+| **Setup** | carbus's settings ([below](#setup)) |
 | **Close** | back to the stock screen you came from |
 | **MENU** | closes and goes on to the stock MENU |
 
@@ -172,13 +174,36 @@ and carbus switches between them:
 
 Choosing a set by hand in Settings holds until the light changes the
 other way. The switch needs the **rain/light sensor** (cars with
-automatic headlights). Modules can also be built to follow the low beam
-instead, or with switching off.
+automatic headlights). It can follow the low beam instead, or be
+switched off, on the [Setup](#setup) page; the delays are set there too.
 
 Give the two sets their looks with the [Colours tool](./user): choose
 **colour set 1** or **colour set 2** as the scope and apply a theme to
 each, e.g. stock for the day and E46 Amber for the night, or use
 `navx theme --set 2 --theme amber` on the command line.
+
+### Setup
+
+**Setup** on the car screen opens carbus's settings. Turn the dial to a
+row and press it for the next value. **Back**, MENU, or 30 s without
+input saves and leaves.
+
+![The Setup page](/navx/car-setup.png)
+
+| Row | Choices |
+|---|---|
+| day/night colours | light sensor (default), low beam, off |
+| night after dark for | 10, 30 (default), 60, 120 s |
+| day after light for | 30, 60 (default), 120, 300 s |
+| night colour set | 2 (default; day is 1), or 1 (day is 2) |
+| popup when a door opens | on (default), off |
+| car screen with | TEL and MENU hold (default), TEL only, MENU hold only |
+| PDC view in reverse | on (default), off |
+| light sensor now | shown only: what the sensor reports, and whether carbus counts it as day or night |
+
+The settings are kept in the unit's settings memory, next to the stock
+ones (such as the colour set), and are used from then on. If they can't
+be read, carbus uses its defaults.
 
 ## Limits and known risks
 
@@ -195,6 +220,9 @@ each, e.g. stock for the day and E46 Amber for the night, or use
   colours.
 - On a 16:9 unit that has booted before, a theme on colour set 1 at full
   screen doesn't show: the unit keeps its first copy of that table.
+- **Settings kept over a power-off** follow the stock software's own
+  saving, which happens when the unit powers down; this hasn't been seen
+  in a car yet. If a choice doesn't stick, set it again and report it.
 - If carbus stopped while its buttons were up, the BMBT would stay
   disconnected from the stock screens until the unit restarts.
 - Screen size: built for the 16:9 BMBT layout (400 × 234). The 4:3
@@ -210,3 +238,4 @@ each, e.g. stock for the day and E46 Amber for the night, or use
 | Lock / Unlock do nothing | the variant doesn't match the car's body module |
 | no car screen at all | the unit had no display memory for the extra page, or the update wasn't installed (check the CD's version differs) |
 | values show `--` | the car hasn't sent that message yet (ignition on, engine running) |
+| colours don't switch | Setup → day/night colours is off or on low beam, or the car has no rain/light sensor; "light sensor now" shows `--` when nothing arrives |
