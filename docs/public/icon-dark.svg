@@ -1,16 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 60" fill="none">
   <!--
-    Dark-theme variant of the ///B emblem. B fills with white (#ffffff).
+    Dark-theme variant of the ///B emblem: the B in white.
+    Geometry identical to icon.svg and icon-light.svg.
   -->
-  <polygon points="22,0 33,0 12,60 1,60" fill="#1c69d4" />
-  <polygon points="33,0 44,0 23,60 12,60" fill="#0a1f4d" />
-  <polygon points="44,0 55,0 34,60 23,60" fill="#c41e3a" />
   <g transform="matrix(1 0 -0.35 1 0 0)">
-    <path
-      transform="translate(55, 60) scale(0.03009 -0.04092) translate(-151, 0)"
-      fill="#ffffff"
-      fill-rule="evenodd"
-      d="M151 1466H999Q1211 1466 1324.5 1361Q1438 1256 1438 1101Q1438 971 1357 878Q1303 816 1199 780Q1357 742 1431.5 649.5Q1506 557 1506 417Q1506 303 1453 212Q1400 121 1308 68Q1251 35 1136 20Q983 0 933 0H151ZM608 891H805Q911 891 952.5 927.5Q994 964 994 1033Q994 1097 952.5 1133Q911 1169 808 1169H608ZM608 315H839Q956 315 1004 356.5Q1052 398 1052 468Q1052 533 1004.5 572.5Q957 612 838 612H608Z"
-    />
+    <rect x="22.0" y="0" width="9.22" height="60" fill="#2fa4e2" />
+    <rect x="34.81" y="0" width="9.22" height="60" fill="#302967" />
+    <rect x="47.62" y="0" width="9.22" height="60" fill="#e1232b" />
+    <path fill="#ffffff" fill-rule="evenodd" d="M60.36,0.0 H94.42 C104.11,0.0 113.09,8.12 113.09,17.66 C113.09,22.81 110.98,26.56 107.39,28.44 C113.33,30.47 118.48,35.94 118.48,45.31 C118.48,55.62 112.23,60.0 98.8,60.0 H60.36 Z M76.3,12.19 H91.45 C94.73,12.19 97.08,14.69 97.08,17.81 C97.08,21.09 94.73,23.44 91.45,23.44 H76.3 Z M77.16,35.0 H95.36 C98.95,35.0 101.53,37.81 101.53,41.09 C101.53,44.38 98.95,47.03 95.36,47.03 H77.16 Z" />
   </g>
 </svg>
