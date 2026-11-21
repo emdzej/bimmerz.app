@@ -43,7 +43,7 @@ it is. Modules can also be built without this limit.
 - Your own stock V32 software CD image (`.iso`). carbus doesn't ship any
   BMW software: you build the update disc from your CD.
 - The carbus module for your car (a file named `display_clock`, about
-  28 KB) and the [NAVX CLI](./user#command-line).
+  32 KB) and the [NAVX CLI](./user#command-line).
 - A CD-R. The modified image is about 281 MB.
 
 carbus comes in variants by body module, because the locking commands
@@ -63,7 +63,7 @@ version in `sw_rel.tbl` (1000 → 1001). The unit's loader installs
 software only when the disc's version differs from the one in flash. All
 other files on the disc stay byte-identical; the command reads the whole
 image back and checks every module before it finishes. `navboot` grows
-by about 28 KB.
+by about 32 KB.
 
 ### Trying it first
 
@@ -104,7 +104,7 @@ don't react until it closes.
 
 | Control | Does |
 |---|---|
-| turn the dial | moves the orange focus |
+| turn the dial | moves the cursor |
 | press the dial | runs the focused button |
 | **Data** / **Car** | switches between the car screen and the data view |
 | **Lock** / **Unlock** | central locking (all doors) |
@@ -116,7 +116,18 @@ The screen also closes after 30 s without input.
 
 ![Car screen with Lock focused](/navx/car-controls.png)
 
-![After Lock: the title bar shows LOCKED](/navx/car-locked.png)
+![After Lock: the title bar shows Locked](/navx/car-locked.png)
+
+### The look
+
+carbus's screens are drawn like the nav's own menus: the same title bar,
+list rows, cursor and fonts, in the colours of the colour set that's
+showing. They change with **Settings → Colour set**, with carbus's own
+day/night switch, and with a theme from the [Colours tool](./user)
+(amber, M or your own). Only the car's own signals keep fixed colours:
+open doors red, open windows yellow, lamps, and the PDC zones.
+
+![The car screen on the stock, amber and M colour themes](/navx/car-themes.png)
 
 ### The car screen
 
@@ -132,7 +143,7 @@ drive) at the bottom.
 | white headlamps, beams | low beam; long beams = high beam; short beams = front fogs |
 | bright red rear lamps | parking / tail lights; the small one at the rear = rear fog |
 | amber corners | indicators; both sides = hazard lights |
-| title bar | `UNLOCKED`, `LOCKED`, `DOUBLE LOCKED` |
+| title bar | `Unlocked`, `Locked`, `Double locked` |
 
 ### The data view
 
@@ -155,7 +166,7 @@ A value shows `--` until the car has sent it.
 
 ![The PDC view in reverse](/navx/pdc.png)
 
-In reverse, four zones front and four at the rear show each sensor: grey
+In reverse, four zones front and four at the rear show each sensor: dark
 up to the obstacle, then **red** (under 40 cm), **yellow** (under 80 cm)
 or **green**. The nearest distance at each end is shown at the top. The
 view closes 2 s after reverse; any button press dismisses it until the
@@ -202,14 +213,17 @@ input saves and leaves.
 
 | Row | Choices |
 |---|---|
-| day/night colours | sensor or sun (default: the rain/light sensor, the sun without one), sun, low beam, off |
-| night after dark for | 10, 30 (default), 60, 120 s |
-| day after light for | 30, 60 (default), 120, 300 s |
-| night colour set | 2 (default; day is 1), or 1 (day is 2) |
-| popup when a door opens | on (default), off |
-| car screen with | TEL and MENU hold (default), TEL only, MENU hold only |
-| PDC view in reverse | on (default), off |
-| light now | shown only: what the sensor reports, or the sun's height in degrees while the sun decides, and whether carbus counts it as day or night |
+| Day/night | Sensor or sun (default: the rain/light sensor, the sun without one), Sun, Low beam, Off |
+| Night after | 10, 30 (default), 60, 120 s of darkness |
+| Day after | 30, 60 (default), 120, 300 s of daylight |
+| Night colours | Set 2 (default; day is set 1), or Set 1 (day is set 2) |
+| Door popup | On (default): the car screen pops up when a door, lid or window opens; Off |
+| Car screen | TEL / MENU hold (default), TEL only, MENU hold only |
+| PDC view | On (default): the PDC view in reverse; Off |
+| Light now | shown only: what the sensor reports, or the sun's height in degrees while the sun decides, and whether carbus counts it as day or night |
+
+Six rows show at a time, as in the stock Settings; the list scrolls as
+you turn, and the arrows in the left column show there's more.
 
 The settings are kept in the unit's settings memory, next to the stock
 ones (such as the colour set), and are used from then on. If they can't
@@ -238,6 +252,9 @@ clock has changed.
   in a car yet. If a choice doesn't stick, set it again and report it.
 - If carbus stopped while its buttons were up, the BMBT would stay
   disconnected from the stock screens until the unit restarts.
+- The stock look needs the nav's own colours and fonts. On software
+  carbus doesn't recognise, it falls back to its own colours and a small
+  built-in font; it still works.
 - Screen size: built for the 16:9 BMBT layout (400 × 234). The 4:3
   layout has not been checked.
 - Oil temperature and engine power (shown by some phone apps) are not
