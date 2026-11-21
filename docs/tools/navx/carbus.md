@@ -20,9 +20,15 @@ module is changed; carbus is added next to them.
 
 ::: warning Status
 carbus works in the NAVX emulator against emulated body, light, cluster
-and PDC modules. **It has not been tried in a car yet.** For a first test
-in the car, check the stock functions and the read-only screens before
-using Lock / Unlock. Keep the stock V32 CD at hand — it is the way back.
+and PDC modules. **It isn't working in a car yet.** An early test build
+made the unit boot-loop: its module had a size the unit's kernel can't
+load past, so the unit restarted before its software started. That is
+fixed: every module is now padded to the size the kernel needs, and every
+disc is checked before release by booting the unit's real boot loader and
+kernel in the emulator. The stock V32 CD takes a unit back only while
+its software still starts; a disc that stops it from starting can't be
+undone from the CD. So try every disc in the emulator first, and do the
+first car test on a spare unit.
 :::
 
 ## Getting carbus
@@ -55,15 +61,26 @@ opens the phone screen).
 ## Building the update CD
 
 ```sh
-navx cd --iso "BMW MKIV V32 Stock.iso" --add display_clock -o carbus.iso
+navx cd --iso "BMW MKIV V32 Stock.iso" --add display_clock --version 1003 -o carbus.iso
 ```
 
-`navx cd` adds the module to both BMW software sets and changes the
-version in `sw_rel.tbl` (1000 → 1001). The unit's loader installs
-software only when the disc's version differs from the one in flash. All
+`navx cd` adds the module to both BMW software sets and writes the
+version into `sw_rel.tbl`. The unit's loader installs software only when
+the disc's version differs from the one in flash, so give every disc a
+version that unit hasn't had before (stock is 1000). All
 other files on the disc stay byte-identical; the command reads the whole
 image back and checks every module before it finishes. `navboot` grows
 by about 32 KB.
+
+Before a disc goes near a car, boot it on the emulated board, which runs
+the unit's real boot loader and kernel:
+
+```sh
+navx flash --cd carbus.iso /tmp/flash
+navx lowboot --cd carbus.iso --flash /tmp/flash --kernel
+```
+
+It must start the kernel and keep running without a restart.
 
 ### Trying it first
 
@@ -76,10 +93,12 @@ TEL button and dial as in the car.
 ## Installing and going back
 
 Insert the modified CD as a software update. The loader compares the
-disc's version (`1001`) with the unit's and installs the new `navboot`.
+disc's version with the unit's and installs the new `navboot`.
 
 To remove carbus, insert the **stock V32 CD**. Its version (`1000`)
-differs again, so the loader installs the stock software.
+differs again, so the loader installs the stock software. This needs the
+unit's software to start: the running software is what notices the disc
+and switches to the loader.
 
 ## Using it
 
@@ -234,7 +253,7 @@ clock has changed.
 
 ## Limits and known risks
 
-- **Not tested in a car.** The message layouts come from community
+- **Not working in a car yet** (see Status above). The message layouts come from community
   documentation (Wilhelm, BlueBus, the I-BUS app) and the emulator.
   Unverified: the E46 lock-all job, the light bits, the PDC sensor order,
   the fuel byte on an E46 cluster.
