@@ -11,7 +11,8 @@ built into the unit's `navboot` on a modified update CD and adds:
 - a **PDC view** in reverse: parking-sensor distances front and rear;
 - a **popup** of the car screen when a door, lid or window opens;
 - **day and night colours**: switches the nav between colour set 1
-  (day) and set 2 (night) by the rain/light sensor;
+  (day) and set 2 (night) by the rain/light sensor, or by sunset and
+  sunrise from the nav's GPS;
 - a **Setup page** for its own settings, kept in the unit.
 
 It uses the unit's own I-Bus connection. No extra hardware, and no stock
@@ -42,7 +43,7 @@ it is. Modules can also be built without this limit.
 - Your own stock V32 software CD image (`.iso`). carbus doesn't ship any
   BMW software: you build the update disc from your CD.
 - The carbus module for your car (a file named `display_clock`, about
-  25 KB) and the [NAVX CLI](./user#command-line).
+  28 KB) and the [NAVX CLI](./user#command-line).
 - A CD-R. The modified image is about 281 MB.
 
 carbus comes in variants by body module, because the locking commands
@@ -62,7 +63,7 @@ version in `sw_rel.tbl` (1000 → 1001). The unit's loader installs
 software only when the disc's version differs from the one in flash. All
 other files on the disc stay byte-identical; the command reads the whole
 image back and checks every module before it finishes. `navboot` grows
-by about 25 KB.
+by about 28 KB.
 
 ### Trying it first
 
@@ -172,10 +173,19 @@ and carbus switches between them:
 | light again for 60 s | colour set 1 |
 | a short tunnel or underpass | no change |
 
+The whole screen that's up changes to the new colours at once, map and
+menus alike, as after a change in Settings.
+
+**Without a rain/light sensor** (or while it reports nothing or a fault)
+carbus goes by the sun: set 2 from sunset to sunrise where the car is,
+worked out from the nav's GPS position and time, to within a couple of
+minutes. Without GPS reception, for example in a garage, it uses the
+last position and the unit's clock. Before the very first GPS fix after
+installing, it can't tell and leaves the colours as they are.
+
 Choosing a set by hand in Settings holds until the light changes the
-other way. The switch needs the **rain/light sensor** (cars with
-automatic headlights). It can follow the low beam instead, or be
-switched off, on the [Setup](#setup) page; the delays are set there too.
+other way. On the [Setup](#setup) page the source can be set to the sun
+only, the low beam, or off; the delays are set there too.
 
 Give the two sets their looks with the [Colours tool](./user): choose
 **colour set 1** or **colour set 2** as the scope and apply a theme to
@@ -192,18 +202,21 @@ input saves and leaves.
 
 | Row | Choices |
 |---|---|
-| day/night colours | light sensor (default), low beam, off |
+| day/night colours | sensor or sun (default: the rain/light sensor, the sun without one), sun, low beam, off |
 | night after dark for | 10, 30 (default), 60, 120 s |
 | day after light for | 30, 60 (default), 120, 300 s |
 | night colour set | 2 (default; day is 1), or 1 (day is 2) |
 | popup when a door opens | on (default), off |
 | car screen with | TEL and MENU hold (default), TEL only, MENU hold only |
 | PDC view in reverse | on (default), off |
-| light sensor now | shown only: what the sensor reports, and whether carbus counts it as day or night |
+| light now | shown only: what the sensor reports, or the sun's height in degrees while the sun decides, and whether carbus counts it as day or night |
 
 The settings are kept in the unit's settings memory, next to the stock
 ones (such as the colour set), and are used from then on. If they can't
-be read, carbus uses its defaults.
+be read, carbus uses its defaults. For the sun, carbus also keeps the
+car's last GPS position there, rounded to about 10 km. It writes it
+again only after the car has moved about 100 km, or when the unit's
+clock has changed.
 
 ## Limits and known risks
 
@@ -213,11 +226,11 @@ be read, carbus uses its defaults.
   the fuel byte on an E46 cluster.
 - **No window or sunroof control** — the body module's jobs for them are
   not documented anywhere carbus could use.
-- **Day/night switching** has been checked only with an emulated rain/light
-  sensor. In the car it depends on the sensor's messages reaching the
-  nav, which isn't verified yet. After a switch, the screen that is up
-  repaints only where it changes; the next screen is fully in the new
-  colours.
+- **Day/night switching** has been checked only in the emulator, with an
+  emulated rain/light sensor and GPS. In the car it depends on the
+  sensor's messages reaching the nav, and on the nav's GPS data being
+  what the emulator shows; neither is verified yet. Sunset and sunrise
+  are within a couple of minutes (about five near the polar circle).
 - On a 16:9 unit that has booted before, a theme on colour set 1 at full
   screen doesn't show: the unit keeps its first copy of that table.
 - **Settings kept over a power-off** follow the stock software's own
@@ -238,4 +251,4 @@ be read, carbus uses its defaults.
 | Lock / Unlock do nothing | the variant doesn't match the car's body module |
 | no car screen at all | the unit had no display memory for the extra page, or the update wasn't installed (check the CD's version differs) |
 | values show `--` | the car hasn't sent that message yet (ignition on, engine running) |
-| colours don't switch | Setup → day/night colours is off or on low beam, or the car has no rain/light sensor; "light sensor now" shows `--` when nothing arrives |
+| colours don't switch | Setup → day/night colours is off or on low beam; without a rain/light sensor, the nav hasn't had a GPS fix yet since installing. "light now" shows `--` while carbus has neither |
