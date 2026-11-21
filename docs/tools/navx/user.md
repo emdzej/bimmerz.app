@@ -44,7 +44,14 @@ The emulator boots the source's software like the car does: BMW logo,
 then the main menu.
 
 - Use the bezel: scroll on the dial to turn it, click to press, click the
-  buttons.
+  buttons. Click the drive's slot to insert a map disc, its eject key to
+  take it out.
+- **Navigation**: MK4 (DVD) or MK3 (CD). Only MK4 software runs so far;
+  MK3 shows its drive and a note.
+- **Monitor**: the 16:9 or the 4:3 on-board monitor (E46 with the cassette
+  radio). The nav asks the monitor what it is at power on and uses the
+  matching colours and dial direction, and the picture is shown at the
+  panel's shape. A change applies at the next power on.
 - **Boot the tools' navboot** runs your edits.
 - **Disc drive**: insert a map DVD image (`.iso`). With it, GPS-Navigation
   opens destination input and reads the countries from the disc, and
