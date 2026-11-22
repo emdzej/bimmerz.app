@@ -144,7 +144,8 @@ list rows, cursor and fonts, in the colours of the colour set that's
 showing. They change with **Settings → Colour set**, with carbus's own
 day/night switch, and with a theme from the [Colours tool](./user)
 (amber, M or your own). The carbus disc comes with **M** on colour set 1
-(day) and **E46 Amber** on set 2 (night). Only the car's own signals keep fixed colours:
+(day) and **E46 Amber** on set 2 (night). While the unit starts, it shows
+the bimmerz ///B logo in place of the BMW one. Only the car's own signals keep fixed colours:
 open doors red, open windows yellow, lamps, and the PDC zones.
 
 ![The car screen on the stock, amber and M colour themes](/navx/car-themes.png)
