@@ -54,9 +54,8 @@ it is. Modules can also be built without this limit.
 
 carbus comes in variants by body module, because the locking commands
 differ: **E46** (ZKE5), **E38/E39/E52/E53 with GM5/GM6**, and **E38/E39
-with GM1/GM4**. Each variant can open its screen with TEL and MENU hold,
-or with MENU hold only (for cars with a phone or a BlueBus, where TEL
-opens the phone screen).
+with GM1/GM4**. The car screen opens with TEL. Cars with a phone or a
+BlueBus aren't supported yet: there TEL opens the phone screen.
 
 ## Building the update CD
 
@@ -111,7 +110,7 @@ and switches to the loader.
 | On the BMBT | Does |
 |---|---|
 | **TEL** (press) | opens the car screen with its buttons |
-| **MENU** (hold) | the same; a short MENU press stays the normal MENU |
+| **MENU** | always the stock MENU, holds included (the service mode too); with the car screen up, it closes it and goes on to the MENU |
 | a door, lid or window opens | the car screen pops up for 10 s |
 | reverse gear (PDC on) | the PDC view comes up |
 
@@ -249,7 +248,6 @@ input saves and leaves.
 | Day after | 30, 60 (default), 120, 300 s of daylight |
 | Night colours | Set 2 (default; day is set 1), or Set 1 (day is set 2) |
 | Door popup | On (default): the car screen pops up when a door, lid or window opens; Off |
-| Car screen | TEL / MENU hold (default), TEL only, MENU hold only |
 | PDC view | On (default): the PDC view in reverse; Off |
 | Day colours | Theme (default): the disc's day colours everywhere; Stock: the unit's own saved day colours back. Shows `--` until carbus has saved a copy of them |
 | Light now | shown only: what the sensor reports, or the sun's height in degrees while the sun decides, and whether carbus counts it as day or night |
@@ -266,6 +264,8 @@ clock has changed.
 
 ## Limits and known risks
 
+- **Cars with a phone or a BlueBus:** TEL belongs to the phone there, so
+  carbus has no way to open its screen. Not supported yet.
 - **Not working in a car yet** (see Status above). The message layouts come from community
   documentation (Wilhelm, BlueBus, the I-BUS app) and the emulator.
   Unverified: the E46 lock-all job, the light bits, the PDC sensor order,
@@ -294,7 +294,7 @@ clock has changed.
 
 | Symptom | Likely cause |
 |---|---|
-| TEL opens the phone screen | a phone or BlueBus is fitted: use the MENU-hold-only variant |
+| TEL opens the phone screen | a phone or BlueBus is fitted: carbus doesn't support these cars yet |
 | Lock / Unlock do nothing | the variant doesn't match the car's body module |
 | no car screen at all | the unit had no display memory for the extra page, or the update wasn't installed (check the CD's version differs) |
 | values show `--` | the car hasn't sent that message yet (ignition on, engine running) |
