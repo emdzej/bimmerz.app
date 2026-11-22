@@ -170,7 +170,13 @@ open doors red, open windows yellow, lamps, and the PDC zones.
 ### The car screen
 
 The car is seen from above, front to the left, driver's side (left-hand
-drive) at the bottom.
+drive) at the bottom. It's drawn as your model and body, at its real
+length and width: **E46** Sedan, Coupe, Convertible, Touring or Compact;
+**E39** Sedan or Touring; **E38**; **E53 X5**; **E52 Z8**. Pick yours in
+**Setup → Body**. Coupés and convertibles show two doors, estates and the
+X5 a tailgate and roof rails, the open cars their seats. The outlines are
+traced from blueprints by [getoutlines.com](https://getoutlines.com)
+(CC BY 4.0).
 
 | Shown | Meaning |
 |---|---|
@@ -258,6 +264,7 @@ input saves and leaves.
 | Night colours | Set 2 (default; day is set 1), or Set 1 (day is set 2) |
 | Door popup | On (default): the car screen pops up when a door, lid or window opens; Off |
 | PDC view | On (default): the PDC view in reverse; Off |
+| Body | the car drawn: E46 Sedan (default for E46), Coupe, Convertible, Touring, Compact, E39 Sedan (default for the other variants), E39 Touring, E38, E53 X5, E52 Z8 |
 | Day colours | Theme (default): the disc's day colours everywhere; Stock: the unit's own saved day colours back. Shows `--` until carbus has saved a copy of them |
 | Light now | shown only: what the sensor reports, or the sun's height in degrees while the sun decides, and whether carbus counts it as day or night |
 
