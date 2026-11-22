@@ -145,7 +145,11 @@ showing. They change with **Settings → Colour set**, with carbus's own
 day/night switch, and with a theme from the [Colours tool](./user)
 (amber, M or your own). The carbus disc comes with **M** on colour set 1
 (day) and **E46 Amber** on set 2 (night). While the unit starts, it shows
-the bimmerz ///B logo in place of the BMW one. Only the car's own signals keep fixed colours:
+the bimmerz ///B logo in place of the BMW one.
+
+The unit keeps a saved copy of the day colours from its first start. On
+a unit that had run the stock software, carbus updates that copy once, so
+the day theme shows on every screen layout. Only the car's own signals keep fixed colours:
 open doors red, open windows yellow, lamps, and the PDC zones.
 
 ![The car screen on the stock, amber and M colour themes](/navx/car-themes.png)
@@ -267,8 +271,6 @@ clock has changed.
   sensor's messages reaching the nav, and on the nav's GPS data being
   what the emulator shows; neither is verified yet. Sunset and sunrise
   are within a couple of minutes (about five near the polar circle).
-- On a 16:9 unit that has booted before, a theme on colour set 1 at full
-  screen doesn't show: the unit keeps its first copy of that table.
 - **Settings kept over a power-off** follow the stock software's own
   saving, which happens when the unit powers down; this hasn't been seen
   in a car yet. If a choice doesn't stick, set it again and report it.
