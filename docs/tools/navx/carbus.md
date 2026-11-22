@@ -143,7 +143,8 @@ carbus's screens are drawn like the nav's own menus: the same title bar,
 list rows, cursor and fonts, in the colours of the colour set that's
 showing. They change with **Settings → Colour set**, with carbus's own
 day/night switch, and with a theme from the [Colours tool](./user)
-(amber, M or your own). Only the car's own signals keep fixed colours:
+(amber, M or your own). The carbus disc comes with **M** on colour set 1
+(day) and **E46 Amber** on set 2 (night). Only the car's own signals keep fixed colours:
 open doors red, open windows yellow, lamps, and the PDC zones.
 
 ![The car screen on the stock, amber and M colour themes](/navx/car-themes.png)
@@ -217,10 +218,11 @@ Choosing a set by hand in Settings holds until the light changes the
 other way. On the [Setup](#setup) page the source can be set to the sun
 only, the low beam, or off; the delays are set there too.
 
-Give the two sets their looks with the [Colours tool](./user): choose
-**colour set 1** or **colour set 2** as the scope and apply a theme to
-each, e.g. stock for the day and E46 Amber for the night, or use
-`navx theme --set 2 --theme amber` on the command line.
+The carbus disc comes with M for the day (set 1) and E46 Amber for the
+night (set 2), on both screen formats. To change them, use the [Colours
+tool](./user): choose **colour set 1** or **colour set 2** as the scope
+and apply a theme to each, or use `navx theme --set 2 --theme amber` on
+the command line.
 
 ### Setup
 
