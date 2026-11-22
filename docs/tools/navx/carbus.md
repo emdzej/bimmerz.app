@@ -86,6 +86,31 @@ navx lowboot --cd carbus.iso --flash /tmp/flash --kernel
 
 It must start the kernel and keep running without a restart.
 
+### The serial console
+
+The carbus disc also makes the unit's serial port its **console**, so a
+first test on a spare unit leaves a boot log: the boot loader's messages
+and the start-up messages of the unit's software. The port runs at
+**19200 baud**. The level is most likely RS-232: the board has RS-232
+transceivers, but the pins haven't been traced. In exchange, the BMW
+service protocol that normally runs on that port doesn't start, so
+service tools that talk to the unit over it won't connect while the
+console is on.
+
+The carbus build tool turns the console on by default; `--no-console`
+leaves those settings stock. With plain `navx cd`, add `--console` to get
+it:
+
+```sh
+navx cd --iso "BMW MKIV V32 Stock.iso" --add display_clock --console --version 1003 -o carbus.iso
+```
+
+Only two settings in the disc's configuration archive change, which keeps
+its size; every other file in it stays byte for byte. In the emulator,
+`navx lowboot --cd carbus.iso --flash /tmp/flash --kernel --console none`
+(no console of the emulator's own) then shows the start-up messages from
+the disc's settings alone. A stock disc shows nothing there.
+
 ### Trying it first
 
 Open the modified `.iso` on [navx.bimmerz.app](https://navx.bimmerz.app),
@@ -101,6 +126,11 @@ disc's version with the unit's and installs the new `navboot`.
 
 To remove carbus, insert the **stock V32 CD**. Its version (`1000`)
 differs again, so the loader installs the stock software.
+
+The serial console may stay on after that. The stock disc's service
+protocol setting is only a default, and a default on a disc keeps the
+value the unit already has. How the unit's loader merges these settings
+hasn't been traced. A disc made with `--no-console` doesn't change them.
 
 On a 16:9 unit, choose **Setup → Day colours → Stock** before going back
 to stock. Otherwise the day colours at full screen stay themed, because
@@ -315,6 +345,7 @@ clock has changed.
 | TEL opens the phone screen | a phone or BlueBus is fitted: use MENU → Car |
 | no Car in the MENU | the disc was made with plain `navx cd` (no MENU entry), or the MENU had no free place |
 | Lock / Unlock do nothing | the variant doesn't match the car's body module |
+| no output on the serial port | the port isn't at 19200 baud, or the disc was built with `--no-console`; the unit may also have kept its old settings (not checked in a unit yet) |
 | no car screen at all | the unit had no display memory for the extra page, or the update wasn't installed (check the CD's version differs) |
 | values show `--` | the car hasn't sent that message yet (ignition on, engine running) |
 | colours don't switch | Setup → day/night colours is off or on low beam; without a rain/light sensor, the nav hasn't had a GPS fix yet since installing. "light now" shows `--` while carbus has neither |
