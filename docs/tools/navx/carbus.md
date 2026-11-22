@@ -96,7 +96,11 @@ Insert the modified CD as a software update. The loader compares the
 disc's version with the unit's and installs the new `navboot`.
 
 To remove carbus, insert the **stock V32 CD**. Its version (`1000`)
-differs again, so the loader installs the stock software. This needs the
+differs again, so the loader installs the stock software.
+
+On a 16:9 unit, choose **Setup → Day colours → Stock** before going back
+to stock. Otherwise the day colours at full screen stay themed, because
+the unit keeps its saved copy and the stock software never changes it. This needs the
 unit's software to start: the running software is what notices the disc
 and switches to the loader.
 
@@ -149,7 +153,8 @@ the bimmerz ///B logo in place of the BMW one.
 
 The unit keeps a saved copy of the day colours from its first start. On
 a unit that had run the stock software, carbus updates that copy once, so
-the day theme shows on every screen layout. Only the car's own signals keep fixed colours:
+the day theme shows on every screen layout. It keeps the original first,
+and **Setup → Day colours → Stock** puts it back. Only the car's own signals keep fixed colours:
 open doors red, open windows yellow, lamps, and the PDC zones.
 
 ![The car screen on the stock, amber and M colour themes](/navx/car-themes.png)
@@ -246,6 +251,7 @@ input saves and leaves.
 | Door popup | On (default): the car screen pops up when a door, lid or window opens; Off |
 | Car screen | TEL / MENU hold (default), TEL only, MENU hold only |
 | PDC view | On (default): the PDC view in reverse; Off |
+| Day colours | Theme (default): the disc's day colours everywhere; Stock: the unit's own saved day colours back. Shows `--` until carbus has saved a copy of them |
 | Light now | shown only: what the sensor reports, or the sun's height in degrees while the sun decides, and whether carbus counts it as day or night |
 
 Six rows show at a time, as in the stock Settings; the list scrolls as
