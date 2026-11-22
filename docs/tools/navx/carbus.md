@@ -15,8 +15,13 @@ built into the unit's `navboot` on a modified update CD and adds:
   sunrise from the nav's GPS;
 - a **Setup page** for its own settings, kept in the unit.
 
-It uses the unit's own I-Bus connection. No extra hardware, and no stock
-module is changed; carbus is added next to them.
+It uses the unit's own I-Bus connection, with no extra hardware. carbus
+runs next to the stock software. For the **Car** entry in the MENU, the
+disc build also changes two stock parts in place: the MENU module
+(`device_dialog`) and the seven language modules (`Lng_*`, for the
+entry's label). The modules keep their sizes, and the build applies the
+changes only if they match the stock V32 modules exactly. Like the rest
+of the disc, they're built from your own CD; no BMW software is shipped.
 
 ::: warning Status
 carbus works in the NAVX emulator against emulated body, light, cluster
@@ -54,8 +59,7 @@ it is. Modules can also be built without this limit.
 
 carbus comes in variants by body module, because the locking commands
 differ: **E46** (ZKE5), **E38/E39/E52/E53 with GM5/GM6**, and **E38/E39
-with GM1/GM4**. The car screen opens with TEL. Cars with a phone or a
-BlueBus aren't supported yet: there TEL opens the phone screen.
+with GM1/GM4**. The car screen opens from **MENU → Car**, or with TEL.
 
 ## Building the update CD
 
@@ -64,7 +68,8 @@ navx cd --iso "BMW MKIV V32 Stock.iso" --add display_clock --version 1003 -o car
 ```
 
 `navx cd` adds the module to both BMW software sets and writes the
-version into `sw_rel.tbl`. The unit's loader installs software only when
+version into `sw_rel.tbl`. It doesn't add the MENU's **Car** entry: that
+comes with the carbus build tool. Without it, TEL opens the car screen. The unit's loader installs software only when
 the disc's version differs from the one in flash, so give every disc a
 version that unit hasn't had before (stock is 1000). All
 other files on the disc stay byte-identical; the command reads the whole
@@ -109,7 +114,8 @@ and switches to the loader.
 
 | On the BMBT | Does |
 |---|---|
-| **TEL** (press) | opens the car screen with its buttons |
+| **MENU → Car** | opens the car screen with its buttons |
+| **TEL** (press) | the same |
 | **MENU** | always the stock MENU, holds included (the service mode too); with the car screen up, it closes it and goes on to the MENU |
 | a door, lid or window opens | the car screen pops up for 10 s |
 | reverse gear (PDC on) | the PDC view comes up |
@@ -118,6 +124,9 @@ and switches to the loader.
 
 A popup shows the state only. Any knob or button input closes it at once
 and goes to the stock screen as usual.
+
+**Car** is in the MENU after the entries your car has, before Set. It's
+labelled "Car" in every language for now.
 
 ### Buttons and the dial
 
@@ -264,8 +273,10 @@ clock has changed.
 
 ## Limits and known risks
 
-- **Cars with a phone or a BlueBus:** TEL belongs to the phone there, so
-  carbus has no way to open its screen. Not supported yet.
+- **Cars with a phone or a BlueBus:** TEL belongs to the phone there; use
+  **MENU → Car**. The MENU has room for both the Telephone entry and Car,
+  but this hasn't been checked with a phone fitted, in the emulator or
+  in a car.
 - **Not working in a car yet** (see Status above). The message layouts come from community
   documentation (Wilhelm, BlueBus, the I-BUS app) and the emulator.
   Unverified: the E46 lock-all job, the light bits, the PDC sensor order,
@@ -294,7 +305,8 @@ clock has changed.
 
 | Symptom | Likely cause |
 |---|---|
-| TEL opens the phone screen | a phone or BlueBus is fitted: carbus doesn't support these cars yet |
+| TEL opens the phone screen | a phone or BlueBus is fitted: use MENU → Car |
+| no Car in the MENU | the disc was made with plain `navx cd` (no MENU entry), or the MENU had no free place |
 | Lock / Unlock do nothing | the variant doesn't match the car's body module |
 | no car screen at all | the unit had no display memory for the extra page, or the update wasn't installed (check the CD's version differs) |
 | values show `--` | the car hasn't sent that message yet (ignition on, engine running) |
