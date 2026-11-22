@@ -32,7 +32,7 @@ All tools work on the same `navboot`:
 | Tool | Does |
 |---|---|
 | **Colours** | the colour tables with BMW's own item names; themes E46 Amber and M Performance, applied to all tables or to one **colour set** (Settings → Colour set 1 or 2, e.g. a day and a night theme); the table picker shows which colour set and screen each table is for, and a badge names the set you are editing; a preview of the MENU and a map screen in the edited colours |
-| **Images** | icons and bitmaps, recoloured with the theme; **replace** any of them with your own picture — rombitmaps #14 (400×234) is the start screen |
+| **Images** | icons and bitmaps, recoloured with the theme; **replace** any of them with your own picture — rombitmaps #14 (400×234) is the start screen; **Use bimmerz splash** puts the bimmerz emblem there (BMWC01S; **Back to stock** undoes it) |
 | **Modules** | the modules in the pool, with header and CRC checks |
 | **Voices** | voice prompts: play words, export WAV, replace words |
 
@@ -112,6 +112,11 @@ few colours — the unit shows 256 at most — and replace it in the web app
 or with `navx image replace`. A picture that compresses worse than BMW's
 makes the `rombitmaps` module, and so the `navboot`, grow; the tool says
 so. It is a single still picture: the unit has no boot animation.
+
+**Use bimmerz splash** on that image's tile puts the bimmerz emblem there
+in one click, opaque on dark grey and smaller than BMW's picture, so the
+`navboot` keeps its size. Boot the edited navboot in the emulator to see
+it at power on. The same picture shows on 16:9 and 4:3 monitors.
 
 ### Putting changes on the unit
 
