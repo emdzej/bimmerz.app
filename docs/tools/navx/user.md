@@ -31,7 +31,7 @@ All tools work on the same `navboot`:
 
 | Tool | Does |
 |---|---|
-| **Colours** | the colour tables with BMW's own item names; themes E46 Amber and M Performance, applied to all tables or to one **colour set** (Settings → Colour set 1 or 2, e.g. a day and a night theme); the table picker shows which colour set and screen each table is for, and a badge names the set you are editing; a preview of the MENU and a map screen in the edited colours |
+| **Colours** | the colour tables with BMW's own item names; themes E46 Amber and M Performance, applied to all tables or to one **colour set** (Settings → Colour set 1 or 2, e.g. a day and a night theme); the table picker shows which colour set and screen each table is for, and a badge names the set you are editing; a preview of the MENU and a map screen in the edited colours, in any of the navboot's languages (with your Language edits) |
 | **Images** | icons and bitmaps, recoloured with the theme; **replace** any of them with your own picture — rombitmaps #14 (400×234) is the start screen; **Use bimmerz splash** puts the bimmerz emblem there (BMWC01S; **Back to stock** undoes it) |
 | **Language** | the menu text: pick the language to **replace** and one to **translate from**, edit strings in place with a preview in the unit's menu font, or export **CSV** (opens in a spreadsheet) / JSON, translate, and import it. Polish letters (ą ć ę ł ń ś ź ż …) are added to the fonts when you save |
 | **Modules** | the modules in the pool, with header and CRC checks |
