@@ -168,3 +168,10 @@ chip.
 `--console` is permanent: once a unit has installed it, no disc turns
 the serial console off again, and the stock CD leaves the dealer
 diagnostics off (a disc with `DiagnosticsMode=1` brings them back).
+
+## Support
+
+The **Support** button at the top of the web app writes to us. Pick what it's about and say what happened. You can
+attach the emulator's console and a picture of its screen; black out what the picture shouldn't show. Give an email
+only if you want an answer by email. Answers show up under **Support › Messages**, where you can also download or
+erase everything kept about you. What's kept and for how long: [Support privacy](./privacy).

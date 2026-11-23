@@ -84,6 +84,7 @@ export default defineConfig({
                 { text: "User guide", link: "/tools/navx/user" },
                 { text: "Car functions (carbus)", link: "/tools/navx/carbus" },
                 { text: "Developer guide", link: "/tools/navx/developer" },
+                { text: "Support privacy", link: "/tools/navx/privacy" },
               ],
               collapsed: true,
             },
