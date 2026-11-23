@@ -78,6 +78,35 @@ then the main menu.
 - Long presses work: hold a button for a second (MENU hold, storing a
   preset).
 
+#### Fast and Full mode
+
+**Mode** picks how the software runs. Each choice applies at the next
+power on.
+
+- **Fast (HLE)**, the default, runs `navboot` on an emulated operating
+  system: it starts in seconds and can boot the Tools' edited navboot.
+- **Full (board)** runs the unit's own boot loader (`lowboot`) and BMW's
+  OS-9000 kernel and drivers on a model of the board, as in the car. It
+  is slower to start: the boot takes about 90 s of emulated time.
+  - **First power on:** the CD's software is installed into an emulated
+    flash, with the voices for the chosen Language plus German and
+    English. After that the unit boots from that flash.
+  - **Flash:** the whole flash is kept in this browser, per navigation
+    unit and software set, so settings you change survive power off. It
+    is saved at Power off, at ignition off and every 30 s while it
+    changes. **Reset flash** forgets it, and the next power on installs
+    the CD again. A flash kept from before the language change has no
+    voices and stays German until you reset it.
+  - **Key off:** the unit saves its settings and switches itself off
+    about a minute later, as in the car. The next boot then says
+    "correct power-down".
+  - **Serial console:** the panel shows the unit's serial port (t1,
+    19200 baud). On the stock software it stays quiet. A disc made with
+    `navx cd --console` writes the boot messages there.
+  - A lowboot of your own can be picked instead of the CD's.
+  - Not yet: a software disc in the drive doesn't start an update, and
+    the edited navboot from the Tools isn't used.
+
 ## Command line
 
 ```sh
@@ -99,10 +128,12 @@ pnpm navx <command> …
 | `navx add <navboot> <module-file> -o <out>` | append a module; the pool grows by its size |
 | `navx voice info` / `export` / `import` | voice prompt files (`.csf`): list, export every word as WAV, replace words |
 | `navx cc <file.c>… -o <module> [--name n] [--cflags …]` | build a program module from C (needs clang with MIPS) |
-| `navx cd --iso <stock.iso> --add <module>… -o <out.iso>` | update CD with modules added and the version changed |
+| `navx cd --iso <stock.iso> [--add <module>]… [--console] --version NNNN -o <out.iso>` | update CD with modules added and the version changed; `--console` makes the serial port the console (permanent on a unit, see below) |
 | `navx flash --cd <iso or dir> <flashdir>` | install the CD's software into an emulated flash |
 | `navx boot --flash <dir> [--cd <iso or dir>]` | boot the unit in the emulator |
 | `navx run [--cd …] <module> [args…]` | run one program module in the emulator |
+| `navx lowboot --cd <iso> --flash <dir> --kernel` | boot a disc on the board model, as Full mode does: which bootfile lowboot starts, and whether its kernel comes up |
+| `navx nand info\|ls\|get\|fix-navboot <dump> …` | inspect and repair a programmer's dump of the unit's NAND flash |
 
 ### Replacing the start screen
 
@@ -124,3 +155,14 @@ For a changed `navboot` (theme, images), replace `V_2/RR/0101/BMWC01S/app_sw/nav
 in a copy of the CD tree and burn it, or use `navx cd` for added modules.
 The unit installs software only when the disc's `sw_rel.tbl` version
 differs from the one in flash; `navx cd` changes it for you.
+
+Before a disc goes into the car, boot it on the board model:
+`navx flash --cd out.iso <dir>`, then `navx lowboot --cd out.iso --flash <dir> --kernel`.
+It must reach the kernel without restarting. A module of the wrong size
+passes the CRC checks but crashes the kernel on every boot, and then
+no CD can help: the unit has to be recovered by rewriting its flash
+chip.
+
+`--console` is permanent: once a unit has installed it, no disc turns
+the serial console off again, and the stock CD leaves the dealer
+diagnostics off (a disc with `DiagnosticsMode=1` brings them back).
