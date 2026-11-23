@@ -99,6 +99,13 @@ power on.
     changes. **Reset flash** forgets it, and the next power on installs
     the CD again. A flash kept from before the language change has no
     voices and stays German until you reset it.
+  - **The CD after that:** as in the car, it's only needed to install.
+    With a flash kept, power on boots it with no CD (**no CD** takes the
+    CD out). A line above the unit says what power on will do: install
+    the CD, boot the flash, or (a CD of another version) that the CD
+    isn't installed. The emulated board can't install an update from the
+    CD yet, so for another version use **Reset flash**, which also
+    forgets the unit's saved settings.
   - **Key off:** the unit saves its settings and switches itself off
     about a minute later, as in the car. The next boot then says
     "correct power-down".
