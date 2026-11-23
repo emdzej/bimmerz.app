@@ -21,9 +21,16 @@ Pick the source once at the top of the page:
   `navx flash`;
 - a single **`navboot`** file.
 
-From a CD the app finds the software sets (BMW `0101/BMWC01S` first) and
-the voice files. The bar under the header shows the source and lets you
-switch the software set or close it.
+From a CD the app finds the software sets and the voice files. The bar
+under the header shows the source and lets you switch the software set
+or close it. The V32 CD has four sets, and the picker says which is which:
+
+- **BMW — the cars (E38, E39, E46, E52, E53) · BMWC01S**: the one to
+  use, and the default;
+- **BMW — second set, smaller UI · BMWM01S**: fewer colour items, no
+  start logo;
+- **Not for BMW — OEM build · 0102/BMWOCN, 0103/BMWOCN**: a non-BMW
+  build without the BMW car tables.
 
 ### Tools
 
@@ -35,7 +42,7 @@ All tools work on the same `navboot`:
 | **Images** | icons and bitmaps, recoloured with the theme; **replace** any of them with your own picture — rombitmaps #14 (400×234) is the start screen; **Use bimmerz splash** puts the bimmerz emblem there (BMWC01S; **Back to stock** undoes it) |
 | **Language** | the menu text: pick the language to **replace** and one to **translate from**, edit strings in place with a preview in the unit's menu font, or export **CSV** (opens in a spreadsheet) / JSON, translate, and import it. Polish letters (ą ć ę ł ń ś ź ż …) are added to the fonts when you save |
 | **Modules** | the modules in the pool, with header and CRC checks |
-| **Voices** | voice prompts: play words, export WAV, replace words |
+| **Voices** | voice prompts, female and male: play words and phrases, export WAV, replace words. Each phrase shows in English what it says (the same prompt in every language), and you can search them; the hints come from listening and can be off, so play a phrase before relying on one |
 
 **Save navboot** writes the edited pool after re-checking every module.
 
@@ -138,7 +145,7 @@ pnpm navx <command> …
 | `navx add <navboot> <module-file> -o <out>` | append a module; the pool grows by its size |
 | `navx lang export <navboot> Lng_English -o en.csv` | every menu string by id, as CSV (id, source, text) or JSON |
 | `navx lang import <navboot> pl.csv --into Lng_Hollands -o <out>` | your translation in place of the language you pick; the fonts get the letters it uses |
-| `navx voice info` / `export` / `import` | voice prompt files (`.csf`): list, export every word as WAV, replace words |
+| `navx voice info` / `export` / `import` | voice prompt files (`.csf`, female and male): list, export every word as WAV plus `phrases.json`; import replaces words, adds new ones (`NNN.wav` past the last) and takes an edited `phrases.json` (each phrase's words in spoken order) |
 | `navx cc <file.c>… -o <module> [--name n] [--cflags …]` | build a program module from C (needs clang with MIPS) |
 | `navx cd --iso <stock.iso> [--add <module>]… [--console] --version NNNN -o <out.iso>` | update CD with modules added and the version changed; `--console` makes the serial port the console (permanent on a unit, see below) |
 | `navx flash --cd <iso or dir> <flashdir>` | install the CD's software into an emulated flash |
@@ -172,7 +179,22 @@ Latin-1 lacks, like Polish ą ć ę ł ń ś ź ż, are drawn from each font's
 own glyphs and added to the fonts; the language and font modules grow,
 so the `navboot` does too. Longer words may not fit their place on the
 screen: boot the saved navboot in the emulator and look. The spoken
-prompts are separate (the Voices tool).
+prompts are separate (the Voices tool). The language's code (`GB`, `D`,
+…) stays the slot's own, so the unit treats it as the language it
+replaced; in the language list, change that language's short name (for
+Deutsch, string 1.348 `D`) to show yours.
+
+### Recording a voice
+
+Every voice has the same 1029 phrases (the male voices the first 248),
+and a phrase number is the same prompt in every language; each language
+has its own words and splits a phrase into them its own way. To make a
+voice in another language: use the English hints in the Voices tool as
+the script, export a voice with `navx voice export`, record your words
+as `NNN.wav` (new words numbered after the last one), set each phrase's
+words in `phrases.json`, and `navx voice import` it. Keep the file near
+the size of the voice it replaces (the unit's flash holds three voices).
+An edited voice hasn't been played on a unit yet.
 
 ### Putting changes on the unit
 
