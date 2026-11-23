@@ -88,18 +88,21 @@ It must start the kernel and keep running without a restart.
 
 ### The serial console
 
-The carbus disc also makes the unit's serial port its **console**, so a
-first test on a spare unit leaves a boot log: the boot loader's messages
-and the start-up messages of the unit's software. The port runs at
+A disc can also make the unit's serial port its **console**, so a first
+test on a spare unit leaves a boot log: the boot loader's messages and
+the start-up messages of the unit's software. The port runs at
 **19200 baud**. The level is most likely RS-232: the board has RS-232
 transceivers, but the pins haven't been traced. In exchange, the BMW
 service protocol that normally runs on that port doesn't start, so
 service tools that talk to the unit over it won't connect while the
 console is on.
 
-The carbus build tool turns the console on by default; `--no-console`
-leaves those settings stock. With plain `navx cd`, add `--console` to get
-it:
+The console is **off unless you ask for it**: the carbus build tool and
+`navx cd` leave those settings stock, and `--console` turns it on. Both
+warn when you do, because it is **permanent**: once a unit has installed
+such a disc, no disc turns the console off again (see
+[Installing and going back](#installing-and-going-back)). Use it on a
+spare unit only:
 
 ```sh
 navx cd --iso "BMW MKIV V32 Stock.iso" --add display_clock --console --version 1003 -o carbus.iso
@@ -127,10 +130,10 @@ disc's version with the unit's and installs the new `navboot`.
 To remove carbus, insert the **stock V32 CD**. Its version (`1000`)
 differs again, so the loader installs the stock software.
 
-The serial console may stay on after that. The stock disc's service
-protocol setting is only a default, and a default on a disc keeps the
-value the unit already has. How the unit's loader merges these settings
-hasn't been traced. A disc made with `--no-console` doesn't change them.
+A serial console from a `--console` disc stays on after that. The
+unit's loader keeps a setting the unit already has when a disc only
+offers a default, and the stock disc's service protocol setting is such
+a default. A disc made without `--console` doesn't touch these settings.
 
 On a 16:9 unit, choose **Setup → Day colours → Stock** before going back
 to stock. Otherwise the day colours at full screen stay themed, because
@@ -194,6 +197,11 @@ a unit that had run the stock software, carbus updates that copy once, so
 the day theme shows on every screen layout. It keeps the original first,
 and **Setup → Day colours → Stock** puts it back. Only the car's own signals keep fixed colours:
 open doors red, open windows yellow, lamps, and the PDC zones.
+
+carbus redraws its screen only when what it shows changes (a door, a
+value, the lock state, the colours) or when you press a button or turn
+the dial, so a screen that stays the same doesn't flicker or load the
+unit.
 
 ![The car screen on the stock, amber and M colour themes](/navx/car-themes.png)
 
@@ -345,7 +353,7 @@ clock has changed.
 | TEL opens the phone screen | a phone or BlueBus is fitted: use MENU → Car |
 | no Car in the MENU | the disc was made with plain `navx cd` (no MENU entry), or the MENU had no free place |
 | Lock / Unlock do nothing | the variant doesn't match the car's body module |
-| no output on the serial port | the port isn't at 19200 baud, or the disc was built with `--no-console`; the unit may also have kept its old settings (not checked in a unit yet) |
+| no output on the serial port | the port isn't at 19200 baud, or the disc was built without `--console` (the default) |
 | no car screen at all | the unit had no display memory for the extra page, or the update wasn't installed (check the CD's version differs) |
 | values show `--` | the car hasn't sent that message yet (ignition on, engine running) |
 | colours don't switch | Setup → day/night colours is off or on low beam; without a rain/light sensor, the nav hasn't had a GPS fix yet since installing. "light now" shows `--` while carbus has neither |
