@@ -290,7 +290,7 @@ input saves and leaves.
 |---|---|
 | Day/night | Sensor or sun (default: the rain/light sensor, the sun without one), Sun, Low beam, Off |
 | Night after | 10, 30 (default), 60, 120 s of darkness |
-| Day after | 30, 60 (default), 120, 300 s of daylight |
+| Day after | 10, 30, 60 (default), 120, 300 s of daylight |
 | Night colours | Set 2 (default; day is set 1), or Set 1 (day is set 2) |
 | Door popup | On (default): the car screen pops up when a door, lid or window opens; Off |
 | PDC view | On (default): the PDC view in reverse; Off |
