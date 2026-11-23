@@ -110,10 +110,15 @@ power on.
   - **The CD after that:** as in the car, it's only needed to install.
     With a flash kept, power on boots it with no CD (**no CD** takes the
     CD out). A line above the unit says what power on will do: install
-    the CD, boot the flash, or (a CD of another version) that the CD
-    isn't installed. The emulated board can't install an update from the
-    CD yet, so for another version use **Reset flash**, which also
-    forgets the unit's saved settings.
+    the CD, boot the flash, or update it.
+  - **Updating:** pick a CD image (`.iso`) of another version and power
+    on with it in the drive, as in the car. The disc's loader installs
+    it (about two minutes here), ejects the disc, and the unit restarts
+    into the new software; the unit's saved settings stay. Untick **CD in
+    the drive at power on** to boot the flash without updating. Going
+    back works the same way: power on with the stock CD. The drive takes
+    images only, not folders. **Reset flash** still starts over from
+    scratch (and forgets the saved settings).
   - **Key off:** the unit saves its settings and switches itself off
     about a minute later, as in the car. The next boot then says
     "correct power-down".
@@ -121,8 +126,8 @@ power on.
     19200 baud). On the stock software it stays quiet. A disc made with
     `navx cd --console` writes the boot messages there.
   - A lowboot of your own can be picked instead of the CD's.
-  - Not yet: a software disc in the drive doesn't start an update, and
-    the edited navboot from the Tools isn't used.
+  - Not yet: the edited navboot from the Tools isn't used (build an
+    update CD with it instead, see below).
 
 ## Command line
 
