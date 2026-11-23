@@ -84,7 +84,7 @@ export default defineConfig({
                 { text: "User guide", link: "/tools/navx/user" },
                 { text: "Car functions (carbus)", link: "/tools/navx/carbus" },
                 { text: "Developer guide", link: "/tools/navx/developer" },
-                { text: "Support privacy", link: "/tools/navx/privacy" },
+                { text: "Support privacy", link: "/privacy" },
               ],
               collapsed: true,
             },
@@ -110,7 +110,7 @@ export default defineConfig({
       message:
         "Most projects are <a href='https://polyformproject.org/licenses/noncommercial/1.0.0/'>PolyForm Noncommercial</a>; some are MIT — see each repo for the canonical licence.",
       copyright:
-        "Not affiliated with BMW AG. Built by <a href='https://github.com/emdzej'>emdzej</a>.",
+        "Not affiliated with BMW AG. Built by <a href='https://github.com/emdzej'>emdzej</a>. <a href='/privacy'>Support privacy</a>",
     },
 
     search: { provider: "local" },

@@ -174,4 +174,4 @@ diagnostics off (a disc with `DiagnosticsMode=1` brings them back).
 The **Support** button at the top of the web app writes to us. Pick what it's about and say what happened. You can
 attach the emulator's console and a picture of its screen; black out what the picture shouldn't show. Give an email
 only if you want an answer by email. Answers show up under **Support › Messages**, where you can also download or
-erase everything kept about you. What's kept and for how long: [Support privacy](./privacy).
+erase everything kept about you. What's kept and for how long: [Bimmerz support: privacy](/privacy).
