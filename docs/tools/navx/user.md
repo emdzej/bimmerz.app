@@ -33,6 +33,7 @@ All tools work on the same `navboot`:
 |---|---|
 | **Colours** | the colour tables with BMW's own item names; themes E46 Amber and M Performance, applied to all tables or to one **colour set** (Settings → Colour set 1 or 2, e.g. a day and a night theme); the table picker shows which colour set and screen each table is for, and a badge names the set you are editing; a preview of the MENU and a map screen in the edited colours |
 | **Images** | icons and bitmaps, recoloured with the theme; **replace** any of them with your own picture — rombitmaps #14 (400×234) is the start screen; **Use bimmerz splash** puts the bimmerz emblem there (BMWC01S; **Back to stock** undoes it) |
+| **Language** | the menu text: pick the language to **replace** and one to **translate from**, edit strings in place with a preview in the unit's menu font, or export **CSV** (opens in a spreadsheet) / JSON, translate, and import it. Polish letters (ą ć ę ł ń ś ź ż …) are added to the fonts when you save |
 | **Modules** | the modules in the pool, with header and CRC checks |
 | **Voices** | voice prompts: play words, export WAV, replace words |
 
@@ -135,6 +136,8 @@ pnpm navx <command> …
 | `navx image replace <navboot> rombitmaps 14 start.png -o <out> [--fit]` | replace an image (here the start screen), encoded in the entry's own format |
 | `navx extract <navboot> <module> -o <file>` | write one module to a file |
 | `navx add <navboot> <module-file> -o <out>` | append a module; the pool grows by its size |
+| `navx lang export <navboot> Lng_English -o en.csv` | every menu string by id, as CSV (id, source, text) or JSON |
+| `navx lang import <navboot> pl.csv --into Lng_Hollands -o <out>` | your translation in place of the language you pick; the fonts get the letters it uses |
 | `navx voice info` / `export` / `import` | voice prompt files (`.csf`): list, export every word as WAV, replace words |
 | `navx cc <file.c>… -o <module> [--name n] [--cflags …]` | build a program module from C (needs clang with MIPS) |
 | `navx cd --iso <stock.iso> [--add <module>]… [--console] --version NNNN -o <out.iso>` | update CD with modules added and the version changed; `--console` makes the serial port the console (permanent on a unit, see below) |
@@ -157,6 +160,19 @@ so. It is a single still picture: the unit has no boot animation.
 in one click, opaque on dark grey and smaller than BMW's picture, so the
 `navboot` keeps its size. Boot the edited navboot in the emulator to see
 it at power on. The same picture shows on 16:9 and 4:3 monitors.
+
+### Translating the menus
+
+The unit has seven menu languages and no room is kept for more, so a
+translation **replaces** one of them: choose one you don't use, and pick
+it on the unit (Settings → Language) to see yours. Export the language
+you translate from as CSV, fill in the `text` column (keep the `id`
+column; rows left empty keep the old text) and import it. Letters
+Latin-1 lacks, like Polish ą ć ę ł ń ś ź ż, are drawn from each font's
+own glyphs and added to the fonts; the language and font modules grow,
+so the `navboot` does too. Longer words may not fit their place on the
+screen: boot the saved navboot in the emulator and look. The spoken
+prompts are separate (the Voices tool).
 
 ### Putting changes on the unit
 
