@@ -79,14 +79,15 @@ then the main menu.
 - Long presses work: hold a button for a second (MENU hold, storing a
   preset).
 
-#### Fast and Full mode
+#### Emulated OS or emulated board
 
-**Mode** picks how the software runs. Each choice applies at the next
+**Runs on** picks how the software runs. The setup row above the bezel
+(software, runs on, navigation, monitor, language) applies at the next
 power on.
 
-- **Fast (HLE)**, the default, runs `navboot` on an emulated operating
+- **Emulated OS (quick)**, the default, runs `navboot` on an emulated operating
   system: it starts in seconds and can boot the Tools' edited navboot.
-- **Full (board)** runs the unit's own boot loader (`lowboot`) and BMW's
+- **Emulated board (real boot)** runs the unit's own boot loader (`lowboot`) and BMW's
   OS-9000 kernel and drivers on a model of the board, as in the car. It
   is slower to start: the boot takes about 90 s of emulated time.
   - **First power on:** the CD's software is installed into an emulated
@@ -133,7 +134,7 @@ pnpm navx <command> …
 | `navx flash --cd <iso or dir> <flashdir>` | install the CD's software into an emulated flash |
 | `navx boot --flash <dir> [--cd <iso or dir>]` | boot the unit in the emulator |
 | `navx run [--cd …] <module> [args…]` | run one program module in the emulator |
-| `navx lowboot --cd <iso> --flash <dir> --kernel` | boot a disc on the board model, as Full mode does: which bootfile lowboot starts, and whether its kernel comes up |
+| `navx lowboot --cd <iso> --flash <dir> --kernel` | boot a disc on the board model, as the emulated board does in the web app: which bootfile lowboot starts, and whether its kernel comes up |
 | `navx nand info\|ls\|get\|fix-navboot <dump> …` | inspect and repair a programmer's dump of the unit's NAND flash |
 
 ### Replacing the start screen

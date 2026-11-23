@@ -24,7 +24,7 @@ Is it safe? The writers re-check every module before saving. The first car
 disc still bricked a unit: one module's size wasn't a multiple of four, the
 kernel crashed on every boot, and that takes a flash programmer to fix. Now
 every disc boots on an emulated board first — BMW's own boot loader and
-kernel, the emulator's Full mode — before it goes near a car. The stock CD
+kernel, the emulator's "emulated board" — before it goes near a car. The stock CD
 is the way back to stock software, as long as the unit still boots. If you
 try it, let me know.
 
