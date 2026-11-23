@@ -60,7 +60,8 @@ then the main menu.
 - **Language**: the language the car is coded for (German, English UK/US,
   French, Italian, Spanish), applied at power on. As in the car, the nav
   shows the cluster's coded language when its voice is installed.
-- **Car** panel: the emulated car on the I-Bus — doors, windows, lids,
+- **Car** panel (the **Car** tab on the right edge; it slides in over the
+  side, so the bezel stays usable, and × or Esc closes it): the emulated car on the I-Bus — doors, windows, lids,
   lock, lights, reverse with parking distances, speed, rpm, temperatures,
   fuel and battery. Stock screens ignore most of it; the
   [car functions](./carbus) show it.
