@@ -6,7 +6,8 @@ The repository is a pnpm/turbo monorepo. Libraries are isomorphic
 | Package | Contents |
 |---|---|
 | `packages/os9` | OS-9000 module pools: parse, verify (parity, CRC), add, serialize-and-verify |
-| `packages/colours`, `packages/images`, `packages/voice` | colour tables, icons/bitmaps, `.csf` voice files |
+| `packages/colours`, `packages/images`, `packages/voice` | colour tables, icons/bitmaps, `.csf` voice files (modern and old layouts, phrase editing, English phrase hints) |
+| `packages/text` | the UI text (`Lng_*`) and bitmap fonts: read, write, translation files (JSON / CSV), the Polish letters added to the fonts |
 | `packages/emu` | the MK4 emulator: MIPS CPU, OS-9000 kernel calls, devices (flash, NVR, video, I-Bus, disc), the car twins (GM, LCM, IKE, PDC) for testing modules, ISO 9660 reader and patcher |
 | `packages/sdk` | building OS-9000/MIPS program modules from C: runtime, `navx cc`, a MIPS I hazard checker |
 | `apps/cli` | the `navx` command — the only package that touches the filesystem |
