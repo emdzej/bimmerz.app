@@ -113,8 +113,11 @@ power on.
     the CD, boot the flash, or update it.
   - **Updating:** pick a CD image (`.iso`) of another version and power
     on with it in the drive, as in the car. The disc's loader installs
-    it (about two minutes here), ejects the disc, and the unit restarts
-    into the new software; the unit's saved settings stay. Untick **CD in
+    it (about two minutes here), ejects the disc and shows "Update is
+    complete! … Please remove CD and confirm with OK". Press OK (the
+    right knob), as in the car: the unit saves its settings, shuts down
+    properly and restarts into the new software about 5 s later; the
+    saved settings stay. Untick **CD in
     the drive at power on** to boot the flash without updating. Going
     back works the same way: power on with the stock CD. The drive takes
     images only, not folders. **Reset flash** still starts over from
