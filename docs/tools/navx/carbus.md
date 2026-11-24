@@ -288,9 +288,17 @@ the command line.
 
 ### Setup
 
-**Setup** on the car screen opens carbus's settings. Turn the dial to a
-row and press it for the next value. **Back**, MENU, or 30 s without
-input saves and leaves.
+**Setup** on the car screen opens carbus's settings. They work like the
+unit's own Settings:
+
+- Each row shows its choices side by side, with the one in force
+  highlighted.
+- Turn the dial to a row and press to edit it. Turn to pick a value and
+  press again to take it.
+- Rows with many values (day/night source, delays, body) show a single
+  box that you turn through.
+
+**Back**, MENU, or 30 s without input saves and leaves.
 
 ![The Setup page](/navx/car-setup.png)
 
