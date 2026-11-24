@@ -300,7 +300,7 @@ unit's own Settings:
 
 **Back**, MENU, or 30 s without input saves and leaves.
 
-![The Setup page](/navx/car-setup.png)
+![The Setup page, editing Night colours](/navx/car-setup.png)
 
 | Row | Choices |
 |---|---|
