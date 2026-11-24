@@ -125,7 +125,8 @@ power on.
   - **Key off:** the unit saves its settings and switches itself off
     about a minute of its own time later, as in the car. The next boot
     then says "correct power-down". In a slow browser or a background
-    tab this takes longer in real time; the panel waits for it.
+    tab this takes longer in real time; the panel waits for it (up to
+    15 minutes, then it saves the card as it is and says so).
   - **Serial console:** the panel shows the unit's serial port (t1,
     19200 baud). On the stock software it stays quiet. A disc made with
     `navx cd --console` writes the boot messages there.
