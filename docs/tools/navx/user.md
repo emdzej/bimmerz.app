@@ -141,7 +141,7 @@ power on.
     - Flash use: code, data, voices and NVR, and the free space on the
       card. This line updates every 30 s and after each save.
   - **Serial console:** the panel shows the unit's serial port (t1,
-    19200 baud). On the stock software it stays quiet. A disc made with
+    9600 baud). On the stock software it stays quiet. A disc made with
     `navx cd --console` writes the boot messages there.
   - A lowboot of your own can be picked instead of the CD's.
   - Not yet: the edited navboot from the Tools isn't used (build an

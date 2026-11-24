@@ -97,8 +97,8 @@ It must start the kernel and keep running without a restart.
 A disc can also make the unit's serial port its **console**, so a first
 test on a spare unit leaves a boot log: the boot loader's messages and
 the start-up messages of the unit's software. The port runs at
-**19200 baud**. The level is most likely RS-232: the board has RS-232
-transceivers, but the pins haven't been traced. In exchange, the BMW
+**9600 baud, 8N1**, at RS-232 level. This was measured on a unit with
+a USB RS-232 adapter. In exchange, the BMW
 service protocol that normally runs on that port doesn't start, so
 service tools that talk to the unit over it won't connect while the
 console is on.
@@ -389,7 +389,7 @@ clock has changed.
 | TEL opens the phone screen | a phone or BlueBus is fitted: use MENU → Car |
 | no Car in the MENU | the disc was made with plain `navx cd` (no MENU entry), or the MENU had no free place |
 | Lock / Unlock do nothing | the variant doesn't match the car's body module |
-| no output on the serial port | the port isn't at 19200 baud, or the disc was built without `--console` (the default) |
+| no output on the serial port | the terminal isn't at 9600 baud, or the disc was built without `--console` (the default) |
 | no car screen at all | the unit had no display memory for the extra page, or the update wasn't installed (check the CD's version differs) |
 | values show `--` | the car hasn't sent that message yet (ignition on, engine running) |
 | colours don't switch | Setup → day/night colours is off or on low beam; without a rain/light sensor, the nav hasn't had a GPS fix yet since installing. "light now" shows `--` while carbus has neither |
