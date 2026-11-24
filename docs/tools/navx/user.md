@@ -56,8 +56,8 @@ then the main menu.
   take it out.
 - **Navigation**: MK4 (DVD) or MK3 (CD). MK3 boots the Mk3 software that
   is also on the V32 CD (the newest set, 01.27) to its own MENU; the
-  dial and buttons work. MK3 runs in Fast mode only (Full mode emulates
-  the MK4 board) and keeps its own settings memory. A Mk3 map CD image
+  dial and buttons work. MK3 runs on the emulated OS only (the emulated
+  board is the MK4 board) and keeps its own settings memory. A Mk3 map CD image
   can go in its drive.
 - **Monitor**: the 16:9 or the 4:3 on-board monitor (E46 with the cassette
   radio). The nav asks the monitor what it is at power on and uses the
