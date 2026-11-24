@@ -120,8 +120,9 @@ power on.
     images only, not folders. **Reset flash** still starts over from
     scratch (and forgets the saved settings).
   - **Key off:** the unit saves its settings and switches itself off
-    about a minute later, as in the car. The next boot then says
-    "correct power-down".
+    about a minute of its own time later, as in the car. The next boot
+    then says "correct power-down". In a slow browser or a background
+    tab this takes longer in real time; the panel waits for it.
   - **Serial console:** the panel shows the unit's serial port (t1,
     19200 baud). On the stock software it stays quiet. A disc made with
     `navx cd --console` writes the boot messages there.
