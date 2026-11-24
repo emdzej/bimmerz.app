@@ -54,8 +54,11 @@ then the main menu.
 - Use the bezel: scroll on the dial to turn it, click to press, click the
   buttons. Click the drive's slot to insert a map disc, its eject key to
   take it out.
-- **Navigation**: MK4 (DVD) or MK3 (CD). Only MK4 software runs so far;
-  MK3 shows its drive and a note.
+- **Navigation**: MK4 (DVD) or MK3 (CD). MK3 boots the Mk3 software that
+  is also on the V32 CD (the newest set, 01.27) to its own MENU; the
+  dial and buttons work. MK3 runs with the emulated board off (the board
+  model is MK4's) and keeps its own settings memory. A Mk3 map CD image
+  can go in its drive.
 - **Monitor**: the 16:9 or the 4:3 on-board monitor (E46 with the cassette
   radio). The nav asks the monitor what it is at power on and uses the
   matching colours and dial direction, and the picture is shown at the
