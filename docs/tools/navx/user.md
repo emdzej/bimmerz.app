@@ -55,7 +55,8 @@ then the main menu.
   buttons. Click the drive's slot to insert a map disc, its eject key to
   take it out.
 - **Navigation**: MK4 (DVD) or MK3 (CD). MK3 boots the Mk3 software that
-  is also on the V32 CD (the newest set, 01.27) to its own MENU; the
+  is also on the V32 CD (for hardware version 0127, the newest unit) to
+  its own MENU; the
   dial and buttons work. MK3 runs on the emulated OS only (the emulated
   board is the MK4 board) and keeps its own settings memory. A Mk3 map CD image
   can go in its drive.
