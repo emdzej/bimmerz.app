@@ -80,10 +80,12 @@ then the main menu.
   GPS it stays at its default position near Wetzlar. Turns are not
   modelled well yet.
 - **Rain/light sensor** (in the Car panel): the light level and reasons (twilight, darkness, tunnel…) the sensor reports to the light module.
-- **Audio** (in the Car panel): an emulated radio and CD changer. FM, AM,
-  MODE, the presets and ◁ ▷ on the bezel work as in the car, and the nav
-  shows the radio's screen (`FM 87.6`, `CD 1 Track 01`). Set stations,
-  discs and tracks from the panel.
+- **Audio** (in the Car panel): an emulated radio with a CD changer and a
+  tape. FM, AM, MODE, the presets and ◁ ▷ on the bezel work as in the car,
+  and the nav shows the radio's screen (`FM 87.6`, `CD 1 Track 01`,
+  `TAPE 1 >>`). Set stations, discs and tracks from the panel. Insert a
+  tape there, then pick its side or state, including the two fault
+  screens: TAPE ERROR and TAPE CLEAN.
 - Long presses work: hold a button for a second (MENU hold, storing a
   preset).
 
