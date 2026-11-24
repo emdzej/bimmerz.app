@@ -127,6 +127,13 @@ power on.
     then says "correct power-down". In a slow browser or a background
     tab this takes longer in real time; the panel waits for it (up to
     15 minutes, then it saves the card as it is and says so).
+  - **System monitor:** a line under the status shows what the running
+    unit reports about itself:
+    - CPU load: the time outside the kernel's idle loop. Near 100 % while
+      it boots, about 5 % at the menu.
+    - Memory: the kernel's own count of used and free RAM.
+    - Flash use: code, data, voices and NVR, and the free space on the
+      card. This line updates every 30 s and after each save.
   - **Serial console:** the panel shows the unit's serial port (t1,
     19200 baud). On the stock software it stays quiet. A disc made with
     `navx cd --console` writes the boot messages there.
