@@ -170,7 +170,7 @@ don't react until it closes.
 |---|---|
 | turn the dial | moves the cursor |
 | press the dial | runs the focused button |
-| **Data** / **Car** | switches between the car screen and the data view |
+| **Data** / **Info** / **Car** | cycles the car screen, the data view and the info page |
 | **Lock** / **Unlock** | central locking (all doors) |
 | **Setup** | carbus's settings ([below](#setup)) |
 | **Close** | back to the stock screen you came from |
@@ -243,6 +243,28 @@ average speed and the clock stay in the stock on-board computer.
 | odometer, gear, engine, handbrake | the cluster |
 
 A value shows `--` until the car has sent it.
+
+### The info page
+
+![The info page (emulated car)](/navx/info.png)
+
+The cluster type and language are shown as the cluster codes them; carbus
+doesn't guess the chassis. Each module that answers gets a row with its
+variant and identification. Press a row to see that module's details.
+
+| Row | What it shows |
+|---|---|
+| VIN | the VIN's last 7 characters, from the light module |
+| Cluster | the cluster type and language |
+| Inspection | the service counters |
+| one row per module | GM, LCM, IKE, PDC, RLS, radio, IHKA, EWS, phone, CD changer, DSP, when they answer |
+
+- **When modules are asked:** only while the page or a module's details
+  are open, once per run. It's a read-only request every 200 ms, so
+  normal bus traffic isn't disturbed.
+- **The "?" marker:** values whose meaning isn't confirmed yet carry a
+  "?". That includes the part number; only the variant codes (DI, CI)
+  are confirmed.
 
 ### The PDC view
 
