@@ -61,6 +61,12 @@ carbus comes in variants by body module, because the locking commands
 differ: **E46** (ZKE5), **E38/E39/E52/E53 with GM5/GM6**, and **E38/E39
 with GM1/GM4**. The car screen opens from **MENU → Car**, or with TEL.
 
+**MK3 (CD) units:** a MK3 version is in progress and runs in the emulator
+only, not yet on a real unit. The car screen opens with TEL in the stock
+MK3 colours, and the dial and MENU work as on MK4. Lock, unlock and
+status requests don't send anything yet, and there's no MENU → Car entry
+yet. Don't put it on a car.
+
 ## Building the update CD
 
 ```sh
