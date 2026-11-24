@@ -26,7 +26,12 @@ navx run --cd V32.iso hello
 ```
 
 The SDK runtime (`packages/sdk/runtime`) wraps the OS-9000 calls (paths,
-pipes, signals, data modules, memory, getstat/setstat). See
+pipes, signals, data modules, memory, getstat/setstat) and adds a small C
+library: stdio, `printf`, `malloc`, string and ctype functions, plus
+soft-float and 64-bit helpers. Programs with more than 64 KB of globals
+build with `navx cc --large-data`. The first big test is Doom
+([emdzej/navx-doom](https://github.com/emdzej/navx-doom)), which boots
+and plays its demo in the emulator; bring your own WAD. See
 [docs/sdk.md](https://github.com/emdzej/navx/blob/main/docs/sdk.md) for
 the argument conventions and the compiler gotchas.
 
