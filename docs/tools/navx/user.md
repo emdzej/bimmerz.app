@@ -101,6 +101,10 @@ power on.
 
 - **Emulated OS (quick)**, the default, runs `navboot` on an emulated operating
   system: it starts in seconds and can boot the Tools' edited navboot.
+- **Sound:** in both modes the unit's voice prompts come out of the
+  browser's speakers, as the unit plays them. The voices for the chosen
+  Language are installed with the software. The stock software only
+  speaks during route guidance, so a plain boot is silent.
 - **Emulated board (real boot)** runs the unit's own boot loader (`lowboot`) and BMW's
   OS-9000 kernel and drivers on a model of the board, as in the car. It
   is slower to start: the boot takes about 90 s of emulated time.
@@ -143,10 +147,6 @@ power on.
   - **Serial console:** the panel shows the unit's serial port (t1,
     9600 baud). On the stock software it stays quiet. A disc made with
     `navx cd --console` writes the boot messages there.
-  - **Sound:** what the unit's speech output plays comes out of the
-    browser's speakers: the voice prompts, as the unit decodes them. The
-    stock software only speaks during route guidance, so a plain boot is
-    silent.
   - A lowboot of your own can be picked instead of the CD's.
   - Not yet: the edited navboot from the Tools isn't used (build an
     update CD with it instead, see below).
