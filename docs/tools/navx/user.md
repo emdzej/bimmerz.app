@@ -143,6 +143,10 @@ power on.
   - **Serial console:** the panel shows the unit's serial port (t1,
     9600 baud). On the stock software it stays quiet. A disc made with
     `navx cd --console` writes the boot messages there.
+  - **Sound:** what the unit's speech output plays comes out of the
+    browser's speakers: the voice prompts, as the unit decodes them. The
+    stock software only speaks during route guidance, so a plain boot is
+    silent.
   - A lowboot of your own can be picked instead of the CD's.
   - Not yet: the edited navboot from the Tools isn't used (build an
     update CD with it instead, see below).
@@ -176,7 +180,7 @@ pnpm navx <command> …
 | `navx flash --cd <iso or dir> <flashdir>` | install the CD's software into an emulated flash |
 | `navx boot --flash <dir> [--cd <iso or dir>]` | boot the unit in the emulator |
 | `navx run [--cd …] <module> [args…]` | run one program module in the emulator |
-| `navx lowboot --cd <iso> --flash <dir> --kernel` | boot a disc on the board model, as the emulated board does in the web app: which bootfile lowboot starts, and whether its kernel comes up |
+| `navx lowboot --cd <iso> --flash <dir> --kernel` | boot a disc on the board model, as the emulated board does in the web app: which bootfile lowboot starts, and whether its kernel comes up; `--wav <file>` records what the speech output plays |
 | `navx nand info\|ls\|get\|fix-navboot <dump> …` | inspect and repair a programmer's dump of the unit's NAND flash |
 | `navx serial ports` / `navx serial <port> shell\|load\|run\|unload\|apps` / `navx serial bridge <unit-port> <cable-port>` | the unit's serial port with the NavX bench firmware: its shell, program modules uploaded into the unit's RAM, and a bridge from t1 to a K+DCAN cable so an app on the unit reaches the car's modules (nothing written to flash; needs an RS-232 adapter on X1312 pins 8/9, 9600 8N1). The bench firmware isn't released yet |
 
