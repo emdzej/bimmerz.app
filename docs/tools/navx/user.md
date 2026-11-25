@@ -178,6 +178,7 @@ pnpm navx <command> …
 | `navx run [--cd …] <module> [args…]` | run one program module in the emulator |
 | `navx lowboot --cd <iso> --flash <dir> --kernel` | boot a disc on the board model, as the emulated board does in the web app: which bootfile lowboot starts, and whether its kernel comes up |
 | `navx nand info\|ls\|get\|fix-navboot <dump> …` | inspect and repair a programmer's dump of the unit's NAND flash |
+| `navx serial ports` / `navx serial <port> shell\|load\|run\|unload\|apps` | the unit's serial port with the NavX bench firmware: its shell, and program modules uploaded into the unit's RAM (nothing written to flash; needs an RS-232 adapter on X1312 pins 8/9, 9600 8N1). The bench firmware isn't released yet |
 
 ### Replacing the start screen
 
