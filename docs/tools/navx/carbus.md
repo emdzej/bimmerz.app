@@ -102,7 +102,11 @@ X1312: pins 8 and 9, with grounds on 17 and 18. This was measured on a
 unit with a USB RS-232 adapter. In exchange, the BMW
 service protocol that normally runs on that port doesn't start, so
 service tools that talk to the unit over it won't connect while the
-console is on.
+console is on. The port works both ways: the unit also reads what is
+sent to it. A boot log and a CD update log from a spare unit are in
+navx's [serial console logs](https://github.com/emdzej/navx/blob/main/docs/serial-console.md).
+Don't send anything on the port while an update disc loads: the loader
+cancels the install on a Ctrl-C in its first 3 seconds.
 
 The console is **off unless you ask for it**: the carbus build tool and
 `navx cd` leave those settings stock, and `--console` turns it on. Both
