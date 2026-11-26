@@ -23,6 +23,12 @@ entry's label). The modules keep their sizes, and the build applies the
 changes only if they match the stock V32 modules exactly. Like the rest
 of the disc, they're built from your own CD; no BMW software is shipped.
 
+The bench discs also carry a **Polish** translation of the menus, in
+German's place (BMWC01S software only), with a Polish voice for the
+prompts, made by the BMW community, in the German voice's place. Choosing
+German on the unit then gives Polish text and speech; English keeps its
+own.
+
 ::: warning Status
 carbus works in the NAVX emulator against emulated body, light, cluster
 and PDC modules. **It isn't working in a car yet.** An early test build
@@ -190,7 +196,8 @@ don't react until it closes.
 | **Close** | back to the stock screen you came from |
 | **MENU** | closes and goes on to the stock MENU |
 
-The screen also closes after 30 s without input.
+The car screen and Setup also close after 30 s without input. Data, Info
+and a module's details stay open until MENU or Back.
 
 ![Car screen with Lock focused](/navx/car-controls.png)
 
