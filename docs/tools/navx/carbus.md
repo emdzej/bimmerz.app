@@ -99,7 +99,8 @@ test on a spare unit leaves a boot log: the boot loader's messages and
 the start-up messages of the unit's software. The port runs at
 **9600 baud, 8N1**, at RS-232 level, on the purple 18-pin connector
 X1312: pins 8 and 9, with grounds on 17 and 18. This was measured on a
-unit with a USB RS-232 adapter. In exchange, the BMW
+unit with a USB RS-232 adapter: we use the [Waveshare USB TO RS232/485](https://www.waveshare.com/usb-to-rs232-485.htm), on its
+RS-232 side. In exchange, the BMW
 service protocol that normally runs on that port doesn't start, so
 service tools that talk to the unit over it won't connect while the
 console is on. The port works both ways: the unit also reads what is

@@ -146,7 +146,10 @@ power on.
       card. This line updates every 30 s and after each save.
   - **Serial console:** the panel shows the unit's serial port (t1,
     9600 baud). On the stock software it stays quiet. A disc made with
-    `navx cd --console` writes the boot messages there.
+    `navx cd --console` writes the boot messages there. The line under it
+    types into the port: Enter sends the line with CR, as a terminal
+    does. With a NavX bench disc that's the bench firmware's shell
+    (`help`, `ps`, `mdir`, …).
   - A lowboot of your own can be picked instead of the CD's.
   - Not yet: the edited navboot from the Tools isn't used (build an
     update CD with it instead, see below).
@@ -182,7 +185,7 @@ pnpm navx <command> …
 | `navx run [--cd …] <module> [args…]` | run one program module in the emulator |
 | `navx lowboot --cd <iso> --flash <dir> --kernel` | boot a disc on the board model, as the emulated board does in the web app: which bootfile lowboot starts, and whether its kernel comes up; `--wav <file>` records what the speech output plays |
 | `navx nand info\|ls\|get\|fix-navboot <dump> …` | inspect and repair a programmer's dump of the unit's NAND flash |
-| `navx serial ports` / `navx serial <port> shell\|load\|run\|unload\|delete\|apps` / `navx serial bridge <unit-port> <cable-port>` | the unit's serial port with the NavX bench firmware: its shell, program modules uploaded into the unit's RAM (`load --flash` asks the bench firmware to install one in flash too, once it supports that), and a bridge from t1 to a K+DCAN cable so an app on the unit reaches the car's modules (nothing else written to flash; needs an RS-232 adapter on X1312 pins 8/9, 9600 8N1). The bench firmware isn't released yet |
+| `navx serial ports` / `navx serial <port> shell\|load\|run\|unload\|delete\|apps` / `navx serial bridge <unit-port> <cable-port>` | the unit's serial port with the NavX bench firmware: its shell, program modules uploaded into the unit's RAM (`load --flash` asks the bench firmware to install one in flash too, once it supports that), and a bridge from t1 to a K+DCAN cable so an app on the unit reaches the car's modules (nothing else written to flash; needs an RS-232 adapter on X1312 pins 8/9, 9600 8N1; we use the [Waveshare USB TO RS232/485](https://www.waveshare.com/usb-to-rs232-485.htm)). The bench firmware isn't released yet |
 
 ### Replacing the start screen
 
