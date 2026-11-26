@@ -98,7 +98,9 @@ A disc can also make the unit's serial port its **console**, so a first
 test on a spare unit leaves a boot log: the boot loader's messages and
 the start-up messages of the unit's software. The port runs at
 **9600 baud, 8N1**, at RS-232 level, on the purple 18-pin connector
-X1312: pins 8 and 9, with grounds on 17 and 18. This was measured on a
+X1312: pin 8 TX (the unit sends), pin 9 RX, with grounds on 17 (TX) and
+18 (RX). Pin 8 goes to the adapter's RXD, pin 9 to its TXD, 17 and 18 to
+its GND (DB9 pins 2, 3 and 5 on a standard adapter). This was measured on a
 unit with a USB RS-232 adapter: we use the [Waveshare USB TO RS232/485](https://www.waveshare.com/usb-to-rs232-485.htm), on its
 RS-232 side. In exchange, the BMW
 service protocol that normally runs on that port doesn't start, so
