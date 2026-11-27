@@ -111,6 +111,8 @@ yet shows as a plain list.
 
 ![Contacts](/navx/shell/contacts.png)
 
+![A contact with several numbers](/navx/shell/contact-numbers.png)
+
 With our own adapter later, the unit gets the phone's data directly, so
 the same page also gets recent calls with in, out and missed.
 
@@ -151,7 +153,10 @@ gear brings up the parking distance view. Messages — an SMS from the
 phone, or a note from the firmware itself — arrive the same way: press to
 read, turn to dismiss. While you're moving, you only see who it's from;
 the text waits until you stop (or a setting says otherwise). What you
-missed stays under Phone, with a badge in the status bar.
+missed stays under Phone, with a badge in the status bar. With a phone
+module in the car, the nav only learns that an SMS arrived (the phone's
+icon), so the note says "A new message on the phone"; message texts come
+with our own adapter.
 
 ![A door note](/navx/shell/door-note.png)
 
