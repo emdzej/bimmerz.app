@@ -106,6 +106,7 @@ export default defineConfig({
     socialLinks: [
       { icon: "discord", link: "https://discord.gg/c5b4UqeY" },
       { icon: "github", link: "https://github.com/emdzej" },
+      { icon: "youtube", link: "https://www.youtube.com/playlist?list=PLXkFtaaluwls", ariaLabel: "Bimmerz videos on YouTube" },
     ],
 
     footer: {
