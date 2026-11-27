@@ -175,8 +175,9 @@ just in a screenshot.
 
 Prefer a sportier look? Settings › Theme has **M inspired**: a thin
 light-blue, dark-blue and red stripe under the status bar and a blue
-focus, on the same dark background. It passes the same contrast checks,
-day and night. A theme is a small data module, so more can be added later
+focus, on the same dark background, and it passes the same contrast
+checks. Themes change the day look only: at night every theme goes back
+to the standard amber, easy on the eyes. A theme is a small data module, so more can be added later
 without a new firmware.
 
 ![M inspired: home](/navx/shell/home-m.png)
