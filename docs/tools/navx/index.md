@@ -46,6 +46,13 @@ soon as a closed beta.
 **A new look** — [New firmware](./shell) shows where it's going: our own
 screens for the whole unit, operated with the knob alone.
 
+**Diagnostics on the unit** — I'm working on INPA running on the nav
+itself: BMW's diagnostic test procedures on the car's own screen, with
+the knob, built on [INPAX](/tools/inpax/), my INPA
+interpreter. Modules on the I-Bus are reachable straight from the unit;
+the rest need a cable to the car's diagnosis line. The INPA scripts come
+from your own install, not from me. Work in progress — no date yet.
+
 ## Links
 
 - [GitHub](https://github.com/emdzej/navx) — source, docs, issues.
