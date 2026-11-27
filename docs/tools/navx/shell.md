@@ -74,12 +74,14 @@ full, split, home.
 
 The radio screen is a display, not a remote. The BMBT's own buttons already
 tune, seek and store presets, and they go to the radio directly — so the
-screen doesn't repeat them. It shows what the radio reports: a large
-frequency, the station name, the presets with the playing one marked, and
-radio text. The CD screen follows the same idea with disc and track; CD
-text only if the car sends it.
+screen doesn't repeat them. It shows what the radio reports and nothing it
+doesn't: a large frequency, the band and the presets with the playing one
+marked. The CD screen does the same with disc and track and the changer's
+magazine; there's no CD text, because the changer doesn't send any.
 
-![The radio on the full screen (earlier version; the large-frequency layout is being drawn)](/navx/shell/audio-full.png)
+![The radio on the full screen](/navx/shell/audio-full.png)
+
+![The CD changer](/navx/shell/audio-cd.png)
 
 ## Car
 
