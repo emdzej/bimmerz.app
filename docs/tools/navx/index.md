@@ -54,6 +54,13 @@ diagnosis line, not the I-Bus, so the unit needs a K-line cable to the
 diagnostic socket. The INPA scripts come
 from your own install, not from me. Work in progress — no date yet.
 
+**Coding and flashing, later** — after INPA, the same idea for
+[NCSX](/tools/ncsx/) (coding) and [NFSX](/tools/nfsx/) (reading and
+writing ECUs). Both need the K-line too, through a small ESP32 dongle,
+and a computer on the other end to keep what's read: ECU images and
+coding backups stay there, and nothing is written without a backup
+first. On the roadmap, not started.
+
 ## Links
 
 - [GitHub](https://github.com/emdzej/navx) — source, docs, issues.
