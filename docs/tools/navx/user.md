@@ -136,14 +136,14 @@ power on.
     about a minute of its own time later, as in the car. The next boot
     then says "correct power-down". In a slow browser or a background
     tab this takes longer in real time; the panel waits for it (up to
-    15 minutes, then it saves the card as it is and says so).
+    15 minutes, then it saves the flash as it is and says so).
   - **System monitor:** a line under the status shows what the running
     unit reports about itself:
     - CPU load: the time outside the kernel's idle loop. Near 100 % while
       it boots, about 5 % at the menu.
     - Memory: the kernel's own count of used and free RAM.
-    - Flash use: code, data, voices and NVR, and the free space on the
-      card. This line updates every 30 s and after each save.
+    - Flash use: code, data, voices and NVR, and the free space in
+      flash. This line updates every 30 s and after each save.
   - **Serial console:** the panel shows the unit's serial port (t1,
     9600 baud). On the stock software it stays quiet. A disc made with
     `navx cd --console` writes the boot messages there. The line under it
@@ -184,7 +184,7 @@ pnpm navx <command> …
 | `navx run [--cd …] <module> [args…]` | run one program module in the emulator |
 | `navx lowboot --cd <iso> --flash <dir> --kernel` | boot a disc on the board model, as the emulated board does in the web app: which bootfile lowboot starts, and whether its kernel comes up; `--wav <file>` records what the speech output plays |
 | `navx nand info\|ls\|get\|fix-navboot <dump> …` | inspect and repair a programmer's dump of the unit's NAND flash |
-| `navx serial ports` / `navx serial <port> shell\|load\|run\|unload\|delete\|apps\|info` / `navx serial bridge <unit-port> <cable-port>` | the unit's serial port with the NavX bench firmware: its shell, the unit's status (`info`: versions, RAM, disk space, file sizes, error log; also one at a time: `ver` (with which copy of each bench part runs, the card's or the navboot's), `mem`, `df`, `files`, `size <path>`, `temp` (the board temperature reading, raw), …; when the unit's flash card doesn't answer, the commands that use it say "card locked" until the next boot; `save` stores the unit's settings before you pull power, `reboot` restarts it, `ls <dir>` lists the flash card, `sum <path> --local <file>` checks a file on the unit against your copy), program modules uploaded into the unit's RAM (`load --flash` installs one in flash too, so it's loaded again at every boot; `delete` takes it off; `install <navxdup>` puts the card copies of the bench firmware's own parts on, for later updates over the serial port), and a bridge from t1 to a K+DCAN cable so an app on the unit reaches the car's modules (nothing else written to flash; needs an RS-232 adapter on X1312 pin 8 TX / 9 RX / 17–18 GND, 9600 8N1; we use the [Waveshare USB TO RS232/485](https://www.waveshare.com/usb-to-rs232-485.htm)). The bench firmware isn't released yet |
+| `navx serial ports` / `navx serial <port> shell\|load\|run\|unload\|delete\|apps\|info` / `navx serial bridge <unit-port> <cable-port>` | the unit's serial port with the NavX bench firmware: its shell, the unit's status (`info`: versions, RAM, disk space, file sizes, error log; also one at a time: `ver` (with which copy of each bench part runs, the flash copy or the navboot's), `mem`, `df`, `files`, `size <path>`, `temp` (the board temperature reading, raw), …; when the unit's flash doesn't answer, the commands that use it say "flash locked" until the next boot; `save` stores the unit's settings before you pull power, `reboot` restarts it, `ls <dir>` lists the unit's flash, `sum <path> --local <file>` checks a file on the unit against your copy), program modules uploaded into the unit's RAM (`load --flash` installs one in flash too, so it's loaded again at every boot; `delete` takes it off; `install <navxdup>` puts the flash copies of the bench firmware's own parts on, for later updates over the serial port), and a bridge from t1 to a K+DCAN cable so an app on the unit reaches the car's modules (nothing else written to flash; needs an RS-232 adapter on X1312 pin 8 TX / 9 RX / 17–18 GND, 9600 8N1; we use the [Waveshare USB TO RS232/485](https://www.waveshare.com/usb-to-rs232-485.htm)). The bench firmware isn't released yet |
 
 ### Installing an app over the serial port
 
@@ -225,7 +225,7 @@ NAVX flash apps 2
 Both apps then show up on the unit's Apps screen and start from there. An
 Apps screen opened in the first seconds after boot, before `flash apps`, can
 show them a moment later. Each upload is checked (size, parity, CRC) and
-read back from the card before it counts as installed; a failed one leaves
+read back from the flash before it counts as installed; a failed one leaves
 the old copy. A key on t1 in those 3 seconds boots without the flash apps.
 
 ### Replacing the start screen
