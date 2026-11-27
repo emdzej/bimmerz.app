@@ -96,6 +96,22 @@ values. **Data**: coolant, battery, outside temperature, speed and revs.
 
 ![Car: the trip values](/navx/shell/car-trip.png)
 
+The car on these screens is your body, picked in Settings: twelve of
+them — the E46 Sedan, Coupé, Convertible, Touring and Compact, the E39
+Sedan and Touring, the E38, X5, Z8, X3 and Z4 — each at its real length
+and width, with the right doors, roof, tailgate or open cockpit. The
+outlines are traced from plan-view blueprints by
+[getoutlines.com](https://getoutlines.com) (CC BY 4.0); only the
+coordinates are kept.
+
+![E38](/navx/shell/body-e38.png)
+
+![E39 Touring](/navx/shell/body-e39-touring.png)
+
+![X5](/navx/shell/body-e53-x5.png)
+
+![Z4](/navx/shell/body-e85-z4.png)
+
 ## Phone
 
 ![Phone: Messages, Contacts and Favourites beside the menu](/navx/shell/phone.png)
