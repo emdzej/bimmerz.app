@@ -191,20 +191,22 @@ pnpm navx <command> …
 The serial tools (`navx serial`, the web app's serial panel) talk to the
 unit's own serial port. You need a **USB RS-232 adapter**: we use the
 [Waveshare USB TO RS232/485](https://www.waveshare.com/usb-to-rs232-485.htm),
-on its RS-232 (DB9) side. The port is at RS-232 level, not TTL, so a
+wired to the screw terminals on its RS-232 side. The port is at RS-232 level, not TTL, so a
 3.3 V or 5 V USB-TTL adapter won't read it.
 
 The port is on the purple 18-pin connector **X1312** of the
 navigation computer:
 
-| X1312 pin | Signal | Adapter (DB9) |
+| X1312 pin | Signal | Adapter terminal |
 |---|---|---|
-| 8 | TX, the unit sends | RXD, pin 2 |
-| 9 | RX, the unit receives | TXD, pin 3 |
-| 17 | TX ground | GND, pin 5 |
-| 18 | RX ground | GND, pin 5 |
+| 8 | TX, the unit sends | RXD |
+| 9 | RX, the unit receives | TXD |
+| 17 | TX ground | GND |
+| 18 | RX ground | GND |
 
 Connect both grounds: with only one, our adapter picked up crosstalk.
+An RS-232 adapter with a DB9 plug works the same way: RXD is pin 2, TXD
+pin 3, GND pin 5.
 The line runs at **9600 baud, 8N1**, with no handshake. Then check the
 link:
 
