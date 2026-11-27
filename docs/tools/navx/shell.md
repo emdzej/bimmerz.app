@@ -84,6 +84,14 @@ holds; there's no CD text, because the changer doesn't send any.
 
 ![The CD changer](/navx/shell/audio-cd.png)
 
+Tune the radio or skip a track while you're on another screen, and a
+short note at the bottom shows what's playing now for three seconds. The
+knob keeps working on the screen underneath; press to open Audio. It
+gives way to parking, doors and messages, and Settings › Audio overlay
+turns it off.
+
+![A new station while on the Car screen](/navx/shell/audio-note.png)
+
 ## Car
 
 The car and the on-board computer are one place, in four parts. **Status**:
