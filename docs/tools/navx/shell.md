@@ -143,6 +143,10 @@ changes.
 
 ![Setting the speed limit](/navx/shell/settings-edit.png)
 
+**Language** is a setting too: Unit follows the nav's own language, or
+pick English, Polski or Deutsch. Apps follow the same choice, and numbers,
+dates and units come from Settings, not from the language.
+
 ## Navigation, honestly
 
 Instead of route guidance, a GPS page: your speed in large numbers, heading on a compass,
