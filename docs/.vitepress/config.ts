@@ -111,7 +111,7 @@ export default defineConfig({
       message:
         "Most projects are <a href='https://polyformproject.org/licenses/noncommercial/1.0.0/'>PolyForm Noncommercial</a>; some are MIT — see each repo for the canonical licence.",
       copyright:
-        "Not affiliated with BMW AG. Built by <a href='https://github.com/emdzej'>emdzej</a>. <a href='/privacy'>Support privacy</a>",
+        "Not affiliated with BMW AG. Built by <a href='https://emdzej.pl'>Michał Jaskólski</a>. <a href='/privacy'>Support privacy</a>",
     },
 
     search: { provider: "local" },
