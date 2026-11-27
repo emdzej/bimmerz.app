@@ -185,7 +185,49 @@ pnpm navx <command> …
 | `navx run [--cd …] <module> [args…]` | run one program module in the emulator |
 | `navx lowboot --cd <iso> --flash <dir> --kernel` | boot a disc on the board model, as the emulated board does in the web app: which bootfile lowboot starts, and whether its kernel comes up; `--wav <file>` records what the speech output plays |
 | `navx nand info\|ls\|get\|fix-navboot <dump> …` | inspect and repair a programmer's dump of the unit's NAND flash |
-| `navx serial ports` / `navx serial <port> shell\|load\|run\|unload\|delete\|apps\|info` / `navx serial bridge <unit-port> <cable-port>` | the unit's serial port with the NavX bench firmware: its shell, the unit's status (`info`: versions, RAM, disk space, file sizes, error log; also one at a time: `ver`, `mem`, `df`, `files`, `size <path>`, …; `save` stores the unit's settings before you pull power, `reboot` restarts it, `ls <dir>` lists the flash card, `sum <path> --local <file>` checks a file on the unit against your copy), program modules uploaded into the unit's RAM (`load --flash` asks the bench firmware to install one in flash too, once it supports that), and a bridge from t1 to a K+DCAN cable so an app on the unit reaches the car's modules (nothing else written to flash; needs an RS-232 adapter on X1312 pin 8 TX / 9 RX / 17–18 GND, 9600 8N1; we use the [Waveshare USB TO RS232/485](https://www.waveshare.com/usb-to-rs232-485.htm)). The bench firmware isn't released yet |
+| `navx serial ports` / `navx serial <port> shell\|load\|run\|unload\|delete\|apps\|info` / `navx serial bridge <unit-port> <cable-port>` | the unit's serial port with the NavX bench firmware: its shell, the unit's status (`info`: versions, RAM, disk space, file sizes, error log; also one at a time: `ver`, `mem`, `df`, `files`, `size <path>`, …; `save` stores the unit's settings before you pull power, `reboot` restarts it, `ls <dir>` lists the flash card, `sum <path> --local <file>` checks a file on the unit against your copy), program modules uploaded into the unit's RAM (`load --flash` installs one in flash too, so it's loaded again at every boot; `delete` takes it off), and a bridge from t1 to a K+DCAN cable so an app on the unit reaches the car's modules (nothing else written to flash; needs an RS-232 adapter on X1312 pin 8 TX / 9 RX / 17–18 GND, 9600 8N1; we use the [Waveshare USB TO RS232/485](https://www.waveshare.com/usb-to-rs232-485.htm)). The bench firmware isn't released yet |
+
+### Installing an app over the serial port
+
+With the bench firmware on the unit, an app goes on from a laptop, with no
+disc. This session is from our spare unit (port name shortened):
+
+```
+$ navx serial /dev/cu.usbserial-XXXX ver
+software 1017 (BMWC01S), navboot 11941492 (11.39 MB), navxd crc a5a829, carbus crc 7b46b1, launcher crc e01351
+
+$ navx serial /dev/cu.usbserial-XXXX load hello --flash --run
+  10%   20%   30%   40%   50%   60%   100%
+loaded hello (installed in flash): 3784 bytes, crc 105ac8, 5.7 s at 9600
+running hello: pid 50
+
+$ navx serial /dev/cu.usbserial-XXXX load dashx --rate 57600 --flash
+  0%   10%   20%   30%   40%   50%   60%   70%   80%   90%   100%
+loaded dashx (installed in flash): 32372 bytes, crc 4291a9, 11.3 s at 57600
+
+$ navx serial /dev/cu.usbserial-XXXX apps
+dashx                           32372  loaded  flash
+hello                            3784  loaded  flash
+
+$ navx serial /dev/cu.usbserial-XXXX sum /pm/compunit/navx/apps/app0 --local hello
+/pm/compunit/navx/apps/app0  crc32 1ed2604f, hello 1ed2604f: same
+
+$ navx serial /dev/cu.usbserial-XXXX reboot
+saved; the unit is restarting
+
+$ navx serial /dev/cu.usbserial-XXXX listen
+…
+NAVX flash apps in 3 s; a key on t1 skips them
+NAVX flash hello loaded 3784
+NAVX flash dashx loaded 32372
+NAVX flash apps 2
+```
+
+Both apps then show up on the unit's Apps screen and start from there. An
+Apps screen opened in the first seconds after boot, before `flash apps`, can
+show them a moment later. Each upload is checked (size, parity, CRC) and
+read back from the card before it counts as installed; a failed one leaves
+the old copy. A key on t1 in those 3 seconds boots without the flash apps.
 
 ### Replacing the start screen
 
