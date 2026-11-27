@@ -156,6 +156,23 @@ text is drawn in a bitmap font of our own, pixel by pixel on the unit's
 written in Latin script — Polish, Czech, Hungarian, German, French, Nordic
 and the rest — and names that don't fit end in "…" rather than shrinking.
 
+## Alongside BlueBus
+
+A car may already have a [BlueBus](https://www.bluebus.dev/). The new
+firmware must never fight it:
+
+- It plays the CD changer or the phone on the I-Bus only when nothing
+  else answers there, so an installed BlueBus keeps both roles. With
+  BlueBus playing, the Audio page shows Bluetooth and BlueBus's track text.
+- Features both can do (comfort indicators, welcome and follow-me-home
+  lights, auto lock, cluster texts) are off on our side, with the hint
+  "BlueBus does this", once BlueBus is detected or Settings › "BlueBus
+  installed" is on. The user can still switch ours on.
+- It never writes to the cluster's number display while BlueBus does.
+
+*Planned: how BlueBus is recognised on the bus is being worked out; none
+of this has run in a car with a BlueBus yet.*
+
 ## For developers
 
 Apps draw inside the same frame: the shell owns the status bar, the knob
