@@ -75,9 +75,10 @@ full, split, home.
 The radio screen is a display, not a remote. The BMBT's own buttons already
 tune, seek and store presets, and they go to the radio directly — so the
 screen doesn't repeat them. It shows what the radio reports and nothing it
-doesn't: a large frequency, the band and the presets with the playing one
-marked. The CD screen does the same with disc and track and the changer's
-magazine; there's no CD text, because the changer doesn't send any.
+doesn't: a large frequency, the band and which preset is playing. A row
+of preset boxes would only repeat the buttons, so it isn't there. The CD
+screen does the same with disc and track and how many discs the magazine
+holds; there's no CD text, because the changer doesn't send any.
 
 ![The radio on the full screen](/navx/shell/audio-full.png)
 
