@@ -106,7 +106,7 @@ changes.
 
 ## Navigation, honestly
 
-Instead of route guidance, a GPS page: heading on a compass, speed,
+Instead of route guidance, a GPS page: your speed in large numbers, heading on a compass,
 coordinates, altitude and satellites, and an arrow with the distance to a
 place you saved — home, the car park, wherever. Later a trip log you can
 copy off over the serial port.
