@@ -13,7 +13,7 @@ app from the Apps menu, in the emulator and on a real unit, with made-up
 data where the real data isn't wired yet. The screenshots below come
 straight from the emulator, pixel for pixel.
 
-![shellx's home screen in an E46](/navx/shell/advert.jpg)
+![shellx's home screen in an E46](/navx/shell/advert-v8.jpg)
 
 *A mockup: the car photo is retouched and the screen is pasted in. The
 screen itself isn't drawn by hand, though — it's shellx's real output,
