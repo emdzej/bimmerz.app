@@ -23,7 +23,7 @@ Programs for the unit are built with the NavX SDK: C compiled with clang
 into an OS-9000/MIPS program module, a runtime that wraps the OS-9000
 calls (paths, pipes, signals, data modules, memory, getstat/setstat) with
 a small C library, and a MIPS I hazard checker. The SDK has moved to its
-own repository and isn't public yet. Modules built with it run in the
+own repository and isn't public yet; its documentation is: [sdk.navx.bimmerz.app](https://sdk.navx.bimmerz.app) (the toolchain, the app interfaces, the UI guidelines and the UI SDK). Modules built with it run in the
 emulator (`navx run --cd V32.iso <module>`) and on the unit with the
 bench firmware (`navx serial <port> load <module>`). The first big test
 is Doom ([emdzej/navx-doom](https://github.com/emdzej/navx-doom)), which

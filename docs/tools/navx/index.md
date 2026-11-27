@@ -65,3 +65,4 @@ first. On the roadmap, not started.
 
 - [GitHub](https://github.com/emdzej/navx) — source, docs, issues.
 - [User guide](./user) · [Car functions manual](./carbus) · [New firmware](./shell) · [Developer guide](./developer)
+- [SDK documentation](https://sdk.navx.bimmerz.app) — the toolchain, the app interfaces and the UI guidelines.
