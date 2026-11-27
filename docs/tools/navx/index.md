@@ -43,7 +43,10 @@ update CD. See the [user guide](./user).
 how to install it, which buttons open what, and every screen. It's coming
 soon as a closed beta.
 
+**A new look** — [New firmware](./shell) shows where it's going: our own
+screens for the whole unit, operated with the knob alone.
+
 ## Links
 
 - [GitHub](https://github.com/emdzej/navx) — source, docs, issues.
-- [User guide](./user) · [Car functions manual](./carbus) · [Developer guide](./developer)
+- [User guide](./user) · [Car functions manual](./carbus) · [New firmware](./shell) · [Developer guide](./developer)

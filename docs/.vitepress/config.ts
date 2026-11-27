@@ -83,6 +83,7 @@ export default defineConfig({
                 { text: "Overview", link: "/tools/navx/" },
                 { text: "User guide", link: "/tools/navx/user" },
                 { text: "Car functions (carbus)", link: "/tools/navx/carbus" },
+                { text: "New firmware", link: "/tools/navx/shell" },
                 { text: "Developer guide", link: "/tools/navx/developer" },
                 { text: "Support privacy", link: "/privacy" },
               ],
