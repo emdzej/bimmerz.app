@@ -43,6 +43,11 @@ update CD. See the [user guide](./user).
 how to install it, which buttons open what, and every screen. It's coming
 soon as a closed beta.
 
+**Build your own apps** — the NavX SDK compiles C into programs for the
+unit, with the app interfaces, a UI library and the guidelines for the new
+screens. The code isn't public yet; the documentation is, at
+[sdk.navx.bimmerz.app](https://sdk.navx.bimmerz.app).
+
 **A new look** — [New firmware](./shell) shows where it's going: our own
 screens for the whole unit, operated with the knob alone.
 

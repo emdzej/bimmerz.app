@@ -85,6 +85,7 @@ export default defineConfig({
                 { text: "Car functions (carbus)", link: "/tools/navx/carbus" },
                 { text: "New firmware", link: "/tools/navx/shell" },
                 { text: "Developer guide", link: "/tools/navx/developer" },
+                { text: "SDK documentation ↗", link: "https://sdk.navx.bimmerz.app" },
                 { text: "Support privacy", link: "/privacy" },
               ],
               collapsed: true,
