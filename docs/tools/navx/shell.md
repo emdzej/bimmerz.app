@@ -96,6 +96,27 @@ values. **Data**: coolant, battery, outside temperature, speed and revs.
 
 ![Car: the trip values](/navx/shell/car-trip.png)
 
+## Phone
+
+![Phone: Messages, Contacts and Favourites beside the menu](/navx/shell/phone.png)
+
+One Phone page, whatever the phone is. A phone module in the car — BMW's
+or a BlueBus — builds its own screens and sends them as text for the
+stock nav to draw; it doesn't hand over contacts as such. Modern reads
+those screens instead and fills its own: the directory becomes
+Contacts, the phone's top-8 becomes Favourites, and the call shows who,
+the state and the time. Picking a contact makes the phone hold it, and
+the TEL button dials, as in the stock software. A screen we can't map
+yet shows as a plain list.
+
+![Contacts](/navx/shell/contacts.png)
+
+With our own adapter later, the unit gets the phone's data directly, so
+the same page also gets recent calls with in, out and missed.
+
+*A mockup from the emulator, with made-up names: nothing is sent to a
+phone yet.*
+
 ## Settings without holding buttons
 
 Press a value and its choices appear beside it, with Cancel at the end.
