@@ -14,6 +14,20 @@ app from the Apps menu, in the emulator and on a real unit, with made-up
 data where the real data isn't wired yet. The screenshots below come
 straight from the emulator, pixel for pixel.
 
+![shellx's home screen in an E46](/navx/shell/advert.jpg)
+
+*A mockup: the car photo is retouched and the screen is pasted in. The
+screen itself isn't drawn by hand, though — it's shellx's real output,
+captured from the software running in the emulator.*
+
+And here it is on a real unit:
+
+<div style="position:relative;padding-top:56.25%;margin:1em 0">
+  <iframe src="https://www.youtube-nocookie.com/embed/w4YjZ5OKI8k?start=44" title="shellx running on a real MK4 unit" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+[Watch on YouTube](https://www.youtube.com/watch?v=w4YjZ5OKI8k&t=44s)
+
 ## Home
 
 The menu sits on the left, the selected function on the right, live.
