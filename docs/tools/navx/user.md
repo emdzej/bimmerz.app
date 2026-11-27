@@ -176,7 +176,6 @@ pnpm navx <command> …
 | `navx lang export <navboot> Lng_English -o en.csv` | every menu string by id, as CSV (id, source, text) or JSON |
 | `navx lang import <navboot> pl.csv --into Lng_Hollands -o <out>` | your translation in place of the language you pick; the fonts get the letters it uses |
 | `navx voice info` / `export` / `import` | voice prompt files (`.csf`, female and male): list, export every word as WAV plus `phrases.json`; import replaces words, adds new ones (`NNN.wav` past the last) and takes an edited `phrases.json` (each phrase's words in spoken order) |
-| `navx cc <file.c>… -o <module> [--name n] [--cflags …]` | build a program module from C (needs clang with MIPS) |
 | `navx cd --iso <stock.iso> [--add <module>]… [--console] --version NNNN -o <out.iso>` | update CD with modules added and the version changed; `--console` makes the serial port the console (permanent on a unit, see below) |
 | `navx cd --iso <stock.iso> --mk3-add <module>… -o <out.iso>` | the same for the MK3 software on the disc: modules added to every MK3 set |
 | `navx mk3 --cd <iso> [--expect <module>]` | install the disc's MK3 software on the emulated MK3 with its own CD loader, then boot the unit from the flash it wrote (emulator only, not checked on a car) |
