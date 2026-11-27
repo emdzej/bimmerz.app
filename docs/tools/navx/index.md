@@ -49,8 +49,9 @@ screens for the whole unit, operated with the knob alone.
 **Diagnostics on the unit** — I'm working on INPA running on the nav
 itself: BMW's diagnostic test procedures on the car's own screen, with
 the knob, built on [INPAX](/tools/inpax/), my INPA
-interpreter. Modules on the I-Bus are reachable straight from the unit;
-the rest need a cable to the car's diagnosis line. The INPA scripts come
+interpreter. INPA talks to the modules over the car's diagnosis line,
+not the I-Bus, so it needs a cable from the unit to the diagnostic
+socket, as any INPA setup does. The INPA scripts come
 from your own install, not from me. Work in progress — no date yet.
 
 ## Links
