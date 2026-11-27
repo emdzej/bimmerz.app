@@ -28,9 +28,13 @@ kernel, the emulator's "emulated board" — before it goes near a car. The stock
 is the way back to stock software, as long as the unit still boots. If you
 try it, let me know.
 
+**The products** — the firmware and the maps have their own site:
+[navx.bimmerz.app](https://navx.bimmerz.app). Both are coming soon, and
+you can join the beta there.
+
 ## How to use it
 
-**In your browser** — [navx.bimmerz.app](https://navx.bimmerz.app). Open
+**In your browser** — [tools.navx.bimmerz.app](https://tools.navx.bimmerz.app). Open
 the V32 CD image (or a `navboot`) once, then use the **Tools** (colours,
 images, modules, voices) or the **Emulator**. Everything stays on your
 machine.
@@ -68,6 +72,8 @@ first. On the roadmap, not started.
 
 ## Links
 
+- [navx.bimmerz.app](https://navx.bimmerz.app) — the firmware and the maps; join the beta.
+- [tools.navx.bimmerz.app](https://tools.navx.bimmerz.app) — the browser tools and the emulator.
 - [GitHub](https://github.com/emdzej/navx) — source, docs, issues.
 - [User guide](./user) · [Car functions manual](./carbus) · [New firmware](./shell) · [Developer guide](./developer)
 - [SDK documentation](https://sdk.navx.bimmerz.app) — the toolchain, the app interfaces and the UI guidelines.

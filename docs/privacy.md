@@ -8,9 +8,11 @@ in those tools stays on your device: your files are never sent.
 
 | Tool | Where | What it adds to a report |
 |---|---|---|
-| [NavX](/tools/navx/) web app | the **Support** button at the top of [navx.bimmerz.app](https://navx.bimmerz.app) | where you were in the app (a tool, or the emulator); whether the emulator ran the emulated OS or the emulated board; the software's name and version; the emulator's state (powered on or off, how long it ran, the flash's software version). Only if you tick them: the emulator's console (its last lines) and a picture of its screen. Never your discs, navboot, flash or voices. |
+| [NavX](/tools/navx/) web app | the **Support** button at the top of [tools.navx.bimmerz.app](https://tools.navx.bimmerz.app) | where you were in the app (a tool, or the emulator); whether the emulator ran the emulated OS or the emulated board; the software's name and version; the emulator's state (powered on or off, how long it ran, the flash's software version). Only if you tick them: the emulator's console (its last lines) and a picture of its screen. Never your discs, navboot, flash or voices. |
+| NavX product site | the **Support** button and the **Join the beta** form on [navx.bimmerz.app](https://navx.bimmerz.app) | the page you were on and the topic. The beta form also sends what you fill in — which product you'd like to try, your car, its monitor and software version — and needs an email, kept only with your consent, so we can send you the beta. |
+| NavX SDK docs | the **Feedback** button on [sdk.navx.bimmerz.app](https://sdk.navx.bimmerz.app) | the page you were on and the topic. Nothing else. |
 
-Each tool is its own product at the support service, with its own anonymous ids (below). This page is updated
+Each tool is its own product at the support service, with its own anonymous ids (below); the three NavX sites share one. This page is updated
 when another tool gets a Support button.
 
 ## What we keep when you ask for help

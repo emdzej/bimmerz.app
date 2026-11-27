@@ -136,7 +136,7 @@ the disc's settings alone. A stock disc shows nothing there.
 
 ### Trying it first
 
-Open the modified `.iso` on [navx.bimmerz.app](https://navx.bimmerz.app),
+Open the modified `.iso` on [tools.navx.bimmerz.app](https://tools.navx.bimmerz.app),
 go to **Emulator** and press **Power on**. The **Car** panel under the
 screen plays the car: open doors, switch lights, put it in reverse, set
 speed, rpm, temperatures, fuel and the battery voltage. Use the bezel's

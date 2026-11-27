@@ -9,7 +9,7 @@ An unmodified V32 CD is the recovery path for every change below.
 
 ## Web app
 
-[navx.bimmerz.app](https://navx.bimmerz.app) runs in the browser;
+[tools.navx.bimmerz.app](https://tools.navx.bimmerz.app) runs in the browser;
 nothing is uploaded.
 
 ### Choosing the source
