@@ -88,7 +88,8 @@ Tune the radio or skip a track while you're on another screen, and a
 short note at the bottom shows what's playing now for three seconds. The
 knob keeps working on the screen underneath; press to open Audio. It
 gives way to parking, doors and messages, and Settings › Audio overlay
-turns it off.
+turns it off. When the radio retunes by itself (to a stronger
+frequency of the same station), no note shows.
 
 ![A new station while on the Car screen](/navx/shell/audio-note.png)
 
