@@ -100,6 +100,10 @@ same style: their title, their status fields and their list. Picking
 from the list follows once the shell may send to the car; for now it
 shows the menu only.
 
+The INFO and SELECT buttons on the wide monitor stay the radio's, as on
+the stock unit: the shell leaves them alone. If the monitor switches
+itself off because it got too hot, a note says so.
+
 ![An adapter's own menu](/navx/shell/radio-screen.png)
 
 Tune the radio or skip a track while you're on another screen, and a
