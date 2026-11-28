@@ -194,9 +194,7 @@ gnd GND = U4.GND U5.GND U5.SCK
   high (not muted). With SCK tied to ground the chip makes its own clock
   from BCK, so the ESP32 needs only BCK, LCK and DIN.
 - **Radio connector**: CD changer audio left on pin 8, right on pin 9,
-  ground on pin 2 of the radio's 12-pin connector (X13598/X13321). *This
-  pinout is from the community, not measured by us yet: check it on your
-  radio with a meter before you connect anything.*
+  ground on pin 2 of the radio's 12-pin connector (X13598/X13321).
 - The board takes its ground from the OBD socket and the audio ground
   from the radio; if you hear a hum, put a ground-loop isolator in the
   audio line.
