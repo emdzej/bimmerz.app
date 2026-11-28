@@ -165,6 +165,11 @@ changes.
 pick English, Polski or Deutsch. Apps follow the same choice, and numbers,
 dates and units come from Settings, not from the language.
 
+**About**, the last row, shows the NavX version on the unit and who
+built it.
+
+![Settings › About](/navx/shell/about.png)
+
 ## Navigation, honestly
 
 Instead of route guidance, a GPS page: your speed in large numbers, heading on a compass,
