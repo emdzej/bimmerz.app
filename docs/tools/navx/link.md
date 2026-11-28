@@ -118,7 +118,7 @@ title "Level 2: NavX Link (ESP32-C3)"
 
 part J1 connector "X1312 (nav computer)" { right 8:TX 9:RX 17:GND 18:GND }
 part U1 connector "MAX3232 module" { left R1IN T1OUT right R1OUT T1IN top VCC bottom GND }
-part U4 connector "ESP32-C3 SuperMini" { left GPIO20/RX GPIO21/TX right GPIO7/TX1 GPIO6/RX1 top 5V 3V3 bottom GND }
+part U4 connector "ESP32-C3 SuperMini" { left GPIO4/RX GPIO5/TX right GPIO7/TX1 GPIO6/RX1 top 5V 3V3 bottom GND }
 part U2 ic "L9637D" link="https://www.st.com/en/automotive-analog-and-power/l9637.html" {
   left 4:TX 1:RX
   right 6:K
@@ -133,8 +133,8 @@ part J2 connector "OBD-II plug" { left 7:K 8:K2 16:+12V 4:CGND 5:SGND }
 
 wire J1.TX -- U1.R1IN
 wire U1.T1OUT -- J1.RX
-wire U1.R1OUT -- U4.GPIO20/RX
-wire U4.GPIO21/TX -- U1.T1IN
+wire U1.R1OUT -- U4.GPIO4/RX
+wire U4.GPIO5/TX -- U1.T1IN
 wire U4.GPIO7/TX1 -- U2.TX
 wire U2.RX -- U4.GPIO6/RX1
 net KLINE = U2.K R1.1 J2.K SW1.1
@@ -150,13 +150,17 @@ group "Power from the OBD socket" { U3 F1 }
 
 - **ESP32-C3 SuperMini** (or any ESP32-C3 board): 5 V in from the buck,
   its own 3.3 V regulator feeds the MAX3232 module and the L9637D's VCC.
-  The C3 has two UARTs; the GPIOs drawn are a suggestion, the firmware
-  sets them. Keep clear of the C3's strapping pins (GPIO2, 8, 9).
+  The C3 has two UARTs and can put them on any GPIO; the K-line pins
+  drawn are a suggestion, the firmware sets them. Keep clear of the C3's strapping pins (GPIO2, 8, 9).
 - The C3 has Bluetooth LE but no Classic Bluetooth, so no audio: that is
   level 3.
 - An ESP32 awake draws tens of milliamps, which would drain the battery
-  from OBD pin 16 within days. The Link firmware will sleep when the nav
-  computer goes quiet; until it does, unplug it when you park.
+  from OBD pin 16 within days, so the board goes into deep sleep: when
+  the nav computer tells it to (the car is going to sleep), or when t1
+  has been quiet for a while. The first byte from the unit wakes it.
+  That's why the unit's line goes to GPIO4: on the C3 only GPIO0–5 can
+  wake it from deep sleep. The sleep is in the Link firmware, still in
+  development; until then, unplug it when you park.
 
 The board's firmware and the protocol are in development.
 
