@@ -63,8 +63,9 @@ to it and press. There's nothing you have to hold.
 One shortcut, on Home only: **hold the knob** for a second and the quick
 actions open: **Day / Night** (overrides the light sensor) and **Monitor
 off** (the screen goes dark; press the knob or MENU to bring it back,
-and the parking view still comes up). Back, MENU, or five seconds close
-them. Home doesn't show a hint for it, to stay clean, so this is the place
+and the parking view still comes up) and **Restart** (press it twice; the
+same as Settings › Restart, which waits while an update is being
+written). Back, MENU, or five seconds close them. Home doesn't show a hint for it, to stay clean, so this is the place
 it's written down.
 
 ![Quick actions on Home](/navx/shell/quick-actions.png)
