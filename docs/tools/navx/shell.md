@@ -60,6 +60,15 @@ MENU always takes you home, as on the stock unit. Back is not a button —
 it's the first stop on every screen, the ‹ next to the title, so you turn
 to it and press. There's nothing you have to hold.
 
+One shortcut, on Home only: **hold the knob** for a second and the quick
+actions open: **Day / Night** (overrides the light sensor) and **Monitor
+off** (the screen goes dark; press the knob or MENU to bring it back,
+and the parking view still comes up). Back, MENU, or five seconds close
+them. Home doesn't show a hint for it, to stay clean, so this is the place
+it's written down.
+
+![Quick actions on Home](/navx/shell/quick-actions.png)
+
 Why so strict? Because three inputs are easy to get from somewhere else.
 The steering-wheel buttons could drive the same screens later, without a
 second way of doing things.
