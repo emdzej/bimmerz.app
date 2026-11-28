@@ -96,8 +96,9 @@ holds; there's no CD text, because the changer doesn't send any.
 
 Adapters that pose as the CD changer, BlueBus-style ones for example, can
 put a menu of their own on the nav. That works here too, drawn in the
-same style: their title, their status fields and their list, which you
-turn through and press as on the stock screen.
+same style: their title, their status fields and their list. Picking
+from the list follows once the shell may send to the car; for now it
+shows the menu only.
 
 ![An adapter's own menu](/navx/shell/radio-screen.png)
 
