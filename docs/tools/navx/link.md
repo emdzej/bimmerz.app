@@ -8,7 +8,7 @@ them are do-it-yourself, from modules you can buy, plus a few parts.
 | Level | What it is | What it gives you |
 |---|---|---|
 | 0 | A USB RS-232 cable | The serial console from a laptop: updates, `navx serial`, logs |
-| 1 | K-line cable: RS-232 → K-line, to the OBD socket | The unit reaches the car's modules over the K-line (diagnosis apps on the unit) |
+| 1 | Link Lite, the K-line cable: RS-232 → K-line, to the OBD socket | The unit reaches the car's modules over the K-line (diagnosis apps on the unit) |
 | 2 | NavX Link: level 1 with an ESP32-C3 in the middle | Both at once: the K-line plus a wireless link to a phone or computer (updates over Bluetooth, gamepads, the unit online) |
 | 3 | NavX Link + Audio: level 2 on an ESP32-S31, plus a DAC | Also Bluetooth audio into the radio's CD changer input |
 
@@ -26,7 +26,7 @@ A USB RS-232 adapter wired to X1312: see
 [Connecting to the serial port](./user#connecting-to-the-serial-port).
 This is all you need for updates and the serial tools.
 
-## Level 1: the K-line cable
+## Level 1: Link Lite, the K-line cable
 
 The unit's port is RS-232, the K-line is a 12 V single-wire bus, so the
 cable needs two converters: RS-232 → logic level (a MAX3232 module), and
@@ -34,7 +34,7 @@ logic level → K-line (an L9637D transceiver). Power comes from the OBD
 socket.
 
 ```elmo
-title "Level 1: K-line cable"
+title "Level 1: Link Lite (K-line cable)"
 
 part J1 connector "X1312 (nav computer)" { right 8:TX 9:RX 17:GND 18:GND }
 part U1 connector "MAX3232 module" { left R1IN T1OUT right R1OUT T1IN top VCC bottom GND }
