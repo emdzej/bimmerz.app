@@ -91,7 +91,8 @@ Parts:
   the usual 20-pin to OBD-II adapter.
 
 X1312 is the same connector as for level 0: pin 8 is the unit's TX,
-pin 9 its RX, 17 and 18 ground (connect both).
+pin 9 its RX, 17 and 18 ground (connect both). It takes MQS contacts
+(part numbers to follow).
 
 You can also take the power at the nav computer instead of the OBD
 socket, from X1313 (blue): pin 1 is +12 V from the battery (not
@@ -232,7 +233,8 @@ gnd GND = U4.GND U5.GND U5.SCK
   high (not muted). With SCK tied to ground the chip makes its own clock
   from BCK, so the ESP32 needs only BCK, LCK and DIN.
 - **Radio connector**: CD changer audio left on pin 8, right on pin 9,
-  ground on pin 2 of the radio's 12-pin connector (X13598/X13321).
+  ground on pin 2 of the radio's 12-pin connector (X13598/X13321). It
+  takes MQS contacts, like X1312 (part numbers to follow).
 - The board takes its ground from the OBD socket and the audio ground
   from the radio; if you hear a hum, put a ground-loop isolator in the
   audio line.
