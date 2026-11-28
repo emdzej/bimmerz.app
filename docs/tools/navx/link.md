@@ -167,8 +167,10 @@ The board's firmware and the protocol are in development.
 ### Setting up the board
 
 The board brings up its own Wi-Fi, `NavX-Link-` and four characters,
-with a random password from its first start. Join it from a phone and
-its setup page opens (or go to `192.168.4.1`).
+with the password `navxlink`. Every new board has that one, and a
+factory reset brings it back, so change it first: the setup page asks
+until you do. Join it from a phone and its setup page opens (or go to
+`192.168.4.1`).
 
 <div class="phone-shots">
   <figure><img src="/navx/link/portal-status.png" alt="Status: the nav computer, the K-line, Wi-Fi and Bluetooth"><figcaption>Status</figcaption></figure>
