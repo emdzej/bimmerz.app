@@ -92,3 +92,48 @@
   ) !important;
   opacity: 0.4;
 }
+
+/* elmo schematics (```elmo fences): the drawing, the elmo badge in its corner, the source folded below */
+.elmo-schematic {
+  position: relative;
+  margin: 1.2rem 0;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  background: #fff;
+}
+.elmo-schematic .elmo-diagram {
+  padding: 1rem 1rem 0.5rem;
+  overflow-x: auto;
+  min-height: 3rem;
+}
+.elmo-schematic .elmo-diagram svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+.elmo-schematic .elmo-badge {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  opacity: 0.75;
+  transition: opacity 0.2s;
+}
+.elmo-schematic .elmo-badge:hover {
+  opacity: 1;
+}
+.elmo-schematic .elmo-badge img {
+  width: 28px;
+  height: 28px;
+}
+.elmo-schematic details {
+  border-top: 1px solid var(--vp-c-divider);
+  padding: 0.3rem 0.9rem;
+  font-size: 0.8rem;
+  color: var(--vp-c-text-2);
+  background: var(--vp-c-bg);
+  border-radius: 0 0 10px 10px;
+}
+.elmo-schematic details div[class*="language-"] {
+  margin: 0.4rem 0;
+}

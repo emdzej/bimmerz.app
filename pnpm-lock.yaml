@@ -8,6 +8,9 @@ importers:
 
   .:
     devDependencies:
+      '@emdzej/elmo-core':
+        specifier: ^0.3.1
+        version: 0.3.1
       vitepress:
         specifier: ^1.6.3
         version: 1.6.4(@algolia/client-search@5.52.1)(postcss@8.5.15)(search-insights@2.17.3)
@@ -129,6 +132,9 @@ packages:
         optional: true
       search-insights:
         optional: true
+
+  '@emdzej/elmo-core@0.3.1':
+    resolution: {integrity: sha512-szioF9H9981cojcmULuGlQ/42kkQDLXnoFAc0wXvb1MUj9JOrDUEepT4iPeu4frd/y9XIh4WEN3Iq6YZ9yMfNw==}
 
   '@esbuild/aix-ppc64@0.21.5':
     resolution: {integrity: sha512-1SDgH6ZSPTlggy1yI6+Dbkiz8xzpHJEVAlF/AM1tHPLsf5STom9rwtjE4hKAF20FfXXNTFqEYXyJNWh1GiZedQ==}
@@ -594,6 +600,9 @@ packages:
   devlop@1.1.0:
     resolution: {integrity: sha512-RWmIqhcFf1lRYBvNmr7qTNuyCt/7/ns2jbpp1+PalgE/rDQcBT0fioSMUpJ93irlUhC5hrg4cYqe6U+0ImW0rA==}
 
+  elkjs@0.12.2:
+    resolution: {integrity: sha512-YC42gyUwsOeKWB/EVTr1abEnNhDEoz+qeLshCBufNW0qrJPcxk+/s1lih4Sbke4BOgjficJGvJ2D9jL/QTC/ew==}
+
   emoji-regex-xs@1.0.0:
     resolution: {integrity: sha512-LRlerrMYoIDrT6jgpeZ2YYl/L8EulRTt5hQcYjy5AInh7HWXKimpqx68aknBFpGL2+/IcogTcaydJEgaTmOpDg==}
 
@@ -960,6 +969,10 @@ snapshots:
     transitivePeerDependencies:
       - '@algolia/client-search'
 
+  '@emdzej/elmo-core@0.3.1':
+    dependencies:
+      elkjs: 0.12.2
+
   '@esbuild/aix-ppc64@0.21.5':
     optional: true
 
@@ -1319,6 +1332,8 @@ snapshots:
   devlop@1.1.0:
     dependencies:
       dequal: 2.0.3
+
+  elkjs@0.12.2: {}
 
   emoji-regex-xs@1.0.0: {}
 

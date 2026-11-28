@@ -42,6 +42,23 @@ export default defineConfig({
     ],
   ],
 
+  // ```elmo fences: schematics as code (https://elmo.emdzej.pl). The source
+  // goes base64 into a data attribute (survives Vue's HTML escaping); the
+  // theme renders it to SVG in the browser, as elmo's own docs do.
+  markdown: {
+    config(md) {
+      const fence = md.renderer.rules.fence!;
+      md.renderer.rules.fence = (tokens, idx, opts, env, self) => {
+        const token = tokens[idx];
+        if (token?.info.trim().split(/\s+/)[0] !== "elmo") return fence(tokens, idx, opts, env, self);
+        const b64 = Buffer.from(token.content, "utf8").toString("base64");
+        token.info = "text";
+        const source = fence(tokens, idx, opts, env, self);
+        token.info = "elmo";
+        return `<div class="elmo-schematic"><div class="elmo-diagram" data-elmo-src="${b64}"></div><a class="elmo-badge" href="https://elmo.emdzej.pl/" target="_blank" rel="noopener" title="Drawn with elmo: schematics as code"><img src="/elmo-icon.svg" alt="elmo"></a><details><summary>elmo source</summary>${source}</details></div>\n`;
+      };
+    },
+  },
   themeConfig: {
     logo: {
       light: "/icon-light.svg",
@@ -84,6 +101,7 @@ export default defineConfig({
                 { text: "User guide", link: "/tools/navx/user" },
                 { text: "Car functions (carbus)", link: "/tools/navx/carbus" },
                 { text: "New firmware", link: "/tools/navx/shell" },
+                { text: "NavX Link (DIY)", link: "/tools/navx/link" },
                 { text: "Developer guide", link: "/tools/navx/developer" },
                 { text: "SDK documentation ↗", link: "https://sdk.navx.bimmerz.app" },
                 { text: "Support privacy", link: "/privacy" },

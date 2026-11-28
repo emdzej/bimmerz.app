@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="elmo">
+  <!-- electronics nod: IC-style legs -->
+  <g stroke="#9c2a20" stroke-width="3" stroke-linecap="round">
+    <line x1="24" y1="52" x2="24" y2="61"/><line x1="40" y1="52" x2="40" y2="61"/>
+  </g>
+  <!-- combed furry head -->
+  <g fill="#e23b2e"><circle cx="32" cy="33" r="20"/><g transform="translate(53.00,33.00) rotate(55.00)"><ellipse rx="7.5" ry="4.5" cx="2" cy="0"/></g><g transform="translate(51.40,41.04) rotate(77.50)"><ellipse rx="7.5" ry="4.5" cx="2" cy="0"/></g><g transform="translate(46.85,47.85) rotate(100.00)"><ellipse rx="7.5" ry="4.5" cx="2" cy="0"/></g><g transform="translate(40.04,52.40) rotate(122.50)"><ellipse rx="7.5" ry="4.5" cx="2" cy="0"/></g><g transform="translate(32.00,54.00) rotate(145.00)"><ellipse rx="7.5" ry="4.5" cx="2" cy="0"/></g><g transform="translate(23.96,52.40) rotate(167.50)"><ellipse rx="7.5" ry="4.5" cx="2" cy="0"/></g><g transform="translate(17.15,47.85) rotate(190.00)"><ellipse rx="7.5" ry="4.5" cx="2" cy="0"/></g><g transform="translate(12.60,41.04) rotate(212.50)"><ellipse rx="7.5" ry="4.5" cx="2" cy="0"/></g><g transform="translate(11.00,33.00) rotate(235.00)"><ellipse rx="7.5" ry="4.5" cx="2" cy="0"/></g><g transform="translate(12.60,24.96) rotate(257.50)"><ellipse rx="7.5" ry="4.5" cx="2" cy="0"/></g><g transform="translate(17.15,18.15) rotate(280.00)"><ellipse rx="7.5" ry="4.5" cx="2" cy="0"/></g><g transform="translate(23.96,13.60) rotate(302.50)"><ellipse rx="7.5" ry="4.5" cx="2" cy="0"/></g><g transform="translate(32.00,12.00) rotate(325.00)"><ellipse rx="7.5" ry="4.5" cx="2" cy="0"/></g><g transform="translate(40.04,13.60) rotate(347.50)"><ellipse rx="7.5" ry="4.5" cx="2" cy="0"/></g><g transform="translate(46.85,18.15) rotate(370.00)"><ellipse rx="7.5" ry="4.5" cx="2" cy="0"/></g><g transform="translate(51.40,24.96) rotate(392.50)"><ellipse rx="7.5" ry="4.5" cx="2" cy="0"/></g></g>
+  <!-- big close-set eyes -->
+  <circle cx="25" cy="28" r="9" fill="#fff"/><circle cx="39" cy="28" r="9" fill="#fff"/>
+  <circle cx="26" cy="29" r="3.6" fill="#1c1c1c"/><circle cx="38" cy="29" r="3.6" fill="#1c1c1c"/>
+  <!-- nose = a lit LED -->
+  <circle cx="32" cy="39" r="5.4" fill="#f5821f"/><circle cx="30" cy="37" r="1.7" fill="#fff" opacity="0.75"/>
+  <!-- smile = a resistor zig-zag -->
+  <polyline points="23,47 26,47 28,44 30.5,50 33.5,44 36,50 38,47 41,47" fill="none" stroke="#9c2a20" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
