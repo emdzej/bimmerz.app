@@ -93,6 +93,13 @@ Parts:
 X1312 is the same connector as for level 0: pin 8 is the unit's TX,
 pin 9 its RX, 17 and 18 ground (connect both).
 
+You can also take the power at the nav computer instead of the OBD
+socket, from X1313 (blue): pin 1 is +12 V from the battery (not
+switched), 10 and 11 ground. That works best for a board that lives
+behind the unit. The F1 fuse still goes in the +12 V line, and
+everything about the OBD pin 16 draw below applies here too. Use good
+splice connectors, e.g. BMW p/n 61138364566 (TE / AMP `0-1393431-1`).
+
 Notes:
 
 - The K-line echoes everything the unit sends, as every K-line cable
