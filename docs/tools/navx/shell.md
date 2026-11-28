@@ -94,6 +94,13 @@ holds; there's no CD text, because the changer doesn't send any.
 
 ![The CD changer](/navx/shell/audio-cd.png)
 
+Adapters that pose as the CD changer, BlueBus-style ones for example, can
+put a menu of their own on the nav. That works here too, drawn in the
+same style: their title, their status fields and their list, which you
+turn through and press as on the stock screen.
+
+![An adapter's own menu](/navx/shell/radio-screen.png)
+
 Tune the radio or skip a track while you're on another screen, and a
 short note at the bottom shows what's playing now for three seconds. The
 knob keeps working on the screen underneath; press to open Audio. It
