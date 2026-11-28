@@ -164,6 +164,35 @@ group "Power from the OBD socket" { U3 F1 }
 
 The board's firmware and the protocol are in development.
 
+### Setting up the board
+
+The board brings up its own Wi-Fi, `NavX-Link-` and four characters,
+with a random password from its first start. Join it from a phone and
+its setup page opens (or go to `192.168.4.1`).
+
+<div class="phone-shots">
+  <figure><img src="/navx/link/portal-status.png" alt="Status: the nav computer, the K-line, Wi-Fi and Bluetooth"><figcaption>Status</figcaption></figure>
+  <figure><img src="/navx/link/portal-wifi.png" alt="Wi-Fi: the board's access point and a network to join"><figcaption>Wi-Fi</figcaption></figure>
+  <figure><img src="/navx/link/portal-bluetooth.png" alt="Bluetooth: paired devices and what may connect"><figcaption>Bluetooth</figcaption></figure>
+  <figure><img src="/navx/link/portal-car.png" alt="Car: the K-line for the unit"><figcaption>Car</figcaption></figure>
+  <figure><img src="/navx/link/portal-power.png" alt="Power: when the board sleeps"><figcaption>Power</figcaption></figure>
+  <figure><img src="/navx/link/portal-update.png" alt="Update: new board firmware from a file"><figcaption>Update</figcaption></figure>
+  <figure><img src="/navx/link/portal-system.png" alt="System: name, settings password, restart and reset"><figcaption>System</figcaption></figure>
+</div>
+
+| Page | What you set |
+|---|---|
+| Wi-Fi | When the board's access point is on (always, the first 10 minutes after it starts, or off), its name, password and channel; a network to join, e.g. your phone's hotspot, so the unit can go online |
+| Bluetooth | Paired devices, and what may connect: the NavX app, game controllers, and on Link + Audio music from your phone |
+| Car | Whether the unit may use the K-line through the board |
+| Power | Sleep when the nav computer says so, or after it has been quiet for a while; no sleep while someone is on the page |
+| Update | New board firmware from a `.bin` file; it's checked before the board switches to it |
+| System | The board's name, a password for changing settings, restart, factory settings |
+
+*Shots from the board's firmware run on a laptop with sample data; it
+hasn't been on a board yet. Bluetooth pairing comes with a later board
+firmware.*
+
 ## Level 3: NavX Link + Audio
 
 Level 2's wiring with an ESP32-S31 in the C3's place (it has Classic

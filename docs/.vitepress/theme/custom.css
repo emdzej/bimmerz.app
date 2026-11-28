@@ -137,3 +137,9 @@
 .elmo-schematic details div[class*="language-"] {
   margin: 0.4rem 0;
 }
+
+/* Phone screenshots (NavX Link setup page) */
+.phone-shots { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; margin: 16px 0; }
+.phone-shots figure { margin: 0; }
+.phone-shots img { width: 100%; border-radius: 12px; border: 1px solid var(--vp-c-divider); }
+.phone-shots figcaption { font-size: 13px; color: var(--vp-c-text-2); text-align: center; margin-top: 4px; }
